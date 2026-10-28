@@ -1,90 +1,25 @@
-﻿<!-- template-only -->
-# An Open-Source Analog Mixed-Signal Chip Design Template & Tutorial for the SkyWater sky130A Open-PDK
+# lit_compac on SKY130A
 
-[![License: Solderpad Hardware License v2.1](https://img.shields.io/badge/License-Solderpad%20Hardware%20License%20v2.1-blue.svg)](LICENSE)
-[![Quarto Publish](https://github.com/iic-jku/sky130A-ams-chip-template/actions/workflows/quarto-publish.yml/badge.svg?branch=main)](https://github.com/iic-jku/sky130A-ams-chip-template/actions/workflows/quarto-publish.yml)
-[![Regression](https://github.com/iic-jku/sky130A-ams-chip-template/actions/workflows/regression.yml/badge.svg?branch=main)](https://github.com/iic-jku/sky130A-ams-chip-template/actions/workflows/regression.yml)
-[![License Check](https://github.com/iic-jku/sky130A-ams-chip-template/actions/workflows/license-check.yml/badge.svg?branch=main)](https://github.com/iic-jku/sky130A-ams-chip-template/actions/workflows/license-check.yml)
-[![Tutorial](https://img.shields.io/badge/Tutorial-online-orange?logo=quarto)](https://iic-jku.github.io/sky130A-ams-chip-template/index.html)
+Port in progress. The multiplier has not yet passed SKY130 schematic or layout qualification.
+See [the port plan](doc/porting/PLAN.md) for scope, acceptance gates and evidence.
+The template example macros and chip wrapper below are scaffolding, not the completed multiplier.
 
-(c) 2026 Simon Dorrer and Harald Pretl
+﻿# lit_compac
 
-Institute for Integrated Circuits and Quantum Computing, Johannes Kepler University (JKU), Linz, Austria
+Started from [sky130A-ams-chip-template](https://github.com/iic-jku/sky130A-ams-chip-template) `unreleased` with `make project`.
 
-<!-- /template-only -->
+TODO: describe the chip, its main specifications and its status.
+
 > [!IMPORTANT]
 > This repository requires the [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS) container with tag `2026.09` or later.
 
 
-<!-- template-only -->
-<p align="center">
-  <a href="render/img/chip_top_black.png">
-    <img src="render/img/chip_top_black.png" alt="Chip render of the sky130A analog mixed-signal template chip (1.6 mm x 1.6 mm)" width=70%>
-  </a>
-  <br>
-  <em>Chip render of the sky130A analog mixed-signal template chip (1.6 mm x 1.6 mm).</em>
-</p>
-
-<p align="center">
-  <a href="render/img/chip_top_black_M5.png">
-    <img src="render/img/chip_top_black_M5.png" alt="Render of the met5 AMS Chip logo, generated with the tool ArtistIC" width=70%>
-  </a>
-  <br>
-  <em>Render of the met5 AMS Chip logo, generated with the tool ArtistIC.</em>
-</p>
-
-
-## Overview
-
-Developing high-performance open-source silicon requires both the availability of tapeout-ready open-PDKs and robust, user-friendly EDA flows. While digital RTL-to-GDS flows offer an easy entry with documentation and examples, analog mixed-signal (AMS) design still suffers from a steep learning curve and the lack of examples and instructions. This repository provides a comprehensive template and tutorial for AMS chip design using the SkyWater sky130A Open-PDK, guiding the designer from initial system-level specifications to the tapeout-ready chip.
-
-This Makefile-driven repository simulates, builds, and fully verifies (DRC, LVS, PEX) a complete analog mixed-signal chip for the SkyWater sky130A Open-PDK, including padframe generation, top-level assembly and bondplan generation. The flow uses:
-
-- [**LibreLane**](https://github.com/librelane/librelane) for digital macro hardening, padframe generation, top-level assembly, filler and logo insertion
-- [**Xschem**](https://github.com/StefanSchippers/xschem) for schematic entry
-- [**Ngspice**](https://github.com/danchitnis/ngspice-sf-mirror), [**VACASK**](https://codeberg.org/arpadbuermen/VACASK) and [**CACE**](https://github.com/fossi-foundation/cace) for analog simulation
-- [**KLayout**](https://github.com/KLayout/klayout) for viewing and routing of the layout
-- [**Magic**](https://github.com/rtimothyedwards/magic) + [**Netgen**](https://github.com/rtimothyedwards/netgen) and [**KLayout**](https://github.com/KLayout/klayout) for DRC, LVS and PEX verification
-- **SystemVerilog**, [**Verilator**](https://github.com/verilator/verilator), [**iverilog**](https://github.com/steveicarus/iverilog), [**cocotb**](https://github.com/cocotb/cocotb), [**GTKWave**](https://github.com/gtkwave/gtkwave) and [**Surfer**](https://gitlab.com/surfer-project/surfer) for linting and simulation of digital macros
-
-The repository is the starting point for your own custom silicon and provides a universal design flow solution: Just clone the repo, enter the IIC-OSIC-TOOLS container, and run `make all` to get a tapeout-ready analog mixed-signal chip. Focus on your design and do not worry about the tools and the design flow!
-
-Furthermore, it serves as a regression test for the above-mentioned open-source tools and their dependencies using the SkyWater sky130A Open-PDK.
-
-
-## PDKs
-
-This template is available for the following open-source PDKs:
-- **ihp-sg13g2**: [ihp-sg13g2-ams-chip-template](https://github.com/iic-jku/ihp-sg13g2-ams-chip-template)
-- **ihp-sg13cmos5l**: [ihp-sg13cmos5l-ams-chip-template](https://github.com/iic-jku/ihp-sg13cmos5l-ams-chip-template)
-- **sky130A**: this repository
-- **gf180mcuD**: [gf180mcuD-ams-chip-template](https://github.com/iic-jku/gf180mcuD-ams-chip-template)
-
-
-## Tutorial
-
-A step-by-step tutorial, including additional exercises, can be found [here](https://iic-jku.github.io/sky130A-ams-chip-template/index.html).
-
-An overview of the open-source IC design landscape is presented [here](https://ic3.ie/resources/open-source-ic-design-day).
-
-Are you interested in an open-source RFIC flow? Check it out [here](https://github.com/iic-jku/SG13CMOS_SPARX).
-
-
-## Examples
-
-Examples based on this template are:
-- [TinyWhisper](https://github.com/iic-jku/TinyWhisper): An Open-Source Fully-Integrated Multi-Mode Short-Wave Transmitter for Amateur Radio Applications in 130-nm CMOS
-- [SPARX](https://github.com/iic-jku/SG13CMOS_SPARX): An Open-Source, Automated, Programmatically Generated, Frequency-Scalable Six-Port Receiver in 130-nm CMOS
-- [Multi-Project Chip](https://github.com/iic-jku/gf180mcu-jku-projects) for the wafer.space gf180mcuD MPW run
-
-
-<!-- /template-only -->
 ## Chip Documentation
 
 A designer-oriented description of this chip can be found in [doc/](doc/):
 
 - **[doc/specifications.md](doc/specifications.md)**: top-level specifications (technology, supplies, clock, macro inventory, functional behaviour).
-- **[doc/pinout.md](doc/pinout.md)**: full 32-pad bondpad table per side, with the `chip_top` port and the role each pad carries inside `chip_core`.
+- **[doc/pinout.md](doc/pinout.md)**: full 32-pad bondpad table per side, with the `lit_compac_top` port and the role each pad carries inside `lit_compac_core`.
 - **[doc/floorplan.md](doc/floorplan.md)**: die / core geometry, hard-macro placement coordinates, PDN strategy and the floorplan diagram.
 
 What the build of this repository produces, on the `2026.08` container with open_pdks `026824c7`:
@@ -94,7 +29,7 @@ What the build of this repository produces, on the `2026.08` container with open
 | Die | 1600 x 1600 um, 32 pads, QFN-32 |
 | Clock | 40 MHz, closed on all three corners, worst setup slack 8.89 ns and worst hold slack 0.14 ns |
 | Antenna | passed, no net listed |
-| Magic DRC | 0 violations on `chip_top` and on `chip_top_logo_fill` |
+| Magic DRC | 0 violations on `lit_compac_top` and on `lit_compac_top_logo_fill` |
 | Netgen LVS | 313 devices on each side, 4 unmatched nets, all of them ring buses of the clock pad |
 | Simulation | 6 of 6 cocotb tests at RTL and at gate level |
 | Bondplan | 32 wires, 1253 to 1613 um, minimum gap 86 um, no warning |
@@ -108,13 +43,13 @@ The four LVS nets are the one open point and the reason `Checker.LVS` is off, se
 <summary>Show Directory Structure</summary>
 
 ```text
-📁 sky130A-ams-chip-template/
+📁 lit_compac_sky/
 ├─ 📁 .github/
 │  └─ 📁 workflows/
 │     ├─ license-check.yml
-│     ├─ quarto-publish.yml
 │     └─ regression.yml
 ├─ 📁 doc/
+│  ├─ 📁 fig/
 │  ├─ 📁 klayout/
 │  ├─ 📁 librelane/
 │  ├─ 📁 sizing/
@@ -127,11 +62,11 @@ The four LVS nets are the one open point and the reason `Checker.LVS` is off, se
 ├─ 📁 flow/
 │  ├─ 📁 artistic/
 │  ├─ 📁 librelane/
-│  │  ├─ chip_top.sdc
 │  │  ├─ config.yaml
+│  │  ├─ lit_compac_top.sdc
 │  │  └─ pdn_cfg.tcl
 │  └─ 📁 logo/
-│     └─ chip_logo_mono.png
+│     └─ lit_compac_logo_mono.png
 ├─ 📁 ip/
 │  ├─ 📁 sky130_ip__jku/
 │  │  ├─ 📁 final/
@@ -148,8 +83,8 @@ The four LVS nets are the one open point and the reason `Checker.LVS` is off, se
 │     ├─ Makefile
 │     └─ README.md
 ├─ 📁 layout/
-│  ├─ chip_top.gds.gz
-│  └─ chip_top_logo_fill.gds.gz
+│  ├─ lit_compac_top.gds.gz
+│  └─ lit_compac_top_logo_fill.gds.gz
 ├─ 📁 LICENSES/
 │  ├─ Apache-2.0.txt
 │  ├─ LicenseRef-EUROPRACTICE.txt
@@ -192,36 +127,32 @@ The four LVS nets are the one open point and the reason `Checker.LVS` is off, se
 │  └─ 📁 spice/
 ├─ 📁 packaging/
 │  ├─ 📁 layout/
-│  │  ├─ chip_top_bondplan.gds
-│  │  ├─ chip_top_logo_M5.gds.gz
 │  │  ├─ EP_PACKAGES_08022018.gds
+│  │  ├─ lit_compac_top_bondplan.gds
+│  │  ├─ lit_compac_top_logo_M5.gds.gz
 │  │  └─ OP_QFN32_A4_FIT.gds
 │  ├─ 📁 render/
-│  │  └─ chip_top_bondplan_{white,black}.{png,svg}
+│  │  └─ lit_compac_top_bondplan_{white,black}.{png,svg}
 │  ├─ 📁 scripts/
 │  │  └─ run_bondplan.py
 │  ├─ config.yaml
 │  ├─ README.md
 │  └─ result.md
 ├─ 📁 release/
-│  └─ 📁 v.1.0.0/
-│     ├─ 📁 gds/
-│     ├─ 📁 img/
-│     └─ 📁 netlist/
 ├─ 📁 render/
 │  ├─ 📁 blender/
 │  └─ 📁 img/
 ├─ 📁 rtl/
-│  ├─ chip_core.sv
-│  ├─ chip_top.sv
-│  └─ lint_waivers.vlt
+│  ├─ lint_waivers.vlt
+│  ├─ lit_compac_core.sv
+│  └─ lit_compac_top.sv
 ├─ 📁 schematic/
 │  └─ 📁 xschem/
 │     ├─ 📁 sky130_ef_io/
 │     ├─ chip_pad_{in,out,bidir}.{sch,sym}
-│     ├─ chip_top.sch
-│     ├─ chip_top.sym
-│     ├─ chip_top_pex.sym
+│     ├─ lit_compac_top.sch
+│     ├─ lit_compac_top.sym
+│     ├─ lit_compac_top_pex.sym
 │     └─ xschemrc
 ├─ 📁 scripts/
 │  ├─ add_logo_fill.sh
@@ -233,23 +164,17 @@ The four LVS nets are the one open point and the reason `Checker.LVS` is off, se
 │  └─ strip_mask_layers.py
 ├─ 📁 testbenches/
 │  ├─ 📁 cocotb/
-│  │  ├─ chip_top_tb.gtkw
-│  │  ├─ chip_top_tb.py
-│  │  └─ chip_top_tb.surf.ron
+│  │  ├─ lit_compac_top_tb.gtkw
+│  │  ├─ lit_compac_top_tb.py
+│  │  └─ lit_compac_top_tb.surf.ron
 │  └─ 📁 xschem/
 │     ├─ 📁 plot_simulations/
 │     │  ├─ 📁 data/
 │     │  ├─ 📁 figures/
 │     │  ├─ ngspice2python.py
-│     │  └─ plot_chip_top.py
-│     ├─ chip_top_tb_tran.sch
+│     │  └─ plot_lit_compac_top.py
+│     ├─ lit_compac_top_tb_tran.sch
 │     └─ xschemrc
-├─ 📁 tutorial/
-│  ├─ 📁 fig/
-│  ├─ _quarto.yml
-│  ├─ index.qmd
-│  ├─ Makefile
-│  └─ requirements.txt
 ├─ 📁 verification/
 │  ├─ 📁 drc/
 │  ├─ 📁 lvs/
@@ -263,7 +188,7 @@ The four LVS nets are the one open point and the reason `Checker.LVS` is off, se
 │     ├─ yosys_post_dff.rpt
 │     ├─ yosys_pre_techmap.rpt
 │     └─ yosys_synth_check.rpt
-├─ CITATION.cff
+├─ doc/fig/CITATION.cff
 ├─ LICENSE
 ├─ Makefile
 ├─ README.md
@@ -315,7 +240,7 @@ macros/inverter/verification/cace/templates/xschemrc
 └─ source macros/inverter/schematic/xschem/xschemrc
 ```
 
-Each schematic folder puts itself and its sibling testbenches folder on the library path, and each testbenches folder does the reverse. The chip top-level therefore sees all six schematic and testbench folders, which is what lets `chip_top.sch` instantiate `inverter_top.sym` and `counter_top.sym`, and what lets you open a macro testbench from a chip top-level session. The macro files do not source each other, so a macro can be opened and simulated on its own without the top level being present.
+Each schematic folder puts itself and its sibling testbenches folder on the library path, and each testbenches folder does the reverse. The chip top-level therefore sees all six schematic and testbench folders, which is what lets `lit_compac_top.sch` instantiate `inverter_top.sym` and `counter_top.sym`, and what lets you open a macro testbench from a chip top-level session. The macro files do not source each other, so a macro can be opened and simulated on its own without the top level being present.
 
 
 ### Where Netlists and Simulation Output Go
@@ -348,8 +273,8 @@ All `simulations/` folders are generated and git-ignored.
 The whole flow is driven by Makefiles. The top-level `Makefile` builds the chip, and every component under [`macros/`](macros/) and [`ip/`](ip/) has its own `Makefile` and `README.md` following the same conventions (`make help`, `make all`, and so on). You can run each component from the top level or directly from inside its own folder. The figure below shows how the targets are connected when you run `make all` at the top level.
 
 <p align="center">
-  <a href="tutorial/fig/targets_overview/targets_overview.png">
-    <img src="tutorial/fig/targets_overview/targets_overview.png" alt="Overview of the Makefile targets" width=100%>
+  <a href="doc/fig/targets_overview/targets_overview.png">
+    <img src="doc/fig/targets_overview/targets_overview.png" alt="Overview of the Makefile targets" width=100%>
   </a>
   <br>
   <em>Overview of the Makefile targets.</em>
@@ -362,7 +287,7 @@ Solid arrows are direct `$(MAKE) <target>` calls within a single Makefile. Dashe
 At the top level, `make all` runs four steps in this order:
 
 1. `build-all` initialises the submodules and builds every component by calling its own `all` target: logos, digital macro, analog macro, and finally the chip assembly with `build-top` (LibreLane, copy-back of all artifacts, logo and fill insertion, final GDS render).
-2. `magic-drc` runs the DRC of the final `chip_top` and `chip_top_logo_fill` GDS. The KLayout DRC is not part of `make all` to shorten the runtime. Run it separately with `klayout-drc-minimum` or `klayout-drc-regular`.
+2. `magic-drc` runs the DRC of the final `lit_compac_top` and `lit_compac_top_logo_fill` GDS. The KLayout DRC is not part of `make all` to shorten the runtime. Run it separately with `klayout-drc-minimum` or `klayout-drc-regular`.
 3. `sim-all` runs the top-level RTL and gate-level simulations on the netlists produced by this build.
 4. `bondplan` generates the bonding diagram, the bondwires, and the pin table.
 
@@ -419,8 +344,8 @@ make open
 ```
 
 <p align="center">
-  <a href="tutorial/fig/make_open/make_open.png">
-    <img src="tutorial/fig/make_open/make_open.png" alt="The sak-open.py window of make open at the top level, with only the .sch and .sym types ticked" width=80%>
+  <a href="doc/fig/make_open/make_open.png">
+    <img src="doc/fig/make_open/make_open.png" alt="The sak-open.py window of make open at the top level, with only the .sch and .sym types ticked" width=80%>
   </a>
   <br>
   <em><code>make open</code> at the top level after <code>None</code> and ticking <code>.sch</code> and <code>.sym</code>: all 33 schematics and symbols of the chip, its IO pads and both macros, each one click away from Xschem.</em>
@@ -473,8 +398,8 @@ Run this after cloning the repository, or whenever submodule pointers are update
 We use [cocotb](https://www.cocotb.org/), a Python-based testbench environment, for the verification of the chip.
 The underlying simulator is [Icarus Verilog](https://github.com/steveicarus/iverilog).
 
-The simulation targets accept an optional `CELL` variable (default: `chip_top`).
-The testbench is located in `testbenches/cocotb/chip_top_tb.py`. To run the RTL simulation, use:
+The simulation targets accept an optional `CELL` variable (default: `lit_compac_top`).
+The testbench is located in `testbenches/cocotb/lit_compac_top_tb.py`. To run the RTL simulation, use:
 
 ```sh
 make sim-rtl-cocotb
@@ -495,7 +420,7 @@ make sim-gl-xschem TB=<testbenchname>
 
 The testbench is selected with the `TB` variable, given without the `.sch` extension (default: `<CELL>_tb_tran`). All testbench schematics are located in `testbenches/xschem/`, and the generated netlists are written to `testbenches/xschem/simulations/`.
 
-Every testbench pulls in a FET `.save` file through its `SAVE` code block (for example `.include chip_top_tb_tran.save`). That file lists the operating-point parameters of every transistor (`ids`, `gm`, `gds`, `vth` and so on), which the `annotate_fet_params` symbols and the `Annotate OP` launcher read back from the raw file. The include uses the bare file name, so it resolves inside `testbenches/xschem/simulations/`, where ngspice runs. Both `sim-gl-xschem` and the schematic's `Simulate` launcher write the file on every run, so it always matches the devices currently in the schematic and a fresh clone needs no manual export. Xschem's **SKY130 > Create FET .save file** menu entry writes the same file by hand.
+Every testbench pulls in a FET `.save` file through its `SAVE` code block (for example `.include lit_compac_top_tb_tran.save`). That file lists the operating-point parameters of every transistor (`ids`, `gm`, `gds`, `vth` and so on), which the `annotate_fet_params` symbols and the `Annotate OP` launcher read back from the raw file. The include uses the bare file name, so it resolves inside `testbenches/xschem/simulations/`, where ngspice runs. Both `sim-gl-xschem` and the schematic's `Simulate` launcher write the file on every run, so it always matches the devices currently in the schematic and a fresh clone needs no manual export. Xschem's **SKY130 > Create FET .save file** menu entry writes the same file by hand.
 
 The simulation runs in **batch mode**: the target netlists the testbench with `xschem netlist` and then invokes `ngspice -b` directly instead of using `xschem simulate`. `xschem simulate` would spawn an interactive ngspice in a terminal detached from `make`: the target would return immediately, the result would never be checked, and the process (with its X server) would leak. Running the simulator directly makes `make` block until the run finishes and see its exit status.
 
@@ -507,7 +432,7 @@ Because the run is headless, the `plot` commands in a testbench's `.control` blo
 To plot the Xschem simulation results, use `sim-view-xschem`. It runs a plotting script from `testbenches/xschem/plot_simulations/` (`SIM_PLOT_DIR`), selected with the `SCRIPT` variable, given without the `.py` extension (default: `plot_<CELL>`), and reproduces the plots of the testbench's `.control` block with matplotlib from the exported data in `plot_simulations/data/`:
 
 ```sh
-make sim-view-xschem                      # run the default plotting script (plot_chip_top)
+make sim-view-xschem                      # run the default plotting script (plot_lit_compac_top)
 make sim-view-xschem SCRIPT=<scriptname>  # run another plotting script
 ```
 
@@ -518,12 +443,12 @@ The target runs `SHOW_PLOTS=1 python3 testbenches/xschem/plot_simulations/$(SCRI
 > It opens the generated Python figures, which blocks the shell until the window is closed.
 > It is designed for interactive use and must be called manually after the simulation has completed.
 
-The cocotb simulations generate a waveform file under `testbenches/cocotb/sim_build/chip_top.fst`.
+The cocotb simulations generate a waveform file under `testbenches/cocotb/sim_build/lit_compac_top.fst`.
 You can view it with a waveform viewer such as [GTKWave](https://gtkwave.github.io/gtkwave/) or [Surfer](https://surfer-project.org/).
 The waveform viewer can be changed with `WAVEFORM_VIEWER=<gtkwave|surfer>` (default: `gtkwave`).
 
 ```sh
-make sim-view-cocotb                                          # view chip_top waveform with GTKWave (default)
+make sim-view-cocotb                                          # view lit_compac_top waveform with GTKWave (default)
 make sim-view-cocotb WAVEFORM_VIEWER=surfer                   # use Surfer instead
 ```
 
@@ -543,7 +468,7 @@ make sim-all
 
 > [!NOTE]
 > `sim-view-xschem` is intentionally **not** called by `sim-all` either. Run it manually with
-> `make sim-view-xschem SCRIPT=plot_chip_top` after the simulation has completed.
+> `make sim-view-xschem SCRIPT=plot_lit_compac_top` after the simulation has completed.
 
 
 ### LibreLane Flow
@@ -627,12 +552,12 @@ To copy the latest LibreLane chip render from `flow/final/render/` into `render/
 make copy-render
 ```
 
-This creates `render/img/chip_top_librelane.png`. This only works if the latest run completed without errors.
+This creates `render/img/lit_compac_top_librelane.png`. This only works if the latest run completed without errors.
 
 
 ### Render Top Layout
 
-Renders the final top-level GDS `layout/chip_top_logo_fill.gds.gz` (with logo and filler) with `sak-render.py` from the [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS):
+Renders the final top-level GDS `layout/lit_compac_top_logo_fill.gds.gz` (with logo and filler) with `sak-render.py` from the [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS):
 
 ```sh
 make render-gds
@@ -640,8 +565,8 @@ make render-gds
 
 Three images are written to the `render/img/` folder:
 
-- `chip_top_white.png` and `chip_top_black.png`: all physical mask layers, on a white and on a black background.
-- `chip_top_black_M5.png`: only `met5`, `via4` and `pad` on a black background, which shows the chip logo and the padframe.
+- `lit_compac_top_white.png` and `lit_compac_top_black.png`: all physical mask layers, on a white and on a black background.
+- `lit_compac_top_black_M5.png`: only `met5`, `via4` and `pad` on a black background, which shows the chip logo and the padframe.
 
 All three images are 2048 px wide and rendered with 4x oversampling. `sak-render.py` reads the layer colours from the PDK's own KLayout layer properties and crops to the drawn geometry, so the images have no border margin.
 
@@ -730,7 +655,7 @@ To add the chip logo (PNG -> GDS) and the fill structures on top of the LibreLan
 make add-logo-fill
 ```
 
-This calls `scripts/add_logo_fill.sh` with `TOP` and writes `layout/chip_top_logo_fill.gds.gz`. The step is also called from `make build-top`.
+This calls `scripts/add_logo_fill.sh` with `TOP` and writes `layout/lit_compac_top_logo_fill.gds.gz`. The step is also called from `make build-top`.
 
 > [!NOTE]
 > In the future, it is planned to replace this script and Makefile target with a custom LibreLane step.
@@ -773,15 +698,15 @@ make klayout-drc-regular
 
 ```sh
 make klayout-drc
-make klayout-drc CELL=chip_top
-make klayout-drc CELL=chip_top DRC_LEVEL=regular
+make klayout-drc CELL=lit_compac_top
+make klayout-drc CELL=lit_compac_top DRC_LEVEL=regular
 ```
 
 **Magic DRC** runs a Magic DRC with all subcells flattened (`sak-drc.sh -f "*"`):
 
 ```sh
 make magic-drc
-make magic-drc CELL=chip_top
+make magic-drc CELL=lit_compac_top
 ```
 
 
@@ -798,14 +723,14 @@ KLayout uses CDL netlists, while Magic uses SPICE netlists. Accordingly, `klayou
 To extract a CDL schematic netlist for KLayout LVS, use:
 ```sh
 make klayout-lvs-netlist
-make klayout-lvs-netlist CELL=chip_top
+make klayout-lvs-netlist CELL=lit_compac_top
 make klayout-lvs-netlist EV_PRECISION=5
 ```
 
 To extract a SPICE schematic netlist for Magic + Netgen LVS, use:
 ```sh
 make magic-lvs-netlist
-make magic-lvs-netlist CELL=chip_top
+make magic-lvs-netlist CELL=lit_compac_top
 make magic-lvs-netlist EV_PRECISION=5
 ```
 
@@ -818,14 +743,14 @@ Exports the schematic netlist from Xschem, then runs LVS. Compares the GDS layou
 
 ```sh
 make klayout-lvs
-make klayout-lvs CELL=chip_top
+make klayout-lvs CELL=lit_compac_top
 ```
 
 **Magic + Netgen LVS** uses `sak-lvs.sh` (Magic + Netgen mode `-m`, the default), which extracts the layout netlist with Magic and compares it against the schematic netlist with Netgen, using the Netgen setup of the PDK:
 
 ```sh
 make magic-lvs
-make magic-lvs CELL=chip_top
+make magic-lvs CELL=lit_compac_top
 ```
 
 
@@ -834,7 +759,7 @@ make magic-lvs CELL=chip_top
 Builds the Xschem symbol the PEX flow needs, `schematic/xschem/<CELL>_pex.sym`, from the regular cell symbol `schematic/xschem/<CELL>.sym`:
 
 ```sh
-make symbol-pex                  # build chip_top_pex.sym from chip_top.sym
+make symbol-pex                  # build lit_compac_top_pex.sym from lit_compac_top.sym
 make symbol-pex CELL=<cellname>  # build the PEX symbol of another cell
 ```
 
@@ -844,7 +769,7 @@ The generated symbol is a copy of `<CELL>.sym` with two changes: `type=subcircui
 - **`format="@name @pinlist @symname"`** makes the instance reference `@symname`, which resolves to `<CELL>_pex`, exactly the `.subckt` name the PEX flow writes.
 - **The pin order** is what `sak-pin-reorder.py` reorders the extracted netlist to, so it has to be that of the cell symbol.
 
-`PEX_MERGED_PINS` (default `IOVSS`) names the supply pins that the extraction does not report as ports of their own. `IOVSS` and `VSS` are separate nets in [chip_top.sv](rtl/chip_top.sv), in the LibreLane netlist `netlist/spice/chip_top.spice` and in the pin labels of the GDS, but both ground rings tap the p-substrate, so the flat Magic extraction sees one ground node and names it `VSS`. The extracted `.subckt` has no `IOVSS` port, and a PEX symbol that still carried the pin would fail the reorder with `[ERROR] Pin count mismatch`. Set the variable to an empty string for a cell whose supplies do stay separate: `make magic-pex PEX_MERGED_PINS=`.
+`PEX_MERGED_PINS` (default `IOVSS`) names the supply pins that the extraction does not report as ports of their own. `IOVSS` and `VSS` are separate nets in [lit_compac_top.sv](rtl/lit_compac_top.sv), in the LibreLane netlist `netlist/spice/lit_compac_top.spice` and in the pin labels of the GDS, but both ground rings tap the p-substrate, so the flat Magic extraction sees one ground node and names it `VSS`. The extracted `.subckt` has no `IOVSS` port, and a PEX symbol that still carried the pin would fail the reorder with `[ERROR] Pin count mismatch`. Set the variable to an empty string for a cell whose supplies do stay separate: `make magic-pex PEX_MERGED_PINS=`.
 
 [`scripts/prune_pex_symbol.py`](scripts/prune_pex_symbol.py) drops those pins and, for the same reason, every repeat of a pin name after the first: a `.subckt` port list holds one entry per net, so pads that share a supply share a port. Only the pin boxes go and every text label stays, so `<CELL>_pex.sym` still reads as the full pad ring while carrying exactly the pins the netlist has a port for.
 
@@ -852,7 +777,7 @@ The generated symbol is a copy of `<CELL>.sym` with two changes: `type=subcircui
 
 If `<CELL>.sym` does not exist, the target prints a note and does nothing, which leaves the PEX targets running without a pin reorder just as before. It fails only when `<CELL>.sym` declares neither `type=subcircuit` nor `type=primitive`.
 
-The cell symbol `<CELL>.sym` that this one is derived from is a hand-drawn source file at the chip top-level, because its pins are the pad ring and their placement is part of the drawing. The digital macro has two further targets for its own cell symbol, `symbol-gl` to scaffold one from the ports of a freshly hardened design and `symbol-check` to verify it on every build, see [Build the Xschem Symbol](macros/counter/README.md#build-the-xschem-symbol). They are macro targets only: they key on the `sim_pinname` property that the gate-level XSPICE flow needs, and `chip_top.sym` neither carries it nor has an XSPICE model to match.
+The cell symbol `<CELL>.sym` that this one is derived from is a hand-drawn source file at the chip top-level, because its pins are the pad ring and their placement is part of the drawing. The digital macro has two further targets for its own cell symbol, `symbol-gl` to scaffold one from the ports of a freshly hardened design and `symbol-check` to verify it on every build, see [Build the Xschem Symbol](macros/counter/README.md#build-the-xschem-symbol). They are macro targets only: they key on the `sim_pinname` property that the gate-level XSPICE flow needs, and `lit_compac_top.sym` neither carries it nor has an XSPICE model to match.
 
 > [!NOTE]
 > Every symbol in this project also carries `spectre_format="@name ( @pinlist ) @symname"`. Xschem writes that line itself whenever a symbol is built from a schematic's pin list (key `a`, `make_sym.awk`), and it is read **only** by the Spectre netlister, which is also the one that drives VACASK (`xschem.tcl` configures `vacask "$N"` as the default simulator for `netlist_type spectre`). The SPICE netlister used for ngspice ignores it, so it has no effect on any target in this Makefile.
@@ -864,11 +789,11 @@ The cell symbol `<CELL>.sym` that this one is derived from is a hand-drawn sourc
 Compares the pins of `schematic/xschem/<CELL>.sym` with the ports of the layout SPICE netlist `netlist/spice/<CELL>.spice` that LibreLane writes from the RTL:
 
 ```sh
-make check-ports                  # check chip_top.sym against netlist/spice/chip_top.spice
+make check-ports                  # check lit_compac_top.sym against netlist/spice/lit_compac_top.spice
 make check-ports CELL=<cellname>  # check the symbol of another cell
 ```
 
-The layout netlist is generated from the port list of [chip_top.sv](rtl/chip_top.sv), so it is the authoritative pin list of the chip, while `chip_top.sym` is hand-drawn. [`scripts/check_top_ports.py`](scripts/check_top_ports.py) reports two kinds of drift and fails the target on either of them:
+The layout netlist is generated from the port list of [lit_compac_top.sv](rtl/lit_compac_top.sv), so it is the authoritative pin list of the chip, while `lit_compac_top.sym` is hand-drawn. [`scripts/check_top_ports.py`](scripts/check_top_ports.py) reports two kinds of drift and fails the target on either of them:
 
 - A netlist port with no symbol pin, for example a pad added in the RTL that never reached the drawing.
 - A symbol pin with no netlist port, for example a pin whose name drifted apart from the RTL.
@@ -908,7 +833,7 @@ Both targets finish by running [`scripts/check_pex_ports.py`](scripts/check_pex_
 Both produce a netlist that ngspice reads without a single warning while the cell behaves completely differently in simulation, so the check is worth the two seconds it costs. It can also be run by hand on any SPICE netlist:
 
 ```sh
-python3 scripts/check_pex_ports.py netlist/pex/chip_top_magic_pex_1.spice
+python3 scripts/check_pex_ports.py netlist/pex/lit_compac_top_magic_pex_1.spice
 python3 scripts/check_pex_ports.py -v netlist/pex/*.spice     # -v also prints the size of each subcircuit
 ```
 
@@ -916,16 +841,16 @@ python3 scripts/check_pex_ports.py -v netlist/pex/*.spice     # -v also prints t
 
 ```sh
 make klayout-pex
-make klayout-pex CELL=chip_top
-make klayout-pex CELL=chip_top EXT_MODE=3
+make klayout-pex CELL=lit_compac_top
+make klayout-pex CELL=lit_compac_top EXT_MODE=3
 ```
 
 **Magic PEX** uses `sak-pex.sh`, which extracts the parasitics with Magic (C-decoupled, C-coupled, or full-RC):
 
 ```sh
 make magic-pex
-make magic-pex CELL=chip_top
-make magic-pex CELL=chip_top EXT_MODE=3
+make magic-pex CELL=lit_compac_top
+make magic-pex CELL=lit_compac_top EXT_MODE=3
 ```
 
 For full-RC extraction (`EXT_MODE=3`), `magic-pex` additionally exposes the three `extresist` tuning parameters of `sak-pex.sh`. They are ignored in `EXT_MODE=1`/`2`.
@@ -939,17 +864,17 @@ A full-RC extraction of a whole chip would produce a resistor network far too la
 In short: `THRESHOLD` and `MINDELAY` control *how many* nets carry parasitic resistance, while `MINRES` controls *how finely* each of them is modelled. Raising all three gives a smaller netlist that simulates faster with less detail. Lowering them gives a more accurate but considerably larger one.
 
 ```sh
-make magic-pex CELL=chip_top EXT_MODE=3 THRESHOLD=5000 MINRES=500 MINDELAY=2
+make magic-pex CELL=lit_compac_top EXT_MODE=3 THRESHOLD=5000 MINRES=500 MINDELAY=2
 ```
 
 
 ### Verify a Specific Cell
 
-Runs DRC, LVS, and PEX for a specific cell (e.g. `chip_top`):
+Runs DRC, LVS, and PEX for a specific cell (e.g. `lit_compac_top`):
 
 ```sh
-make klayout-verify CELL=chip_top
-make magic-verify CELL=chip_top
+make klayout-verify CELL=lit_compac_top
+make magic-verify CELL=lit_compac_top
 ```
 
 
@@ -965,26 +890,26 @@ make magic-verify
 
 ### Packaging (Bondplan Generation)
 
-Generates the bondplan fully automatically: the die placed in the package cavity, all bondwires, a pin table, and the filled EUROPRACTICE title block. Inputs are the final chip GDS (`layout/chip_top_logo_fill.gds.gz`) and the EUROPRACTICE package library, from which the QFN32 drawing sheet is extracted:
+Generates the bondplan fully automatically: the die placed in the package cavity, all bondwires, a pin table, and the filled EUROPRACTICE title block. Inputs are the final chip GDS (`layout/lit_compac_top_logo_fill.gds.gz`) and the EUROPRACTICE package library, from which the QFN32 drawing sheet is extracted:
 
 ```sh
 make bondplan                        # uses the default VERSION (1.0.0)
 make bondplan VERSION=2.1.0          # stamp another version on the sheet
 ```
 
-`TOP` (as `DESIGN_NAME`) and `VERSION` are passed to the flow and printed in the title block (`DIE: CHIP_TOP - V.1.0.0`), so the design name and the version number are maintained in the Makefile only.
+`TOP` (as `DESIGN_NAME`) and `VERSION` are passed to the flow and printed in the title block (`DIE: LIT_COMPAC_TOP - V.1.0.0`), so the design name and the version number are maintained in the Makefile only.
 
 The flow ([packaging/scripts/run_bondplan.py](packaging/scripts/run_bondplan.py)) is driven by [packaging/config.yaml](packaging/config.yaml), which holds the full package-pin-to-die-pad `PINOUT` in a LibreLane-style config format. It detects the die bondpads (`pad` openings on 76/20 and `met5.label` texts on 72/5), places the die in the package cavity, draws the bondwires, and checks wire lengths, crossings, spacing, lead skew and analog guard clearances. Outputs:
 
-- `packaging/layout/chip_top_bondplan.gds`: the bondplan GDS
+- `packaging/layout/lit_compac_top_bondplan.gds`: the bondplan GDS
 - [packaging/result.md](packaging/result.md): bond report with summary and bond table
-- `packaging/render/chip_top_bondplan_{white,black}.{png,svg}`: bonding diagram images
+- `packaging/render/lit_compac_top_bondplan_{white,black}.{png,svg}`: bonding diagram images
 
 See [packaging/README.md](packaging/README.md) for the full flow documentation and configuration reference.
 
 <p align="center">
-  <a href="packaging/render/chip_top_bondplan_white.png">
-    <img src="packaging/render/chip_top_bondplan_white.png" alt="Bonding diagram of the chip in a QFN32 package" width=70%>
+  <a href="packaging/render/lit_compac_top_bondplan_white.png">
+    <img src="packaging/render/lit_compac_top_bondplan_white.png" alt="Bonding diagram of the chip in a QFN32 package" width=70%>
   </a>
   <br>
   <em>Bonding diagram of the chip in a QFN32 package.</em>
@@ -993,7 +918,7 @@ See [packaging/README.md](packaging/README.md) for the full flow documentation a
 
 ### Build, Verify and Simulate All
 
-Runs `build-all` first, followed by Magic DRC for both `chip_top` and `chip_top_logo_fill`, then the chip simulations (`sim-all`) and finally generates the bondplan (`bondplan`) once all checks have passed:
+Runs `build-all` first, followed by Magic DRC for both `lit_compac_top` and `lit_compac_top_logo_fill`, then the chip simulations (`sim-all`) and finally generates the bondplan (`bondplan`) once all checks have passed:
 
 ```sh
 make all
@@ -1012,22 +937,22 @@ The following netlist folders are exported:
 - `netlist/spice` -> `release/v.<VERSION>/netlist/spice`
 
 > [!NOTE]
-> `netlist/pex` is **not** copied by the `release` target. It holds the Magic-extracted top-level netlist (`chip_top_magic_pex_1.spice`, ~73 MB and ~566k lines even in the C-decoupled `EXT_MODE=1`). Since `release/` is committed to the repository, copying it would add those ~73 MB to every released version. The netlist stays available in `netlist/pex/`.
+> `netlist/pex` is **not** copied by the `release` target. It holds the Magic-extracted top-level netlist (`lit_compac_top_magic_pex_1.spice`, ~73 MB and ~566k lines even in the C-decoupled `EXT_MODE=1`). Since `release/` is committed to the repository, copying it would add those ~73 MB to every released version. The netlist stays available in `netlist/pex/`.
 
 > [!NOTE]
 > `netlist/schematic` and `netlist/layout` are still empty. The schematic netlist is written by `klayout-lvs-netlist` / `magic-lvs-netlist` and the extracted layout netlist by `klayout-lvs` / `magic-lvs`, and the top-level LVS is not finished yet. Both folders fill up once it runs through.
 
 The following chip renders are exported:
 
-- `render/img/chip_top_black.png` -> `release/v.<VERSION>/img/chip_top_black.png`
-- `render/img/chip_top_white.png` -> `release/v.<VERSION>/img/chip_top_white.png`
-- `render/img/chip_top_black_M5.png` -> `release/v.<VERSION>/img/chip_top_black_M5.png`
-- `render/img/chip_top_librelane.png` -> `release/v.<VERSION>/img/chip_top_librelane.png`
+- `render/img/lit_compac_top_black.png` -> `release/v.<VERSION>/img/lit_compac_top_black.png`
+- `render/img/lit_compac_top_white.png` -> `release/v.<VERSION>/img/lit_compac_top_white.png`
+- `render/img/lit_compac_top_black_M5.png` -> `release/v.<VERSION>/img/lit_compac_top_black_M5.png`
+- `render/img/lit_compac_top_librelane.png` -> `release/v.<VERSION>/img/lit_compac_top_librelane.png`
 
 The bonding diagram is exported as well (see `make bondplan`):
 
-- `packaging/render/chip_top_bondplan_black.png` -> `release/v.<VERSION>/img/chip_top_bondplan_black.png`
-- `packaging/render/chip_top_bondplan_white.png` -> `release/v.<VERSION>/img/chip_top_bondplan_white.png`
+- `packaging/render/lit_compac_top_bondplan_black.png` -> `release/v.<VERSION>/img/lit_compac_top_bondplan_black.png`
+- `packaging/render/lit_compac_top_bondplan_white.png` -> `release/v.<VERSION>/img/lit_compac_top_bondplan_white.png`
 
 Run with default version (`1.0.0`):
 
@@ -1088,13 +1013,13 @@ The following tools and flows are checked:
 `make clean` deletes everything the chip top-level targets generate. The sources stay untouched: the RTL, the schematics, symbols and testbenches, the scripts, the LibreLane and packaging configurations, the EUROPRACTICE package library `packaging/layout/EP_PACKAGES_08022018.gds`, and `render/blender/`. Deleted are:
 
 - `flow/librelane/runs/` and `flow/final/` (LibreLane run directories and the saved views)
-- `layout/` (`chip_top.gds.gz` and `chip_top_logo_fill.gds.gz`)
+- `layout/` (`lit_compac_top.gds.gz` and `lit_compac_top_logo_fill.gds.gz`)
 - `netlist/` (schematic, layout, PEX, PnL, NL and SPICE netlists)
 - `render/img/` (the chip renders)
 - `verification/drc/`, `verification/lvs/` and `verification/reports/`
 - `schematic/xschem/simulations/`, `testbenches/xschem/simulations/` and the `plot_simulations/` outputs (`data/`, `figures/`, `__pycache__/`)
 - `testbenches/cocotb/sim_build/` and the `__pycache__` folders under `scripts/`, `packaging/scripts/` and `testbenches/cocotb/`
-- the bondplan outputs in `packaging/` (`render/`, `result.md`, and in `layout/` the generated `chip_top_bondplan.gds`, `chip_top_logo_M5.gds.gz` and the extracted package footprint `OP_QFN32_A4_FIT.gds`)
+- the bondplan outputs in `packaging/` (`render/`, `result.md`, and in `layout/` the generated `lit_compac_top_bondplan.gds`, `lit_compac_top_logo_M5.gds.gz` and the extracted package footprint `OP_QFN32_A4_FIT.gds`)
 
 The macros under [`macros/`](macros/) and the IPs under [`ip/`](ip/) are left alone. `make clean-all` runs `clean` here and then `make clean` in every IP and macro:
 
@@ -1117,79 +1042,6 @@ make all
 > The chip top-level testbench includes the counter XSPICE model `macros/counter/netlist/xspice/counter_top.xspice`, which `clean-all` removes. Run `make build-counter` (or the full `make all`) once before `make sim-gl-xschem`, otherwise the include fails.
 
 
-<!-- template-only -->
-## Start a New Chip from This Template
-
-This repository is itself the template for a new chip. Create your own repository from it (**Use this template** on GitHub, a fork or a copy) and name it `sky130A-<name>` after the chip, so that `git clone` gives its folder the same name. Clone it and run in the IIC-OSIC-TOOLS container:
-
-```sh
-make project NAME=<name> DRY_RUN=1   # list the changes, touch nothing
-make project NAME=<name>             # start the chip <name>
-```
-
-`NAME` is a lowercase letter followed by lowercase letters, digits or underscores, and it must not be the name of a macro or an IP. The target needs no PDK. It refuses to run in a git tree with uncommitted changes and in a checkout whose `origin` is this template, `FORCE=1` skips both checks. Every change is planned first, so a refused run leaves the tree untouched. Then the target:
-
-1. Runs `make clean`, which deletes the committed outputs of the template chip. The macros and IPs keep their committed views, so the new chip builds without rebuilding them.
-2. Removes what only makes sense in the template: `tutorial/`, `.github/workflows/quarto-publish.yml`, `CITATION.cff`, the content of `release/`, and every block between `template-only` markers in this README, `AGENTS.md`, the `Makefile` and the configuration files. Figures that a remaining file still shows move to `doc/fig/`, and `ToDo.md` starts empty.
-3. Renames `chip_top`, `chip_core` and `chip_logo` to `<name>_top`, `<name>_core` and `<name>_logo`, in file names and in file contents.
-4. Gives this README a new header that records the template version, and deletes itself (`scripts/new_project.py` and the `project` target).
-5. Checks that no old name, no link into a deleted path and no marker is left, runs `reuse lint` when it is installed, and lists what is left for you: the die area, the pad ring and the macro placements in [`flow/librelane/config.yaml`](flow/librelane/config.yaml), the `PINOUT` in [`packaging/config.yaml`](packaging/config.yaml), the chip documentation in [`doc/`](doc/), and the `regression` target once you replace the example macros. When the folder is not named `sky130A-<name>`, the list also gives the steps to rename it together with the GitHub repository and `origin`.
-
-Review the result, commit it and build the new chip:
-
-```sh
-git status             # undo: git reset --hard && git clean -fd
-git add -A
-git commit -m "started <name> from sky130A-ams-chip-template"
-make init-submodules   # the logo and fill step needs flow/artistic
-make build-top         # or make all, which also fetches it
-```
-
-The example macros and the logos stay, and two of the logos put the template's identity on the die: [`ip/sky130_ip__jku_names/`](ip/sky130_ip__jku_names/) draws the names of the template authors and `flow/logo/chip_logo_mono.png` the "AMS CHIP" artwork. Replace them, and the JKU logo in [`ip/sky130_ip__jku/`](ip/sky130_ip__jku/) where it does not apply, before a tapeout. The tutorial walks through the same steps in [Start Your Own Chip](https://iic-jku.github.io/sky130A-ams-chip-template/index.html#sec-new-chip).
-
-The two example macros are themselves templates for the two kinds of block. `make macro FROM=<macro> NAME=<name>` in [`macros/`](macros/) starts a new macro as a renamed copy of one of them, see [Start a New Macro from an Existing One](macros/README.md#start-a-new-macro-from-an-existing-one).
-
-
-## Cite This Work
-
-```
-@software{2026_ams_chip_template,
-	author = {Dorrer, Simon and Pretl, Harald},
-	month = apr,
-	year = {2026},
-	title = {{GitHub Repository of an Open-Source Analog Mixed-Signal Chip Design Template for the SkyWater sky130A Open-PDK}},
-	url = {https://github.com/iic-jku/sky130A-ams-chip-template}
-}
-```
-
-This repository has no Zenodo record yet, so there is no DOI to cite. The badge and the `doi` field arrive with the first release, together with the `identifiers` entry of [CITATION.cff](CITATION.cff), which says `ToDo` until then.
-
-
-## Acknowledgements
-
-First, we would like to thank the open-source chip design community for its valuable input and constructive feedback. We especially thank:
-- [Leo Moser](https://github.com/mole99), who initially started [template repositories](https://github.com/IHP-GmbH/ihp-sg13g2-librelane-template) based on the LibreLane flow.
-- [Tim Edwards](https://github.com/RTimothyEdwards) for helping with Magic + Netgen LVS and PEX issues.
-- [Krzysztof Herman](https://github.com/KrzysztofHerman) for discussions about the [directory structure](https://github.com/iic-jku/ihp-sg13g2-ams-chip-template/tree/main/doc/ihp-structure-proposals).
-
-This project is funded by the JKU/SAL [IWS Lab](https://research.jku.at/de/projects/jku-lit-sal-intelligent-wireless-systems-lab-iws-lab/), a collaboration of [Johannes Kepler University](https://jku.at) and [Silicon Austria Labs](https://silicon-austria-labs.com).
-
-<table width="100%">
-  <tr>
-    <td align="left" width="50%">
-      <a href="https://iic.jku.at" target="_blank">
-        <img src="tutorial/fig/funding/iic-jku.svg" alt="Johannes Kepler University: Institute for Integrated Circuits and Quantum Computing" width="94%"/>
-      </a>
-    </td>
-    <td align="right" width="50%">
-      <a href="https://silicon-austria-labs.com" target="_blank">
-        <img src="tutorial/fig/funding/silicon-austria-labs-logo.svg" alt="Silicon Austria Labs" width="94%"/>
-      </a>
-    </td>
-  </tr>
-</table>
-
-<!-- /template-only -->
 ## License
 
 Licensed under the **Solderpad Hardware License v2.1**, see [`LICENSE`](LICENSE).

@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: 2026 Simon Dorrer and Harald Pretl
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 #
-# Setup file for netgen LVS of chip_top, selected with NETGEN_SETUP in config.yaml.
+# Setup file for netgen LVS of lit_compac_top, selected with NETGEN_SETUP in config.yaml.
 #
 # It is the sky130A setup of the PDK plus the physical-only cells. The PDK setup ignores the fill, tap and
 # fake diode cells only when MAGIC_EXT_USE_GDS is set, that is when Magic extracts the layout from the GDS.

@@ -5,7 +5,7 @@ Everything this template needs from KLayout with the sky130A PDK: how to start i
 ## Starting it
 
 ```sh
-ke layout/chip_top_logo_fill.gds.gz     # alias of klayout -e, edit mode, in the container
+ke layout/lit_compac_top_logo_fill.gds.gz     # alias of klayout -e, edit mode, in the container
 klayout -e layout/inverter.gds          # the same by hand
 make open                               # the file browser of this repo, one button per file
 ```
@@ -122,7 +122,7 @@ In the GUI: `Efabless sky130 > Run LVS` asks for the schematic netlist first. It
 ## Other useful things
 
 ```sh
-sak-render.py -t sky130A -w 2048 -s 4 -o render/img/chip layout/chip_top.gds.gz
+sak-render.py -t sky130A -w 2048 -s 4 -o render/img/chip layout/lit_compac_top.gds.gz
 sak-render.py -t sky130A --list        # the layer names and groups the renderer knows
 klayout -zz -r scripts/strip_mask_layers.py -rd input=a.gds -rd output=b.gds
 ```

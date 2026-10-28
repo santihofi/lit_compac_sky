@@ -114,12 +114,12 @@ The new macro still implements the copied design under its new name. What follow
 There is no central macro list. A new macro is added in these places, all relative to the repository root:
 
 1. `Makefile`: a `build-<NAME>` target, its line in `build-macros`, and a `clean` line in `clean-all`.
-2. `rtl/chip_core.sv`: instantiate the macro.
+2. `rtl/lit_compac_core.sv`: instantiate the macro.
 3. `flow/librelane/config.yaml`: a `MACROS` entry with the view paths (`dir::../../macros/<NAME>/final/...`) and the instance placement. The placement of a macro is a multiple of 7.82 um, the common period of the `met1` and `met2` track grids, and a `met4` power stripe has to cross it, see [doc/floorplan.md](../doc/floorplan.md).
 4. `flow/librelane/pdn_cfg.tcl`: a `define_pdn_grid -macro` block when the power pins of the macro are not on the layers of the default grid, see the `inverter_top` blocks at the end of the file.
 5. `schematic/xschem/xschemrc`: a `source` line for the `xschemrc` of the new macro, without it the symbols of the macro do not resolve at the chip top-level.
-6. `schematic/xschem/chip_top.sch`: place the symbol of the macro.
-7. `testbenches/cocotb/chip_top_tb.py`: the `sources` list names the netlist or RTL and the stub of every macro.
+6. `schematic/xschem/lit_compac_top.sch`: place the symbol of the macro.
+7. `testbenches/cocotb/lit_compac_top_tb.py`: the `sources` list names the netlist or RTL and the stub of every macro.
 8. The documentation: [doc/floorplan.md](../doc/floorplan.md), [doc/specifications.md](../doc/specifications.md), [doc/pinout.md](../doc/pinout.md) when pins change, and the top-level `README.md`.
 
 `.gitignore` and `REUSE.toml` need no line: their `macros/*/` patterns already cover the build outputs and the files without a license header of every macro, so a new macro passes `reuse lint` and keeps its simulation outputs out of `git status` from the first build. Add the macro to git before running `reuse lint`: git does not report the ignored paths inside a folder it does not track yet, so the lint lists the build outputs of an untracked macro.

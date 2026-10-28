@@ -1,0 +1,145 @@
+[*]
+[*] GTKWave Analyzer v4.0.0-prealpha (7d7b4db) (w)1999-2022 BSI
+[*] Mon May 11 19:08:14 2026
+[*]
+[dumpfile] "/foss/designs/sky130A-ams-chip-template/testbenches/cocotb/sim_build/lit_compac_top.fst"
+[dumpfile_mtime] "Mon May 11 18:59:16 2026"
+[dumpfile_size] 4475
+[savefile] "/foss/designs/sky130A-ams-chip-template/testbenches/cocotb/lit_compac_top_tb.gtkw"
+[timestart] 0
+[size] 1920 1252
+[pos] -1 -1
+*-29.930702 -1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[markername] AA
+[markername] BB
+[markername] CC
+[markername] DD
+[markername] EE
+[markername] FF
+[markername] GG
+[markername] HH
+[markername] II
+[markername] JJ
+[markername] KK
+[markername] LL
+[markername] MM
+[markername] NN
+[markername] OO
+[markername] PP
+[markername] QQ
+[markername] RR
+[markername] SS
+[markername] TT
+[markername] UU
+[markername] VV
+[markername] WW
+[markername] XX
+[markername] YY
+[markername] ZZ
+[treeopen] lit_compac_top.
+[sst_width] 297
+[signals_width] 181
+[sst_expanded] 1
+[sst_vpaned_height] 495
+@200
+-CONSTANTS
+@24
+lit_compac_top.NUM_IOVDD_PADS
+lit_compac_top.NUM_IOVSS_PADS
+lit_compac_top.NUM_VDD_PADS
+lit_compac_top.NUM_VSS_PADS
+lit_compac_top.NUM_INPUT_PADS
+@c00024
+lit_compac_top.NUM_BIDIR_PADS
+@28
+(0)lit_compac_top.NUM_BIDIR_PADS
+(1)lit_compac_top.NUM_BIDIR_PADS
+(2)lit_compac_top.NUM_BIDIR_PADS
+(3)lit_compac_top.NUM_BIDIR_PADS
+(4)lit_compac_top.NUM_BIDIR_PADS
+(5)lit_compac_top.NUM_BIDIR_PADS
+(6)lit_compac_top.NUM_BIDIR_PADS
+(7)lit_compac_top.NUM_BIDIR_PADS
+(8)lit_compac_top.NUM_BIDIR_PADS
+(9)lit_compac_top.NUM_BIDIR_PADS
+(10)lit_compac_top.NUM_BIDIR_PADS
+(11)lit_compac_top.NUM_BIDIR_PADS
+(12)lit_compac_top.NUM_BIDIR_PADS
+(13)lit_compac_top.NUM_BIDIR_PADS
+(14)lit_compac_top.NUM_BIDIR_PADS
+(15)lit_compac_top.NUM_BIDIR_PADS
+(16)lit_compac_top.NUM_BIDIR_PADS
+(17)lit_compac_top.NUM_BIDIR_PADS
+(18)lit_compac_top.NUM_BIDIR_PADS
+(19)lit_compac_top.NUM_BIDIR_PADS
+(20)lit_compac_top.NUM_BIDIR_PADS
+(21)lit_compac_top.NUM_BIDIR_PADS
+(22)lit_compac_top.NUM_BIDIR_PADS
+(23)lit_compac_top.NUM_BIDIR_PADS
+(24)lit_compac_top.NUM_BIDIR_PADS
+(25)lit_compac_top.NUM_BIDIR_PADS
+(26)lit_compac_top.NUM_BIDIR_PADS
+(27)lit_compac_top.NUM_BIDIR_PADS
+(28)lit_compac_top.NUM_BIDIR_PADS
+(29)lit_compac_top.NUM_BIDIR_PADS
+(30)lit_compac_top.NUM_BIDIR_PADS
+(31)lit_compac_top.NUM_BIDIR_PADS
+@1401204
+-group_end
+@24
+lit_compac_top.NUM_OUTPUT_PADS
+lit_compac_top.NUM_ANALOG_PADS
+@200
+-INPUTS
+@28
+lit_compac_top.clk_PAD
+lit_compac_top.rst_n_PAD
+lit_compac_top.input_PAD
+@200
+-BIDIRS
+@800024
+lit_compac_top.bidir_PAD[3:0]
+@28
+(0)lit_compac_top.bidir_PAD[3:0]
+(1)lit_compac_top.bidir_PAD[3:0]
+(2)lit_compac_top.bidir_PAD[3:0]
+(3)lit_compac_top.bidir_PAD[3:0]
+@1001204
+-group_end
+@200
+-OUTPUTS
+@800024
+lit_compac_top.output_PAD[16:0]
+@28
+(0)lit_compac_top.output_PAD[16:0]
+(1)lit_compac_top.output_PAD[16:0]
+(2)lit_compac_top.output_PAD[16:0]
+(3)lit_compac_top.output_PAD[16:0]
+(4)lit_compac_top.output_PAD[16:0]
+(5)lit_compac_top.output_PAD[16:0]
+(6)lit_compac_top.output_PAD[16:0]
+(7)lit_compac_top.output_PAD[16:0]
+(8)lit_compac_top.output_PAD[16:0]
+(9)lit_compac_top.output_PAD[16:0]
+(10)lit_compac_top.output_PAD[16:0]
+(11)lit_compac_top.output_PAD[16:0]
+(12)lit_compac_top.output_PAD[16:0]
+(13)lit_compac_top.output_PAD[16:0]
+(14)lit_compac_top.output_PAD[16:0]
+(15)lit_compac_top.output_PAD[16:0]
+(16)lit_compac_top.output_PAD[16:0]
+@1001204
+-group_end
+@200
+-ANALOG
+@800022
+lit_compac_top.analog_PAD[3:0]
+@28
+(0)lit_compac_top.analog_PAD[3:0]
+(1)lit_compac_top.analog_PAD[3:0]
+(2)lit_compac_top.analog_PAD[3:0]
+(3)lit_compac_top.analog_PAD[3:0]
+@1001200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

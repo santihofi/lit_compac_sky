@@ -1,0 +1,2 @@
+temp,seed,vdd,vincm,vref,corner_mos,corner_res,corner_cap,gcode,ibias,c_load,vd1,vd2,sim_error,run_id,tb_gilbert_cell_mult__error,k100,k100_pass,k10,k10_pass,compr,compr_pass,compr1,compr1_pass,compr2,compr2_pass,vout_pp,vout_pp_pass,vos_out,vos_out_pass,vos1_eq,vos1_eq_pass,vos2_eq,vos2_eq_pass,vocm,vocm_pass,tb_gilbert_cell_mult_overall_pass,global_pass
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,40u,100f,0,0,None,000000,None,-10.0387,True,-9.85739,True,1.01839,True,0.977262,True,1.04751,True,-0.100387,True,-2.76335e-13,True,-3.45769e-14,True,-0.0,True,0.757967,True,True,True

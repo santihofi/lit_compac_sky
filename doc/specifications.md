@@ -1,6 +1,6 @@
 # Specifications
 
-Top-level specification of `chip_top`, an analog mixed-signal chip in SkyWater sky130A.
+Top-level specification of `lit_compac_top`, an analog mixed-signal chip in SkyWater sky130A.
 
 ## Technology
 
@@ -22,7 +22,7 @@ Top-level specification of `chip_top`, an analog mixed-signal chip in SkyWater s
 | `IOVDD` | 3.3 V | pad ring | `sky130_ef_io__vddio_hvc_clamped_pad` |
 | `IOVSS` | 0 V | pad ring ground | `sky130_ef_io__vssio_hvc_clamped_pad` |
 
-The sky130 pads carry twelve ring buses. Every pad instance in [rtl/chip_top.sv](../rtl/chip_top.sv) ties them to those four supplies: `VCCD` and `VCCHIB` to `VDD`, `VSSD` to `VSS`, `VDDIO`, `VDDIO_Q`, `VDDA` and `VSWITCH` to `IOVDD`, and `VSSIO`, `VSSIO_Q` and `VSSA` to `IOVSS`. Two connect slices short the same buses inside the ring, so the ring is one node per supply even where a pad does not drive it. `AMUXBUS_A` and `AMUXBUS_B` stay unconnected, this chip has no analog mux.
+The sky130 pads carry twelve ring buses. Every pad instance in [rtl/lit_compac_top.sv](../rtl/lit_compac_top.sv) ties them to those four supplies: `VCCD` and `VCCHIB` to `VDD`, `VSSD` to `VSS`, `VDDIO`, `VDDIO_Q`, `VDDA` and `VSWITCH` to `IOVDD`, and `VSSIO`, `VSSIO_Q` and `VSSA` to `IOVSS`. Two connect slices short the same buses inside the ring, so the ring is one node per supply even where a pad does not drive it. `AMUXBUS_A` and `AMUXBUS_B` stay unconnected, this chip has no analog mux.
 
 ## Clock and reset
 
@@ -51,11 +51,11 @@ The OpenRAM SRAM macro is characterized for one corner only, `TT_1p8V_25C`, so e
 
 | Instance | Macro | Size | Role |
 | --- | --- | --- | --- |
-| `i_chip_core.counter1` | `counter_top` | 200 um x 100 um | 8 bit counter, low nibble to `output_PAD[3:0]`, high nibble to the four bidirectional pads |
-| `i_chip_core.counter2` | `counter_top` | 200 um x 100 um | 8 bit counter, all eight bits to `output_PAD[11:4]` |
-| `i_chip_core.inverter1` | `inverter_top` | 42.73 um x 75.52 um | four inverters used as digital inverters, inputs from the bidirectional pads, outputs to `output_PAD[15:12]` |
-| `i_chip_core.inverter2` | `inverter_top` | 42.73 um x 75.52 um | two inverters as analog amplifiers between the analog pads, the other two tied off |
-| `i_chip_core.sram_0` | `sky130_sram_1kbyte_1rw1r_32x256_8` | 479.78 um x 397.5 um | 256 words of 32 bit, port 0 reads address 0 every clock, port 1 deselected, the parity of the word goes to `output_PAD[16]` |
+| `i_lit_compac_core.counter1` | `counter_top` | 200 um x 100 um | 8 bit counter, low nibble to `output_PAD[3:0]`, high nibble to the four bidirectional pads |
+| `i_lit_compac_core.counter2` | `counter_top` | 200 um x 100 um | 8 bit counter, all eight bits to `output_PAD[11:4]` |
+| `i_lit_compac_core.inverter1` | `inverter_top` | 42.73 um x 75.52 um | four inverters used as digital inverters, inputs from the bidirectional pads, outputs to `output_PAD[15:12]` |
+| `i_lit_compac_core.inverter2` | `inverter_top` | 42.73 um x 75.52 um | two inverters as analog amplifiers between the analog pads, the other two tied off |
+| `i_lit_compac_core.sram_0` | `sky130_sram_1kbyte_1rw1r_32x256_8` | 479.78 um x 397.5 um | 256 words of 32 bit, port 0 reads address 0 every clock, port 1 deselected, the parity of the word goes to `output_PAD[16]` |
 | `jku_logo` | `sky130_ip__jku` | 100 um x 100 um | logo on `met4` |
 | `jku_names` | `sky130_ip__jku_names` | 100 um x 100 um | names on `met4` |
 
@@ -73,8 +73,8 @@ The OpenRAM SRAM macro is characterized for one corner only, `TT_1p8V_25C`, so e
 | --- | --- | --- |
 | RTL lint | Verilator | clean, with and without the power pins |
 | RTL simulation | cocotb with Icarus | 6 of 6 tests pass |
-| Gate-level simulation | cocotb with Icarus on `netlist/pnl/chip_top.pnl.v` | 6 of 6 tests pass |
-| Chip DRC | Magic, on `chip_top` and `chip_top_logo_fill` | 0 violations each |
+| Gate-level simulation | cocotb with Icarus on `netlist/pnl/lit_compac_top.pnl.v` | 6 of 6 tests pass |
+| Chip DRC | Magic, on `lit_compac_top` and `lit_compac_top_logo_fill` | 0 violations each |
 | Chip DRC | KLayout `sky130A_mr.drc` | run outside the flow, see the README |
 | Chip LVS | Netgen, 313 devices on each side | 4 unmatched nets, the `VDDIO_Q`, `VSSIO_Q`, `VDDA` and `VSSA` ring buses of the clock pad, see [flow/librelane/config.yaml](../flow/librelane/config.yaml) |
 | Antenna | OpenROAD | passed, no net listed |

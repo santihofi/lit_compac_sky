@@ -1,6 +1,6 @@
 # Pinout
 
-The 32 bondpads of `chip_top`, the pad cell behind each one and the role it carries inside `chip_core`.
+The 32 bondpads of `lit_compac_top`, the pad cell behind each one and the role it carries inside `lit_compac_core`.
 
 The pad order per side is the one of `PAD_WEST`, `PAD_NORTH`, `PAD_SOUTH` and `PAD_EAST` in [flow/librelane/config.yaml](../flow/librelane/config.yaml), which OpenROAD places bottom to top on the vertical sides and left to right on the horizontal ones. The package pin numbers come from `PINOUT` in [packaging/config.yaml](../packaging/config.yaml), where pin 1 is the top left lead of the QFN32 and the numbering runs counter-clockwise.
 
@@ -8,7 +8,7 @@ Two cells of the west row are not bondpads: the ring bus connect slices, 20 um w
 
 ## West, bottom to top (package pins 8 to 1)
 
-| Pin | Port | Pad cell | Role in `chip_core` |
+| Pin | Port | Pad cell | Role in `lit_compac_core` |
 | --- | --- | --- | --- |
 | 8 | `output_PAD[16]` | `gpiov2_pad`, output | parity of the SRAM word at address 0 |
 | 7 | `VSS` | `vssd_lvc_clamped_pad` | core ground |
@@ -23,7 +23,7 @@ Two cells of the west row are not bondpads: the ring bus connect slices, 20 um w
 
 ## North, left to right (package pins 32 to 25)
 
-| Pin | Port | Pad cell | Role in `chip_core` |
+| Pin | Port | Pad cell | Role in `lit_compac_core` |
 | --- | --- | --- | --- |
 | 32 | `output_PAD[0]` | `gpiov2_pad`, output | `counter1` bit 0 |
 | 31 | `output_PAD[1]` | `gpiov2_pad`, output | `counter1` bit 1 |
@@ -36,7 +36,7 @@ Two cells of the west row are not bondpads: the ring bus connect slices, 20 um w
 
 ## South, left to right (package pins 9 to 16)
 
-| Pin | Port | Pad cell | Role in `chip_core` |
+| Pin | Port | Pad cell | Role in `lit_compac_core` |
 | --- | --- | --- | --- |
 | 9 | `output_PAD[4]` | `gpiov2_pad`, output | `counter2` bit 0 |
 | 10 | `output_PAD[5]` | `gpiov2_pad`, output | `counter2` bit 1 |
@@ -49,7 +49,7 @@ Two cells of the west row are not bondpads: the ring bus connect slices, 20 um w
 
 ## East, bottom to top (package pins 17 to 24)
 
-| Pin | Port | Pad cell | Role in `chip_core` |
+| Pin | Port | Pad cell | Role in `lit_compac_core` |
 | --- | --- | --- | --- |
 | 17 | `analog_PAD[0]` | `analog_esd_pad` | input of `inverter2` channel 1, behind the ESD diodes of the pad |
 | 18 | `analog_PAD[1]` | `analog_esd_pad` | input of `inverter2` channel 2, behind the ESD diodes of the pad |
@@ -62,7 +62,7 @@ Two cells of the west row are not bondpads: the ring bus connect slices, 20 um w
 
 ## Pad cells and their settings
 
-Every digital pad is a `sky130_ef_io__gpiov2_pad` inside one of the three wrappers of [rtl/chip_top.sv](../rtl/chip_top.sv). The wrappers differ in two pins only:
+Every digital pad is a `sky130_ef_io__gpiov2_pad` inside one of the three wrappers of [rtl/lit_compac_top.sv](../rtl/lit_compac_top.sv). The wrappers differ in two pins only:
 
 | Wrapper | `DM[2:0]` | `OE_N` | `INP_DIS` | Use |
 | --- | --- | --- | --- | --- |

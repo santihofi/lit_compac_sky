@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "timestamp": "2026-10-28T18:49:41",
+  "yaml": "nominal_mult.yaml",
+  "host": "iic-osic-tools",
+  "python": "3.12.3",
+  "ngspice": "******",
+  "vacask": "This is vacask fb8cc20.",
+  "git_commit": "a36383c",
+  "duration_s": 2.4097668009999325,
+  "total_runs": 1,
+  "valid_runs": 1,
+  "global_yield": 100.0,
+  "tran_dir": "",
+  "analysis_dirs": {
+    "dc": "analysis_data/dc/20261028_184939"
+  },
+  "templates_dir": "",
+  "notes": "",
+  "tags": []
+}

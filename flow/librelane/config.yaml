@@ -74,10 +74,10 @@ meta:
 #  - target: rst_n_pad.pad_cell/IN
 #    buffer: sky130_fd_sc_hd__buf_4
 
-DESIGN_NAME: chip_top
+DESIGN_NAME: lit_compac_top
 VERILOG_FILES:
-- dir::../../rtl/chip_top.sv
-- dir::../../rtl/chip_core.sv
+- dir::../../rtl/lit_compac_top.sv
+- dir::../../rtl/lit_compac_core.sv
 
 # Enable plugin for better SystemVerilog support
 # USE_SLANG: True
@@ -95,7 +95,7 @@ PRIMARY_GDSII_STREAMOUT_TOOL: klayout
 #   - PAD_NORTH : left   to right
 #   - PAD_SOUTH : left   to right
 # Pad-cell instance names follow the generate-block hierarchy in
-# rtl/chip_top.sv. The GPIO pads sit inside the chip_pad_* wrappers,
+# rtl/lit_compac_top.sv. The GPIO pads sit inside the chip_pad_* wrappers,
 # so their cell instance is "<wrapper instance>.pad_cell"
 # (e.g. "g_outputs[16].output_pad.pad_cell").
 # See doc/pinout.md for the full pin table.
@@ -162,9 +162,9 @@ PAD_EAST: [
 PAD_SPACING_MULTIPLE: 2
 
 # SDC files
-PNR_SDC_FILE:     dir::chip_top.sdc
-SIGNOFF_SDC_FILE: dir::chip_top.sdc
-FALLBACK_SDC:     dir::chip_top.sdc
+PNR_SDC_FILE:     dir::lit_compac_top.sdc
+SIGNOFF_SDC_FILE: dir::lit_compac_top.sdc
+FALLBACK_SDC:     dir::lit_compac_top.sdc
 
 # Power / ground nets
 VDD_NETS: ["VDD"]
@@ -251,11 +251,11 @@ NETGEN_SETUP: dir::netgen_setup.tcl
 # cells only, so every macro with VDD and VSS pins is listed here: the SRAM (its one supply pair is vccd1
 # and vssd1), the two counters and the two inverters. The RTL connects the same pins under USE_POWER_PINS.
 PDN_MACRO_CONNECTIONS:
-- "i_chip_core.sram_0 VDD VSS vccd1 vssd1"
-- "i_chip_core.counter1 VDD VSS VDD VSS"
-- "i_chip_core.counter2 VDD VSS VDD VSS"
-- "i_chip_core.inverter1 VDD VSS VDD VSS"
-- "i_chip_core.inverter2 VDD VSS VDD VSS"
+- "i_lit_compac_core.sram_0 VDD VSS vccd1 vssd1"
+- "i_lit_compac_core.counter1 VDD VSS VDD VSS"
+- "i_lit_compac_core.counter2 VDD VSS VDD VSS"
+- "i_lit_compac_core.inverter1 VDD VSS VDD VSS"
+- "i_lit_compac_core.inverter2 VDD VSS VDD VSS"
 
 # Corners: the three nominal RC corners, as in the counter macro. The PDK configuration supplies the
 # standard cell and pad liberty files per corner.
@@ -320,11 +320,11 @@ MACROS:
     # (0.46 um) tracks, so the macro pins land on the top-level routing grid.
     instances:
       # counter1: upper position in the mid-right core (drives output_PAD[3:0] / bidir_PAD[3:0])
-      i_chip_core.counter1:
+      i_lit_compac_core.counter1:
         location: ["expr::115 * 7.82", "expr::115 * 7.82"]   # x = 899.30, y = 899.30
         orientation: N
       # counter2: lower position in the mid-right core (drives output_PAD[11:4] = south pads)
-      i_chip_core.counter2:
+      i_lit_compac_core.counter2:
         location: ["expr::115 * 7.82", "expr::90 * 7.82"]    # x = 899.30, y = 703.80
         orientation: FS
 
@@ -344,7 +344,7 @@ MACROS:
       "*":
         - pdk_dir::libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib
     instances:
-      i_chip_core.sram_0:
+      i_lit_compac_core.sram_0:
         location: ["expr::43 * 7.82", "expr::43 * 7.82"]     # x = 336.26, y = 336.26
         orientation: N
 
@@ -366,11 +366,11 @@ MACROS:
       # reach their met3 supply bars: the stripes sit 153.6 um apart and a macro between two of them stays
       # unconnected. The pair at x = 1083.9 and 1087.2 um lies inside both macros with this placement.
       # inverter1: upper east position (digital outputs to east pads)
-      i_chip_core.inverter1:
+      i_lit_compac_core.inverter1:
         location: ["expr::156 * 7.82", "expr::109 * 7.82"]   # x = 1219.92, y = 852.38
         orientation: N
       # inverter2: lower east position (analog channels to east pads)
-      i_chip_core.inverter2:
+      i_lit_compac_core.inverter2:
         location: ["expr::156 * 7.82", "expr::83 * 7.82"]    # x = 1219.92, y = 649.06
         orientation: N
 

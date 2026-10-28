@@ -6,7 +6,7 @@ S {}
 F {}
 E {}
 T {chip_pad_out} 0 -60 0 0 0.8 0.8 {}
-T {The pad pins carry labels instead of wires. The ties are the ones of rtl/chip_top.sv.} 0 -30 0 0 0.4 0.4 {}
+T {The pad pins carry labels instead of wires. The ties are the ones of rtl/lit_compac_top.sv.} 0 -30 0 0 0.4 0.4 {}
 C {sky130_ef_io/sky130_ef_io__gpiov2_pad.sym} 700 -500 0 0 {name=x_pad}
 C {lab_pin.sym} 820 -710 2 0 {name=l1 lab=in_h}
 C {lab_pin.sym} 580 -710 0 0 {name=l2 lab=pad_a_noesd_h}

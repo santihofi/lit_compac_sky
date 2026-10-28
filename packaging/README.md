@@ -8,7 +8,7 @@ is generated fully automatically by [scripts/run_bondplan.py](scripts/run_bondpl
 ### Requirements
 
 - KLayout Python module (`pya`) and PyYAML. Both available out of the box in the [IIC-OSIC-TOOLS](https://github.com/iic-jku/IIC-OSIC-TOOLS) container.
-- The die GDS with `pad` openings and pad name labels (`met5.label`), e.g. the final chip layout `../layout/chip_top_logo_fill.gds.gz`.
+- The die GDS with `pad` openings and pad name labels (`met5.label`), e.g. the final chip layout `../layout/lit_compac_top_logo_fill.gds.gz`.
 - The EUROPRACTICE package library GDS (`layout/EP_PACKAGES_08022018.gds`, download link under Useful Links). A pre-made package GDS with lead frame polygons and pin number texts works as well.
 
 ### Quick Start
@@ -22,7 +22,7 @@ or directly:
 
 ```bash
 cd packaging
-python3 scripts/run_bondplan.py config.yaml DESIGN_NAME=chip_top VERSION=1.0.0
+python3 scripts/run_bondplan.py config.yaml DESIGN_NAME=lit_compac_top VERSION=1.0.0
 ```
 
 Any config key can be overridden with `KEY=VALUE` on the command line. The Makefile passes `TOP` as `DESIGN_NAME` and its `VERSION` this way, so both live in the Makefile only and are not set in `config.yaml`. Without `DESIGN_NAME` the flow stops with an error. Both are also read from the environment, which is how to pass them to `klayout -b -r scripts/run_bondplan.py -rd config=config.yaml`. They are available as the `{design}` and `{version}` placeholders (both used in the `Die` title block field).

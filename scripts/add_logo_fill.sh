@@ -44,7 +44,7 @@ GDS_M5="${GDS_DIR}/${DESIGN}_m5.gds"
 GDS_LOGO="${GDS_DIR}/${DESIGN}_logo.gds"
 GDS_OUT="${GDS_DIR}/${DESIGN}_logo.gds.gz"
 GDS_OUT_FILL="${GDS_DIR}/${DESIGN}_logo_fill.gds.gz"
-LOGO_IMG="${IMG_DIR}/chip_logo_mono.png"
+LOGO_IMG="${IMG_DIR}/lit_compac_logo_mono.png"
 
 # ─── Logo sizing guide ────────────────────────────────────────────────────────
 # meerkat.py maps each image pixel to one GDS pixel of size PIXSZ = 2 µm.
@@ -68,7 +68,7 @@ LOGO_IMG="${IMG_DIR}/chip_logo_mono.png"
 #   max img_width  = (1600 - 2*400) / 2 = 400 px → 800 µm on-chip
 #   max img_height = (1600 - 2*530) / 2 = 270 px → 540 µm on-chip
 #
-# Current image (chip_logo_mono.png): 400x270 px → 800x540 µm on-chip
+# Current image (lit_compac_logo_mono.png): 400x270 px → 800x540 µm on-chip
 #   placed symmetrically with die margins (left,right,bottom,top)
 #   = (400,400,530,530) µm
 # ─────────────────────────────────────────────────────────────────────────────

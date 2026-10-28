@@ -1,6 +1,6 @@
 # Floorplan
 
-Die and core geometry of `chip_top`, where the hard macros sit and how the power reaches them. Every number here is in [flow/librelane/config.yaml](../flow/librelane/config.yaml), this file explains why.
+Die and core geometry of `lit_compac_top`, where the hard macros sit and how the power reaches them. Every number here is in [flow/librelane/config.yaml](../flow/librelane/config.yaml), this file explains why.
 
 ## Die and core
 
@@ -35,11 +35,11 @@ Coordinates are the lower left corner of the macro in micrometres, as `MACROS` g
 
 | Instance | Position | Size | Orientation |
 | --- | --- | --- | --- |
-| `i_chip_core.sram_0` | 336.26, 336.26 | 479.78 x 397.50 | N |
-| `i_chip_core.counter2` | 899.30, 703.80 | 200 x 100 | FS |
-| `i_chip_core.counter1` | 899.30, 899.30 | 200 x 100 | N |
-| `i_chip_core.inverter2` | 1219.92, 649.06 | 42.73 x 75.52 | N |
-| `i_chip_core.inverter1` | 1219.92, 852.38 | 42.73 x 75.52 | N |
+| `i_lit_compac_core.sram_0` | 336.26, 336.26 | 479.78 x 397.50 | N |
+| `i_lit_compac_core.counter2` | 899.30, 703.80 | 200 x 100 | FS |
+| `i_lit_compac_core.counter1` | 899.30, 899.30 | 200 x 100 | N |
+| `i_lit_compac_core.inverter2` | 1219.92, 649.06 | 42.73 x 75.52 | N |
+| `i_lit_compac_core.inverter1` | 1219.92, 852.38 | 42.73 x 75.52 | N |
 | `jku_logo` | 320, 1180 | 100 x 100 | N |
 | `jku_names` | 1180, 1180 | 100 x 100 | N |
 
@@ -70,7 +70,7 @@ Three macro grids are defined in [flow/librelane/pdn_cfg.tcl](../flow/librelane/
 
 ## Metal fill and logo
 
-The metal fill is not inserted by the flow (`KLayout.Filler` is disabled). [scripts/add_logo_fill.sh](../scripts/add_logo_fill.sh) draws the chip logo on `met5` with ArtistIC and then runs the PDK fill generator `libs.tech/magic/generate_fill.py`, which fills tile by tile in 700 um squares and keeps its own distance to the drawn geometry. The result is `layout/chip_top_logo_fill.gds.gz`, which is the GDS every sign-off step reads.
+The metal fill is not inserted by the flow (`KLayout.Filler` is disabled). [scripts/add_logo_fill.sh](../scripts/add_logo_fill.sh) draws the chip logo on `met5` with ArtistIC and then runs the PDK fill generator `libs.tech/magic/generate_fill.py`, which fills tile by tile in 700 um squares and keeps its own distance to the drawn geometry. The result is `layout/lit_compac_top_logo_fill.gds.gz`, which is the GDS every sign-off step reads.
 
 ## Where the geometry is written down
 

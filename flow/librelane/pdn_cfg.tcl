@@ -215,7 +215,7 @@ add_pdn_connect \
 # routed, the macro halo keeps them out.
 define_pdn_grid \
     -macro \
-    -instances "i_chip_core.inverter1 i_chip_core.inverter2" \
+    -instances "i_lit_compac_core.inverter1 i_lit_compac_core.inverter2" \
     -name inverter_top \
     -starts_with POWER \
     -halo "$::env(PDN_HORIZONTAL_HALO) $::env(PDN_VERTICAL_HALO)"
@@ -235,7 +235,7 @@ add_pdn_connect \
 # and met4 stripes onto the met3 ring bars.
 define_pdn_grid \
     -macro \
-    -instances "i_chip_core.sram_0" \
+    -instances "i_lit_compac_core.sram_0" \
     -name sram \
     -starts_with POWER \
     -halo "$::env(PDN_HORIZONTAL_HALO) $::env(PDN_VERTICAL_HALO)"

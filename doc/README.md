@@ -7,7 +7,7 @@ Reference material for this chip and for the SkyWater sky130A Open-PDK it is bui
 | Document | Contents |
 | --- | --- |
 | [specifications.md](specifications.md) | Top-level specifications: technology, supplies, clock, corner list, macro inventory, functional behaviour of every block. |
-| [pinout.md](pinout.md) | The full 32-pad table per side, with the `chip_top` port, the pad cell and the role each pad carries inside `chip_core`. |
+| [pinout.md](pinout.md) | The full 32-pad table per side, with the `lit_compac_top` port, the pad cell and the role each pad carries inside `lit_compac_core`. |
 | [floorplan.md](floorplan.md) | Die and core geometry, hard-macro placement coordinates, the PDN strategy and the pad ring. |
 
 The three are cross-linked and are written against the design files, not the other way round. If you change a number in [flow/librelane/config.yaml](../flow/librelane/config.yaml), [rtl/](../rtl/) or [packaging/config.yaml](../packaging/config.yaml), mirror it here.

@@ -1,0 +1,307 @@
+** sch_path: /foss/designs/lit_compac/macros/gilbert_cell/testbenches/xschem/tb_gilbert_cell_mult.sch
+**.subckt tb_gilbert_cell_mult
+Vdd vdd GND {{vdd}}
+.save i(vdd)
+Vcmi vcmi GND {{vincm}}
+Vref vref GND {{vref}}
+I0 ibias GND {{ibias}}
+I1 vdd ibias_ota {{ibias}}
+Vd1 vdin1 GND {{vd1}}
+E1 in1p vcmi VOL=' v(vdin1)/2 '
+E2 in1n vcmi VOL=' -v(vdin1)/2 '
+Vd2 vdin2 GND {{vd2}}
+E4 in2p vcmi VOL=' v(vdin2)/2 '
+E5 in2n vcmi VOL=' -v(vdin2)/2 '
+x1 vdd vbias outp outn in1n in1p in2p in2n GND ibias vdd GND vcm_sense gt0 gt1 gt2 gt3 gt4 gilbert_cell
+Cloadp outp GND {{c_load}}
+Cloadn outn GND {{c_load}}
+x2 vdd vbias vref vcm_sense GND ibias_ota vdd GND ota
+Vgcode gcode GND {{gcode}}
+Egt0 gt0 GND VOL=' 1.5*(1-(floor((v(gcode)+0.5)/1)-2*floor((v(gcode)+0.5)/2))) '
+Egt1 gt1 GND VOL=' 1.5*(1-(floor((v(gcode)+0.5)/2)-2*floor((v(gcode)+0.5)/4))) '
+Egt2 gt2 GND VOL=' 1.5*(1-(floor((v(gcode)+0.5)/4)-2*floor((v(gcode)+0.5)/8))) '
+Egt3 gt3 GND VOL=' 1.5*(1-(floor((v(gcode)+0.5)/8)-2*floor((v(gcode)+0.5)/16))) '
+Egt4 gt4 GND VOL=' 1.5*(1-(floor((v(gcode)+0.5)/16)-2*floor((v(gcode)+0.5)/32))) '
+**** begin user architecture code
+
+
+.temp {{ temp }}
+.option SEED = {{ (seed|int) + 1 }}
+.option method=gear
+
+.control
+save all
+* op1..op21: (vd1, vd2) points; every op plot gets vout = v(outp)-v(outn)
+op
+let vout = v(outp)-v(outn)
+let vocm = (v(outp)+v(outn))/2
+alter vd1 dc=0.1
+alter vd2 dc=0.1
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=-0.1
+op
+let vout = v(outp)-v(outn)
+alter vd2 dc=-0.1
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=0.1
+op
+let vout = v(outp)-v(outn)
+* feedthrough points: one input at +-100 mV, the other at 0
+alter vd2 dc=0
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=-0.1
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=0
+alter vd2 dc=0.1
+op
+let vout = v(outp)-v(outn)
+alter vd2 dc=-0.1
+op
+let vout = v(outp)-v(outn)
+* small-signal four-quadrant at +-10 mV (op10..op13)
+alter vd1 dc=0.01
+alter vd2 dc=0.01
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=-0.01
+op
+let vout = v(outp)-v(outn)
+alter vd2 dc=-0.01
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=0.01
+op
+let vout = v(outp)-v(outn)
+* in1 at +-100 mV, in2 at +-10 mV (op14..op17)
+alter vd1 dc=0.1
+alter vd2 dc=0.01
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=-0.1
+op
+let vout = v(outp)-v(outn)
+alter vd2 dc=-0.01
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=0.1
+op
+let vout = v(outp)-v(outn)
+* in1 at +-10 mV, in2 at +-100 mV (op18..op21)
+alter vd1 dc=0.01
+alter vd2 dc=0.1
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=-0.01
+op
+let vout = v(outp)-v(outn)
+alter vd2 dc=-0.1
+op
+let vout = v(outp)-v(outn)
+alter vd1 dc=0.01
+op
+let vout = v(outp)-v(outn)
+* transfer curves: vs vd1 at vd2 = +100 mV (dc1), vs vd2 at vd1 = +100 mV (dc2)
+alter vd2 dc=0.1
+dc vd1 -0.2 0.2 0.005
+let vout_v1 = v(outp)-v(outn)
+alter vd1 dc=0.1
+dc vd2 -0.2 0.2 0.005
+let vout_v2 = v(outp)-v(outn)
+* scalars, K = vout/(v1*v2) from four-quadrant differences (offsets and feedthrough cancel)
+let k100 = (op2.vout - op3.vout - op5.vout + op4.vout)/(4*0.1*0.1)
+let k10 = (op10.vout - op11.vout - op13.vout + op12.vout)/(4*0.01*0.01)
+let k_in1big = (op14.vout - op15.vout - op17.vout + op16.vout)/(4*0.1*0.01)
+let k_in2big = (op18.vout - op19.vout - op21.vout + op20.vout)/(4*0.01*0.1)
+let compr = k100/k10
+let compr1 = k_in1big/k10
+let compr2 = k_in2big/k10
+let vout_pp = op2.vout
+let vos_out = op1.vout
+let vocm = op1.vocm
+* feedthrough of one input, referred to the other input as an equivalent offset
+let vos2_eq = (op6.vout - op7.vout)/(2*k10*0.1)
+let vos1_eq = (op8.vout - op9.vout)/(2*k10*0.1)
+quit
+.endc
+
+
+
+
+
+.lib cornerMOSlv.lib mos_{{ corner_mos }}
+.lib cornerRES.lib res_{{ corner_res }}
+.lib cornerCAP.lib cap_{{ corner_cap }}
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  lit_compac/macros/gilbert_cell/schematic/xschem/gilbert_cell.sym # of pins=18
+** sym_path: /foss/designs/lit_compac/macros/gilbert_cell/schematic/xschem/gilbert_cell.sym
+** sch_path: /foss/designs/lit_compac/macros/gilbert_cell/schematic/xschem/gilbert_cell.sch
+.subckt gilbert_cell vdd vbias outp outn in1n in1p in2p in2n vss ibias ntap ptap vcm gt0 gt1 gt2 gt3 gt4
+*.iopin vdd
+*.ipin in1n
+*.opin outp
+*.opin outn
+*.iopin vss
+*.ipin in1p
+*.ipin in2n
+*.ipin in2p
+*.ipin vbias
+*.ipin ibias
+*.iopin ptap
+*.opin vcm
+*.iopin ntap
+*.ipin gt0
+*.ipin gt1
+*.ipin gt2
+*.ipin gt3
+*.ipin gt4
+XM5 qs1 net2 vss ptap sg13_lv_nmos w=20u l=1.25u ng=4 m=1 mm_ok=1
+XM6 qs2 net1 vss ptap sg13_lv_nmos w=20u l=1.25u ng=4 m=1 mm_ok=1
+XM7 outp in2n qs1 ptap sg13_lv_nmos w=20u l=0.5u ng=4 m=1 mm_ok=1
+XM9 outp in2p qs2 ptap sg13_lv_nmos w=20u l=0.5u ng=4 m=1 mm_ok=1
+XM10 outn in2n qs2 ptap sg13_lv_nmos w=20u l=0.5u ng=4 m=1 mm_ok=1
+XM8 outn in2p qs1 ptap sg13_lv_nmos w=20u l=0.5u ng=4 m=1 mm_ok=1
+XM11 outp vbias vdd ntap sg13_lv_pmos w=32u l=1u ng=8 m=1 mm_ok=1
+XM12 outn vbias vdd ntap sg13_lv_pmos w=32u l=1u ng=8 m=1 mm_ok=1
+XM1 net1 in1n vcm1 ntap sg13_lv_pmos w=59.7u l=0.28u ng=12 m=1 mm_ok=1
+XM13 vcm1 ibias vdd ntap sg13_lv_pmos w=40u l=0.65u ng=4 m=8 mm_ok=1
+XM3 net1 net1 vss ptap sg13_lv_nmos w=20u l=1.25u ng=4 m=1 mm_ok=1
+XM4 net2 net2 vss ptap sg13_lv_nmos w=20u l=1.25u ng=4 m=1 mm_ok=1
+XM2 net2 in1p vcm1 ntap sg13_lv_pmos w=59.7u l=0.28u ng=12 m=1 mm_ok=1
+XM14 ibias ibias vdd ntap sg13_lv_pmos w=40u l=0.65u ng=4 m=1 mm_ok=1
+XR1 vss ptap ptap1 R=10.6461 w=34.8752e-6 l=0.6048e-6
+XR7 outp t4p ntap rppd w=3e-6 l=9.01e-6 m=1 b=0 mm_ok=1
+XR5 t4n outn ntap rppd w=3e-6 l=9.01e-6 m=1 b=0 mm_ok=1
+XR2 vdd ntap ntap1 R=13.81141 w=25.4493e-6 l=0.7307e-6
+xtrim t4p t4n vcm gt0 gt1 gt2 gt3 gt4 ptap gain_trim
+XMDP vcm1 vcm1 vcm1 ntap sg13_lv_pmos w=19.9u l=0.28u ng=4 m=1 mm_ok=1
+XMDM vss vss vss ptap sg13_lv_nmos w=10u l=1.25u ng=2 m=1 mm_ok=1
+XMDQ1 qs1 qs1 qs1 ptap sg13_lv_nmos w=20u l=0.5u ng=4 m=1 mm_ok=1
+XMDQ2 qs2 qs2 qs2 ptap sg13_lv_nmos w=20u l=0.5u ng=4 m=1 mm_ok=1
+XMDL vdd vdd vdd ntap sg13_lv_pmos w=16u l=1u ng=4 m=1 mm_ok=1
+XMDT vdd vdd vdd ntap sg13_lv_pmos w=20u l=0.65u ng=2 m=1 mm_ok=1
+XRD1 ntap ntap ntap rppd w=3e-6 l=9.01e-6 m=1 b=0 mm_ok=1
+XRD2 ntap ntap ntap rppd w=3e-6 l=9.01e-6 m=1 b=0 mm_ok=1
+.ends
+
+
+* expanding   symbol:  lit_compac/macros/ota/schematic/xschem/ota.sym # of pins=8
+** sym_path: /foss/designs/lit_compac/macros/ota/schematic/xschem/ota.sym
+** sch_path: /foss/designs/lit_compac/macros/ota/schematic/xschem/ota.sch
+.subckt ota vdd out inn inp vss ibias1 ntap ptap
+*.opin out
+*.ipin inp
+*.ipin ibias1
+*.ipin inn
+*.iopin ntap
+*.iopin ptap
+*.iopin vdd
+*.iopin vss
+XM5 vd_m5 vd_m5 vdd ntap sg13_lv_pmos w=4.4u l=1u ng=2 m=1 mm_ok=1
+XM6 out out vdd ntap sg13_lv_pmos w=4.4u l=1u ng=2 m=1 mm_ok=1
+XM1 vd_m5 inp sa ptap sg13_lv_nmos w=16u l=1u ng=4 m=1 mm_ok=1
+XM2 out vref_int sb ptap sg13_lv_nmos w=16u l=1u ng=4 m=1 mm_ok=1
+XRS1 sa rs1 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS2 rs1 rs2 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS3 rs2 rs3 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS4 rs3 rs4 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS5 rs4 rs5 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS6 rs5 rs6 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS7 rs6 rs7 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS8 rs7 rs8 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS9 rs8 rs9 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS10 rs9 rs10 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS11 rs10 rs11 ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XRS12 rs11 sb ptap rppd w=1e-6 l=20.9e-6 m=1 b=0 mm_ok=1
+XM3 sa ibias1 vss ptap sg13_lv_nmos w=16u l=2u ng=4 m=1 mm_ok=1
+XM3B sb ibias1 vss ptap sg13_lv_nmos w=16u l=2u ng=4 m=1 mm_ok=1
+XM4 ibias1 ibias1 vss ptap sg13_lv_nmos w=32u l=2u ng=8 m=1 mm_ok=1
+XM10 vd_m10 vd_m10 vdd ntap sg13_lv_pmos w=1u l=4u ng=1 m=1 mm_ok=1
+XM11 vref_int vd_m10 vdd ntap sg13_lv_pmos w=1u l=4u ng=1 m=1 mm_ok=1
+XM7 vd_m10 inn vtail_slow ptap sg13_lv_nmos w=2u l=2u ng=2 m=1 mm_ok=1
+XM8 vref_int inp vtail_slow ptap sg13_lv_nmos w=2u l=2u ng=2 m=1 mm_ok=1
+XM9 vtail_slow ibias1 vss ptap sg13_lv_nmos w=1u l=5u ng=1 m=1 mm_ok=1
+XMC vss vref_int vss ptap sg13_lv_nmos w=6u l=6u ng=1 m=1 mm_ok=1
+XR2 vdd ntap ntap1 R=262.8473 w=0.78e-6 l=0.78e-6
+XR7 vss ptap ptap1 R=262.8473 w=0.78e-6 l=0.78e-6
+XMDA sa sa sa ptap sg13_lv_nmos w=16u l=1u ng=4 m=1 mm_ok=1
+XMDB sb sb sb ptap sg13_lv_nmos w=16u l=1u ng=4 m=1 mm_ok=1
+XMD3 vss vss vss ptap sg13_lv_nmos w=16u l=2u ng=4 m=1 mm_ok=1
+XMD5 vd_m5 vdd vd_m5 ntap sg13_lv_pmos w=4.4u l=1u ng=2 m=1 mm_ok=1
+XMD7 vd_m10 vd_m10 vd_m10 ptap sg13_lv_nmos w=2u l=2u ng=2 m=1 mm_ok=1
+XMD10 vd_m10 vdd vd_m10 ntap sg13_lv_pmos w=1u l=4u ng=1 m=1 mm_ok=1
+XMD11 vref_int vdd vref_int ntap sg13_lv_pmos w=1u l=4u ng=1 m=1 mm_ok=1
+XMD8 vref_int vss vref_int ptap sg13_lv_nmos w=2u l=2u ng=2 m=1 mm_ok=1
+.ends
+
+
+* expanding   symbol:  lit_compac/macros/gilbert_cell/schematic/xschem/gain_trim.sym # of pins=9
+** sym_path: /foss/designs/lit_compac/macros/gilbert_cell/schematic/xschem/gain_trim.sym
+** sch_path: /foss/designs/lit_compac/macros/gilbert_cell/schematic/xschem/gain_trim.sch
+.subckt gain_trim t4p t4n vcm gt0 gt1 gt2 gt3 gt4 ptap
+*.iopin t4p
+*.iopin t4n
+*.iopin vcm
+*.ipin gt0
+*.ipin gt1
+*.ipin gt2
+*.ipin gt3
+*.ipin gt4
+*.iopin ptap
+XRS4P0 t4p net1 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P1 net1 net2 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P2 net2 net3 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P3 net3 net4 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P4 net4 net5 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P5 net5 net6 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P6 net6 net7 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4P7 net7 t3p ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3P0 t3p net8 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3P1 net8 net9 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3P2 net9 net10 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3P3 net10 t2p ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS2P0 t2p net11 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS2P1 net11 t1p ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS1P0 t1p t0p ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS0P t0p vcm ptap rppd w=3e-6 l=1.04e-6 m=4 b=0 mm_ok=1
+XMSW4P t3p gt4 t4p ptap sg13_lv_nmos w=7.365u l=0.35u ng=1 m=1 mm_ok=1
+XMSW3P t2p gt3 t3p ptap sg13_lv_nmos w=14.73u l=0.35u ng=2 m=1 mm_ok=1
+XMSW2P t1p gt2 t2p ptap sg13_lv_nmos w=29.46u l=0.35u ng=4 m=1 mm_ok=1
+XMSW1P t0p gt1 t1p ptap sg13_lv_nmos w=58.92u l=0.35u ng=8 m=1 mm_ok=1
+XRS4N0 t4n net12 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N1 net12 net13 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N2 net13 net14 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N3 net14 net15 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N4 net15 net16 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N5 net16 net17 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N6 net17 net18 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS4N7 net18 t3n ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3N0 t3n net19 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3N1 net19 net20 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3N2 net20 net21 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS3N3 net21 t2n ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS2N0 t2n net22 ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS2N1 net22 t1n ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS1N0 t1n t0n ptap rppd w=3e-6 l=1.04e-6 m=2 b=0 mm_ok=1
+XRS0N t0n vcm ptap rppd w=3e-6 l=1.04e-6 m=4 b=0 mm_ok=1
+XMSW4N t4n gt4 t3n ptap sg13_lv_nmos w=7.365u l=0.35u ng=1 m=1 mm_ok=1
+XMSW3N t3n gt3 t2n ptap sg13_lv_nmos w=14.73u l=0.35u ng=2 m=1 mm_ok=1
+XMSW2N t2n gt2 t1n ptap sg13_lv_nmos w=29.46u l=0.35u ng=4 m=1 mm_ok=1
+XMSW1N t1n gt1 t0n ptap sg13_lv_nmos w=58.92u l=0.35u ng=8 m=1 mm_ok=1
+XMSW0 t0p gt0 t0n ptap sg13_lv_nmos w=58.92u l=0.35u ng=8 m=1 mm_ok=1
+XRDP ptap ptap ptap rppd w=3e-6 l=1.04e-6 m=6 b=0 mm_ok=1
+XRDN ptap ptap ptap rppd w=3e-6 l=1.04e-6 m=6 b=0 mm_ok=1
+XRDS ptap ptap ptap rppd w=0.5e-6 l=1.04e-6 m=8 b=0 mm_ok=1
+XMDSP t4p t4p t4p ptap sg13_lv_nmos w=7.365u l=0.35u ng=1 m=1 mm_ok=1
+XMDSN t4n t4n t4n ptap sg13_lv_nmos w=7.365u l=0.35u ng=1 m=1 mm_ok=1
+.ends
+
+.GLOBAL GND
+.end

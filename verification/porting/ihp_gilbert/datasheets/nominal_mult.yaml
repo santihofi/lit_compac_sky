@@ -1,0 +1,42 @@
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 13
+  ibias:
+  - 40u
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+tests:
+  tb_gilbert_cell_mult:
+    engine: ngspice
+    k100: {}
+    k10: {}
+    compr: {}
+    compr1: {}
+    compr2: {}
+    vout_pp: {}
+    vos_out: {}
+    vos1_eq: {}
+    vos2_eq: {}
+    vocm: {}
+    dc_signals:
+    - dc21.vout_v1
+    - dc22.vout_v2

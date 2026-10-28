@@ -12,7 +12,7 @@ module counter_top #(
   localparam int unsigned CTR_BW  = $clog2(CTR_MAX + 1)
 )(
   // The supply ports the LibreLane run gives the macro, so that a simulation of this RTL inside
-  // rtl/chip_core.sv connects the same pins as the netlist does.
+  // rtl/lit_compac_core.sv connects the same pins as the netlist does.
   `ifdef USE_POWER_PINS
   inout wire                VDD,
   inout wire                VSS,

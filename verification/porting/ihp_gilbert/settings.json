@@ -1,0 +1,6 @@
+{
+  "tb_dir": "/foss/designs/lit_compac/macros/gilbert_cell/testbenches/xschem",
+  "num_cores": 2,
+  "sim_timeout_sec": 120,
+  "out_dir": "out"
+}

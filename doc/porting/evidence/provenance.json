@@ -1,0 +1,16 @@
+{
+  "date_utc": "2026-10-28",
+  "source_commit": "3764a02d8641559aa58ec8521680424afc38a178",
+  "template_commit": "a84f4514d727b58cd475a67000aac230d8d367ea",
+  "chipify_source_commit": "1960c8132a68676c9aa496f267d135d6f5af2d74",
+  "chipify_version": "0.2.3",
+  "container_tag": "hpretl/iic-osic-tools:latest",
+  "image_build": "2026.10",
+  "sky130_resolved_path": "/foss/pdks/ciel/sky130/versions/1689ac3f2dc763876eaf967227c7dfe831b031ae/sky130A",
+  "ngspice_version_banner": "******\n** ngspice-47 : Circuit level simulation program\n** Compiled with KLU Direct Linear Solver\n** The U. C. Berkeley CAD Group\n** Copyright 1985-1994, Regents of the University of California.\n** Copyright 2001-2026, The ngspice team.\n** Please get your ngspice manual from https://ngspice.sourceforge.io/docs.html\n** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html\n** Creation Date: Thu Oct 15 12:58:05 UTC 2026\n******\n",
+  "notes": [
+    "Current schematic contains PMOS tail mirror multiplicity 8. The 40 uA reference corresponds approximately to a 320 uA tail.",
+    "The nominal datasheet has unconstrained scalar limits. This run establishes the baseline only, not specification compliance.",
+    "Chipify history metadata misidentifies ngspice as ******. Full banner is recorded here."
+  ]
+}

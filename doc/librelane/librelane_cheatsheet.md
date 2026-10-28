@@ -8,11 +8,11 @@ What the flow writes, how to read it, and the numbers of the sky130A metal stack
 
 | Folder | File | Used by |
 | --- | --- | --- |
-| `gds/` | `chip_top.gds` | `copy-gds`, the logo and fill step, every sign-off run |
+| `gds/` | `lit_compac_top.gds` | `copy-gds`, the logo and fill step, every sign-off run |
 | `def/`, `odb/` | the placed and routed database | a rerun with `--last-run`, the OpenROAD and KLayout GUI targets |
-| `nl/` | `chip_top.nl.v` | gate-level simulation without power pins |
-| `pnl/` | `chip_top.pnl.v` | the netlist with power pins, the LVS reference |
-| `spice/` | `chip_top.spice` | `check-ports`, the netlist comparison |
+| `nl/` | `lit_compac_top.nl.v` | gate-level simulation without power pins |
+| `pnl/` | `lit_compac_top.pnl.v` | the netlist with power pins, the LVS reference |
+| `spice/` | `lit_compac_top.spice` | `check-ports`, the netlist comparison |
 | `lib/`, `sdf/` | timing views per corner | a parent design that instantiates this block |
 | `spef/` | parasitics per corner | STA of a parent design |
 | `json_h/` | the JSON header | a parent flow that needs the port list |
