@@ -1,0 +1,1353 @@
+
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VSSA
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VDDA
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VSWITCH
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VCCHIB
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VDDIO
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VCCD
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VSSIO
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VSSD
+Cell sky130_ef_io__com_bus_slice_20um (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__com_bus_slice_20u |Circuit 2: sky130_ef_io__com_bus_slice_20u 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__com_bus_slice_20um and sky130_ef_io__com_bus_slice_20um are equivalent.
+
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: A
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: B
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__xnor2_1 (0) disconnected node: Y
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__xnor2_1        |Circuit 2: sky130_fd_sc_hd__xnor2_1        
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+B                                          |B                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+Y                                          |Y                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__xnor2_1 and sky130_fd_sc_hd__xnor2_1 are equivalent.
+
+Cell sky130_fd_sc_hd__buf_8 (0) disconnected node: A
+Cell sky130_fd_sc_hd__buf_8 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__buf_8 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__buf_8 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__buf_8 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__buf_8 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__buf_8          |Circuit 2: sky130_fd_sc_hd__buf_8          
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__buf_8 and sky130_fd_sc_hd__buf_8 are equivalent.
+
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VSSA
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VDDA
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VSWITCH
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VCCHIB
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VDDIO
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VCCD
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VSSIO
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VSSD
+Cell sky130_ef_io__com_bus_slice_1um (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__com_bus_slice_1um |Circuit 2: sky130_ef_io__com_bus_slice_1um 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__com_bus_slice_1um and sky130_ef_io__com_bus_slice_1um are equivalent.
+
+Cell sky130_fd_sc_hd__buf_16 (0) disconnected node: A
+Cell sky130_fd_sc_hd__buf_16 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__buf_16 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__buf_16 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__buf_16 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__buf_16 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__buf_16         |Circuit 2: sky130_fd_sc_hd__buf_16         
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__buf_16 and sky130_fd_sc_hd__buf_16 are equivalent.
+
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: A
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: B
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__xor2_1 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__xor2_1         |Circuit 2: sky130_fd_sc_hd__xor2_1         
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+B                                          |B                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__xor2_1 and sky130_fd_sc_hd__xor2_1 are equivalent.
+
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VSSA
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VDDA
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VSWITCH
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VCCHIB
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VDDIO
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VCCD
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VSSIO
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VSSD
+Cell sky130_ef_io__com_bus_slice_5um (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__com_bus_slice_5um |Circuit 2: sky130_ef_io__com_bus_slice_5um 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__com_bus_slice_5um and sky130_ef_io__com_bus_slice_5um are equivalent.
+
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ANALOG_EN
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ANALOG_POL
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ANALOG_SEL
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: DM[2]
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: DM[1]
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: DM[0]
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ENABLE_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ENABLE_INP_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ENABLE_VDDA_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ENABLE_VDDIO
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: ENABLE_VSWITCH_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: HLD_H_N
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: HLD_OVR
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: IB_MODE_SEL
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: IN
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: IN_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: INP_DIS
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: OE_N
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: OUT
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: PAD
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: PAD_A_ESD_0_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: PAD_A_ESD_1_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: PAD_A_NOESD_H
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: SLOW
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: TIE_HI_ESD
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: TIE_LO_ESD
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VSSIO_Q
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__gpiov2_pad (0) disconnected node: VTRIP_SEL
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__gpiov2_pad        |Circuit 2: sky130_ef_io__gpiov2_pad        
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+ANALOG_EN                                  |ANALOG_EN                                  
+ANALOG_POL                                 |ANALOG_POL                                 
+ANALOG_SEL                                 |ANALOG_SEL                                 
+DM[2]                                      |DM[2]                                      
+DM[1]                                      |DM[1]                                      
+DM[0]                                      |DM[0]                                      
+ENABLE_H                                   |ENABLE_H                                   
+ENABLE_INP_H                               |ENABLE_INP_H                               
+ENABLE_VDDA_H                              |ENABLE_VDDA_H                              
+ENABLE_VDDIO                               |ENABLE_VDDIO                               
+ENABLE_VSWITCH_H                           |ENABLE_VSWITCH_H                           
+HLD_H_N                                    |HLD_H_N                                    
+HLD_OVR                                    |HLD_OVR                                    
+IB_MODE_SEL                                |IB_MODE_SEL                                
+IN                                         |IN                                         
+INP_DIS                                    |INP_DIS                                    
+OE_N                                       |OE_N                                       
+OUT                                        |OUT                                        
+PAD                                        |PAD                                        
+SLOW                                       |SLOW                                       
+TIE_HI_ESD                                 |TIE_HI_ESD                                 
+TIE_LO_ESD                                 |TIE_LO_ESD                                 
+VCCD                                       |VCCD                                       
+VCCHIB                                     |VCCHIB                                     
+VDDA                                       |VDDA                                       
+VDDIO                                      |VDDIO                                      
+VDDIO_Q                                    |VDDIO_Q                                    
+VSSA                                       |VSSA                                       
+VSSD                                       |VSSD                                       
+VSSIO                                      |VSSIO                                      
+VSSIO_Q                                    |VSSIO_Q                                    
+VSWITCH                                    |VSWITCH                                    
+VTRIP_SEL                                  |VTRIP_SEL                                  
+IN_H                                       |(no matching pin)                          
+PAD_A_ESD_0_H                              |(no matching pin)                          
+PAD_A_ESD_1_H                              |(no matching pin)                          
+PAD_A_NOESD_H                              |(no matching pin)                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__gpiov2_pad and sky130_ef_io__gpiov2_pad are equivalent.
+
+Cell sky130_fd_sc_hd__inv_12 (0) disconnected node: A
+Cell sky130_fd_sc_hd__inv_12 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__inv_12 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__inv_12 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__inv_12 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__inv_12 (0) disconnected node: Y
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__inv_12         |Circuit 2: sky130_fd_sc_hd__inv_12         
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+Y                                          |Y                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__inv_12 and sky130_fd_sc_hd__inv_12 are equivalent.
+
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VSSD_PAD
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__vssd_lvc_clamped_pad (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__vssd_lvc_clamped_ |Circuit 2: sky130_ef_io__vssd_lvc_clamped_ 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSD_PAD                                   |VSSD_PAD                                   
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__vssd_lvc_clamped_pad and sky130_ef_io__vssd_lvc_clamped_pad are equivalent.
+
+Cell inverter_top (0) disconnected node: vin1
+Cell inverter_top (0) disconnected node: vout1
+Cell inverter_top (0) disconnected node: vin2
+Cell inverter_top (0) disconnected node: vout2
+Cell inverter_top (0) disconnected node: vin3
+Cell inverter_top (0) disconnected node: vout3
+Cell inverter_top (0) disconnected node: vin4
+Cell inverter_top (0) disconnected node: vout4
+Cell inverter_top (0) disconnected node: VSS
+Cell inverter_top (0) disconnected node: VDD
+
+Subcircuit pins:
+Circuit 1: inverter_top                    |Circuit 2: inverter_top                    
+-------------------------------------------|-------------------------------------------
+vin1                                       |vin1                                       
+vout1                                      |vout1                                      
+vin2                                       |vin2                                       
+vout2                                      |vout2                                      
+vin3                                       |vin3                                       
+vout3                                      |vout3                                      
+vin4                                       |vin4                                       
+vout4                                      |vout4                                      
+VSS                                        |VSS                                        
+VDD                                        |VDD                                        
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes inverter_top and inverter_top are equivalent.
+
+Cell sky130_ef_io__corner_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__corner_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__corner_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__corner_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__corner_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__corner_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__corner_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__corner_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__corner_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__corner_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__corner_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__corner_pad (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__corner_pad        |Circuit 2: sky130_ef_io__corner_pad        
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__corner_pad and sky130_ef_io__corner_pad are equivalent.
+
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VSSA
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VDDA
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VSWITCH
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VCCHIB
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VDDIO
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VCCD
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VSSIO
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VSSD
+Cell sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__connect_vdda_vddi |Circuit 2: sky130_ef_io__connect_vdda_vddi 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um and sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um are equivalent.
+
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: P_CORE
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: VSSIO_Q
+Cell sky130_ef_io__analog_noesd_pad (0) disconnected node: P_PAD
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__analog_noesd_pad  |Circuit 2: sky130_ef_io__analog_noesd_pad  
+-------------------------------------------|-------------------------------------------
+P_CORE                                     |P_CORE                                     
+VSSA                                       |VSSA                                       
+VSSD                                       |VSSD                                       
+AMUXBUS_B                                  |AMUXBUS_B                                  
+AMUXBUS_A                                  |AMUXBUS_A                                  
+VDDIO_Q                                    |VDDIO_Q                                    
+VDDIO                                      |VDDIO                                      
+VSWITCH                                    |VSWITCH                                    
+VSSIO                                      |VSSIO                                      
+VDDA                                       |VDDA                                       
+VCCD                                       |VCCD                                       
+VCCHIB                                     |VCCHIB                                     
+VSSIO_Q                                    |VSSIO_Q                                    
+P_PAD                                      |P_PAD                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__analog_noesd_pad and sky130_ef_io__analog_noesd_pad are equivalent.
+
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VSSIO_PAD
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__vssio_hvc_clamped_pad (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__vssio_hvc_clamped |Circuit 2: sky130_ef_io__vssio_hvc_clamped 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSIO_PAD                                  |VSSIO_PAD                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__vssio_hvc_clamped_pad and sky130_ef_io__vssio_hvc_clamped_pad are equivalent.
+
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VDDIO_PAD
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__vddio_hvc_clamped_pad (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__vddio_hvc_clamped |Circuit 2: sky130_ef_io__vddio_hvc_clamped 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VDDIO_PAD                                  |VDDIO_PAD                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__vddio_hvc_clamped_pad and sky130_ef_io__vddio_hvc_clamped_pad are equivalent.
+
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: P_CORE
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: VSSIO_Q
+Cell sky130_ef_io__analog_esd_pad (0) disconnected node: P_PAD
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__analog_esd_pad    |Circuit 2: sky130_ef_io__analog_esd_pad    
+-------------------------------------------|-------------------------------------------
+P_CORE                                     |P_CORE                                     
+VSSA                                       |VSSA                                       
+VSSD                                       |VSSD                                       
+AMUXBUS_B                                  |AMUXBUS_B                                  
+AMUXBUS_A                                  |AMUXBUS_A                                  
+VDDIO_Q                                    |VDDIO_Q                                    
+VDDIO                                      |VDDIO                                      
+VSWITCH                                    |VSWITCH                                    
+VSSIO                                      |VSSIO                                      
+VDDA                                       |VDDA                                       
+VCCD                                       |VCCD                                       
+VCCHIB                                     |VCCHIB                                     
+VSSIO_Q                                    |VSSIO_Q                                    
+P_PAD                                      |P_PAD                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__analog_esd_pad and sky130_ef_io__analog_esd_pad are equivalent.
+
+
+Subcircuit pins:
+Circuit 1: sky130_ip__jku                  |Circuit 2: sky130_ip__jku                  
+-------------------------------------------|-------------------------------------------
+(no pins)                                  |(no pins)                                  
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ip__jku and sky130_ip__jku are equivalent.
+
+Cell sky130_fd_sc_hd__clkbuf_16 (0) disconnected node: A
+Cell sky130_fd_sc_hd__clkbuf_16 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__clkbuf_16 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__clkbuf_16 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__clkbuf_16 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__clkbuf_16 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__clkbuf_16      |Circuit 2: sky130_fd_sc_hd__clkbuf_16      
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__clkbuf_16 and sky130_fd_sc_hd__clkbuf_16 are equivalent.
+
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VSSA
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VDDA
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VSWITCH
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VCCHIB
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VDDIO
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VCCD
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VSSIO
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VSSD
+Cell sky130_ef_io__com_bus_slice_10um (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__com_bus_slice_10u |Circuit 2: sky130_ef_io__com_bus_slice_10u 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__com_bus_slice_10um and sky130_ef_io__com_bus_slice_10um are equivalent.
+
+Cell counter_top (0) disconnected node: VDD
+Cell counter_top (0) disconnected node: VSS
+Cell counter_top (0) disconnected node: clock_i
+Cell counter_top (0) disconnected node: counter_value_o[0]
+Cell counter_top (0) disconnected node: counter_value_o[1]
+Cell counter_top (0) disconnected node: counter_value_o[2]
+Cell counter_top (0) disconnected node: counter_value_o[3]
+Cell counter_top (0) disconnected node: counter_value_o[4]
+Cell counter_top (0) disconnected node: counter_value_o[5]
+Cell counter_top (0) disconnected node: counter_value_o[6]
+Cell counter_top (0) disconnected node: counter_value_o[7]
+Cell counter_top (0) disconnected node: enable_i
+Cell counter_top (0) disconnected node: reset_n_i
+
+Subcircuit pins:
+Circuit 1: counter_top                     |Circuit 2: counter_top                     
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+clock_i                                    |clock_i                                    
+counter_value_o[0]                         |counter_value_o[0]                         
+counter_value_o[1]                         |counter_value_o[1]                         
+counter_value_o[2]                         |counter_value_o[2]                         
+counter_value_o[3]                         |counter_value_o[3]                         
+counter_value_o[4]                         |counter_value_o[4]                         
+counter_value_o[5]                         |counter_value_o[5]                         
+counter_value_o[6]                         |counter_value_o[6]                         
+counter_value_o[7]                         |counter_value_o[7]                         
+enable_i                                   |enable_i                                   
+reset_n_i                                  |reset_n_i                                  
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes counter_top and counter_top are equivalent.
+
+Cell sky130_fd_sc_hd__clkinv_2 (0) disconnected node: A
+Cell sky130_fd_sc_hd__clkinv_2 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__clkinv_2 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__clkinv_2 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__clkinv_2 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__clkinv_2 (0) disconnected node: Y
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__clkinv_2       |Circuit 2: sky130_fd_sc_hd__clkinv_2       
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+Y                                          |Y                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__clkinv_2 and sky130_fd_sc_hd__clkinv_2 are equivalent.
+
+Cell sky130_fd_sc_hd__clkbuf_2 (0) disconnected node: A
+Cell sky130_fd_sc_hd__clkbuf_2 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__clkbuf_2 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__clkbuf_2 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__clkbuf_2 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__clkbuf_2 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__clkbuf_2       |Circuit 2: sky130_fd_sc_hd__clkbuf_2       
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__clkbuf_2 and sky130_fd_sc_hd__clkbuf_2 are equivalent.
+
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[0]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[1]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[2]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[3]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[4]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[5]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[6]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[7]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[8]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[9]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[10]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[11]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[12]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[13]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[14]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[15]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[16]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[17]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[18]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[19]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[20]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[21]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[22]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[23]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[24]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[25]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[26]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[27]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[28]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[29]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[30]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: din0[31]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[0]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[1]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[2]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[3]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[4]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[5]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[6]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr0[7]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[0]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[1]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[2]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[3]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[4]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[5]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[6]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: addr1[7]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: csb0
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: csb1
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: web0
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: clk0
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: clk1
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: wmask0[0]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: wmask0[1]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: wmask0[2]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: wmask0[3]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[0]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[1]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[2]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[3]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[4]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[5]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[6]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[7]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[8]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[9]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[10]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[11]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[12]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[13]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[14]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[15]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[16]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[17]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[18]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[19]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[20]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[21]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[22]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[23]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[24]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[25]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[26]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[27]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[28]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[29]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[30]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout0[31]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[0]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[1]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[2]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[3]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[4]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[5]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[6]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[7]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[8]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[9]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[10]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[11]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[12]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[13]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[14]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[15]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[16]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[17]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[18]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[19]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[20]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[21]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[22]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[23]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[24]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[25]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[26]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[27]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[28]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[29]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[30]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: dout1[31]
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: vccd1
+Cell sky130_sram_1kbyte_1rw1r_32x256_8 (0) disconnected node: vssd1
+
+Subcircuit pins:
+Circuit 1: sky130_sram_1kbyte_1rw1r_32x256 |Circuit 2: sky130_sram_1kbyte_1rw1r_32x256 
+-------------------------------------------|-------------------------------------------
+din0[0]                                    |din0[0]                                    
+din0[1]                                    |din0[1]                                    
+din0[2]                                    |din0[2]                                    
+din0[3]                                    |din0[3]                                    
+din0[4]                                    |din0[4]                                    
+din0[5]                                    |din0[5]                                    
+din0[6]                                    |din0[6]                                    
+din0[7]                                    |din0[7]                                    
+din0[8]                                    |din0[8]                                    
+din0[9]                                    |din0[9]                                    
+din0[10]                                   |din0[10]                                   
+din0[11]                                   |din0[11]                                   
+din0[12]                                   |din0[12]                                   
+din0[13]                                   |din0[13]                                   
+din0[14]                                   |din0[14]                                   
+din0[15]                                   |din0[15]                                   
+din0[16]                                   |din0[16]                                   
+din0[17]                                   |din0[17]                                   
+din0[18]                                   |din0[18]                                   
+din0[19]                                   |din0[19]                                   
+din0[20]                                   |din0[20]                                   
+din0[21]                                   |din0[21]                                   
+din0[22]                                   |din0[22]                                   
+din0[23]                                   |din0[23]                                   
+din0[24]                                   |din0[24]                                   
+din0[25]                                   |din0[25]                                   
+din0[26]                                   |din0[26]                                   
+din0[27]                                   |din0[27]                                   
+din0[28]                                   |din0[28]                                   
+din0[29]                                   |din0[29]                                   
+din0[30]                                   |din0[30]                                   
+din0[31]                                   |din0[31]                                   
+addr0[0]                                   |addr0[0]                                   
+addr0[1]                                   |addr0[1]                                   
+addr0[2]                                   |addr0[2]                                   
+addr0[3]                                   |addr0[3]                                   
+addr0[4]                                   |addr0[4]                                   
+addr0[5]                                   |addr0[5]                                   
+addr0[6]                                   |addr0[6]                                   
+addr0[7]                                   |addr0[7]                                   
+addr1[0]                                   |addr1[0]                                   
+addr1[1]                                   |addr1[1]                                   
+addr1[2]                                   |addr1[2]                                   
+addr1[3]                                   |addr1[3]                                   
+addr1[4]                                   |addr1[4]                                   
+addr1[5]                                   |addr1[5]                                   
+addr1[6]                                   |addr1[6]                                   
+addr1[7]                                   |addr1[7]                                   
+csb0                                       |csb0                                       
+csb1                                       |csb1                                       
+web0                                       |web0                                       
+clk0                                       |clk0                                       
+clk1                                       |clk1                                       
+wmask0[0]                                  |wmask0[0]                                  
+wmask0[1]                                  |wmask0[1]                                  
+wmask0[2]                                  |wmask0[2]                                  
+wmask0[3]                                  |wmask0[3]                                  
+dout0[0]                                   |dout0[0]                                   
+dout0[1]                                   |dout0[1]                                   
+dout0[2]                                   |dout0[2]                                   
+dout0[3]                                   |dout0[3]                                   
+dout0[4]                                   |dout0[4]                                   
+dout0[5]                                   |dout0[5]                                   
+dout0[6]                                   |dout0[6]                                   
+dout0[7]                                   |dout0[7]                                   
+dout0[8]                                   |dout0[8]                                   
+dout0[9]                                   |dout0[9]                                   
+dout0[10]                                  |dout0[10]                                  
+dout0[11]                                  |dout0[11]                                  
+dout0[12]                                  |dout0[12]                                  
+dout0[13]                                  |dout0[13]                                  
+dout0[14]                                  |dout0[14]                                  
+dout0[15]                                  |dout0[15]                                  
+dout0[16]                                  |dout0[16]                                  
+dout0[17]                                  |dout0[17]                                  
+dout0[18]                                  |dout0[18]                                  
+dout0[19]                                  |dout0[19]                                  
+dout0[20]                                  |dout0[20]                                  
+dout0[21]                                  |dout0[21]                                  
+dout0[22]                                  |dout0[22]                                  
+dout0[23]                                  |dout0[23]                                  
+dout0[24]                                  |dout0[24]                                  
+dout0[25]                                  |dout0[25]                                  
+dout0[26]                                  |dout0[26]                                  
+dout0[27]                                  |dout0[27]                                  
+dout0[28]                                  |dout0[28]                                  
+dout0[29]                                  |dout0[29]                                  
+dout0[30]                                  |dout0[30]                                  
+dout0[31]                                  |dout0[31]                                  
+dout1[0]                                   |dout1[0]                                   
+dout1[1]                                   |dout1[1]                                   
+dout1[2]                                   |dout1[2]                                   
+dout1[3]                                   |dout1[3]                                   
+dout1[4]                                   |dout1[4]                                   
+dout1[5]                                   |dout1[5]                                   
+dout1[6]                                   |dout1[6]                                   
+dout1[7]                                   |dout1[7]                                   
+dout1[8]                                   |dout1[8]                                   
+dout1[9]                                   |dout1[9]                                   
+dout1[10]                                  |dout1[10]                                  
+dout1[11]                                  |dout1[11]                                  
+dout1[12]                                  |dout1[12]                                  
+dout1[13]                                  |dout1[13]                                  
+dout1[14]                                  |dout1[14]                                  
+dout1[15]                                  |dout1[15]                                  
+dout1[16]                                  |dout1[16]                                  
+dout1[17]                                  |dout1[17]                                  
+dout1[18]                                  |dout1[18]                                  
+dout1[19]                                  |dout1[19]                                  
+dout1[20]                                  |dout1[20]                                  
+dout1[21]                                  |dout1[21]                                  
+dout1[22]                                  |dout1[22]                                  
+dout1[23]                                  |dout1[23]                                  
+dout1[24]                                  |dout1[24]                                  
+dout1[25]                                  |dout1[25]                                  
+dout1[26]                                  |dout1[26]                                  
+dout1[27]                                  |dout1[27]                                  
+dout1[28]                                  |dout1[28]                                  
+dout1[29]                                  |dout1[29]                                  
+dout1[30]                                  |dout1[30]                                  
+dout1[31]                                  |dout1[31]                                  
+vccd1                                      |vccd1                                      
+vssd1                                      |vssd1                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_sram_1kbyte_1rw1r_32x256_8 and sky130_sram_1kbyte_1rw1r_32x256_8 are equivalent.
+
+
+Subcircuit pins:
+Circuit 1: sky130_ip__jku_names            |Circuit 2: sky130_ip__jku_names            
+-------------------------------------------|-------------------------------------------
+(no pins)                                  |(no pins)                                  
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ip__jku_names and sky130_ip__jku_names are equivalent.
+
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VCCD_PAD
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VSSA
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VDDA
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VSWITCH
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VCCHIB
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VDDIO
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VCCD
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VSSIO
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VSSD
+Cell sky130_ef_io__vccd_lvc_clamped_pad (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__vccd_lvc_clamped_ |Circuit 2: sky130_ef_io__vccd_lvc_clamped_ 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VCCD_PAD                                   |VCCD_PAD                                   
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__vccd_lvc_clamped_pad and sky130_ef_io__vccd_lvc_clamped_pad are equivalent.
+
+Cell sky130_fd_sc_hd__buf_6 (0) disconnected node: A
+Cell sky130_fd_sc_hd__buf_6 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__buf_6 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__buf_6 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__buf_6 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__buf_6 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__buf_6          |Circuit 2: sky130_fd_sc_hd__buf_6          
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__buf_6 and sky130_fd_sc_hd__buf_6 are equivalent.
+
+Cell sky130_fd_sc_hd__dlygate4sd3_1 (0) disconnected node: A
+Cell sky130_fd_sc_hd__dlygate4sd3_1 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__dlygate4sd3_1 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__dlygate4sd3_1 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__dlygate4sd3_1 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__dlygate4sd3_1 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__dlygate4sd3_1  |Circuit 2: sky130_fd_sc_hd__dlygate4sd3_1  
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__dlygate4sd3_1 and sky130_fd_sc_hd__dlygate4sd3_1 are equivalent.
+
+Cell sky130_fd_sc_hd__diode_2 (0) disconnected node: DIODE
+Cell sky130_fd_sc_hd__diode_2 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__diode_2 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__diode_2 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__diode_2 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__diode_2 (1) disconnected node: VGND
+Cell sky130_fd_sc_hd__diode_2 (1) disconnected node: VPB
+Cell sky130_fd_sc_hd__diode_2 (1) disconnected node: VPWR
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__diode_2        |Circuit 2: sky130_fd_sc_hd__diode_2        
+-------------------------------------------|-------------------------------------------
+DIODE                                      |DIODE                                      
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__diode_2 and sky130_fd_sc_hd__diode_2 are equivalent.
+
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: CLK
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: D
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: RESET_B
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__dfrtp_1 (0) disconnected node: Q
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__dfrtp_1        |Circuit 2: sky130_fd_sc_hd__dfrtp_1        
+-------------------------------------------|-------------------------------------------
+CLK                                        |CLK                                        
+D                                          |D                                          
+RESET_B                                    |RESET_B                                    
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+Q                                          |Q                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__dfrtp_1 and sky130_fd_sc_hd__dfrtp_1 are equivalent.
+
+Cell sky130_fd_sc_hd__buf_4 (0) disconnected node: A
+Cell sky130_fd_sc_hd__buf_4 (0) disconnected node: VGND
+Cell sky130_fd_sc_hd__buf_4 (0) disconnected node: VNB
+Cell sky130_fd_sc_hd__buf_4 (0) disconnected node: VPB
+Cell sky130_fd_sc_hd__buf_4 (0) disconnected node: VPWR
+Cell sky130_fd_sc_hd__buf_4 (0) disconnected node: X
+
+Subcircuit pins:
+Circuit 1: sky130_fd_sc_hd__buf_4          |Circuit 2: sky130_fd_sc_hd__buf_4          
+-------------------------------------------|-------------------------------------------
+A                                          |A                                          
+VGND                                       |VGND                                       
+VNB                                        |VNB                                        
+VPB                                        |VPB                                        
+VPWR                                       |VPWR                                       
+X                                          |X                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_sc_hd__buf_4 and sky130_fd_sc_hd__buf_4 are equivalent.
+
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: AMUXBUS_A
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: AMUXBUS_B
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VSSA
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VDDA
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VSWITCH
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VDDIO_Q
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VCCHIB
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VDDIO
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VCCD
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VSSIO
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VSSD
+Cell sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um (0) disconnected node: VSSIO_Q
+
+Subcircuit pins:
+Circuit 1: sky130_ef_io__connect_vcchib_vc |Circuit 2: sky130_ef_io__connect_vcchib_vc 
+-------------------------------------------|-------------------------------------------
+AMUXBUS_A                                  |AMUXBUS_A                                  
+AMUXBUS_B                                  |AMUXBUS_B                                  
+VSSA                                       |VSSA                                       
+VDDA                                       |VDDA                                       
+VSWITCH                                    |VSWITCH                                    
+VDDIO_Q                                    |VDDIO_Q                                    
+VCCHIB                                     |VCCHIB                                     
+VDDIO                                      |VDDIO                                      
+VCCD                                       |VCCD                                       
+VSSIO                                      |VSSIO                                      
+VSSD                                       |VSSD                                       
+VSSIO_Q                                    |VSSIO_Q                                    
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um and sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um are equivalent.
+
+Cell chip_top (0) disconnected node: sky130_ip__jku:jku_logo/(no pins)
+Cell chip_top (0) disconnected node: sky130_ip__jku_names:jku_names/(no pins)
+Cell chip_top (1) disconnected node: jku_logo/(no pins)
+Cell chip_top (1) disconnected node: jku_names/(no pins)
+Class chip_top (0):  Merged 1 parallel devices.
+Class chip_top (1):  Merged 1 parallel devices.
+Cell chip_top (0) disconnected node: sky130_ip__jku:jku_logo/(no pins)
+Cell chip_top (0) disconnected node: sky130_ip__jku_names:jku_names/(no pins)
+Cell chip_top (1) disconnected node: jku_logo/(no pins)
+Cell chip_top (1) disconnected node: jku_names/(no pins)
+Subcircuit summary:
+Circuit 1: chip_top                        |Circuit 2: chip_top                        
+-------------------------------------------|-------------------------------------------
+sky130_ef_io__com_bus_slice_20um (103)     |sky130_ef_io__com_bus_slice_20um (103)     
+sky130_fd_sc_hd__xnor2_1 (20)              |sky130_fd_sc_hd__xnor2_1 (20)              
+sky130_fd_sc_hd__buf_8 (12)                |sky130_fd_sc_hd__buf_8 (12)                
+sky130_ef_io__com_bus_slice_1um (89)       |sky130_ef_io__com_bus_slice_1um (89)       
+sky130_fd_sc_hd__buf_16 (2)                |sky130_fd_sc_hd__buf_16 (2)                
+sky130_fd_sc_hd__xor2_1 (11)               |sky130_fd_sc_hd__xor2_1 (11)               
+sky130_ef_io__com_bus_slice_5um (11)       |sky130_ef_io__com_bus_slice_5um (11)       
+sky130_ef_io__gpiov2_pad (24)              |sky130_ef_io__gpiov2_pad (24)              
+sky130_fd_sc_hd__inv_12 (1)                |sky130_fd_sc_hd__inv_12 (1)                
+sky130_ef_io__vssd_lvc_clamped_pad (1)     |sky130_ef_io__vssd_lvc_clamped_pad (1)     
+inverter_top (2)                           |inverter_top (2)                           
+sky130_ef_io__corner_pad (4)               |sky130_ef_io__corner_pad (4)               
+sky130_ef_io__connect_vdda_vddio_and_vssa_ |sky130_ef_io__connect_vdda_vddio_and_vssa_ 
+sky130_ef_io__analog_noesd_pad (2)         |sky130_ef_io__analog_noesd_pad (2)         
+sky130_ef_io__vssio_hvc_clamped_pad (1)    |sky130_ef_io__vssio_hvc_clamped_pad (1)    
+sky130_ef_io__vddio_hvc_clamped_pad (1)    |sky130_ef_io__vddio_hvc_clamped_pad (1)    
+sky130_ef_io__analog_esd_pad (2)           |sky130_ef_io__analog_esd_pad (2)           
+sky130_ip__jku (1)                         |sky130_ip__jku (1)                         
+sky130_fd_sc_hd__clkbuf_16 (7)             |sky130_fd_sc_hd__clkbuf_16 (7)             
+sky130_ef_io__com_bus_slice_10um (2)       |sky130_ef_io__com_bus_slice_10um (2)       
+counter_top (2)                            |counter_top (2)                            
+sky130_fd_sc_hd__clkinv_2 (1)              |sky130_fd_sc_hd__clkinv_2 (1)              
+sky130_fd_sc_hd__clkbuf_2 (1)              |sky130_fd_sc_hd__clkbuf_2 (1)              
+sky130_sram_1kbyte_1rw1r_32x256_8 (1)      |sky130_sram_1kbyte_1rw1r_32x256_8 (1)      
+sky130_ip__jku_names (1)                   |sky130_ip__jku_names (1)                   
+sky130_ef_io__vccd_lvc_clamped_pad (1)     |sky130_ef_io__vccd_lvc_clamped_pad (1)     
+sky130_fd_sc_hd__buf_6 (4)                 |sky130_fd_sc_hd__buf_6 (4)                 
+sky130_fd_sc_hd__dlygate4sd3_1 (1)         |sky130_fd_sc_hd__dlygate4sd3_1 (1)         
+sky130_fd_sc_hd__diode_2 (2->1)            |sky130_fd_sc_hd__diode_2 (2->1)            
+sky130_fd_sc_hd__dfrtp_1 (1)               |sky130_fd_sc_hd__dfrtp_1 (1)               
+sky130_fd_sc_hd__buf_4 (1)                 |sky130_fd_sc_hd__buf_4 (1)                 
+sky130_ef_io__connect_vcchib_vccd_and_vswi |sky130_ef_io__connect_vcchib_vccd_and_vswi 
+Number of devices: 313                     |Number of devices: 313                     
+Number of nets: 630 **Mismatch**           |Number of nets: 626 **Mismatch**           
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: chip_top                        |Circuit 2: chip_top                        
+
+---------------------------------------------------------------------------------------
+Net: IOVSS                                 |Net: IOVSS                                 
+  sky130_ef_io__com_bus_slice_20um/VSSIO = |  sky130_ef_io__com_bus_slice_20um/VSSIO = 
+  sky130_ef_io__com_bus_slice_1um/VSSIO =  |  sky130_ef_io__com_bus_slice_1um/VSSIO =  
+  sky130_ef_io__com_bus_slice_5um/VSSIO =  |  sky130_ef_io__com_bus_slice_5um/VSSIO =  
+  sky130_ef_io__gpiov2_pad/VSSIO = 24      |  sky130_ef_io__gpiov2_pad/VSSIO = 24      
+  sky130_ef_io__vssd_lvc_clamped_pad/VSSIO |  sky130_ef_io__vssd_lvc_clamped_pad/VSSIO 
+  sky130_ef_io__corner_pad/VSSIO = 4       |  sky130_ef_io__corner_pad/VSSIO = 4       
+  sky130_ef_io__connect_vdda_vddio_and_vss |  sky130_ef_io__connect_vdda_vddio_and_vss 
+  sky130_ef_io__analog_noesd_pad/VSSIO = 2 |  sky130_ef_io__analog_noesd_pad/VSSIO = 2 
+  sky130_ef_io__vssio_hvc_clamped_pad/VSSI |  sky130_ef_io__vssio_hvc_clamped_pad/VSSI 
+  sky130_ef_io__vssio_hvc_clamped_pad/VSSI |  sky130_ef_io__vssio_hvc_clamped_pad/VSSI 
+  sky130_ef_io__vddio_hvc_clamped_pad/VSSI |  sky130_ef_io__vddio_hvc_clamped_pad/VSSI 
+  sky130_ef_io__analog_esd_pad/VSSIO = 2   |  sky130_ef_io__analog_esd_pad/VSSIO = 2   
+  sky130_ef_io__com_bus_slice_10um/VSSIO = |  sky130_ef_io__com_bus_slice_10um/VSSIO = 
+  sky130_ef_io__vccd_lvc_clamped_pad/VSSIO |  sky130_ef_io__vccd_lvc_clamped_pad/VSSIO 
+  sky130_ef_io__connect_vcchib_vccd_and_vs |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+                                           |  sky130_ef_io__gpiov2_pad/VSSA = 24       
+                                           |  sky130_ef_io__com_bus_slice_20um/VSSA =  
+                                           |  sky130_ef_io__gpiov2_pad/VSSIO_Q = 24    
+                                           |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+                                           |  sky130_ef_io__com_bus_slice_10um/VSSIO_Q 
+                                           |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+                                           |  sky130_ef_io__connect_vdda_vddio_and_vss 
+                                           |  sky130_ef_io__com_bus_slice_5um/VSSA = 1 
+                                           |  sky130_ef_io__connect_vdda_vddio_and_vss 
+                                           |  sky130_ef_io__analog_esd_pad/VSSA = 2    
+                                           |  sky130_ef_io__com_bus_slice_1um/VSSIO_Q  
+                                           |  sky130_ef_io__analog_esd_pad/VSSIO_Q = 2 
+                                           |  sky130_ef_io__analog_noesd_pad/VSSA = 2  
+                                           |  sky130_ef_io__corner_pad/VSSIO_Q = 4     
+                                           |  sky130_ef_io__analog_noesd_pad/VSSIO_Q = 
+                                           |  sky130_ef_io__vddio_hvc_clamped_pad/VSSA 
+                                           |  sky130_ef_io__com_bus_slice_20um/VSSIO_Q 
+                                           |  sky130_ef_io__vddio_hvc_clamped_pad/VSSI 
+                                           |  sky130_ef_io__com_bus_slice_5um/VSSIO_Q  
+                                           |  sky130_ef_io__vssio_hvc_clamped_pad/VSSA 
+                                           |  sky130_ef_io__com_bus_slice_1um/VSSA = 8 
+                                           |  sky130_ef_io__vssio_hvc_clamped_pad/VSSI 
+                                           |  sky130_ef_io__vccd_lvc_clamped_pad/VSSA  
+                                           |  sky130_ef_io__com_bus_slice_10um/VSSA =  
+                                           |  sky130_ef_io__vccd_lvc_clamped_pad/VSSIO 
+                                           |  sky130_ef_io__vssd_lvc_clamped_pad/VSSA  
+                                           |  sky130_ef_io__corner_pad/VSSA = 4        
+                                           |  sky130_ef_io__vssd_lvc_clamped_pad/VSSIO 
+                                           |                                           
+Net: IOVDD                                 |Net: IOVDD                                 
+  sky130_ef_io__com_bus_slice_20um/VSWITCH |  sky130_ef_io__com_bus_slice_20um/VSWITCH 
+  sky130_ef_io__com_bus_slice_20um/VDDIO = |  sky130_ef_io__com_bus_slice_20um/VDDIO = 
+  sky130_ef_io__com_bus_slice_1um/VSWITCH  |  sky130_ef_io__com_bus_slice_1um/VSWITCH  
+  sky130_ef_io__com_bus_slice_1um/VDDIO =  |  sky130_ef_io__com_bus_slice_1um/VDDIO =  
+  sky130_ef_io__com_bus_slice_5um/VSWITCH  |  sky130_ef_io__com_bus_slice_5um/VSWITCH  
+  sky130_ef_io__com_bus_slice_5um/VDDIO =  |  sky130_ef_io__com_bus_slice_5um/VDDIO =  
+  sky130_ef_io__gpiov2_pad/VDDIO = 24      |  sky130_ef_io__gpiov2_pad/VDDIO = 24      
+  sky130_ef_io__gpiov2_pad/VSWITCH = 24    |  sky130_ef_io__gpiov2_pad/VSWITCH = 24    
+  sky130_ef_io__vssd_lvc_clamped_pad/VSWIT |  sky130_ef_io__vssd_lvc_clamped_pad/VSWIT 
+  sky130_ef_io__vssd_lvc_clamped_pad/VDDIO |  sky130_ef_io__vssd_lvc_clamped_pad/VDDIO 
+  sky130_ef_io__corner_pad/VSWITCH = 4     |  sky130_ef_io__corner_pad/VSWITCH = 4     
+  sky130_ef_io__corner_pad/VDDIO = 4       |  sky130_ef_io__corner_pad/VDDIO = 4       
+  sky130_ef_io__connect_vdda_vddio_and_vss |  sky130_ef_io__connect_vdda_vddio_and_vss 
+  sky130_ef_io__connect_vdda_vddio_and_vss |  sky130_ef_io__connect_vdda_vddio_and_vss 
+  sky130_ef_io__analog_noesd_pad/VDDIO = 2 |  sky130_ef_io__analog_noesd_pad/VDDIO = 2 
+  sky130_ef_io__analog_noesd_pad/VSWITCH = |  sky130_ef_io__analog_noesd_pad/VSWITCH = 
+  sky130_ef_io__vssio_hvc_clamped_pad/VSWI |  sky130_ef_io__vssio_hvc_clamped_pad/VSWI 
+  sky130_ef_io__vssio_hvc_clamped_pad/VDDI |  sky130_ef_io__vssio_hvc_clamped_pad/VDDI 
+  sky130_ef_io__vddio_hvc_clamped_pad/VDDI |  sky130_ef_io__vddio_hvc_clamped_pad/VDDI 
+  sky130_ef_io__vddio_hvc_clamped_pad/VSWI |  sky130_ef_io__vddio_hvc_clamped_pad/VSWI 
+  sky130_ef_io__vddio_hvc_clamped_pad/VDDI |  sky130_ef_io__vddio_hvc_clamped_pad/VDDI 
+  sky130_ef_io__analog_esd_pad/VDDIO = 2   |  sky130_ef_io__analog_esd_pad/VDDIO = 2   
+  sky130_ef_io__analog_esd_pad/VSWITCH = 2 |  sky130_ef_io__analog_esd_pad/VSWITCH = 2 
+  sky130_ef_io__com_bus_slice_10um/VSWITCH |  sky130_ef_io__com_bus_slice_10um/VSWITCH 
+  sky130_ef_io__com_bus_slice_10um/VDDIO = |  sky130_ef_io__com_bus_slice_10um/VDDIO = 
+  sky130_ef_io__vccd_lvc_clamped_pad/VSWIT |  sky130_ef_io__vccd_lvc_clamped_pad/VSWIT 
+  sky130_ef_io__vccd_lvc_clamped_pad/VDDIO |  sky130_ef_io__vccd_lvc_clamped_pad/VDDIO 
+  sky130_ef_io__connect_vcchib_vccd_and_vs |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+  sky130_ef_io__connect_vcchib_vccd_and_vs |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+                                           |  sky130_ef_io__com_bus_slice_1um/VDDA = 8 
+                                           |  sky130_ef_io__connect_vdda_vddio_and_vss 
+                                           |  sky130_ef_io__corner_pad/VDDIO_Q = 4     
+                                           |  sky130_ef_io__analog_esd_pad/VDDIO_Q = 2 
+                                           |  sky130_ef_io__com_bus_slice_20um/VDDIO_Q 
+                                           |  sky130_ef_io__gpiov2_pad/VDDIO_Q = 24    
+                                           |  sky130_ef_io__analog_esd_pad/VDDA = 2    
+                                           |  sky130_ef_io__analog_noesd_pad/VDDIO_Q = 
+                                           |  sky130_ef_io__com_bus_slice_1um/VDDIO_Q  
+                                           |  sky130_ef_io__corner_pad/VDDA = 4        
+                                           |  sky130_ef_io__analog_noesd_pad/VDDA = 2  
+                                           |  sky130_ef_io__com_bus_slice_10um/VDDIO_Q 
+                                           |  sky130_ef_io__vddio_hvc_clamped_pad/VDDA 
+                                           |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+                                           |  sky130_ef_io__vddio_hvc_clamped_pad/VDDI 
+                                           |  sky130_ef_io__gpiov2_pad/VDDA = 24       
+                                           |  sky130_ef_io__vssio_hvc_clamped_pad/VDDA 
+                                           |  sky130_ef_io__com_bus_slice_10um/VDDA =  
+                                           |  sky130_ef_io__vssio_hvc_clamped_pad/VDDI 
+                                           |  sky130_ef_io__com_bus_slice_5um/VDDIO_Q  
+                                           |  sky130_ef_io__vccd_lvc_clamped_pad/VDDA  
+                                           |  sky130_ef_io__connect_vdda_vddio_and_vss 
+                                           |  sky130_ef_io__vccd_lvc_clamped_pad/VDDIO 
+                                           |  sky130_ef_io__connect_vcchib_vccd_and_vs 
+                                           |  sky130_ef_io__vssd_lvc_clamped_pad/VDDA  
+                                           |  sky130_ef_io__com_bus_slice_5um/VDDA = 1 
+                                           |  sky130_ef_io__vssd_lvc_clamped_pad/VDDIO 
+                                           |  sky130_ef_io__com_bus_slice_20um/VDDA =  
+                                           |                                           
+Net: clk_pad.pad_cell/VDDIO_Q              |(no matching net)                          
+  sky130_ef_io__com_bus_slice_20um/VDDIO_Q |                                           
+  sky130_ef_io__com_bus_slice_1um/VDDIO_Q  |                                           
+  sky130_ef_io__com_bus_slice_5um/VDDIO_Q  |                                           
+  sky130_ef_io__gpiov2_pad/VDDIO_Q = 24    |                                           
+  sky130_ef_io__vssd_lvc_clamped_pad/VDDIO |                                           
+  sky130_ef_io__corner_pad/VDDIO_Q = 4     |                                           
+  sky130_ef_io__connect_vdda_vddio_and_vss |                                           
+  sky130_ef_io__analog_noesd_pad/VDDIO_Q = |                                           
+  sky130_ef_io__vssio_hvc_clamped_pad/VDDI |                                           
+  sky130_ef_io__vddio_hvc_clamped_pad/VDDI |                                           
+  sky130_ef_io__analog_esd_pad/VDDIO_Q = 2 |                                           
+  sky130_ef_io__com_bus_slice_10um/VDDIO_Q |                                           
+  sky130_ef_io__vccd_lvc_clamped_pad/VDDIO |                                           
+  sky130_ef_io__connect_vcchib_vccd_and_vs |                                           
+                                           |                                           
+Net: clk_pad.pad_cell/VSSIO_Q              |(no matching net)                          
+  sky130_ef_io__com_bus_slice_20um/VSSIO_Q |                                           
+  sky130_ef_io__com_bus_slice_1um/VSSIO_Q  |                                           
+  sky130_ef_io__com_bus_slice_5um/VSSIO_Q  |                                           
+  sky130_ef_io__gpiov2_pad/VSSIO_Q = 24    |                                           
+  sky130_ef_io__vssd_lvc_clamped_pad/VSSIO |                                           
+  sky130_ef_io__corner_pad/VSSIO_Q = 4     |                                           
+  sky130_ef_io__connect_vdda_vddio_and_vss |                                           
+  sky130_ef_io__analog_noesd_pad/VSSIO_Q = |                                           
+  sky130_ef_io__vssio_hvc_clamped_pad/VSSI |                                           
+  sky130_ef_io__vddio_hvc_clamped_pad/VSSI |                                           
+  sky130_ef_io__analog_esd_pad/VSSIO_Q = 2 |                                           
+  sky130_ef_io__com_bus_slice_10um/VSSIO_Q |                                           
+  sky130_ef_io__vccd_lvc_clamped_pad/VSSIO |                                           
+  sky130_ef_io__connect_vcchib_vccd_and_vs |                                           
+                                           |                                           
+Net: clk_pad.pad_cell/VDDA                 |(no matching net)                          
+  sky130_ef_io__com_bus_slice_20um/VDDA =  |                                           
+  sky130_ef_io__com_bus_slice_1um/VDDA = 8 |                                           
+  sky130_ef_io__com_bus_slice_5um/VDDA = 1 |                                           
+  sky130_ef_io__gpiov2_pad/VDDA = 24       |                                           
+  sky130_ef_io__vssd_lvc_clamped_pad/VDDA  |                                           
+  sky130_ef_io__corner_pad/VDDA = 4        |                                           
+  sky130_ef_io__connect_vdda_vddio_and_vss |                                           
+  sky130_ef_io__analog_noesd_pad/VDDA = 2  |                                           
+  sky130_ef_io__vssio_hvc_clamped_pad/VDDA |                                           
+  sky130_ef_io__vddio_hvc_clamped_pad/VDDA |                                           
+  sky130_ef_io__analog_esd_pad/VDDA = 2    |                                           
+  sky130_ef_io__com_bus_slice_10um/VDDA =  |                                           
+  sky130_ef_io__vccd_lvc_clamped_pad/VDDA  |                                           
+  sky130_ef_io__connect_vcchib_vccd_and_vs |                                           
+                                           |                                           
+Net: clk_pad.pad_cell/VSSA                 |(no matching net)                          
+  sky130_ef_io__com_bus_slice_20um/VSSA =  |                                           
+  sky130_ef_io__com_bus_slice_1um/VSSA = 8 |                                           
+  sky130_ef_io__com_bus_slice_5um/VSSA = 1 |                                           
+  sky130_ef_io__gpiov2_pad/VSSA = 24       |                                           
+  sky130_ef_io__vssd_lvc_clamped_pad/VSSA  |                                           
+  sky130_ef_io__corner_pad/VSSA = 4        |                                           
+  sky130_ef_io__connect_vdda_vddio_and_vss |                                           
+  sky130_ef_io__analog_noesd_pad/VSSA = 2  |                                           
+  sky130_ef_io__vssio_hvc_clamped_pad/VSSA |                                           
+  sky130_ef_io__vddio_hvc_clamped_pad/VSSA |                                           
+  sky130_ef_io__analog_esd_pad/VSSA = 2    |                                           
+  sky130_ef_io__com_bus_slice_10um/VSSA =  |                                           
+  sky130_ef_io__vccd_lvc_clamped_pad/VSSA  |                                           
+  sky130_ef_io__connect_vcchib_vccd_and_vs |                                           
+---------------------------------------------------------------------------------------
+Netlists do not match.
+Port matching may fail to disambiguate symmetries.
+
+Subcircuit pins:
+Circuit 1: chip_top                        |Circuit 2: chip_top                        
+-------------------------------------------|-------------------------------------------
+Cell pin lists are equivalent.
+Device classes chip_top and chip_top are equivalent.
+
+Final result: Netlists do not match.
+Port matching may fail to disambiguate symmetries.

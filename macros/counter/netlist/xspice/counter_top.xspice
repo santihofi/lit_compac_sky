@@ -1,0 +1,181 @@
+* XSpice netlist created from SPICE and liberty sources by spi2xspice.py
+* NGSPICE file created from counter_top.ext - technology: sky130A
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_12 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_6 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__tapvpwrvgnd_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__fill_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nand3_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__fill_2 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_3 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__buf_2 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__buf_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__buf_4 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__and2_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__a21boi_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__xnor2_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__or3_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__dlygate4sd3_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nand2_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__o21ai_0 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_8 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__decap_4 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__clkbuf_16 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__dfxtp_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__xor2_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__mux2i_2 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nor3_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__inv_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nand2b_1 abstract view
+* Black-box entry subcircuit for sky130_fd_sc_hd__nand4_4 abstract view
+.subckt counter_top a_VDD a_VSS a_clock_i a_reset_n_i a_enable_i
++ a_counter_value_o_0_ a_counter_value_o_1_ a_counter_value_o_2_
++ a_counter_value_o_3_ a_counter_value_o_4_ a_counter_value_o_5_
++ a_counter_value_o_6_ a_counter_value_o_7_
+A_66_ [_66_/A _74_/Q _73_/Q] _67_/B d_lut_sky130_fd_sc_hd__nand3_1
+A_49_ [_70_/Q _77_/Q _76_/Q] _57_/C d_lut_sky130_fd_sc_hd__nand3_1
+Aoutput7 [_77_/Q] counter_value_o_4_ d_lut_sky130_fd_sc_hd__buf_2
+A_65_ [_65_/A] _74_/D d_lut_sky130_fd_sc_hd__buf_1
+A_48_ [_48_/A] _70_/D d_lut_sky130_fd_sc_hd__buf_4
+Aoutput10 [_72_/Q] counter_value_o_7_ d_lut_sky130_fd_sc_hd__buf_2
+Aoutput8 [_70_/Q] counter_value_o_5_ d_lut_sky130_fd_sc_hd__buf_2
+A_64_ [_68_/A _64_/B] _65_/A d_lut_sky130_fd_sc_hd__and2_1
+A_47_ [_45_/Y _46_/X _68_/A] _48_/A d_lut_sky130_fd_sc_hd__a21boi_1
+Aoutput9 [_71_/Q] counter_value_o_6_ d_lut_sky130_fd_sc_hd__buf_2
+A_63_ [_74_/Q _63_/B] _64_/B d_lut_sky130_fd_sc_hd__xnor2_1
+A_46_ [_70_/Q _57_/B _46_/C] _46_/X d_lut_sky130_fd_sc_hd__or3_1
+Ahold11 [_72_/Q] _54_/A d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+A_62_ [_66_/A _73_/Q] _63_/B d_lut_sky130_fd_sc_hd__nand2_1
+A_45_ [_57_/B _46_/C _70_/Q] _45_/Y d_lut_sky130_fd_sc_hd__o21ai_0
+Ahold12 [_58_/Y] _72_/D d_lut_sky130_fd_sc_hd__dlygate4sd3_1
+A_61_ [_61_/A] _73_/D d_lut_sky130_fd_sc_hd__buf_1
+A_44_ [_77_/Q _76_/Q] _46_/C d_lut_sky130_fd_sc_hd__nand2_1
+A_60_ [_68_/A _60_/B] _61_/A d_lut_sky130_fd_sc_hd__and2_1
+A_43_ [_43_/A] _77_/D d_lut_sky130_fd_sc_hd__buf_4
+A_42_ [_40_/Y _41_/X _68_/A] _43_/A d_lut_sky130_fd_sc_hd__a21boi_1
+A_41_ [_77_/Q _41_/B _57_/B] _41_/X d_lut_sky130_fd_sc_hd__or3_1
+A_40_ [_41_/B _57_/B _77_/Q] _40_/Y d_lut_sky130_fd_sc_hd__o21ai_0
+Aclkbuf_1_1__f_clock_i [clkbuf_0_clock_i/X] _77_/CLK d_lut_sky130_fd_sc_hd__clkbuf_16
+Ainput1 [enable_i] _66_/A d_lut_sky130_fd_sc_hd__buf_2
+Ainput2 [reset_n_i] _68_/A d_lut_sky130_fd_sc_hd__buf_2
+Aclkbuf_1_0__f_clock_i [clkbuf_0_clock_i/X] _76_/CLK d_lut_sky130_fd_sc_hd__clkbuf_16
+A_77_ _77_/D _77_/CLK NULL NULL _77_/Q NULL ddflop
+A_76_ _76_/D _76_/CLK NULL NULL _76_/Q NULL ddflop
+A_59_ [_66_/A _73_/Q] _60_/B d_lut_sky130_fd_sc_hd__xor2_1
+A_75_ _75_/D _76_/CLK NULL NULL _75_/Q NULL ddflop
+A_58_ [_54_/Y _55_/Y _58_/S] _58_/Y d_lut_sky130_fd_sc_hd__mux2i_2
+A_74_ _74_/D _76_/CLK NULL NULL _74_/Q NULL ddflop
+A_57_ [_57_/A _57_/B _57_/C] _58_/S d_lut_sky130_fd_sc_hd__nor3_1
+A_73_ _73_/D _76_/CLK NULL NULL _73_/Q NULL ddflop
+A_56_ [_71_/Q] _57_/A d_lut_sky130_fd_sc_hd__inv_1
+A_39_ [_76_/Q] _41_/B d_lut_sky130_fd_sc_hd__inv_1
+A_72_ _72_/D _77_/CLK NULL NULL _72_/Q NULL ddflop
+A_55_ [_72_/Q _68_/A] _55_/Y d_lut_sky130_fd_sc_hd__nand2b_1
+A_38_ [_38_/A] _76_/D d_lut_sky130_fd_sc_hd__buf_2
+A_71_ _71_/D _77_/CLK NULL NULL _71_/Q NULL ddflop
+A_54_ [_54_/A _68_/A] _54_/Y d_lut_sky130_fd_sc_hd__nand2_1
+A_37_ [_68_/A _37_/B] _38_/A d_lut_sky130_fd_sc_hd__and2_1
+A_70_ _70_/D _77_/CLK NULL NULL _70_/Q NULL ddflop
+A_53_ [_53_/A] _71_/D d_lut_sky130_fd_sc_hd__buf_4
+A_36_ [_76_/Q _57_/B] _37_/B d_lut_sky130_fd_sc_hd__xnor2_1
+A_52_ [_50_/Y _51_/X _68_/A] _53_/A d_lut_sky130_fd_sc_hd__a21boi_1
+A_35_ [_75_/Q _66_/A _74_/Q _73_/Q] _57_/B d_lut_sky130_fd_sc_hd__nand4_4
+A_51_ [_71_/Q _57_/B _57_/C] _51_/X d_lut_sky130_fd_sc_hd__or3_1
+A_50_ [_57_/B _57_/C _71_/Q] _50_/Y d_lut_sky130_fd_sc_hd__o21ai_0
+Aoutput3 [_73_/Q] counter_value_o_0_ d_lut_sky130_fd_sc_hd__buf_2
+A_69_ [_69_/A] _75_/D d_lut_sky130_fd_sc_hd__buf_1
+Aoutput4 [_74_/Q] counter_value_o_1_ d_lut_sky130_fd_sc_hd__buf_2
+A_68_ [_68_/A _68_/B] _69_/A d_lut_sky130_fd_sc_hd__and2_1
+Aclkbuf_0_clock_i [clock_i] clkbuf_0_clock_i/X d_lut_sky130_fd_sc_hd__clkbuf_16
+Aoutput5 [_75_/Q] counter_value_o_2_ d_lut_sky130_fd_sc_hd__buf_2
+A_67_ [_75_/Q _67_/B] _68_/B d_lut_sky130_fd_sc_hd__xnor2_1
+Aoutput6 [_76_/Q] counter_value_o_3_ d_lut_sky130_fd_sc_hd__buf_2
+
+.model todig_1v8 adc_bridge(in_high=1.2 in_low=0.6 rise_delay=500p fall_delay=500p)
+.model toana_1v8 dac_bridge(out_high=1.8 out_low=0)
+
+.model ddflop d_dff(ic=0 rise_delay=50p fall_delay=50p)
+.model dlatch d_dlatch(ic=0 rise_delay=50p fall_delay=50p)
+.model dzero d_pulldown(load=250f)
+.model done d_pullup(load=250f)
+
+AA2D1 [a_VDD] [dig_VDD] todig_1v8
+AA2D2 [a_VSS] [dig_VSS] todig_1v8
+AA2D3 [a_clock_i] [clock_i] todig_1v8
+AD2A1 [counter_value_o_0_] [a_counter_value_o_0_] toana_1v8
+AD2A2 [counter_value_o_1_] [a_counter_value_o_1_] toana_1v8
+AD2A3 [counter_value_o_2_] [a_counter_value_o_2_] toana_1v8
+AD2A4 [counter_value_o_3_] [a_counter_value_o_3_] toana_1v8
+AD2A5 [counter_value_o_4_] [a_counter_value_o_4_] toana_1v8
+AD2A6 [counter_value_o_5_] [a_counter_value_o_5_] toana_1v8
+AD2A7 [counter_value_o_6_] [a_counter_value_o_6_] toana_1v8
+AD2A8 [counter_value_o_7_] [a_counter_value_o_7_] toana_1v8
+AA2D4 [a_enable_i] [enable_i] todig_1v8
+AA2D5 [a_reset_n_i] [reset_n_i] todig_1v8
+
+.ends
+
+
+* sky130_fd_sc_hd__decap_12 (no function)
+* sky130_fd_sc_hd__decap_6 (no function)
+* sky130_fd_sc_hd__tapvpwrvgnd_1 (no function)
+* sky130_fd_sc_hd__fill_1 (no function)
+* sky130_fd_sc_hd__nand3_1 (!A) | (!B) | (!C)
+.model d_lut_sky130_fd_sc_hd__nand3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11111110")
+* sky130_fd_sc_hd__fill_2 (no function)
+* sky130_fd_sc_hd__decap_3 (no function)
+* sky130_fd_sc_hd__buf_2 (A)
+.model d_lut_sky130_fd_sc_hd__buf_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sky130_fd_sc_hd__buf_1 (A)
+.model d_lut_sky130_fd_sc_hd__buf_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sky130_fd_sc_hd__buf_4 (A)
+.model d_lut_sky130_fd_sc_hd__buf_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sky130_fd_sc_hd__and2_1 (A&B)
+.model d_lut_sky130_fd_sc_hd__and2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0001")
+* sky130_fd_sc_hd__a21boi_1 (!A1&B1_N) | (!A2&B1_N)
+.model d_lut_sky130_fd_sc_hd__a21boi_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "00001110")
+* sky130_fd_sc_hd__xnor2_1 (!A&!B) | (A&B)
+.model d_lut_sky130_fd_sc_hd__xnor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1001")
+* sky130_fd_sc_hd__or3_1 (A) | (B) | (C)
+.model d_lut_sky130_fd_sc_hd__or3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01111111")
+* sky130_fd_sc_hd__dlygate4sd3_1 (A)
+.model d_lut_sky130_fd_sc_hd__dlygate4sd3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sky130_fd_sc_hd__nand2_1 (!A) | (!B)
+.model d_lut_sky130_fd_sc_hd__nand2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1110")
+* sky130_fd_sc_hd__o21ai_0 (!A1&!A2) | (!B1)
+.model d_lut_sky130_fd_sc_hd__o21ai_0 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "11111000")
+* sky130_fd_sc_hd__decap_8 (no function)
+* sky130_fd_sc_hd__decap_4 (no function)
+* sky130_fd_sc_hd__clkbuf_16 (A)
+.model d_lut_sky130_fd_sc_hd__clkbuf_16 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "01")
+* sky130_fd_sc_hd__dfxtp_1 IQ
+* sky130_fd_sc_hd__xor2_1 (A&!B) | (!A&B)
+.model d_lut_sky130_fd_sc_hd__xor2_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "0110")
+* sky130_fd_sc_hd__mux2i_2 (!A0&!S) | (!A1&S)
+.model d_lut_sky130_fd_sc_hd__mux2i_2 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10101100")
+* sky130_fd_sc_hd__nor3_1 (!A&!B&!C)
+.model d_lut_sky130_fd_sc_hd__nor3_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10000000")
+* sky130_fd_sc_hd__inv_1 (!A)
+.model d_lut_sky130_fd_sc_hd__inv_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "10")
+* sky130_fd_sc_hd__nand2b_1 (A_N) | (!B)
+.model d_lut_sky130_fd_sc_hd__nand2b_1 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1101")
+* sky130_fd_sc_hd__nand4_4 (!A) | (!B) | (!C) | (!D)
+.model d_lut_sky130_fd_sc_hd__nand4_4 d_lut (rise_delay=50p fall_delay=50p input_load=250f
++ table_values "1111111111111110")
+.end

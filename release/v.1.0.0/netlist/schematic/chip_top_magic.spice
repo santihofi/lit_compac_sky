@@ -1,0 +1,119 @@
+** sch_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_top.sch
+.subckt chip_top clk_PAD rst_n_PAD input_PAD[0] output_PAD[0] output_PAD[1] output_PAD[2] output_PAD[3] output_PAD[4]
++ output_PAD[5] output_PAD[6] output_PAD[7] output_PAD[8] output_PAD[9] output_PAD[10] output_PAD[11] output_PAD[12] output_PAD[13]
++ output_PAD[14] output_PAD[15] output_PAD[16] bidir_PAD[0] bidir_PAD[1] bidir_PAD[2] bidir_PAD[3] analog_PAD[0] analog_PAD[1] analog_PAD[2]
++ analog_PAD[3] VDD VSS IOVDD IOVSS
+*.PININFO clk_PAD:B rst_n_PAD:B input_PAD[0]:B output_PAD[0]:B output_PAD[1]:B output_PAD[2]:B output_PAD[3]:B output_PAD[4]:B
+*+ output_PAD[5]:B output_PAD[6]:B output_PAD[7]:B output_PAD[8]:B output_PAD[9]:B output_PAD[10]:B output_PAD[11]:B output_PAD[12]:B
+*+ output_PAD[13]:B output_PAD[14]:B output_PAD[15]:B output_PAD[16]:B bidir_PAD[0]:B bidir_PAD[1]:B bidir_PAD[2]:B bidir_PAD[3]:B analog_PAD[0]:B
+*+ analog_PAD[1]:B analog_PAD[2]:B analog_PAD[3]:B VDD:B VSS:B IOVDD:B IOVSS:B
+clk_pad VDD VSS IOVDD IOVSS clk_PAD clk_PAD2CORE chip_pad_in
+rst_n_pad VDD VSS IOVDD IOVSS rst_n_PAD rst_n_PAD2CORE chip_pad_in
+input_pad0 VDD VSS IOVDD IOVSS input_PAD[0] input_PAD2CORE[0] chip_pad_in
+output_pad0 VDD VSS IOVDD IOVSS output_PAD[0] output_CORE2PAD[0] chip_pad_out
+output_pad1 VDD VSS IOVDD IOVSS output_PAD[1] output_CORE2PAD[1] chip_pad_out
+output_pad2 VDD VSS IOVDD IOVSS output_PAD[2] output_CORE2PAD[2] chip_pad_out
+output_pad3 VDD VSS IOVDD IOVSS output_PAD[3] output_CORE2PAD[3] chip_pad_out
+output_pad4 VDD VSS IOVDD IOVSS output_PAD[4] output_CORE2PAD[4] chip_pad_out
+output_pad5 VDD VSS IOVDD IOVSS output_PAD[5] output_CORE2PAD[5] chip_pad_out
+output_pad6 VDD VSS IOVDD IOVSS output_PAD[6] output_CORE2PAD[6] chip_pad_out
+output_pad7 VDD VSS IOVDD IOVSS output_PAD[7] output_CORE2PAD[7] chip_pad_out
+output_pad8 VDD VSS IOVDD IOVSS output_PAD[8] output_CORE2PAD[8] chip_pad_out
+output_pad9 VDD VSS IOVDD IOVSS output_PAD[9] output_CORE2PAD[9] chip_pad_out
+output_pad10 VDD VSS IOVDD IOVSS output_PAD[10] output_CORE2PAD[10] chip_pad_out
+output_pad11 VDD VSS IOVDD IOVSS output_PAD[11] output_CORE2PAD[11] chip_pad_out
+output_pad12 VDD VSS IOVDD IOVSS output_PAD[12] output_CORE2PAD[12] chip_pad_out
+output_pad13 VDD VSS IOVDD IOVSS output_PAD[13] output_CORE2PAD[13] chip_pad_out
+output_pad14 VDD VSS IOVDD IOVSS output_PAD[14] output_CORE2PAD[14] chip_pad_out
+output_pad15 VDD VSS IOVDD IOVSS output_PAD[15] output_CORE2PAD[15] chip_pad_out
+output_pad16 VDD VSS IOVDD IOVSS output_PAD[16] output_CORE2PAD[16] chip_pad_out
+bidir_pad0 VDD VSS IOVDD IOVSS bidir_PAD[0] bidir_CORE2PAD[0] input_PAD2CORE[0] bidir_PAD2CORE[0] chip_pad_bidir
+bidir_pad1 VDD VSS IOVDD IOVSS bidir_PAD[1] bidir_CORE2PAD[1] input_PAD2CORE[0] bidir_PAD2CORE[1] chip_pad_bidir
+bidir_pad2 VDD VSS IOVDD IOVSS bidir_PAD[2] bidir_CORE2PAD[2] input_PAD2CORE[0] bidir_PAD2CORE[2] chip_pad_bidir
+bidir_pad3 VDD VSS IOVDD IOVSS bidir_PAD[3] bidir_CORE2PAD[3] input_PAD2CORE[0] bidir_PAD2CORE[3] chip_pad_bidir
+analog_pad0 analog_PADESD[0] IOVSS VSS AMUXBUS_B AMUXBUS_A IOVDD IOVDD IOVDD IOVSS IOVDD VDD VDD IOVSS analog_PAD[0]
++ sky130_ef_io__analog_esd_pad
+analog_pad1 analog_PADESD[1] IOVSS VSS AMUXBUS_B AMUXBUS_A IOVDD IOVDD IOVDD IOVSS IOVDD VDD VDD IOVSS analog_PAD[1]
++ sky130_ef_io__analog_esd_pad
+analog_pad2 analog_PADBARE[2] IOVSS VSS AMUXBUS_B AMUXBUS_A IOVDD IOVDD IOVDD IOVSS IOVDD VDD VDD IOVSS analog_PAD[2]
++ sky130_ef_io__analog_noesd_pad
+analog_pad3 analog_PADBARE[3] IOVSS VSS AMUXBUS_B AMUXBUS_A IOVDD IOVDD IOVDD IOVSS IOVDD VDD VDD IOVSS analog_PAD[3]
++ sky130_ef_io__analog_noesd_pad
+vdd_pad AMUXBUS_A AMUXBUS_B VDD IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__vccd_lvc_clamped_pad
+vss_pad AMUXBUS_A AMUXBUS_B VSS IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__vssd_lvc_clamped_pad
+iovdd_pad AMUXBUS_A AMUXBUS_B IOVDD IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__vddio_hvc_clamped_pad
+iovss_pad AMUXBUS_A AMUXBUS_B IOVSS IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__vssio_hvc_clamped_pad
+connect_vcchib_vswitch AMUXBUS_A AMUXBUS_B IOVSS IOVDD IOVDD IOVDD VDD IOVSS VSS IOVSS
++ sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um
+connect_vdda_vssa AMUXBUS_A AMUXBUS_B IOVSS IOVDD IOVDD IOVDD VDD IOVSS VSS IOVSS
++ sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um
+counter1 VDD VSS clk_PAD2CORE rst_n_PAD2CORE input_PAD2CORE[0] output_CORE2PAD[0] output_CORE2PAD[1] output_CORE2PAD[2]
++ output_CORE2PAD[3] bidir_CORE2PAD[0] bidir_CORE2PAD[1] bidir_CORE2PAD[2] bidir_CORE2PAD[3] counter_top
+counter2 VDD VSS clk_PAD2CORE rst_n_PAD2CORE input_PAD2CORE[0] output_CORE2PAD[4] output_CORE2PAD[5] output_CORE2PAD[6]
++ output_CORE2PAD[7] output_CORE2PAD[8] output_CORE2PAD[9] output_CORE2PAD[10] output_CORE2PAD[11] counter_top
+inverter1 VDD bidir_PAD2CORE[3] output_CORE2PAD[15] VSS bidir_PAD2CORE[2] output_CORE2PAD[14] bidir_PAD2CORE[1]
++ output_CORE2PAD[13] output_CORE2PAD[12] bidir_PAD2CORE[0] inverter_top
+inverter2 VDD VSS VSS VSS VSS VSS analog_PADESD[1] analog_PADBARE[3] analog_PADBARE[2] analog_PADESD[0] inverter_top
+.ends
+
+* expanding   symbol:  chip_pad_in.sym # of pins=6
+** sym_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_pad_in.sym
+** sch_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_pad_in.sch
+.subckt chip_pad_in VDD VSS IOVDD IOVSS pad p2c
+*.PININFO VDD:B VSS:B IOVDD:B IOVSS:B pad:B p2c:O
+x_pad in_h pad_a_noesd_h pad_a_esd_0_h pad_a_esd_1_h pad lo lo hi tie_hi p2c lo lo tie_hi tie_hi tie_lo hi tie_hi tie_lo lo lo lo
++ lo lo hi tie_lo lo lo AMUXBUS_A AMUXBUS_B IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__gpiov2_pad
+x_tie VSS VSS VDD VDD hi lo sky130_fd_sc_hd__conb_1
+.ends
+
+
+* expanding   symbol:  chip_pad_out.sym # of pins=6
+** sym_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_pad_out.sym
+** sch_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_pad_out.sch
+.subckt chip_pad_out VDD VSS IOVDD IOVSS pad c2p
+*.PININFO VDD:B VSS:B IOVDD:B IOVSS:B pad:B c2p:I
+x_pad in_h pad_a_noesd_h pad_a_esd_0_h pad_a_esd_1_h pad hi hi lo tie_hi in hi lo tie_hi tie_hi tie_lo lo tie_hi tie_lo lo lo lo
++ lo lo hi tie_lo lo c2p AMUXBUS_A AMUXBUS_B IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__gpiov2_pad
+x_tie VSS VSS VDD VDD hi lo sky130_fd_sc_hd__conb_1
+.ends
+
+
+* expanding   symbol:  chip_pad_bidir.sym # of pins=8
+** sym_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_pad_bidir.sym
+** sch_path: /foss/designs/sky130A-ams-chip-template/schematic/xschem/chip_pad_bidir.sch
+.subckt chip_pad_bidir VDD VSS IOVDD IOVSS pad c2p c2p_en p2c
+*.PININFO VDD:B VSS:B IOVDD:B IOVSS:B pad:B c2p:I c2p_en:I p2c:O
+x_pad in_h pad_a_noesd_h pad_a_esd_0_h pad_a_esd_1_h pad hi hi lo tie_hi p2c lo lo tie_hi tie_hi tie_lo oe_n tie_hi tie_lo lo lo
++ lo lo lo hi tie_lo lo c2p AMUXBUS_A AMUXBUS_B IOVSS IOVDD IOVDD IOVDD VDD IOVDD VDD IOVSS VSS IOVSS sky130_ef_io__gpiov2_pad
+x_tie VSS VSS VDD VDD hi lo sky130_fd_sc_hd__conb_1
+x_oe c2p_en VSS VSS VDD VDD oe_n sky130_fd_sc_hd__inv_2
+.ends
+
+
+* expanding   symbol:  inverter_top.sym # of pins=10
+** sym_path: /foss/designs/sky130A-ams-chip-template/macros/inverter/schematic/xschem/inverter_top.sym
+** sch_path: /foss/designs/sky130A-ams-chip-template/macros/inverter/schematic/xschem/inverter_top.sch
+.subckt inverter_top VDD vin4 vout4 VSS vin3 vout3 vin2 vout2 vout1 vin1
+*.PININFO vin4:I VDD:B VSS:B vout4:B vin3:I vin2:I vin1:I vout3:B vout2:B vout1:B
+x1 VDD vin1 vout1 VSS inverter
+x2 VDD vin2 vout2 VSS inverter
+x3 VDD vin3 vout3 VSS inverter
+x4 VDD vin4 vout4 VSS inverter
+.ends
+
+
+* expanding   symbol:  inverter.sym # of pins=4
+** sym_path: /foss/designs/sky130A-ams-chip-template/macros/inverter/schematic/xschem/inverter.sym
+** sch_path: /foss/designs/sky130A-ams-chip-template/macros/inverter/schematic/xschem/inverter.sch
+.subckt inverter VDD vin vout VSS
+*.PININFO vin:I VDD:B VSS:B vout:B
+XMdummy1 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 L=1.0 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd=0.145 nrs=0.145 sa=0 sb=0 sd=0
++ mult=1
+XMdummy2 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt L=1.0 W=4 nf=2 ad=0.58 as=1.16 pd=4.58 ps=9.16 nrd=0.0725 nrs=0.0725 sa=0
++ sb=0 sd=0 mult=1
+XM1 vout vin VSS VSS sky130_fd_pr__nfet_01v8 L=1.0 W=20 nf=20 ad=2.9 as=3.19 pd=25.8 ps=28.38 nrd=0.0145 nrs=0.0145 sa=0 sb=0 sd=0
++ mult=1
+XM2 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt L=1.0 W=40 nf=20 ad=5.8 as=6.38 pd=45.8 ps=50.38 nrd=0.00725 nrs=0.00725 sa=0
++ sb=0 sd=0 mult=1
+.ends
+

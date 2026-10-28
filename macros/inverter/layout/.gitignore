@@ -1,0 +1,4 @@
+# Outputs of the KLayout GUI menu Efabless sky130 (Run DRC, Run LVS), which writes next to the open GDS
+sky130_drc.txt
+*.lvsdb
+*_extracted.cir

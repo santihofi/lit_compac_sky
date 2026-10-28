@@ -1,0 +1,15 @@
+VERSION 5.8 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO sky130_ip__jku
+  CLASS BLOCK ;
+  FOREIGN sky130_ip__jku ;
+  ORIGIN 0.000 0.000 ;
+  SIZE 100 BY 100 ;
+  OBS
+      LAYER met4 ;
+        RECT 0.0 0.0 100 100 ;
+  END
+END sky130_ip__jku
+END LIBRARY

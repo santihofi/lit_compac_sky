@@ -1,0 +1,43 @@
+122. Printing statistics.
+
+=== chip_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+      520        - wires
+      542        - wire bits
+      118        - public wires
+      140        - public wire bits
+        6        - ports
+       28        - port bits
+      444 5.11E+05 cells
+        2        -   counter_top
+        2        -   inverter_top
+        2    29700   sky130_ef_io__analog_esd_pad
+        2    29700   sky130_ef_io__analog_noesd_pad
+        1    15000   sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um
+        1    15000   sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um
+       24   360000   sky130_ef_io__gpiov2_pad
+        1    15000   sky130_ef_io__vccd_lvc_clamped_pad
+        1    15000   sky130_ef_io__vddio_hvc_clamped_pad
+        1    14850   sky130_ef_io__vssd_lvc_clamped_pad
+        1    15000   sky130_ef_io__vssio_hvc_clamped_pad
+      370 1.39E+03   sky130_fd_sc_hd__conb_1
+        1   25.024   sky130_fd_sc_hd__dfrtp_1
+        1    3.754   sky130_fd_sc_hd__inv_1
+       20  175.168   sky130_fd_sc_hd__xnor2_1
+       11   96.342   sky130_fd_sc_hd__xor2_1
+        1        -   sky130_ip__jku
+        1        -   sky130_ip__jku_names
+        1        -   sky130_sram_1kbyte_1rw1r_32x256_8
+
+   Area for cell type \sky130_sram_1kbyte_1rw1r_32x256_8 is unknown!
+   Area for cell type \inverter_top is unknown!
+   Area for cell type \sky130_ip__jku is unknown!
+   Area for cell type \sky130_ip__jku_names is unknown!
+   Area for cell type \counter_top is unknown!
+
+   Chip area for module '\chip_top': 510939.120000
+     of which used for sequential elements: 25.024000 (0.00%)
+

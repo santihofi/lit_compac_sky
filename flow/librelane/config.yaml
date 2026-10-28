@@ -1,0 +1,413 @@
+# SPDX-FileCopyrightText: 2026 Simon Dorrer and Harald Pretl
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+
+meta:
+  version: 3
+  flow: Chip
+  substituting_steps:
+
+    # Magic reports some overlaps which can be ignored
+    Checker.IllegalOverlap: null
+
+    # Disable KLayout DRC
+    #KLayout.DRC: null
+    #Checker.KLayoutDRC: null
+
+    # Disable Magic DRC
+    #Magic.DRC: null
+    #Checker.MagicDRC: null
+
+    # Disable KLayout antenna check
+    #KLayout.Antenna: null
+    #Checker.KLayoutAntenna: null
+
+    # Disable KLayout density check
+    #KLayout.Density: null
+    #Checker.KLayoutDensity: null
+
+    # The IR drop analysis needs one connected power grid, and on a pad ring it does not find one: it
+    # starts its search at an arbitrary shape on the top layer, which here is one of the supply stubs of a
+    # pad, and those connect to their neighbours by abutment, which the analysis does not follow. It then
+    # reports every shape of the core grid as unconnected and stops the flow. The grid itself is checked
+    # in OpenROAD.GeneratePDN, whose check is a warning.
+    OpenROAD.IRDropReport: null
+
+    # Magic cannot read the GDS of the OpenRAM SRAM macro: its bit cells carry the foundry mask prep
+    # layers cfom.maskAdd (22/21), cfom.maskDrop (22/22), cp1m.maskDrop (33/42) and cp1m.maskAdd (33/43),
+    # which sky130A.tech does not define, and LibreLane counts every "Error while reading cell" as fatal.
+    # KLayout writes the GDS of this chip (PRIMARY_GDSII_STREAMOUT_TOOL), so only the second, Magic-written
+    # GDS and the XOR between the two are lost. scripts/strip_mask_layers.py makes a Magic-readable copy of
+    # the final GDS for the chip-level Magic targets of the Makefile.
+    Magic.StreamOut: null
+    KLayout.XOR: null
+    Checker.XOR: null
+
+    # The LVS of this chip ends with four unmatched nets, the VDDIO_Q, VSSIO_Q, VDDA and VSSA pins of the
+    # clock pad, which is the cell at the north end of the west pad row. Those four ring buses run through
+    # the whole pad ring by abutment, and the extraction reads the DEF, where abutment is a net name and
+    # not a wire: at the corner cell, where the bus turns, it loses the connection and leaves the four pins
+    # of the last pad on their own nets. Every other net of the chip matches, and the report stays in
+    # verification/reports/lvs.netgen.rpt, so the checker is off and the report is the record.
+    Checker.LVS: null
+
+    # The power grid violations come from the same abutment, see the comment on OpenROAD.IRDropReport.
+    # The message of the checker says it itself: they may be ignored if LVS passes.
+    Checker.PowerGridViolations: null
+
+    # Save time
+    #Netgen.LVS: null
+
+    # Disable the KLayout filler. The sky130A PDK sets neither KLAYOUT_FILLER_SCRIPT nor
+    # MAGIC_FILLER_SCRIPT, so the step skips with a warning anyway. The metal fill comes after the logo
+    # from the PDK's own generator, see scripts/add_logo_fill.sh.
+    KLayout.Filler: null
+
+    # Disable setup-violation errors
+    #Checker.SetupViolations: null
+
+    # Fix hold violations by inserting buffers
+    #"+OpenROAD.DetailedRouting": "Odb.InsertECOBuffers"
+    #"+Odb.InsertECOBuffers": "OpenROAD.DetailedRouting"
+
+
+# INSERT_ECO_BUFFERS:
+#  - target: rst_n_pad.pad_cell/IN
+#    buffer: sky130_fd_sc_hd__buf_4
+
+DESIGN_NAME: chip_top
+VERILOG_FILES:
+- dir::../../rtl/chip_top.sv
+- dir::../../rtl/chip_core.sv
+
+# Enable plugin for better SystemVerilog support
+# USE_SLANG: True
+# SLANG_ARGUMENTS: ['--keep-hierarchy']
+
+# Slightly smaller file sizes
+PRIMARY_GDSII_STREAMOUT_TOOL: klayout
+
+# ================================================================
+# Padframe layout: 8 bondpads per side, 32 user bondpads in total,
+# plus the two ring bus connect slices on the west side.
+# Order convention:
+#   - PAD_WEST  : bottom to top
+#   - PAD_EAST  : bottom to top
+#   - PAD_NORTH : left   to right
+#   - PAD_SOUTH : left   to right
+# Pad-cell instance names follow the generate-block hierarchy in
+# rtl/chip_top.sv. The GPIO pads sit inside the chip_pad_* wrappers,
+# so their cell instance is "<wrapper instance>.pad_cell"
+# (e.g. "g_outputs[16].output_pad.pad_cell").
+# See doc/pinout.md for the full pin table.
+# ================================================================
+
+# West (bottom to top): SRAM_out, VSS, VDD, connect slice, IOVSS, IOVDD, connect slice, enable, rst_n, clk
+PAD_WEST: [
+    "g_outputs\\[16\\].output_pad.pad_cell",  # output_PAD[16] = sram_0_out
+    "g_vss_pads\\[0\\].vss_pad",              # VSS  (core ground)
+    "g_vdd_pads\\[0\\].vdd_pad",              # VDD  (1.8 V core supply)
+    connect_vcchib_vswitch,                   # shorts VCCHIB to VCCD and VSWITCH to VDDIO in the ring
+    "g_iovss_pads\\[0\\].iovss_pad",          # IOVSS (3.3 V I/O ground)
+    "g_iovdd_pads\\[0\\].iovdd_pad",          # IOVDD (3.3 V I/O supply)
+    connect_vdda_vssa,                        # shorts VDDA to VDDIO and VSSA to VSSIO in the ring
+    "g_inputs\\[0\\].input_pad.pad_cell",     # input_PAD[0]   = enable
+    rst_n_pad.pad_cell,                       # rst_n
+    clk_pad.pad_cell                          # clk
+]
+
+# North (left to right): counter1_value[3:0], counter1_value[7:4] / inv1.vin bidir
+PAD_NORTH: [
+    "g_outputs\\[0\\].output_pad.pad_cell",   # output_PAD[0]  = counter1_value[0] (LSB)
+    "g_outputs\\[1\\].output_pad.pad_cell",   # output_PAD[1]  = counter1_value[1]
+    "g_outputs\\[2\\].output_pad.pad_cell",   # output_PAD[2]  = counter1_value[2]
+    "g_outputs\\[3\\].output_pad.pad_cell",   # output_PAD[3]  = counter1_value[3]
+    "g_bidirs\\[0\\].bidir_pad.pad_cell",     # bidir_PAD[0]   = counter1_value[4] / inv1_din1
+    "g_bidirs\\[1\\].bidir_pad.pad_cell",     # bidir_PAD[1]   = counter1_value[5] / inv1_din2
+    "g_bidirs\\[2\\].bidir_pad.pad_cell",     # bidir_PAD[2]   = counter1_value[6] / inv1_din3
+    "g_bidirs\\[3\\].bidir_pad.pad_cell"      # bidir_PAD[3]   = counter1_value[7] / inv1_din4
+]
+
+# South (left to right): counter2_value[7:0]
+PAD_SOUTH: [
+    "g_outputs\\[4\\].output_pad.pad_cell",   # output_PAD[4]  = counter2_value[0] (LSB)
+    "g_outputs\\[5\\].output_pad.pad_cell",   # output_PAD[5]  = counter2_value[1]
+    "g_outputs\\[6\\].output_pad.pad_cell",   # output_PAD[6]  = counter2_value[2]
+    "g_outputs\\[7\\].output_pad.pad_cell",   # output_PAD[7]  = counter2_value[3]
+    "g_outputs\\[8\\].output_pad.pad_cell",   # output_PAD[8]  = counter2_value[4]
+    "g_outputs\\[9\\].output_pad.pad_cell",   # output_PAD[9]  = counter2_value[5]
+    "g_outputs\\[10\\].output_pad.pad_cell",  # output_PAD[10] = counter2_value[6]
+    "g_outputs\\[11\\].output_pad.pad_cell"   # output_PAD[11] = counter2_value[7]
+]
+
+# East (bottom to top): inverter2 analog ch1/ch2 (4 pads), inverter1 digital out (4 pads)
+PAD_EAST: [
+    "g_analogs\\[0\\].g_esd.analog_pad",      # analog_PAD[0]  = inv2_vin1  (behind the pad ESD diodes)
+    "g_analogs\\[1\\].g_esd.analog_pad",      # analog_PAD[1]  = inv2_vin2  (behind the pad ESD diodes)
+    "g_analogs\\[2\\].g_noesd.analog_pad",    # analog_PAD[2]  = inv2_vout1 (bare pad)
+    "g_analogs\\[3\\].g_noesd.analog_pad",    # analog_PAD[3]  = inv2_vout2 (bare pad)
+    "g_outputs\\[12\\].output_pad.pad_cell",  # output_PAD[12] = inv1_dout1
+    "g_outputs\\[13\\].output_pad.pad_cell",  # output_PAD[13] = inv1_dout2
+    "g_outputs\\[14\\].output_pad.pad_cell",  # output_PAD[14] = inv1_dout3
+    "g_outputs\\[15\\].output_pad.pad_cell"   # output_PAD[15] = inv1_dout4
+]
+
+# Pad spacing: each side offers 1200 um between the 200 um corner cells. The GPIO pads are 80 um wide,
+# the supply and analog pads 75 um, the connect slices 20 um, and the IO site is 1 um.
+# OpenROAD.PadRing floors the pad-to-pad gap to a multiple of PAD_SPACING_MULTIPLE and centers the row,
+# the leftover at the two row ends must land on the 1 um site grid.
+#   West:  10 cells, 660 um, fill 540 um: gap floor(540/11) = 49 um, ends (540 - 9*49)/2 = 49.5 um -> off-grid with 1 um,
+#          with a multiple of 2 um: gap 48 um, ends (540 - 9*48)/2 = 54 um -> on-grid.
+#   North, South: 8 cells, 640 um, fill 560 um: gap floor(560/9/2)*2 = 62 um, ends (560 - 7*62)/2 = 63 um -> on-grid.
+#   East:  8 cells, 620 um, fill 580 um: gap floor(580/9/2)*2 = 64 um, ends (580 - 7*64)/2 = 66 um -> on-grid.
+PAD_SPACING_MULTIPLE: 2
+
+# SDC files
+PNR_SDC_FILE:     dir::chip_top.sdc
+SIGNOFF_SDC_FILE: dir::chip_top.sdc
+FALLBACK_SDC:     dir::chip_top.sdc
+
+# Power / ground nets
+VDD_NETS: ["VDD"]
+GND_NETS: ["VSS"]
+VERILOG_POWER_DEFINE: "USE_POWER_PINS"
+
+# Clock
+CLOCK_PORT: clk_PAD
+CLOCK_NET:  clk_pad.pad_cell/IN
+
+# 40 MHz. The IHP template runs at 50 MHz, the sky130 GPIO pad is slower: at 20 ns the slow corner
+# misses the setup of the pad paths by 3.4 ns, at 25 ns every corner closes.
+CLOCK_PERIOD: 25 # in ns == 40 MHz
+
+# Floorplanning
+# The pads are 198 um deep, the core ring and its clearance take the rest of the 300 um margin.
+# Keep the four places that hold the die geometry in sync: this file, scripts/add_logo_fill.sh,
+# doc/floorplan.md and doc/specifications.md.
+FP_SIZING: absolute
+DIE_AREA:  [0, 0, 1600, 1600]
+CORE_AREA: [300, 300, 1300, 1300]
+
+# Increase for more logic on your die
+PL_TARGET_DENSITY_PCT: 10
+GRT_ALLOW_CONGESTION:  true
+
+# The sky130 pad cells carry their bond pad, so no PAD_BONDPAD_NAME and no extra GDS or LEF.
+
+# Pad ring script: the LibreLane one with every listed pin of a pad turned into a terminal shape, not only
+# the first. The supply terminals then sit on the bond pad (the label the packaging reads) and on the bus
+# pin that the core ring straps reach (the source the power grid analysis needs). The PDK list puts the
+# supply terminals on the bond pads only, whose connection to the bus is inside the pad cell where no
+# top-level wire touches it.
+PAD_CFG: dir::pad_cfg.tcl
+PAD_PLACE_IO_TERMINALS:
+- sky130_ef_io__gpiov2_pad/PAD
+- sky130_ef_io__vccd_lvc_clamped_pad/VCCD_PAD
+- sky130_ef_io__vccd_lvc_clamped_pad/VCCD
+- sky130_ef_io__vssd_lvc_clamped_pad/VSSD_PAD
+- sky130_ef_io__vssd_lvc_clamped_pad/VSSD
+- sky130_ef_io__vddio_hvc_clamped_pad/VDDIO_PAD
+- sky130_ef_io__vddio_hvc_clamped_pad/VDDIO
+- sky130_ef_io__vssio_hvc_clamped_pad/VSSIO_PAD
+- sky130_ef_io__vssio_hvc_clamped_pad/VSSIO
+- sky130_ef_io__analog_esd_pad/P_PAD
+- sky130_ef_io__analog_noesd_pad/P_PAD
+
+# The analog pads are listed because their LEF marks no pin as a power pin, their supply buses connect by
+# abutment in the ring like those of every other pad.
+IGNORE_DISCONNECTED_MODULES:
+- sky130_ip__jku
+- sky130_ip__jku_names
+- sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um
+- sky130_ef_io__connect_vdda_vddio_and_vssa_vssio_slice_20um
+- sky130_ef_io__analog_esd_pad
+- sky130_ef_io__analog_noesd_pad
+
+# PDN
+PDN_CORE_RING: True
+
+# Ring widths and spacings on met4 (vertical) and met5 (horizontal)
+PDN_CORE_RING_VWIDTH: 10
+PDN_CORE_RING_HWIDTH: 10
+PDN_CORE_RING_VSPACING: 5
+PDN_CORE_RING_HSPACING: 5
+
+PDN_CORE_RING_CONNECT_TO_PADS: True
+# The supply pads offer their bus to the core on met3 tabs (the VCCD tab of the vccd pad, the VSSD tab of
+# the vssd pad), the ring straps land on those. With met4 and met5 in the list pdngen also straps the
+# narrow bus stubs at the side edges of every GPIO pad, which are too narrow for a via4.
+PDN_CORE_RING_CONNECT_TO_PAD_LAYERS: [met3]
+PDN_ENABLE_PINS: False
+
+# Because we have multiple power pads for one power domain
+MAGIC_EXT_UNIQUE: notopports
+
+# Custom PDN config
+PDN_CFG: dir::pdn_cfg.tcl
+
+# Netgen setup: the PDK one plus the physical-only cells, see the comment in that file
+NETGEN_SETUP: dir::netgen_setup.tcl
+
+# Macro power-net hookup. The sky130A global connections match the VPWR and VGND pins of the standard
+# cells only, so every macro with VDD and VSS pins is listed here: the SRAM (its one supply pair is vccd1
+# and vssd1), the two counters and the two inverters. The RTL connects the same pins under USE_POWER_PINS.
+PDN_MACRO_CONNECTIONS:
+- "i_chip_core.sram_0 VDD VSS vccd1 vssd1"
+- "i_chip_core.counter1 VDD VSS VDD VSS"
+- "i_chip_core.counter2 VDD VSS VDD VSS"
+- "i_chip_core.inverter1 VDD VSS VDD VSS"
+- "i_chip_core.inverter2 VDD VSS VDD VSS"
+
+# Corners: the three nominal RC corners, as in the counter macro. The PDK configuration supplies the
+# standard cell and pad liberty files per corner.
+STA_CORNERS:
+  - nom_tt_025C_1v80
+  - nom_ss_100C_1v60
+  - nom_ff_n40C_1v95
+
+DEFAULT_CORNER: nom_tt_025C_1v80
+
+# Limit detailed routing to 10 iterations
+# DRT_OPT_ITERS: 10
+
+# Non-Default Rules (NDRs) for the following analog traces
+# Note for the AUTO_TAPER_NDR_NETS variable:
+# OpenROAD needs to be recompiled with the following patch when the AUTO_TAPER_NDR_NETS variable is changed from true (default) to false:
+# https://github.com/FPGA-Research/heichips25-tapeout/blob/main/nix/disable_auto_taper.patch
+# The AUTO_TAPER_NDR_NETS variable tells the detailed router whether it is allowed to automatically "shrink" those wide NDR wires to fit onto small pins.
+# When Enabled (1 or true - Default): The router will automatically taper the wide wire down to the minimum width of the pin's metal layer as it makes the final connection.
+# When Disabled (0 or false): The router will attempt to maintain the full NDR width all the way into the pin.
+# Pending issue to change AUTO_TAPER_NDR_NETS in the LibreLane `config.yaml`: https://github.com/The-OpenROAD-Project/OpenROAD/issues/10032
+NON_DEFAULT_RULES:
+  # Rules for analog traces (inverter2 vin/vout pairs).
+  # 0.5 um width and 0.5 um spacing on met1 through met4 (met5 is the PDN layer with a 1.6 um minimum width).
+  NDR_analog:
+    width:   [met1, "0.5", met2, "0.5", met3, "0.5", met4, "0.5"]
+    spacing: [met1, "0.5", met2, "0.5", met3, "0.5", met4, "0.5"]
+    via:     ["M1M2_PR", "M2M3_PR", "M3M4_PR"]
+
+# Apply NDRs to analog traces during detailed routing
+DRT_ASSIGN_NDR:
+  "^.*PADESD.*$":  NDR_analog
+  "^.*PADBARE.*$": NDR_analog
+
+# Do not touch analog traces --> no optimization or buffering
+RSZ_DONT_TOUCH_LIST:
+- "analog_PADESD[0]"
+- "analog_PADESD[1]"
+- "analog_PADBARE[2]"
+- "analog_PADBARE[3]"
+
+MACROS:
+  # ----------------------------------------------------------------
+  # 2 x counter_top (200 um x 100 um)
+  # ----------------------------------------------------------------
+  counter_top:
+    gds:
+      - dir::../../macros/counter/final/gds/counter_top.gds
+    lef:
+      - dir::../../macros/counter/final/lef/counter_top.lef
+    pnl:
+      - dir::../../macros/counter/final/pnl/counter_top.pnl.v
+    nl:
+      - dir::../../macros/counter/final/nl/counter_top.nl.v
+    spef:
+      nom_*: dir::../../macros/counter/final/spef/nom/counter_top.nom.spef
+    lib:
+      nom_tt_025C_1v80: dir::../../macros/counter/final/lib/nom_tt_025C_1v80/counter_top__nom_tt_025C_1v80.lib
+      nom_ss_100C_1v60: dir::../../macros/counter/final/lib/nom_ss_100C_1v60/counter_top__nom_ss_100C_1v60.lib
+      nom_ff_n40C_1v95: dir::../../macros/counter/final/lib/nom_ff_n40C_1v95/counter_top__nom_ff_n40C_1v95.lib
+    # Macro origins sit on multiples of 7.82 um, the common period of the met1 (0.34 um) and met2
+    # (0.46 um) tracks, so the macro pins land on the top-level routing grid.
+    instances:
+      # counter1: upper position in the mid-right core (drives output_PAD[3:0] / bidir_PAD[3:0])
+      i_chip_core.counter1:
+        location: ["expr::115 * 7.82", "expr::115 * 7.82"]   # x = 899.30, y = 899.30
+        orientation: N
+      # counter2: lower position in the mid-right core (drives output_PAD[11:4] = south pads)
+      i_chip_core.counter2:
+        location: ["expr::115 * 7.82", "expr::90 * 7.82"]    # x = 899.30, y = 703.80
+        orientation: FS
+
+  # ----------------------------------------------------------------
+  # 1 x sky130_sram_1kbyte_1rw1r_32x256_8 (479.78 um x 397.5 um)
+  # ----------------------------------------------------------------
+  sky130_sram_1kbyte_1rw1r_32x256_8:
+    gds:
+      - pdk_dir::libs.ref/sky130_sram_macros/gds/sky130_sram_1kbyte_1rw1r_32x256_8.gds
+    lef:
+      - pdk_dir::libs.ref/sky130_sram_macros/lef/sky130_sram_1kbyte_1rw1r_32x256_8.lef
+    vh:
+      - pdk_dir::libs.ref/sky130_sram_macros/verilog/sky130_sram_1kbyte_1rw1r_32x256_8.v
+    lib:
+      # The OpenRAM macro is characterized for one corner only (TT, 1.8 V, 25 C), so every STA corner
+      # reads that library. This is the same stand-in situation the IHP SRAM has above 1.32 V.
+      "*":
+        - pdk_dir::libs.ref/sky130_sram_macros/lib/sky130_sram_1kbyte_1rw1r_32x256_8_TT_1p8V_25C.lib
+    instances:
+      i_chip_core.sram_0:
+        location: ["expr::43 * 7.82", "expr::43 * 7.82"]     # x = 336.26, y = 336.26
+        orientation: N
+
+  # ----------------------------------------------------------------
+  # 2 x inverter_top (42.73 um x 75.52 um)
+  # ----------------------------------------------------------------
+  inverter_top:
+    gds:
+      - dir::../../macros/inverter/final/gds/inverter_top.gds
+    lef:
+      - dir::../../macros/inverter/final/lef/inverter_top.lef
+    vh:
+      - dir::../../macros/inverter/final/vh/inverter_top.vh
+#   lib:
+#     "*":
+#       - dir::../../macros/inverter/final/lib/inverter_top.lib
+    instances:
+      # The two inverters are 42.73 um wide, so a met4 power stripe has to cross them for the PDN to
+      # reach their met3 supply bars: the stripes sit 153.6 um apart and a macro between two of them stays
+      # unconnected. The pair at x = 1083.9 and 1087.2 um lies inside both macros with this placement.
+      # inverter1: upper east position (digital outputs to east pads)
+      i_chip_core.inverter1:
+        location: ["expr::156 * 7.82", "expr::109 * 7.82"]   # x = 1219.92, y = 852.38
+        orientation: N
+      # inverter2: lower east position (analog channels to east pads)
+      i_chip_core.inverter2:
+        location: ["expr::156 * 7.82", "expr::83 * 7.82"]    # x = 1219.92, y = 649.06
+        orientation: N
+
+  # ----------------------------------------------------------------
+  # Logos (100 um x 100 um, met4)
+  # ----------------------------------------------------------------
+  sky130_ip__jku:
+    gds:
+      - dir::../../ip/sky130_ip__jku/final/gds/sky130_ip__jku.gds
+    lef:
+      - dir::../../ip/sky130_ip__jku/final/lef/sky130_ip__jku.lef
+    vh:
+      - dir::../../ip/sky130_ip__jku/final/vh/sky130_ip__jku.vh
+    lib:
+      "*":
+        - dir::../../ip/sky130_ip__jku/final/lib/sky130_ip__jku.lib
+    instances:
+      jku_logo:
+        location: ["expr::300 + 20", "expr::1300 - 120"]
+        orientation: N
+
+  sky130_ip__jku_names:
+    gds:
+      - dir::../../ip/sky130_ip__jku_names/final/gds/sky130_ip__jku_names.gds
+    lef:
+      - dir::../../ip/sky130_ip__jku_names/final/lef/sky130_ip__jku_names.lef
+    vh:
+      - dir::../../ip/sky130_ip__jku_names/final/vh/sky130_ip__jku_names.vh
+    lib:
+      "*":
+        - dir::../../ip/sky130_ip__jku_names/final/lib/sky130_ip__jku_names.lib
+    instances:
+      jku_names:
+        location: ["expr::1300 - 120", "expr::1300 - 120"]
+        orientation: N
+
+MAGIC_GDS_FLATGLOB:
+ # For DRC of the SRAM macro: its OpenRAM subcells
+ - "sky130_fd_bd_sram__*"
+ - "sky130_sram_1kbyte_1rw1r_32x256_8_*"

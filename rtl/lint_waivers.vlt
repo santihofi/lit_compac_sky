@@ -1,0 +1,19 @@
+// SPDX-FileCopyrightText: 2026 Simon Dorrer and Harald Pretl
+// SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+// Description: Verilator waivers for `make lint-verilog`. The PDK models and the generated macro stubs
+// are read as they are, so their unused and undriven signals, open pins, file names and missing timescales
+// are not findings. The pad wrappers share chip_top.sv and leave the unused pad pins open on purpose, the
+// core leaves the second SRAM port open.
+`verilator_config
+
+lint_off -rule UNUSEDSIGNAL -file "*libs.ref*"
+lint_off -rule UNDRIVEN -file "*libs.ref*"
+lint_off -rule BLKSEQ -file "*libs.ref*"
+lint_off -rule PINCONNECTEMPTY -file "*libs.ref*"
+lint_off -rule DECLFILENAME -file "*libs.ref*"
+lint_off -rule UNUSEDSIGNAL -file "*final/vh*"
+lint_off -rule UNDRIVEN -file "*final/vh*"
+lint_off -rule TIMESCALEMOD
+lint_off -rule DECLFILENAME -file "*chip_top.sv"
+lint_off -rule PINCONNECTEMPTY -file "*chip_top.sv"
+lint_off -rule PINCONNECTEMPTY -file "*chip_core.sv"

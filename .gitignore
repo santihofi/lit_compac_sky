@@ -1,0 +1,36 @@
+drc_run_*
+lvs_run_*
+drc_*.tcl
+ext_*.tcl
+pex_*.tcl
+*.vcd
+*.raw
+*.log
+*.pyc
+*.ext
+.DS_Store
+__pycache__/
+runs/
+backups/
+sim_build/
+# template-only
+/tutorial/.quarto/
+/tutorial/_site/
+/tutorial/index.pdf
+/tutorial/fig/*.pdf
+/tutorial/fig/**/*.pdf
+/doc/ihp-structure-proposals/gen_structure.py
+# /template-only
+/flow/artistic
+/flow/final
+/layout/magic/
+/schematic/xschem/simulations
+/testbenches/xschem/simulations
+/macros/*/verification/cace/_runs
+/macros/*/verification/cace/_docs
+/macros/*/verification/cace/netlist
+/macros/*/verification/cace/templates/simulations
+/macros/*/schematic/xschem/simulations
+/macros/*/testbenches/xschem/simulations
+/macros/*/flow/final
+/macros/*/fpga/*/build/

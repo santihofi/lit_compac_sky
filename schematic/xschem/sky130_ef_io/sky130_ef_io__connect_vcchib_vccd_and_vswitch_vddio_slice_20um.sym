@@ -1,0 +1,46 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=primitive
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -70 -40 70 -40 {}
+L 4 70 -40 70 40 {}
+L 4 70 40 -70 40 {}
+L 4 -70 40 -70 -40 {}
+T {sky130_ef_io__connect_vcchib_vccd_and_vswitch_vddio_slice_20um} -60 -80 0 0 0.3 0.3 {}
+T {@name} -60 65 0 0 0.3 0.3 {}
+B 5 -52.5 -62.5 -47.5 -57.5 {name=AMUXBUS_A dir=inout}
+L 4 -50 -60 -50 -40 {}
+T {AMUXBUS_A} -46 -35 1 0 0.2 0.2 {}
+B 5 -32.5 -62.5 -27.5 -57.5 {name=AMUXBUS_B dir=inout}
+L 4 -30 -60 -30 -40 {}
+T {AMUXBUS_B} -26 -35 1 0 0.2 0.2 {}
+B 5 -52.5 57.5 -47.5 62.5 {name=VSSA dir=inout}
+L 4 -50 40 -50 60 {}
+T {VSSA} -46 35 3 0 0.2 0.2 {}
+B 5 -12.5 -62.5 -7.5 -57.5 {name=VDDA dir=inout}
+L 4 -10 -60 -10 -40 {}
+T {VDDA} -6 -35 1 0 0.2 0.2 {}
+B 5 7.5 -62.5 12.5 -57.5 {name=VDDIO_Q dir=inout}
+L 4 10 -60 10 -40 {}
+T {VDDIO_Q} 14 -35 1 0 0.2 0.2 {}
+B 5 27.5 -62.5 32.5 -57.5 {name=VDDIO dir=inout}
+L 4 30 -60 30 -40 {}
+T {VDDIO} 34 -35 1 0 0.2 0.2 {}
+B 5 47.5 -62.5 52.5 -57.5 {name=VCCD dir=inout}
+L 4 50 -60 50 -40 {}
+T {VCCD} 54 -35 1 0 0.2 0.2 {}
+B 5 -32.5 57.5 -27.5 62.5 {name=VSSIO dir=inout}
+L 4 -30 40 -30 60 {}
+T {VSSIO} -26 35 3 0 0.2 0.2 {}
+B 5 -12.5 57.5 -7.5 62.5 {name=VSSD dir=inout}
+L 4 -10 40 -10 60 {}
+T {VSSD} -6 35 3 0 0.2 0.2 {}
+B 5 7.5 57.5 12.5 62.5 {name=VSSIO_Q dir=inout}
+L 4 10 40 10 60 {}
+T {VSSIO_Q} 14 35 3 0 0.2 0.2 {}

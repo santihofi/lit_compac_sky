@@ -1,0 +1,51 @@
+* PEX produced on Fri Sep 18 03:01:41 PM CEST 2026 using /foss/tools/sak/sak-pex.sh with m=1 and s=1
+* NGSPICE file created from inverter_pex.ext - technology: sky130A
+
+.subckt inverter_pex VDD vin vout VSS
+X0 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X1 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X2 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X3 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X4 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X5 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X6 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=4.2 ps=36.4 w=1 l=1
+X7 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X8 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X9 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X10 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X11 VSS VSS VSS VSS sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0 ps=0 w=1 l=1
+X12 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X13 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X14 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X15 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X16 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X17 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X18 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.3 ps=2.6 w=1 l=1
+X19 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X20 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X21 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X22 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X23 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X24 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X25 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.6 pd=4.6 as=0.3 ps=2.3 w=2 l=1
+X26 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.6 ps=4.6 w=2 l=1
+X27 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=8.4 ps=64.4 w=2 l=1
+X28 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X29 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X30 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X31 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X32 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X33 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X34 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X35 VDD VDD VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.6 pd=4.6 as=0 ps=0 w=2 l=1
+X36 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X37 vout vin VDD VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X38 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X39 vout vin VSS VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X40 VDD vin vout VDD sky130_fd_pr__pfet_01v8_lvt ad=0.3 pd=2.3 as=0.3 ps=2.3 w=2 l=1
+X41 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X42 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.15 pd=1.3 as=0.15 ps=1.3 w=1 l=1
+X43 VSS vin vout VSS sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.15 ps=1.3 w=1 l=1
+C0 vout VSS 22.81505f
+.ends
+

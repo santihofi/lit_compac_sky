@@ -1,0 +1,13 @@
+* Antenna
+Passed ✅
+
+* LVS
+Failed 𐄂
+Total Errors: 5
+Unmatched Pins: 0
+Unmatched Nets: 1
+Check the report directory of Netgen.LVS.
+
+* DRC
+N/A
+

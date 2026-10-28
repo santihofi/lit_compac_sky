@@ -1,0 +1,58 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {type=primitive
+format="@name @pinlist @symname"
+spectre_format="@name ( @pinlist ) @symname"
+template="name=x1"
+}
+V {}
+S {}
+E {}
+L 4 -90 -40 90 -40 {}
+L 4 90 -40 90 40 {}
+L 4 90 40 -90 40 {}
+L 4 -90 40 -90 -40 {}
+T {sky130_ef_io__analog_esd_pad} -80 -80 0 0 0.3 0.3 {}
+T {@name} -80 65 0 0 0.3 0.3 {}
+B 5 107.5 -22.5 112.5 -17.5 {name=P_CORE dir=inout}
+L 4 90 -20 110 -20 {}
+T {P_CORE} 85 -24 0 1 0.2 0.2 {}
+B 5 -72.5 57.5 -67.5 62.5 {name=VSSA dir=inout}
+L 4 -70 40 -70 60 {}
+T {VSSA} -66 35 3 0 0.2 0.2 {}
+B 5 -52.5 57.5 -47.5 62.5 {name=VSSD dir=inout}
+L 4 -50 40 -50 60 {}
+T {VSSD} -46 35 3 0 0.2 0.2 {}
+B 5 -72.5 -62.5 -67.5 -57.5 {name=AMUXBUS_B dir=inout}
+L 4 -70 -60 -70 -40 {}
+T {AMUXBUS_B} -66 -35 1 0 0.2 0.2 {}
+B 5 -52.5 -62.5 -47.5 -57.5 {name=AMUXBUS_A dir=inout}
+L 4 -50 -60 -50 -40 {}
+T {AMUXBUS_A} -46 -35 1 0 0.2 0.2 {}
+B 5 -32.5 -62.5 -27.5 -57.5 {name=VDDIO_Q dir=inout}
+L 4 -30 -60 -30 -40 {}
+T {VDDIO_Q} -26 -35 1 0 0.2 0.2 {}
+B 5 -12.5 -62.5 -7.5 -57.5 {name=VDDIO dir=inout}
+L 4 -10 -60 -10 -40 {}
+T {VDDIO} -6 -35 1 0 0.2 0.2 {}
+B 5 7.5 -62.5 12.5 -57.5 {name=VSWITCH dir=inout}
+L 4 10 -60 10 -40 {}
+T {VSWITCH} 14 -35 1 0 0.2 0.2 {}
+B 5 -32.5 57.5 -27.5 62.5 {name=VSSIO dir=inout}
+L 4 -30 40 -30 60 {}
+T {VSSIO} -26 35 3 0 0.2 0.2 {}
+B 5 27.5 -62.5 32.5 -57.5 {name=VDDA dir=inout}
+L 4 30 -60 30 -40 {}
+T {VDDA} 34 -35 1 0 0.2 0.2 {}
+B 5 47.5 -62.5 52.5 -57.5 {name=VCCD dir=inout}
+L 4 50 -60 50 -40 {}
+T {VCCD} 54 -35 1 0 0.2 0.2 {}
+B 5 67.5 -62.5 72.5 -57.5 {name=VCCHIB dir=inout}
+L 4 70 -60 70 -40 {}
+T {VCCHIB} 74 -35 1 0 0.2 0.2 {}
+B 5 -12.5 57.5 -7.5 62.5 {name=VSSIO_Q dir=inout}
+L 4 -10 40 -10 60 {}
+T {VSSIO_Q} -6 35 3 0 0.2 0.2 {}
+B 5 -112.5 -22.5 -107.5 -17.5 {name=P_PAD dir=inout}
+L 4 -110 -20 -90 -20 {}
+T {P_PAD} -85 -24 0 0 0.2 0.2 {}

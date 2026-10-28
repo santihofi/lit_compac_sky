@@ -1,0 +1,65 @@
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__nfet_01v8 is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__nfet_01v8         |Circuit 2: sky130_fd_pr__nfet_01v8         
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8_lvt and Circuit 2 cell sky130_fd_pr__pfet_01v8_lvt are black boxes.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt is a placeholder, treated as a black box.
+Warning: Equate pins:  cell sky130_fd_pr__pfet_01v8_lvt is a placeholder, treated as a black box.
+
+Subcircuit pins:
+Circuit 1: sky130_fd_pr__pfet_01v8_lvt     |Circuit 2: sky130_fd_pr__pfet_01v8_lvt     
+-------------------------------------------|-------------------------------------------
+1                                          |1                                          
+2                                          |2                                          
+3                                          |3                                          
+4                                          |4                                          
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes sky130_fd_pr__pfet_01v8_lvt and sky130_fd_pr__pfet_01v8_lvt are equivalent.
+Flattening unmatched subcell inverter in circuit inverter_top (1)(4 instances)
+
+Class inverter_top (0):  Merged 166 parallel devices.
+Class inverter_top (1):  Merged 6 parallel devices.
+Subcircuit summary:
+Circuit 1: inverter_top                    |Circuit 2: inverter_top                    
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (88->5)            |sky130_fd_pr__nfet_01v8 (8->5)             
+sky130_fd_pr__pfet_01v8_lvt (88->5)        |sky130_fd_pr__pfet_01v8_lvt (8->5)         
+Number of devices: 10                      |Number of devices: 10                      
+Number of nets: 10                         |Number of nets: 10                         
+---------------------------------------------------------------------------------------
+Resolving symmetries by property value.
+Resolving symmetries by pin name.
+Netlists match uniquely.
+
+Subcircuit pins:
+Circuit 1: inverter_top                    |Circuit 2: inverter_top                    
+-------------------------------------------|-------------------------------------------
+VDD                                        |VDD                                        
+VSS                                        |VSS                                        
+vin4                                       |vin4                                       
+vin3                                       |vin3                                       
+vin2                                       |vin2                                       
+vin1                                       |vin1                                       
+vout4                                      |vout4                                      
+vout3                                      |vout3                                      
+vout2                                      |vout2                                      
+vout1                                      |vout1                                      
+---------------------------------------------------------------------------------------
+Cell pin lists are equivalent.
+Device classes inverter_top and inverter_top are equivalent.
+
+Final result: Circuits match uniquely.
+.
