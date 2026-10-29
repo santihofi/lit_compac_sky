@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+description: 'all 16 channels at nominal (tt, 27 C, 1.5 V): every output and its spread
+  over the channels (zero without mismatch)'
+parameters:
+  temp:
+  - 27
+  seed:
+  - 0
+  vdd:
+  - 1.5
+  code_vcm:
+  - 15
+  code_von:
+  - 20
+  code_idac:
+  - 21
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_pnp:
+  - typ
+tests:
+  tb_bias_distribution:
+    engine: ngspice
+    vbg_v:
+      min: 0.895
+      max: 0.925
+    idd_ma: {}
+    vref_ch0:
+      min: 0.73
+      max: 0.765
+    vref_min:
+      min: 0.73
+    vref_max:
+      max: 0.765
+    vref_sd:
+      max: 0.0001
+    von_ch0:
+      min: 0.78
+      max: 0.815
+    von_min:
+      min: 0.78
+    von_max:
+      max: 0.815
+    von_sd:
+      max: 0.0001
+    ibias_ch0:
+      min: 34
+      max: 47
+    ibias_min:
+      min: 34
+    ibias_max:
+      max: 47
+    ibias_sd:
+      max: 0.01
+    iota_ch0:
+      min: 34
+      max: 47
+    iota_min:
+      min: 34
+    iota_max:
+      max: 47
+    iota_sd:
+      max: 0.01
+    iref_ch0:
+      min: 0.6
+      max: 0.96
+    iref_min:
+      min: 0.6
+    iref_max:
+      max: 0.96
+    iref_sd:
+      max: 0.001
+reports:
+  formats:
+  - png
+  pdf: true
+  plots:
+  - type: scatter
+    name: vref_vs_ibias
+    x: ibias_ch0
+    y: vref_ch0

@@ -1,0 +1,2 @@
+temp,seed,vdd,corner_mos,corner_res,corner_cap,iline,vb_ostg,vincm,gcode,ocode,code_vcm,code_von,code_idac,vd1,vd2,c_load,c_out,sim_error,run_id,tb_mult_tile_dc__error,voutcm,voutcm_pass,vout_d_mv,vout_d_mv_pass,voocm,voocm_pass,voo_d_mv,voo_d_mv_pass,idd_ua,idd_ua_pass,gain_in1,gain_in1_pass,gain_oo_in1,gain_oo_in1_pass,tb_mult_tile_dc_overall_pass,global_pass
+27,0,1.5,tt,typ,typ,3.8u,0.35,0.75,13,0,15,20,21,0,0.1,30f,20p,None,000000,None,0.754078,True,0.000394339,True,0.361676,True,0.000348598,True,1086.76,True,-1.03161,True,-0.911946,True,True,True

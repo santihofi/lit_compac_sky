@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-29",
+  "source_commit": "3764a02d8641559aa58ec8521680424afc38a178",
+  "template_runtime_commit": "8c39e538051786cc0f91600f8c43b5ff77c774d7",
+  "artifacts_sha256": {
+    "ihp_nominal_multiplier.template.spice": "0a1d260a8f9c5305e44eeb17afc45cdca6a23f7f491a89b7865ec6a276071c33",
+    "sky_initial_multiplier.template.spice": "192279e7612a9c02453b0c116bee3b64aa654fa2a3c21317dea9ae1ef77e2ea1",
+    "sky_initial_multiplier.csv": "b1c1c28086cffab3d2e88cfab27fd1b8c6b335f0c27326bb22101a46d49f206e",
+    "sky_sizing_first.csv": "16d197ef0eefb68f28573009792157afaab3d5c496a98fcc26e27439f6e72e56",
+    "sky_sizing_refined.csv": "e0d05291ad18dda46047a2fb8eaa6753ffc8204576ebe190a8268fe76177556a",
+    "ihp_corners_multiplier.csv": "e5720399beccaef5448e06f47ea9d5b87874fcf3e7a8b3ab9c024ea1613b2e98"
+  },
+  "qualification": "exploratory schematic results, no layout qualification"
+}

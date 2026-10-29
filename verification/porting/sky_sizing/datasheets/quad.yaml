@@ -1,0 +1,59 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 13
+  ibias:
+  - 40u
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+  mirror_scale:
+  - 4
+  - 8
+  quad_scale:
+  - 0.5
+  pair_scale:
+  - 0.5
+  - 1
+  - 1.5
+  mirror_l:
+  - 0.5
+  quad_l:
+  - 0.15
+  - 0.25
+  - 0.5
+tests:
+  core_sizing_quad:
+    source: netlist
+    engine: ngspice
+    k100: {}
+    k10: {}
+    compr: {}
+    vocm: {}
+    idd: {}
+    vos: {}
+    tail_margin: {}
+    pair_margin: {}
+    mirror_margin: {}
+    quad_margin: {}
+    qs: {}
+    sp: {}

@@ -1,0 +1,6 @@
+{
+  "tb_dir": "tb",
+  "num_cores": 2,
+  "sim_timeout_sec": 180,
+  "out_dir": "out"
+}

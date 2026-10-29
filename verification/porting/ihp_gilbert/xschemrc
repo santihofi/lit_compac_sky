@@ -1,2 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 source /foss/designs/lit_compac/schematic/xschem/xschemrc
 append XSCHEM_LIBRARY_PATH :/foss/designs

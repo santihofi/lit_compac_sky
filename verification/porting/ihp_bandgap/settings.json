@@ -1,0 +1,5 @@
+{
+  "tb_dir": "/foss/designs/lit_compac/macros/bandgap/testbenches/xschem",
+  "num_cores": 2,
+  "sim_timeout_sec": 180
+}

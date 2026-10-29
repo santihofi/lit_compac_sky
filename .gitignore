@@ -32,3 +32,5 @@ verification/porting/**/out/
 verification/porting/**/work/
 verification/porting/**/templates/
 verification/porting/**/*.log
+
+verification/porting/**/debug.spice

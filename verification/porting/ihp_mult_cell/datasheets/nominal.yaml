@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+description: bandwidth with the real tree load at the gain code nearest K = 10
+parameters:
+  temp:
+  - 27
+  seed:
+  - 0
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  von:
+  - 0.8
+  vb_ostg:
+  - 0.35
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  ibias:
+  - 40u
+  ibias_ota:
+  - 40u
+  iref:
+  - 0.8u
+  c_out:
+  - 20p
+  gcode:
+  - 13
+  k_nom:
+  - 10
+tests:
+  tb_mult_cell_bw:
+    engine: ngspice
+    code_trim: {}
+    k_trim: {}
+    k_code0: {}
+    k_code31: {}
+    vocm_a:
+      min: 0.7
+      max: 0.8
+    bw_in1_ld_in1_mhz: {}
+    bw_in1_ld_in2_mhz: {}
+    bw_in2_ld_in1_mhz: {}
+    bw_in2_ld_in2_mhz: {}
+    bw_min_mhz:
+      min: 180

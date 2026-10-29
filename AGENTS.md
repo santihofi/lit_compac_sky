@@ -50,6 +50,7 @@ make -C macros/inverter all                 # KLayout and Magic DRC/LVS/PEX, LEF
 
 - Start with the narrowest target: lint and RTL simulation before any LibreLane run. CI allows `make regression` up to 360 minutes.
 - `make all` and the `build-*` and `copy-*` targets overwrite committed outputs. Check `git status` afterwards and commit outputs only when they belong to the change.
+- Batch ngspice targets use scripts/with_sky130_ngspice.sh to load scripts/ngspice/.spiceinit before model parsing. Use the same wrapper for Chipify so its scratch working directory gets identical initialization. See doc/sky130A-Open-PDK/ngspice-runtime.md.
 - The Xschem targets netlist in batch mode and run `ngspice -b`, so `plot` commands in a testbench `.control` block do nothing. Testbenches write results with `wrdata` to `testbenches/xschem/plot_simulations/data/`, and `sim-view-xschem` plots them.
 - The top-level `sim-gl-xschem` includes `macros/counter/netlist/xspice/counter_top.xspice` (template), which `clean-all` deletes. Run `make build-counter` before it.
 - Magic cannot read the foundry mask prep layers in the OpenRAM SRAM bit cells. `make magic-gds` writes a filtered copy to `layout/magic/` (git-ignored) with `scripts/strip_mask_layers.py`, every top-level Magic target reads that copy, and the tapeout GDS in `layout/` keeps the layers.

@@ -1,0 +1,10 @@
+{
+  "matched_mos_and_resistor_connectivity": 103,
+  "resistor_bodies_moved_from_nwell_to_substrate": [
+    "gilbert_cell/xr7",
+    "gilbert_cell/xr5",
+    "gilbert_cell/xrd1",
+    "gilbert_cell/xrd2"
+  ],
+  "scope": "Core, gain trim and CMFB. Supply tap abstraction checked separately."
+}

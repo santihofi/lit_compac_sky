@@ -1,0 +1,105 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+description: 'operating point over MOS x rppd x pnp x VDD x 0/27/80 C: vbg, the 3.8
+  uA line current, supply current, OTA offset, saturation margins'
+parameters:
+  temp:
+  - 27
+  seed:
+  - 0
+  vdd:
+  - 1.5
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_pnp:
+  - typ
+tests:
+  tb_bandgap_op:
+    engine: ngspice
+    vbg_v:
+      min: 0.895
+      max: 0.925
+    i_line_ua:
+      min: 3.0
+      max: 4.8
+    i_line15_ua:
+      min: 3.0
+      max: 4.8
+    di_line_pct:
+      min: -0.1
+      max: 0.1
+    v_line:
+      min: 0.35
+    idd_ua:
+      max: 60
+    dv_ota_mv:
+      min: -1
+      max: 1
+    v_ns:
+      max: 0.05
+    vsat_mpa:
+      min: 0.05
+    vsat_mpo:
+      min: 0.05
+    vsat_mpd:
+      min: 0.05
+    vsat_mn2:
+      min: 0.05
+    vsat_mnt:
+      min: 0.05
+reports:
+  formats:
+  - png
+  pdf: true
+  plots:
+  - type: histogram
+    name: vbg_by_temp
+    param: vbg_v
+    group: temp
+    fit: None
+  - type: scatter
+    name: vbg_vs_temp
+    x: temp
+    y: vbg_v
+  - type: tornado
+    name: vbg_sensitivity
+    target: vbg_v
+  - type: histogram
+    name: i_line_by_rppd
+    param: i_line_ua
+    group: corner_res
+    fit: None
+  - type: scatter
+    name: line_voltage_vs_vdd
+    x: vdd
+    y: v_line
+  - type: histogram
+    name: idd_by_temp
+    param: idd_ua
+    group: temp
+    fit: None
+  - type: histogram
+    name: ota_offset
+    param: dv_ota_mv
+    group: temp
+    fit: None
+  - type: scatter
+    name: ns_vs_temp
+    x: temp
+    y: v_ns
+  - type: histogram
+    name: sat_ota_out
+    param: vsat_mn2
+    group: vdd
+    fit: None
+  - type: histogram
+    name: sat_core_mirror
+    param: vsat_mpa
+    group: vdd
+    fit: None
+  - type: corner_yield
+    name: yield_mos_temp
+    x: corner_mos
+    y: temp

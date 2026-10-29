@@ -1,0 +1,1252 @@
+{
+  "gain_trim/MDSN": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDSN\nl=0.35u\nw=7.365u\nng=1\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDSN\nL=0.35\nW=7.365\nnf=1\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MDSP": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDSP\nl=0.35u\nw=7.365u\nng=1\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDSP\nL=0.35\nW=7.365\nnf=1\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/RDS_resistance": {
+    "ihp_nominal_ohm_per_copy": 674.3873517786562,
+    "parallel_copies": 8,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 10.76
+  },
+  "gain_trim/RDS": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RDS\nw=0.5e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=8\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RDS\nL=10.76\nmult=8\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RDN_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 6,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RDN": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RDN\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=6\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RDN\nL=0.875\nmult=6\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RDP_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 6,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RDP": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RDP\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=6\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RDP\nL=0.875\nmult=6\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW0": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW0\nl=0.35u\nw=58.92u\nng=8\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW0\nL=0.35\nW=58.92\nnf=8\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW1N": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW1N\nl=0.35u\nw=58.92u\nng=8\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW1N\nL=0.35\nW=58.92\nnf=8\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW2N": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW2N\nl=0.35u\nw=29.46u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW2N\nL=0.35\nW=29.46\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW3N": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW3N\nl=0.35u\nw=14.73u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW3N\nL=0.35\nW=14.73\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW4N": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW4N\nl=0.35u\nw=7.365u\nng=1\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW4N\nL=0.35\nW=7.365\nnf=1\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/RS0N_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 4,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS0N": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS0N\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=4\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS0N\nL=0.875\nmult=4\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS1N0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS1N0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS1N0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS1N0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS2N1_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS2N1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS2N1\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS2N1\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS2N0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS2N0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS2N0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS2N0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3N3_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3N3": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3N3\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3N3\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3N2_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3N2": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3N2\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3N2\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3N1_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3N1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3N1\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3N1\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3N0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3N0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3N0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3N0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N7_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N7": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N7\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N7\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N6_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N6": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N6\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N6\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N5_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N5": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N5\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N5\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N4_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N4": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N4\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N4\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N3_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N3": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N3\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N3\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N2_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N2": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N2\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N2\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N1_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N1\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N1\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4N0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4N0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4N0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4N0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW1P": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW1P\nl=0.35u\nw=58.92u\nng=8\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW1P\nL=0.35\nW=58.92\nnf=8\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW2P": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW2P\nl=0.35u\nw=29.46u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW2P\nL=0.35\nW=29.46\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW3P": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW3P\nl=0.35u\nw=14.73u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW3P\nL=0.35\nW=14.73\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/MSW4P": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MSW4P\nl=0.35u\nw=7.365u\nng=1\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MSW4P\nL=0.35\nW=7.365\nnf=1\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gain_trim/RS0P_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 4,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS0P": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS0P\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=4\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS0P\nL=0.875\nmult=4\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS1P0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS1P0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS1P0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS1P0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS2P1_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS2P1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS2P1\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS2P1\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS2P0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS2P0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS2P0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS2P0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3P3_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3P3": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3P3\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3P3\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3P2_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3P2": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3P2\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3P2\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3P1_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3P1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3P1\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3P1\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS3P0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS3P0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3P0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS3P0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P7_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P7": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P7\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P7\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P6_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P6": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P6\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P6\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P5_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P5": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P5\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P5\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P4_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P4": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P4\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P4\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P3_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P3": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P3\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P3\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P2_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P2": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P2\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P2\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P1_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P1\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P1\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gain_trim/RS4P0_resistance": {
+    "ihp_nominal_ohm_per_copy": 113.28675981370593,
+    "parallel_copies": 2,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 0.875
+  },
+  "gain_trim/RS4P0": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4P0\nw=3e-6\nl=1.04e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=2\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RS4P0\nL=0.875\nmult=2\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gilbert_cell/RD2_resistance": {
+    "ihp_nominal_ohm_per_copy": 802.641383898869,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 13.035
+  },
+  "gilbert_cell/RD2": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RD2\nw=3e-6\nl=9.01e-6\nmodel=rppd\nbody=ntap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RD2\nL=13.035\nmult=1\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gilbert_cell/RD1_resistance": {
+    "ihp_nominal_ohm_per_copy": 802.641383898869,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 13.035
+  },
+  "gilbert_cell/RD1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RD1\nw=3e-6\nl=9.01e-6\nmodel=rppd\nbody=ntap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=RD1\nL=13.035\nmult=1\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gilbert_cell/MDT": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=MDT\nl=0.65u\nw=20u\nng=2\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=MDT\nL=0.65\nW=20\nnf=2\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/MDL": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=MDL\nl=1u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=MDL\nL=1\nW=16\nnf=4\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/MDQ2": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDQ2\nl=0.5u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDQ2\nL=0.5\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/MDQ1": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDQ1\nl=0.5u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDQ1\nL=0.5\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/MDM": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDM\nl=1.25u\nw=10u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDM\nL=1.25\nW=10\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/MDP": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=MDP\nl=0.28u\nw=19.9u\nng=4\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=MDP\nL=0.35\nW=24.875\nnf=4\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/R2": {
+    "source": {
+      "symbol": "sg13g2_pr/ntap1.sym",
+      "attributes": "name=R2\nmodel=ntap1\nspiceprefix=X\nw=25.4493e-6\nl=0.7307e-6\nlvs_ignore=open\n"
+    },
+    "target_symbol": "devices/res.sym",
+    "target_attributes": "name=Rtap_R2\nvalue=1m\nlvs_ignore=short\n"
+  },
+  "gilbert_cell/R5_resistance": {
+    "ihp_nominal_ohm_per_copy": 802.641383898869,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 13.035
+  },
+  "gilbert_cell/R5": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=R5\nw=3e-6\nl=9.01e-6\nmodel=rppd\nbody=ntap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=R5\nL=13.035\nmult=1\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gilbert_cell/R7_resistance": {
+    "ihp_nominal_ohm_per_copy": 802.641383898869,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_5p73",
+    "initial_sky_length_um": 13.035
+  },
+  "gilbert_cell/R7": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=R7\nw=3e-6\nl=9.01e-6\nmodel=rppd\nbody=ntap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\"\n"
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_5p73.sym",
+    "target_attributes": "name=R7\nL=13.035\nmult=1\nmodel=res_high_po_5p73\nspiceprefix=X\n"
+  },
+  "gilbert_cell/annot7": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot7 ref=M6"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot7 ref=M6"
+  },
+  "gilbert_cell/annot6": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot6 ref=M8"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot6 ref=M8"
+  },
+  "gilbert_cell/annot5": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot5 ref=M1\n"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot5 ref=M1\n"
+  },
+  "gilbert_cell/annot4": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot4 ref=M3"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot4 ref=M3"
+  },
+  "gilbert_cell/annot3": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot3 ref=M10"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot3 ref=M10"
+  },
+  "gilbert_cell/annot2": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot2 ref=M14\n\n"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot2 ref=M14\n\n"
+  },
+  "gilbert_cell/annot1": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot1 ref=M7\n"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot1 ref=M7\n"
+  },
+  "gilbert_cell/R1": {
+    "source": {
+      "symbol": "sg13g2_pr/ptap1.sym",
+      "attributes": "name=R1\nmodel=ptap1\nspiceprefix=X\nw=34.8752e-6\nl=0.6048e-6\nlvs_ignore=open\n"
+    },
+    "target_symbol": "devices/res.sym",
+    "target_attributes": "name=Rtap_R1\nvalue=1m\nlvs_ignore=short\n"
+  },
+  "gilbert_cell/M14": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M14\nl=0.65u\nw=40u\nng=4\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M14\nL=0.65\nW=40\nnf=4\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M2": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M2\nl=0.28u\nw=59.7u\nng=12\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M2\nL=0.35\nW=74.625\nnf=12\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M4": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M4\nl=1.25u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M4\nL=1.25\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M3": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M3\nl=1.25u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M3\nL=1.25\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M13": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M13\nl=0.65u\nw=40u\nng=4\nm=8\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M13\nL=0.65\nW=40\nnf=4\nmult=8\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M1": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M1\nl=0.28u\nw=59.7u\nng=12\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M1\nL=0.35\nW=74.625\nnf=12\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M12": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M12\nl=1u\nw=32u\nng=8\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M12\nL=1\nW=32\nnf=8\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M11": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M11\nl=1u\nw=32u\nng=8\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M11\nL=1\nW=32\nnf=8\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M8": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M8\nl=0.5u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M8\nL=0.5\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M10": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M10\nl=0.5u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M10\nL=0.5\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M9": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M9\nl=0.5u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M9\nL=0.5\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M7": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M7\nl=0.5u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M7\nL=0.5\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M6": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M6\nl=1.25u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M6\nL=1.25\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "gilbert_cell/M5": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M5\nl=1.25u\nw=20u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M5\nL=1.25\nW=20\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MD8": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MD8\nl=2u\nw=2u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MD8\nL=2\nW=2\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MD11": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=MD11\nl=4u\nw=1u\nng=1\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=MD11\nL=4\nW=1\nnf=1\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MD10": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=MD10\nl=4u\nw=1u\nng=1\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=MD10\nL=4\nW=1\nnf=1\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MD7": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MD7\nl=2u\nw=2u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MD7\nL=2\nW=2\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MD5": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=MD5\nl=1u\nw=4.4u\nng=2\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=MD5\nL=1\nW=4.4\nnf=2\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MD3": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MD3\nl=2u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MD3\nL=2\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MDB": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDB\nl=1u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDB\nL=1\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/MDA": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MDA\nl=1u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X\n"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MDA\nL=1\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/annot4": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot4 ref=M9"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot4 ref=M9"
+  },
+  "ota/annot3": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot3 ref=M7"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot3 ref=M7"
+  },
+  "ota/annot2": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot2 ref=M6"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot2 ref=M6"
+  },
+  "ota/annot1": {
+    "source": {
+      "symbol": "sg13g2_pr/annotate_fet_params.sym",
+      "attributes": "name=annot1 ref=M1"
+    },
+    "target_symbol": "sky130_fd_pr/annotate_fet_params.sym",
+    "target_attributes": "name=annot1 ref=M1"
+  },
+  "ota/R7": {
+    "source": {
+      "symbol": "sg13g2_pr/ptap1.sym",
+      "attributes": "name=R7\nmodel=ptap1\nspiceprefix=X\nw=0.78e-6\nl=0.78e-6\nlvs_ignore=open"
+    },
+    "target_symbol": "devices/res.sym",
+    "target_attributes": "name=Rtap_R7\nvalue=1m\nlvs_ignore=short\n"
+  },
+  "ota/R2": {
+    "source": {
+      "symbol": "sg13g2_pr/ntap1.sym",
+      "attributes": "name=R2\nmodel=ntap1\nspiceprefix=X\nw=0.78e-6\nl=0.78e-6\nlvs_ignore=open"
+    },
+    "target_symbol": "devices/res.sym",
+    "target_attributes": "name=Rtap_R2\nvalue=1m\nlvs_ignore=short\n"
+  },
+  "ota/MC": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=MC\nl=6u\nw=6u\nng=1\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=MC\nL=6\nW=6\nnf=1\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M9": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M9\nl=5u\nw=1u\nng=1\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M9\nL=5\nW=1\nnf=1\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M8": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M8\nl=2u\nw=2u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M8\nL=2\nW=2\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M7": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M7\nl=2u\nw=2u\nng=2\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M7\nL=2\nW=2\nnf=2\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M11": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M11\nl=4u\nw=1u\nng=1\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M11\nL=4\nW=1\nnf=1\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M10": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M10\nl=4u\nw=1u\nng=1\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M10\nL=4\nW=1\nnf=1\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M4": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M4\nl=2u\nw=32u\nng=8\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M4\nL=2\nW=32\nnf=8\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M3B": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M3B\nl=2u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M3B\nL=2\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M3": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M3\nl=2u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M3\nL=2\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/RS12_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS12": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS12\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS12\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS11_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS11": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS11\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS11\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS10_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS10": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS10\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS10\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS9_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS9": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS9\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS9\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS8_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS8": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS8\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS8\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS7_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS7": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS7\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS7\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS6_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS6": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS6\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS6\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS5_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS5": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS5\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS5\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS4_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS4": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS4\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS4\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS3_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS3": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS3\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS3\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS2_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS2": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS2\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS2\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/RS1_resistance": {
+    "ihp_nominal_ohm_per_copy": 5471.590457256461,
+    "parallel_copies": 1,
+    "initial_sky_model": "res_high_po_1p41",
+    "initial_sky_length_um": 22.705000000000002
+  },
+  "ota/RS1": {
+    "source": {
+      "symbol": "sg13g2_pr/rppd.sym",
+      "attributes": "name=RS1\nw=1e-6\nl=20.9e-6\nmodel=rppd\nbody=ptap\nspiceprefix=X\nb=0\nm=1\nvalue=\"expr_eng(  ( 70.0e-6 / @w + 260.0 * ( (@b + 1)* @l + ( 1.081*( @w + 6.0e-9 ) + 0.18e-6 )*@b ) / ( @w + 6.0e-9 ) ) / @m  )\""
+    },
+    "target_symbol": "sky130_fd_pr/res_high_po_1p41.sym",
+    "target_attributes": "name=RS1\nL=22.705\nmult=1\nmodel=res_high_po_1p41\nspiceprefix=X\n"
+  },
+  "ota/M2": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M2\nl=1u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M2\nL=1\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M1": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_nmos.sym",
+      "attributes": "name=M1\nl=1u\nw=16u\nng=4\nm=1\nmodel=sg13_lv_nmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/nfet_01v8_lvt.sym",
+    "target_attributes": "name=M1\nL=1\nW=16\nnf=4\nmult=1\nmodel=nfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M6": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M6\nl=1u\nw=4.4u\nng=2\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M6\nL=1\nW=4.4\nnf=2\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  },
+  "ota/M5": {
+    "source": {
+      "symbol": "sg13g2_pr/sg13_lv_pmos.sym",
+      "attributes": "name=M5\nl=1u\nw=4.4u\nng=2\nm=1\nmodel=sg13_lv_pmos\nspiceprefix=X"
+    },
+    "target_symbol": "sky130_fd_pr/pfet_01v8_lvt.sym",
+    "target_attributes": "name=M5\nL=1\nW=4.4\nnf=2\nmult=1\nmodel=pfet_01v8_lvt\nspiceprefix=X\n"
+  }
+}

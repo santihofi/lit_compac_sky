@@ -202,7 +202,7 @@ sim-gl-xschem: ## Run gate-level simulation of CELL cell with Xschem in batch mo
 		write_data [save_params] $(abspath $(XSCHEM_TB_DIR)/simulations)/$(TB).save; \
 		xschem netlist \
 	' $(TB).sch
-	cd $(XSCHEM_TB_DIR)/simulations && ngspice -b $(TB).spice
+	cd $(XSCHEM_TB_DIR)/simulations && $(abspath $(MAKEFILE_DIR)/scripts/with_sky130_ngspice.sh) ngspice -b $(TB).spice
 .PHONY: sim-gl-xschem
 
 sim-view-xschem: ## Plot Xschem simulation results (usage: make sim-view-xschem [SCRIPT=<scriptname>])

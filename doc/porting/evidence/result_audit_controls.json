@@ -1,0 +1,6 @@
+{
+  "nonfinite": "Case 000000: nonfinite k100",
+  "simulator_error": "Case 000000: sim_error=INVALID_OUTPUT",
+  "missing_waveform": "[Errno 2] No such file or directory: '/tmp/chipify-audit-331rz9d1/out/analysis_data/dc/20261028_191339/run_000000__tb_gilbert_cell_mult.csv'",
+  "out_of_spec": "Case 000000: k100=-5.90626 below 0"
+}

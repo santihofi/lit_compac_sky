@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+description: 'tile on its own bias channel: operating point, output CM, offset, DC
+  gain, supply current over MOS x rppd x 0/27/80 C x 1.45/1.5/1.65 V'
+parameters:
+  temp:
+  - 27
+  seed:
+  - 0
+  vdd:
+  - 1.5
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  iline:
+  - 3.8u
+  vb_ostg:
+  - 0.35
+  vincm:
+  - 0.75
+  gcode:
+  - 13
+  ocode:
+  - 0
+  code_vcm:
+  - 15
+  code_von:
+  - 20
+  code_idac:
+  - 21
+  vd1:
+  - 0
+  vd2:
+  - 0.1
+  c_load:
+  - 30f
+  c_out:
+  - 20p
+tests:
+  tb_mult_tile_dc:
+    engine: ngspice
+    voutcm: {}
+    vout_d_mv: {}
+    voocm: {}
+    voo_d_mv: {}
+    idd_ua: {}
+    gain_in1: {}
+    gain_oo_in1: {}

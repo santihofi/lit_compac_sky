@@ -1,0 +1,7 @@
+* SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+* SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+* Load before parsing the SKY130 model library.
+set ngbehavior=hsa
+set skywaterpdk
+set ng_nomodcheck
+set num_threads=1

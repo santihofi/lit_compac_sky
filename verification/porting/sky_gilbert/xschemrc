@@ -1,0 +1,4 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+source $env(PDK_ROOT)/sky130A/libs.tech/xschem/xschemrc
+append XSCHEM_LIBRARY_PATH :/foss/designs

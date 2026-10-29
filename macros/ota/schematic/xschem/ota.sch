@@ -1,0 +1,524 @@
+v {xschem version=3.4.8RC file_version=1.3}
+G {}
+K {}
+V {}
+S {}
+F {}
+E {}
+T {RS = RS1..RS12 in series (sa to sb), 12 straight rppd stripes 1 x 20.9 um,
+65.66 kOhm (bent 1 x 20 um b=11: 65.68 kOhm), drawn straight so LVS can match} 740 -40 0 0 0.3 0.3 {}
+T {CMFB amplifier for the Gilbert cell, two loops
+-) fast loop: NMOS pair M1/M2 with split tails M3/M3B and degeneration RS (12 rppd stripes 1 x 20.9 um in series, 65.7 kOhm) into the diodes M5/M6
+-) out = diode M6 = vbias, the mirror master of the Gilbert loads M11/M12, so vbias is a low-impedance node and the cell outputs set the dominant pole
+-) M5/M6 are 1.1x the Gilbert loads per unit of current (load 4/1 um per 20 uA), which centres the output CM on the reference without steering
+-) slow loop: 5T OTA M7..M11 (tail M9 = ibias1/80) integrates on MC (gate cap, about 0.5 pF) and trims the fast-loop reference vref_int
+-) the slow loop removes the DC CM error from ratio errors, bias mismatch and device mismatch, the fast loop keeps the phase margin
+-) ibias1 = Gilbert cell ibias (1:1), inp = sensed output CM, inn = CM reference} -700 -720 0 0 0.3 0.3 {}
+T {slow loop (integrator)} -680 -460 0 0 0.4 0.4 {}
+T {fast loop (diode-load CMFB)} -40 -460 0 0 0.4 0.4 {}
+T {n bulk
+contact} 540 -340 0 0 0.3 0.3 {}
+T {p bulk
+contact} 540 150 0 0 0.3 0.3 {}
+N 40 -420 40 -350 {lab=vdd}
+N 300 -420 300 -350 {lab=vdd}
+N 0 -320 40 -320 {lab=ntap}
+N 300 -320 340 -320 {lab=ntap}
+N 80 -320 110 -320 {lab=vd_m5}
+N 110 -320 110 -250 {lab=vd_m5}
+N 40 -250 110 -250 {lab=vd_m5}
+N 40 -290 40 -250 {lab=vd_m5}
+N 40 -250 40 -30 {lab=vd_m5}
+N 230 -320 260 -320 {lab=out}
+N 230 -320 230 -250 {lab=out}
+N 230 -250 300 -250 {lab=out}
+N 300 -290 300 -250 {lab=out}
+N 300 -250 300 -200 {lab=out}
+N 300 -200 300 -30 {lab=out}
+N 300 -200 400 -200 {lab=out}
+N -40 0 0 0 {lab=inp}
+N 40 0 80 0 {lab=ptap}
+N 340 0 380 0 {lab=vref_int}
+N 260 0 300 0 {lab=ptap}
+N 40 30 40 80 {lab=sa}
+N 40 80 40 120 {lab=sa}
+N 40 80 140 80 {lab=sa}
+N 300 30 300 80 {lab=sb}
+N 300 80 300 120 {lab=sb}
+N 200 80 300 80 {lab=sb}
+N 40 180 40 260 {lab=vss}
+N 300 180 300 260 {lab=vss}
+N -120 180 -120 260 {lab=vss}
+N 40 150 80 150 {lab=ptap}
+N 260 150 300 150 {lab=ptap}
+N -160 150 -120 150 {lab=ptap}
+N 340 150 380 150 {lab=ibias1}
+N -80 150 -60 150 {lab=ibias1}
+N -60 150 0 150 {lab=ibias1}
+N -120 100 -120 120 {lab=ibias1}
+N -120 100 -60 100 {lab=ibias1}
+N -60 100 -60 150 {lab=ibias1}
+N -120 60 -120 100 {lab=ibias1}
+N -580 -420 -580 -350 {lab=vdd}
+N -320 -420 -320 -350 {lab=vdd}
+N -620 -320 -580 -320 {lab=ntap}
+N -320 -320 -280 -320 {lab=ntap}
+N -540 -320 -510 -320 {lab=vd_m10}
+N -510 -320 -360 -320 {lab=vd_m10}
+N -510 -320 -510 -260 {lab=vd_m10}
+N -580 -260 -510 -260 {lab=vd_m10}
+N -580 -290 -580 -260 {lab=vd_m10}
+N -580 -260 -580 -90 {lab=vd_m10}
+N -320 -290 -320 -150 {lab=vref_int}
+N -320 -150 -320 -90 {lab=vref_int}
+N -320 -150 -200 -150 {lab=vref_int}
+N -660 -60 -620 -60 {lab=inn}
+N -580 -60 -540 -60 {lab=ptap}
+N -280 -60 -240 -60 {lab=inp}
+N -370 -60 -320 -60 {lab=ptap}
+N -580 -30 -580 20 {lab=vtail_slow}
+N -580 20 -450 20 {lab=vtail_slow}
+N -320 -30 -320 20 {lab=vtail_slow}
+N -450 20 -320 20 {lab=vtail_slow}
+N -450 20 -450 50 {lab=vtail_slow}
+N -530 80 -490 80 {lab=ibias1}
+N -450 110 -450 260 {lab=vss}
+N -450 80 -410 80 {lab=ptap}
+N -160 -200 -160 -180 {lab=vss}
+N -160 -120 -160 -100 {lab=vss}
+N -160 -150 -120 -150 {lab=ptap}
+N 500 -420 500 -350 {lab=vdd}
+N 500 -290 500 -270 {lab=ntap}
+N 500 190 500 260 {lab=vss}
+N 500 90 500 130 {lab=ptap}
+N -700 -420 -580 -420 {lab=vdd}
+N -580 -420 -320 -420 {lab=vdd}
+N -320 -420 40 -420 {lab=vdd}
+N 40 -420 300 -420 {lab=vdd}
+N 300 -420 500 -420 {lab=vdd}
+N -700 260 -450 260 {lab=vss}
+N -450 260 -120 260 {lab=vss}
+N -120 260 40 260 {lab=vss}
+N 40 260 300 260 {lab=vss}
+N 300 260 500 260 {lab=vss}
+C {title.sym} -700 380 0 0 {name=l1 author="Santiago Hofwimmer | JKU IICQC"}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 60 -320 0 1 {name=M5
+L=1
+W=4.4
+nf=2
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 280 -320 0 0 {name=M6
+L=1
+W=4.4
+nf=2
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {lab_pin.sym} 0 -320 2 1 {name=p20 sig_type=std_logic lab=ntap}
+C {lab_pin.sym} 340 -320 2 0 {name=p21 sig_type=std_logic lab=ntap}
+C {lab_wire.sym} 40 -140 3 0 {name=p22 sig_type=std_logic lab=vd_m5}
+C {opin.sym} 400 -200 0 0 {name=p5 lab=out}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 20 0 0 0 {name=M1
+L=1
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 320 0 0 1 {name=M2
+L=1
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {ipin.sym} -40 0 0 0 {name=p2 lab=inp}
+C {lab_pin.sym} 80 0 2 0 {name=p23 sig_type=std_logic lab=ptap}
+C {lab_pin.sym} 380 0 2 0 {name=p24 sig_type=std_logic lab=vref_int}
+C {lab_pin.sym} 260 0 2 1 {name=p25 sig_type=std_logic lab=ptap}
+C {sky130_fd_pr/res_high_po_1p41.sym} 760 80 0 0 {name=RS1
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 760 50 760 30 {lab=sa}
+C {lab_pin.sym} 760 30 1 0 {name=prs1a sig_type=std_logic lab=sa}
+N 760 110 760 130 {lab=rs1}
+C {lab_pin.sym} 760 130 3 0 {name=prs1b sig_type=std_logic lab=rs1}
+C {sky130_fd_pr/res_high_po_1p41.sym} 840 80 0 0 {name=RS2
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 840 50 840 30 {lab=rs1}
+C {lab_pin.sym} 840 30 1 0 {name=prs2a sig_type=std_logic lab=rs1}
+N 840 110 840 130 {lab=rs2}
+C {lab_pin.sym} 840 130 3 0 {name=prs2b sig_type=std_logic lab=rs2}
+C {sky130_fd_pr/res_high_po_1p41.sym} 920 80 0 0 {name=RS3
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 920 50 920 30 {lab=rs2}
+C {lab_pin.sym} 920 30 1 0 {name=prs3a sig_type=std_logic lab=rs2}
+N 920 110 920 130 {lab=rs3}
+C {lab_pin.sym} 920 130 3 0 {name=prs3b sig_type=std_logic lab=rs3}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1000 80 0 0 {name=RS4
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1000 50 1000 30 {lab=rs3}
+C {lab_pin.sym} 1000 30 1 0 {name=prs4a sig_type=std_logic lab=rs3}
+N 1000 110 1000 130 {lab=rs4}
+C {lab_pin.sym} 1000 130 3 0 {name=prs4b sig_type=std_logic lab=rs4}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1080 80 0 0 {name=RS5
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1080 50 1080 30 {lab=rs4}
+C {lab_pin.sym} 1080 30 1 0 {name=prs5a sig_type=std_logic lab=rs4}
+N 1080 110 1080 130 {lab=rs5}
+C {lab_pin.sym} 1080 130 3 0 {name=prs5b sig_type=std_logic lab=rs5}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1160 80 0 0 {name=RS6
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1160 50 1160 30 {lab=rs5}
+C {lab_pin.sym} 1160 30 1 0 {name=prs6a sig_type=std_logic lab=rs5}
+N 1160 110 1160 130 {lab=rs6}
+C {lab_pin.sym} 1160 130 3 0 {name=prs6b sig_type=std_logic lab=rs6}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1240 80 0 0 {name=RS7
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1240 50 1240 30 {lab=rs6}
+C {lab_pin.sym} 1240 30 1 0 {name=prs7a sig_type=std_logic lab=rs6}
+N 1240 110 1240 130 {lab=rs7}
+C {lab_pin.sym} 1240 130 3 0 {name=prs7b sig_type=std_logic lab=rs7}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1320 80 0 0 {name=RS8
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1320 50 1320 30 {lab=rs7}
+C {lab_pin.sym} 1320 30 1 0 {name=prs8a sig_type=std_logic lab=rs7}
+N 1320 110 1320 130 {lab=rs8}
+C {lab_pin.sym} 1320 130 3 0 {name=prs8b sig_type=std_logic lab=rs8}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1400 80 0 0 {name=RS9
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1400 50 1400 30 {lab=rs8}
+C {lab_pin.sym} 1400 30 1 0 {name=prs9a sig_type=std_logic lab=rs8}
+N 1400 110 1400 130 {lab=rs9}
+C {lab_pin.sym} 1400 130 3 0 {name=prs9b sig_type=std_logic lab=rs9}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1480 80 0 0 {name=RS10
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1480 50 1480 30 {lab=rs9}
+C {lab_pin.sym} 1480 30 1 0 {name=prs10a sig_type=std_logic lab=rs9}
+N 1480 110 1480 130 {lab=rs10}
+C {lab_pin.sym} 1480 130 3 0 {name=prs10b sig_type=std_logic lab=rs10}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1560 80 0 0 {name=RS11
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1560 50 1560 30 {lab=rs10}
+C {lab_pin.sym} 1560 30 1 0 {name=prs11a sig_type=std_logic lab=rs10}
+N 1560 110 1560 130 {lab=rs11}
+C {lab_pin.sym} 1560 130 3 0 {name=prs11b sig_type=std_logic lab=rs11}
+C {sky130_fd_pr/res_high_po_1p41.sym} 1640 80 0 0 {name=RS12
+L=22.705
+mult=1
+model=res_high_po_1p41
+spiceprefix=X
+}
+N 1640 50 1640 30 {lab=rs11}
+C {lab_pin.sym} 1640 30 1 0 {name=prs12a sig_type=std_logic lab=rs11}
+N 1640 110 1640 130 {lab=sb}
+C {lab_pin.sym} 1640 130 3 0 {name=prs12b sig_type=std_logic lab=sb}
+C {lab_wire.sym} 90 80 0 0 {name=p26 sig_type=std_logic lab=sa}
+C {lab_wire.sym} 250 80 0 0 {name=p27 sig_type=std_logic lab=sb}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 20 150 0 0 {name=M3
+L=2
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 320 150 0 1 {name=M3B
+L=2
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -100 150 0 1 {name=M4
+L=2
+W=32
+nf=8
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {lab_pin.sym} 80 150 2 0 {name=p28 sig_type=std_logic lab=ptap}
+C {lab_pin.sym} 260 150 2 1 {name=p29 sig_type=std_logic lab=ptap}
+C {lab_pin.sym} -160 150 2 1 {name=p30 sig_type=std_logic lab=ptap}
+C {lab_pin.sym} 380 150 2 0 {name=p31 sig_type=std_logic lab=ibias1}
+C {ipin.sym} -120 60 1 0 {name=p1 lab=ibias1}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} -560 -320 0 1 {name=M10
+L=4
+W=1
+nf=1
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} -340 -320 0 0 {name=M11
+L=4
+W=1
+nf=1
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+C {lab_pin.sym} -620 -320 2 1 {name=p32 sig_type=std_logic lab=ntap}
+C {lab_pin.sym} -280 -320 2 0 {name=p33 sig_type=std_logic lab=ntap}
+C {lab_wire.sym} -580 -180 3 0 {name=p34 sig_type=std_logic lab=vd_m10}
+C {lab_wire.sym} -260 -150 0 0 {name=p35 sig_type=std_logic lab=vref_int}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -600 -60 0 0 {name=M7
+L=2
+W=2
+nf=2
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -300 -60 0 1 {name=M8
+L=2
+W=2
+nf=2
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {ipin.sym} -660 -60 0 0 {name=p3 lab=inn}
+C {lab_pin.sym} -540 -60 2 0 {name=p36 sig_type=std_logic lab=ptap}
+C {lab_pin.sym} -240 -60 2 0 {name=p37 sig_type=std_logic lab=inp}
+C {lab_pin.sym} -370 -60 2 1 {name=p38 sig_type=std_logic lab=ptap}
+C {lab_wire.sym} -520 20 0 0 {name=p39 sig_type=std_logic lab=vtail_slow}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -470 80 0 0 {name=M9
+L=5
+W=1
+nf=1
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {lab_pin.sym} -530 80 2 1 {name=p40 sig_type=std_logic lab=ibias1}
+C {lab_pin.sym} -410 80 2 0 {name=p41 sig_type=std_logic lab=ptap}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -180 -150 0 0 {name=MC
+L=6
+W=6
+nf=1
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+C {lab_pin.sym} -160 -200 3 1 {name=p42 sig_type=std_logic lab=vss}
+C {lab_pin.sym} -160 -100 3 0 {name=p43 sig_type=std_logic lab=vss}
+C {lab_pin.sym} -120 -150 2 0 {name=p44 sig_type=std_logic lab=ptap}
+C {devices/res.sym} 500 -320 0 0 {name=Rtap_R2
+value=1m
+lvs_ignore=short
+}
+C {iopin.sym} 500 -270 3 1 {name=p18 lab=ntap}
+C {devices/res.sym} 500 160 2 0 {name=Rtap_R7
+value=1m
+lvs_ignore=short
+}
+C {iopin.sym} 500 90 1 1 {name=p19 lab=ptap}
+C {iopin.sym} -700 -420 0 1 {name=p4 lab=vdd}
+C {iopin.sym} -700 260 0 1 {name=p6 lab=vss}
+C {sky130_fd_pr/annotate_fet_params.sym} -700 450 0 0 {name=annot1 ref=M1}
+C {sky130_fd_pr/annotate_fet_params.sym} -400 450 0 0 {name=annot2 ref=M6}
+C {sky130_fd_pr/annotate_fet_params.sym} -100 450 0 0 {name=annot3 ref=M7}
+C {sky130_fd_pr/annotate_fet_params.sym} 200 450 0 0 {name=annot4 ref=M9}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -640 640 0 0 {name=MDA
+L=1
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+N -620 610 -620 580 {lab=sa}
+C {lab_pin.sym} -620 580 1 0 {name=pdm1 sig_type=std_logic lab=sa}
+N -620 670 -620 700 {lab=sa}
+C {lab_pin.sym} -620 700 3 0 {name=pdm2 sig_type=std_logic lab=sa}
+N -660 640 -700 640 {lab=sa}
+C {lab_pin.sym} -700 640 0 0 {name=pdm3 sig_type=std_logic lab=sa}
+N -620 640 -580 640 {lab=ptap}
+C {lab_pin.sym} -580 640 2 0 {name=pdm4 sig_type=std_logic lab=ptap}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -400 640 0 0 {name=MDB
+L=1
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+N -380 610 -380 580 {lab=sb}
+C {lab_pin.sym} -380 580 1 0 {name=pdm5 sig_type=std_logic lab=sb}
+N -380 670 -380 700 {lab=sb}
+C {lab_pin.sym} -380 700 3 0 {name=pdm6 sig_type=std_logic lab=sb}
+N -420 640 -460 640 {lab=sb}
+C {lab_pin.sym} -460 640 0 0 {name=pdm7 sig_type=std_logic lab=sb}
+N -380 640 -340 640 {lab=ptap}
+C {lab_pin.sym} -340 640 2 0 {name=pdm8 sig_type=std_logic lab=ptap}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} -160 640 0 0 {name=MD3
+L=2
+W=16
+nf=4
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+N -140 610 -140 580 {lab=vss}
+C {lab_pin.sym} -140 580 1 0 {name=pdm9 sig_type=std_logic lab=vss}
+N -140 670 -140 700 {lab=vss}
+C {lab_pin.sym} -140 700 3 0 {name=pdm10 sig_type=std_logic lab=vss}
+N -180 640 -220 640 {lab=vss}
+C {lab_pin.sym} -220 640 0 0 {name=pdm11 sig_type=std_logic lab=vss}
+N -140 640 -100 640 {lab=ptap}
+C {lab_pin.sym} -100 640 2 0 {name=pdm12 sig_type=std_logic lab=ptap}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 80 640 0 0 {name=MD5
+L=1
+W=4.4
+nf=2
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+N 100 610 100 580 {lab=vd_m5}
+C {lab_pin.sym} 100 580 1 0 {name=pdm13 sig_type=std_logic lab=vd_m5}
+N 100 670 100 700 {lab=vd_m5}
+C {lab_pin.sym} 100 700 3 0 {name=pdm14 sig_type=std_logic lab=vd_m5}
+N 60 640 20 640 {lab=vdd}
+C {lab_pin.sym} 20 640 0 0 {name=pdm15 sig_type=std_logic lab=vdd}
+N 100 640 140 640 {lab=ntap}
+C {lab_pin.sym} 140 640 2 0 {name=pdm16 sig_type=std_logic lab=ntap}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 320 640 0 0 {name=MD7
+L=2
+W=2
+nf=2
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+N 340 610 340 580 {lab=vd_m10}
+C {lab_pin.sym} 340 580 1 0 {name=pdm17 sig_type=std_logic lab=vd_m10}
+N 340 670 340 700 {lab=vd_m10}
+C {lab_pin.sym} 340 700 3 0 {name=pdm18 sig_type=std_logic lab=vd_m10}
+N 300 640 260 640 {lab=vd_m10}
+C {lab_pin.sym} 260 640 0 0 {name=pdm19 sig_type=std_logic lab=vd_m10}
+N 340 640 380 640 {lab=ptap}
+C {lab_pin.sym} 380 640 2 0 {name=pdm20 sig_type=std_logic lab=ptap}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 560 640 0 0 {name=MD10
+L=4
+W=1
+nf=1
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+N 580 610 580 580 {lab=vd_m10}
+C {lab_pin.sym} 580 580 1 0 {name=pdm21 sig_type=std_logic lab=vd_m10}
+N 580 670 580 700 {lab=vd_m10}
+C {lab_pin.sym} 580 700 3 0 {name=pdm22 sig_type=std_logic lab=vd_m10}
+N 540 640 500 640 {lab=vdd}
+C {lab_pin.sym} 500 640 0 0 {name=pdm23 sig_type=std_logic lab=vdd}
+N 580 640 620 640 {lab=ntap}
+C {lab_pin.sym} 620 640 2 0 {name=pdm24 sig_type=std_logic lab=ntap}
+C {sky130_fd_pr/pfet_01v8_lvt.sym} 800 640 0 0 {name=MD11
+L=4
+W=1
+nf=1
+mult=1
+model=pfet_01v8_lvt
+spiceprefix=X
+}
+N 820 610 820 580 {lab=vref_int}
+C {lab_pin.sym} 820 580 1 0 {name=pdm25 sig_type=std_logic lab=vref_int}
+N 820 670 820 700 {lab=vref_int}
+C {lab_pin.sym} 820 700 3 0 {name=pdm26 sig_type=std_logic lab=vref_int}
+N 780 640 740 640 {lab=vdd}
+C {lab_pin.sym} 740 640 0 0 {name=pdm27 sig_type=std_logic lab=vdd}
+N 820 640 860 640 {lab=ntap}
+C {lab_pin.sym} 860 640 2 0 {name=pdm28 sig_type=std_logic lab=ntap}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 1040 640 0 0 {name=MD8
+L=2
+W=2
+nf=2
+mult=1
+model=nfet_01v8_lvt
+spiceprefix=X
+}
+N 1060 610 1060 580 {lab=vref_int}
+C {lab_pin.sym} 1060 580 1 0 {name=pdm29 sig_type=std_logic lab=vref_int}
+N 1060 670 1060 700 {lab=vref_int}
+C {lab_pin.sym} 1060 700 3 0 {name=pdm30 sig_type=std_logic lab=vref_int}
+N 1020 640 980 640 {lab=vss}
+C {lab_pin.sym} 980 640 0 0 {name=pdm31 sig_type=std_logic lab=vss}
+N 1060 640 1100 640 {lab=ptap}
+C {lab_pin.sym} 1100 640 2 0 {name=pdm32 sig_type=std_logic lab=ptap}
+T {Layout plan (common centroid, every matched device with an even finger count):
+-) M1/M2 2D common centroid, N1 M1 | M2 over N2 M2 | M1, each group of 2 fingers ends on its own source,
+   dummies MDA on sa and MDB on sb
+-) M3/M3B/M4 two rows, M4 M3 M3B M4 over M4 M3B M3 M4 in groups of 2, vss at the four row ends, dummies MD3
+-) M5/M6 one row, single fingers ABBA with M5 at the ends, dummies MD5 on vd_m5
+-) M7/M8 2D common centroid, D M7 M8 D over D M8 M7 D in single fingers, dummies MD7 on vd_m10 (the M7 ends)
+   and MD8 on vref_int (the M8 ends)
+-) M10/M11 one 1 um finger each (a 0.5 um finger holds only one contact), row MD10 M10 M11 MD11,
+   dummies MD10 on vd_m10, MD11 on vref_int
+-) dummies: one finger at each row end, source and drain on the node that ends the row,
+   gate on that node too (MDA sa, MDB sb, MD7 vd_m10) or on the rail (MD3 vss, MD8 vss, MD5/MD10/MD11 vdd)} -700 780 0 0 0.3 0.3 {}
+C {devices/lab_pin.sym} 1620 80 0 0 {name=body_RS12 lab=ptap}
+C {devices/lab_pin.sym} 1540 80 0 0 {name=body_RS11 lab=ptap}
+C {devices/lab_pin.sym} 1460 80 0 0 {name=body_RS10 lab=ptap}
+C {devices/lab_pin.sym} 1380 80 0 0 {name=body_RS9 lab=ptap}
+C {devices/lab_pin.sym} 1300 80 0 0 {name=body_RS8 lab=ptap}
+C {devices/lab_pin.sym} 1220 80 0 0 {name=body_RS7 lab=ptap}
+C {devices/lab_pin.sym} 1140 80 0 0 {name=body_RS6 lab=ptap}
+C {devices/lab_pin.sym} 1060 80 0 0 {name=body_RS5 lab=ptap}
+C {devices/lab_pin.sym} 980 80 0 0 {name=body_RS4 lab=ptap}
+C {devices/lab_pin.sym} 900 80 0 0 {name=body_RS3 lab=ptap}
+C {devices/lab_pin.sym} 820 80 0 0 {name=body_RS2 lab=ptap}
+C {devices/lab_pin.sym} 740 80 0 0 {name=body_RS1 lab=ptap}
