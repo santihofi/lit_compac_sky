@@ -128,6 +128,7 @@ Use the statistical section:
 ```
 
 For process variation together with local mismatch, select `mc` once and then set `.param mc_mm_switch=1`.
+A separate four-seed control confirmed both variation across seeds and unequal paired devices with this selection.
 Do not stack a deterministic corner section with `mc`.
 The inverter's `ac_mc_params` CACE test now selects `mc`.
 Its previous `tt` selection with only the process switch enabled did not exercise process variation.

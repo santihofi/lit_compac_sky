@@ -115,3 +115,28 @@ These controls establish model activation, not reliable spread or yield estimate
 The template guide and inverter CACE process selection were corrected.
 A 200-sample process-only inverter run using mc passed its existing limits, with gain 25.138 to 34.881 dB and bandwidth 689.573 kHz to 1.98538 MHz.
 The primitive controls are also provided as a reusable Chipify project in testbenches/chipify/sky_statistics.
+
+## Corner rejection and next device choice
+
+Parallel copies at constant device voltage and inversely scaled resistance improve bandwidth under the fixed 100 fF external load.
+At mirror scale 6, pair scale 0.75, 10/0.15 um LVT quad, resistor scale 1.1 and two parallel copies, the measured gain is -9.76893 V^-1, ratio 0.980359, bandwidth 459.448/1070.30 MHz and supply current 1.225 mA.
+This is an exploratory nominal result.
+
+![Nominal schematic tradeoffs](figures/core_tradeoffs.png)
+
+The following 45-case check used resistor scale 1.14 and swept five MOS corners, three supplies and three temperatures.
+All 720 scalar captures were valid.
+Only 20 cases met the provisional checks: positive tail and mirror saturation margins and a gain ratio between 0.96758 and 1.03242.
+This provisional ratio window uses the maximum magnitude of the reproduced IHP corner deviation from unity, and does not replace matched-corner or full transfer-surface comparisons.
+The candidate is rejected.
+At the fs corner, mirror margin reaches -35.66 mV and gain ratio reaches 1.19769.
+At sf, tail margin reaches -52.98 mV.
+The fixed-current all-LVT mapping therefore cannot be accepted from its nominal gain and bandwidth.
+
+![All-LVT candidate corner rejection](figures/candidate_corners.png)
+
+Tying the quad body to its source buys only about 10 to 20 mV in the tested points, before any well parasitics.
+The native 3.3 V NMOS quad gives 353 to 523 mV nominal mirror margin in the first four valid geometry probes, but needs more width to recover gain.
+These are schematic alternatives, not selected physical implementations.
+The first native sweep failed because 5 um fingers fell outside all nine model bins.
+The corrected probes use supported 4 um fingers at L=0.5 um, as described in [the geometry guide](../sky130A-Open-PDK/device-model-geometry.md).

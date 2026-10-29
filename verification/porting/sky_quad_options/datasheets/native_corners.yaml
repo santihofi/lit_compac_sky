@@ -1,0 +1,82 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 0
+  - 27
+  - 80
+  seed: range(1)
+  vdd:
+  - 1.45
+  - 1.5
+  - 1.65
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - tt
+  - ss
+  - ff
+  - sf
+  - fs
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 13
+  ibias:
+  - 4.0e-05
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+  mirror_scale:
+  - 2
+  mirror_l:
+  - 0.5
+  pair_scale:
+  - 2
+  pair_l:
+  - 0.35
+  quad_scale:
+  - 0.5
+  quad_l:
+  - 0.5
+  rscale:
+  - 1.4
+  power_m:
+  - 2
+  quad_model:
+  - nfet_03v3_nvt
+  body_tied:
+  - 0
+  native_nf:
+  - 8
+tests:
+  core_options:
+    source: netlist
+    engine: ngspice
+    k100: {}
+    k10: {}
+    compr:
+      min: 0.96758
+      max: 1.03242
+    vocm: {}
+    idd: {}
+    vos: {}
+    tail_margin:
+      min: 0
+    pair_margin: {}
+    mirror_margin:
+      min: 0
+    quad_margin: {}
+    qs: {}
+    sp: {}
+    bw_in1_mhz: {}
+    bw_in2_mhz: {}
+    acgain_in1: {}
+    acgain_in2: {}

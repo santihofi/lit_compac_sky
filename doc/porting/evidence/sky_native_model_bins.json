@@ -1,0 +1,60 @@
+{
+  "path": "/foss/pdks/sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_03v3_nvt.pm3.spice",
+  "sha256": "b4bd56719dbce94a0a9134d4224a226cdf586238a9ff142c0ea7654065a55a8c",
+  "bins_um": [
+    {
+      "lmin": 0.49500000000000005,
+      "lmax": 0.505,
+      "wmin_per_finger": 9.995,
+      "wmax_per_finger": 10.005
+    },
+    {
+      "lmin": 0.49500000000000005,
+      "lmax": 0.505,
+      "wmin_per_finger": 0.995,
+      "wmax_per_finger": 1.005
+    },
+    {
+      "lmin": 0.595,
+      "lmax": 0.605,
+      "wmin_per_finger": 0.995,
+      "wmax_per_finger": 1.005
+    },
+    {
+      "lmin": 0.49500000000000005,
+      "lmax": 0.505,
+      "wmin_per_finger": 3.9949999999999997,
+      "wmax_per_finger": 4.005
+    },
+    {
+      "lmin": 0.49500000000000005,
+      "lmax": 0.505,
+      "wmin_per_finger": 0.415,
+      "wmax_per_finger": 0.425
+    },
+    {
+      "lmin": 0.595,
+      "lmax": 0.605,
+      "wmin_per_finger": 0.415,
+      "wmax_per_finger": 0.425
+    },
+    {
+      "lmin": 0.795,
+      "lmax": 0.805,
+      "wmin_per_finger": 0.415,
+      "wmax_per_finger": 0.425
+    },
+    {
+      "lmin": 0.49500000000000005,
+      "lmax": 0.505,
+      "wmin_per_finger": 0.6950000000000001,
+      "wmax_per_finger": 0.7050000000000001
+    },
+    {
+      "lmin": 0.595,
+      "lmax": 0.605,
+      "wmin_per_finger": 0.6950000000000001,
+      "wmax_per_finger": 0.7050000000000001
+    }
+  ]
+}

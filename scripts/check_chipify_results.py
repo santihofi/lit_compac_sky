@@ -20,7 +20,7 @@ def count(value):
     args=[ast.literal_eval(a) for a in node.args]
     return len(funcs[node.func.id](*args))
 
-def audit(sheet_path,out):
+def audit(sheet_path,out,enforce_limits=True):
     spec=yaml.safe_load(sheet_path.read_text())
     expected=math.prod(count(v) for v in spec["parameters"].values())
     result=out/"simulation_results.csv"
@@ -36,6 +36,7 @@ def audit(sheet_path,out):
     ids=[r["run_id"] for r in rows]
     if len(set(ids))!=expected: raise ValueError("Repeated run IDs")
     checked=waves=0
+    failed_limits=[]
     for row in rows:
         rid=row["run_id"]
         for name,value in row.items():
@@ -48,10 +49,14 @@ def audit(sheet_path,out):
                 v=float(row[key])
                 if not math.isfinite(v): raise ValueError(f"Case {rid}: nonfinite {key}")
                 limits=limits or {}
+                violation=None
                 if limits.get("min") is not None and v<float(limits["min"]):
-                    raise ValueError(f"Case {rid}: {key}={v} below {limits['min']}")
+                    violation=f"Case {rid}: {key}={v} below {limits['min']}"
                 if limits.get("max") is not None and v>float(limits["max"]):
-                    raise ValueError(f"Case {rid}: {key}={v} above {limits['max']}")
+                    violation=f"Case {rid}: {key}={v} above {limits['max']}"
+                if violation:
+                    failed_limits.append(violation)
+                    if enforce_limits: raise ValueError(violation)
                 checked+=1
             for kind,field in [("dc","dc_signals"),("tran","transient_signals"),("ac","ac_signals")]:
                 signals=tests.get(field,[])
@@ -70,10 +75,11 @@ def audit(sheet_path,out):
                         if any(not math.isfinite(float(d[column])) for d in data):
                             raise ValueError(f"Nonfinite {column} in {wave}")
                 waves+=1
-    return {"cases":expected,"scalar_values":checked,"waveform_files":waves,"status":"valid"}
+    return {"cases":expected,"scalar_values":checked,"waveform_files":waves,"status":"valid","specification_status":"fail" if failed_limits else "pass","failed_limits":failed_limits}
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("datasheet",type=Path);ap.add_argument("out",type=Path)
+    ap.add_argument("--allow-spec-fail",action="store_true",help="Audit data integrity and report all failed limits without rejecting the run")
     args=ap.parse_args()
-    print(json.dumps(audit(args.datasheet,args.out),sort_keys=True))
+    print(json.dumps(audit(args.datasheet,args.out,not args.allow_spec_fail),sort_keys=True))
 if __name__=="__main__": main()
