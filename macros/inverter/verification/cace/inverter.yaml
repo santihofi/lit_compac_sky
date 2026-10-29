@@ -60,7 +60,7 @@ default_conditions:
     display: Corner
     typical: tt
   mc_pr:
-    description: Process variation Monte Carlo switch (mc_pr_switch of the model library)
+    description: Process switch, requires corner_mos=mc to load statistical models
     display: MC process
     typical: 0
   temp:
@@ -76,8 +76,8 @@ default_conditions:
 
 parameters:
   # The limits are what this design meets: the fixed 0.9 V input bias leaves 2.7 dB and 6.9 dB of gain at the skewed
-  # corners sf and fs (the switching point moves to 0.84 V and 0.97 V), mismatch and process Monte Carlo take the
-  # cut-off frequency down to 0.80 MHz.
+  # corners sf and fs (the switching point moves to 0.84 V and 0.97 V).
+  # The process Monte Carlo limits must be checked with the mc section selected.
   ac_params:
     spec:
       Adc_ol_dB:
@@ -235,7 +235,7 @@ parameters:
         step: linear
         stepsize: 1
       corner_mos:
-        typical: tt
+        typical: mc
       mc_pr:
         typical: 1          # Process variation Monte Carlo
       temp:

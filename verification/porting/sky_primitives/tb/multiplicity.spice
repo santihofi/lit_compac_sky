@@ -1,0 +1,17 @@
+SKY130 precision-poly multiplicity control
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.temp 27
+Vbase base 0 0.01
+Xbase base 0 0 sky130_fd_pr__res_high_po_5p73 L=1 mult=1
+Vmult2 mult2 0 0.01
+Xmult2 mult2 0 0 sky130_fd_pr__res_high_po_5p73 L=1 mult=2
+Vm2 m2 0 0.01
+Xm2 m2 0 0 sky130_fd_pr__res_high_po_5p73 L=1 mult=2 m=2
+.control
+op
+let base=-v(base)/i(vbase)
+let mult2=-v(mult2)/i(vmult2)
+let m2=-v(m2)/i(vm2)
+quit
+.endc
+.end

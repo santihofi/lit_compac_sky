@@ -1,6 +1,7 @@
 # ngspice corners, mismatch and Monte Carlo in sky130A
 
-What the model files of sky130A contain, which line selects what, and which runs are possible. Everything here was read out of the PDK of the IIC-OSIC-TOOLS 2026.08 image, open_pdks `026824c7`.
+What the model files of sky130A contain, which line selects what, and which runs are possible. The library structure was read in IIC-OSIC-TOOLS 2026.08, open_pdks `026824c7`.
+The statistical selection and precision-poly mismatch were checked again with ngspice 47 in image 2026.10 on 2026-10-29.
 
 ## One entry point
 
@@ -18,7 +19,9 @@ Every simulation pulls in one file and one section:
 
 The two trees hold the same sections. `libs.tech/ngspice/` is the ngspice build, `libs.tech/combined/` is the one the Xschem variable points at.
 
-`.option scale=1e-6` belongs with it in a hand-written deck: the sky130 device models take `W` and `L` in metres, and the Xschem symbols write them in micrometres.
+The installed `all.spice` and `parameters/montecarlo.spice` set `.option scale=1.0u`.
+The Xschem symbols therefore write `W` and `L` as numbers in micrometres.
+A handwritten deck using the full library inherits this setting, so do not also add an SI suffix to those geometry values.
 
 ## The sections
 
@@ -40,7 +43,7 @@ That gives the 52 sections the library defines, for example:
 | `ss_hh` | slow | high R, high C | off |
 | `ff_ll_mm` | fast | low R, low C | on |
 | `hh` | typical | high R, high C | off |
-| `mc` | typical plus process variation | typical | off |
+| `mc` | statistical process models | statistical process models | off |
 
 Unlike the IHP libraries, the RC corner is not a separate `.lib` line: it is part of the section name. One `.lib` line per simulation is all it takes, and a corner sweep is a sweep over section names.
 
@@ -90,7 +93,10 @@ The slope scales with the device area, so a wide, long device mismatches less. W
 ls $PDK_ROOT/$PDK/libs.ref/sky130_fd_pr/spice/ | grep mismatch
 ```
 
-In the 2026.08 PDK that is 28 files: the 1.8 V core FETs and their low and high threshold flavours, the 5 V thick oxide FETs, the native FETs, the RF FETs and the flash and SRAM cells. Resistors, capacitors, diodes and bipolars have no mismatch model here, a mismatch run leaves them at their nominal value.
+In the 2026.08 PDK that is 28 files: the 1.8 V core FETs and their low and high threshold flavours, the 5 V thick oxide FETs, the native FETs, the RF FETs and the flash and SRAM cells. This filename list is not an inventory of all mismatch behavior.
+Precision-poly resistor wrappers contain their own MC_MM_SWITCH-gated AGAUSS expressions, including body and end resistance mismatch.
+The 1.41 um and 5.73 um high-poly families both varied in the measured control.
+Inspect and probe other passive and bipolar families individually before claiming whether they have mismatch.
 
 A mismatch run is a Monte Carlo over the mismatch models only, so it needs a repeated analysis:
 
@@ -113,14 +119,18 @@ CACE does that repetition for you, see `ac_mm_params` in [macros/inverter/verifi
 
 The `mc` section is different from the corner sections: it sets `mc_pr_switch=1` and includes `parameters/critical.spice` and `parameters/montecarlo.spice`, which redefine the process parameters as functions of a set of random variables. It does not include a MOS corner, so it cannot be stacked on top of one: reading `.lib ... mc` after `.lib ... tt` redefines the models.
 
-The practical way to combine a corner with process variation is to keep the corner section and set the switch afterwards:
+Selecting a corner and changing only the process switch does not load the statistical parameter definitions.
+The measured `tt` plus `mc_pr_switch=1` control was identical to deterministic `tt` for all eight seeds.
+Use the statistical section:
 
 ```spice
-.lib $::SKYWATER_MODELS/sky130.lib.spice tt
-.param mc_pr_switch=1
+.lib $::SKYWATER_MODELS/sky130.lib.spice mc
 ```
 
-That is what the CACE datasheet of the inverter does, through its `mc_pr` condition. The parameter reaches the model equations, which scale the critical dimensions and the oxide thickness with it, and every `reset` draws a new set.
+For process variation together with local mismatch, select `mc` once and then set `.param mc_mm_switch=1`.
+Do not stack a deterministic corner section with `mc`.
+The inverter's `ac_mc_params` CACE test now selects `mc`.
+Its previous `tt` selection with only the process switch enabled did not exercise process variation.
 
 ## Which run for which question
 
@@ -129,8 +139,8 @@ That is what the CACE datasheet of the inverter does, through its `mc_pr` condit
 | Does it work at the nominal corner? | `tt` | - |
 | Does it work over process and RC corners? | `tt`, `ss`, `ff`, `sf`, `fs`, with `hh`, `hl`, `lh`, `ll` where the parasitics matter | sweep the section name |
 | How much does device to device mismatch cost? | `tt_mm` | repeat the analysis, 100 to 1000 runs |
-| How much does lot to lot process variation cost? | `tt` plus `.param mc_pr_switch=1` | repeat the analysis |
-| Both at once? | `tt_mm` plus `.param mc_pr_switch=1` | repeat the analysis |
+| How much does process variation cost? | `mc` | repeat the analysis |
+| Both at once? | `mc` plus `.param mc_mm_switch=1` | repeat the analysis |
 
 Temperature is not part of the section name, `.temp` is a separate statement, and supply variation is a parameter of the testbench.
 
@@ -145,3 +155,39 @@ Readers coming from the sibling templates will notice:
 | `mm_ok=1` on the device instance to enable its mismatch | no instance parameter, the `_mm` section switches every device that has data |
 | `num_sigmas` on the instance | fixed slopes in the mismatch models |
 | statistical corners in separate files | `mc` section and two switches |
+
+## Statistical activation controls
+
+A 2026-10-29 control used two equal diode-connected low-threshold NMOS devices (W=20 um, L=0.5 um, nf=4, 80 uA each) and two equal L=10 um resistors from each high-poly family at 10 mV.
+Each mode used eight independent seeds at 27 C.
+
+| Selection | NMOS VGS sample standard deviation | Pair VGS difference sample standard deviation | 5.73 um resistor relative pair difference sample standard deviation |
+| --- | ---: | ---: | ---: |
+| `tt` | 0 | 0 | 0 |
+| `tt` with process switch 1 | 0 | 0 | 0 |
+| `tt_mm` | 1.905 mV | 2.160 mV | 0.4784% |
+| `mc` | 6.542 mV | 0 | numerical roundoff |
+
+The 1.41 um resistor pair difference had 0.8464% sample standard deviation with `tt_mm`.
+These small controls establish model activation only, not a distribution, yield or foundry mismatch guarantee.
+
+Both `mult` and `m` are present in the stock precision-poly Xschem symbol format.
+For a 5.73 um resistor at L=1 um, `mult=2` alone measured the same 124.5 ohm as `mult=1`.
+Using `mult=2 m=2` measured 62.26 ohm.
+The wrapper's `mult` scales statistical area, while ngspice's instance `m` supplies electrical parallel copies.
+Keep both when writing a netlist by hand.
+
+## Inverter process Monte Carlo check
+
+After changing the CACE selection to `mc`, all 200 schematic samples passed the existing limits of gain at least 0 dB and bandwidth at least 500 kHz.
+At 1.8 V, input bias 0.9 V, 27 C and 10 pF load, gain spans 25.138 to 34.881 dB and bandwidth spans 689.573 kHz to 1.98538 MHz.
+These are the corrected process-only results with ngspice 47 on 2026-10-29.
+The generated samples are in [inverter_tb_ac.csv](../../macros/inverter/verification/cace/scripts/inverter_tb_ac.csv).
+
+Reproduce with:
+
+```sh
+source .designinit
+cd macros/inverter
+../../scripts/with_sky130_ngspice.sh cace verification/cace/inverter.yaml -s schematic -p ac_mc_params -j 4
+```

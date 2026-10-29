@@ -1,0 +1,9 @@
+corner,process_switch,seed,sim_error,run_id,statistics__error,vgs,vgs_pass,dv_mv,dv_mv_pass,r5p73_1,r5p73_1_pass,r5p73_2,r5p73_2_pass,r1p41_1,r1p41_1_pass,r1p41_2,r1p41_2_pass,dr5p73_pct,dr5p73_pct_pass,dr1p41_pct,dr1p41_pct_pass,statistics_overall_pass,global_pass
+tt_mm,0,1.0,None,000001,None,0.617114,True,-2.11749,True,632.666,True,634.114,True,2573.36,True,2595.55,True,-0.228644,True,-0.858453,True,True,True
+tt_mm,0,0.0,None,000000,None,0.621038,True,0.986372,True,634.622,True,632.614,True,2582.35,True,2560.91,True,0.316972,True,0.83357,True,True,True
+tt_mm,0,3.0,None,000003,None,0.619612,True,0.939486,True,629.686,True,633.657,True,2572.35,True,2556.34,True,-0.628744,True,0.624486,True,True,True
+tt_mm,0,2.0,None,000002,None,0.617761,True,-2.49847,True,633.05,True,633.531,True,2576.32,True,2565.23,True,-0.0759435,True,0.431455,True,True,True
+tt_mm,0,4.0,None,000004,None,0.620259,True,0.453942,True,635.991,True,631.558,True,2520.94,True,2553.11,True,0.699384,True,-1.2681,True,True,True
+tt_mm,0,5.0,None,000005,None,0.62264,True,2.07723,True,633.781,True,636.331,True,2548.84,True,2576.9,True,-0.401418,True,-1.09502,True,True,True
+tt_mm,0,6.0,None,000006,None,0.618041,True,-3.94472,True,631.114,True,635.616,True,2585.21,True,2610.56,True,-0.710927,True,-0.975739,True,True,True
+tt_mm,0,7.0,None,000007,None,0.620909,True,1.06862,True,631.672,True,634.014,True,2558.87,True,2564.81,True,-0.370224,True,-0.231555,True,True,True

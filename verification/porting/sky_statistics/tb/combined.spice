@@ -1,0 +1,31 @@
+SKY130 statistical semantics controls
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice {{corner}}
+.param mc_pr_switch={{process_switch}}
+.param mc_mm_switch=1
+.option seed={{(seed|int)+1}}
+.temp 27
+I1 0 n1 80u
+I2 0 n2 80u
+Xn1 n1 n1 0 0 sky130_fd_pr__nfet_01v8_lvt W=20 L=0.5 nf=4
+Xn2 n2 n2 0 0 sky130_fd_pr__nfet_01v8_lvt W=20 L=0.5 nf=4
+Vr5p73_1 r5p73_1 0 0.01
+Xr5p73_1 r5p73_1 0 0 sky130_fd_pr__res_high_po_5p73 L=10 mult=1 m=1
+Vr5p73_2 r5p73_2 0 0.01
+Xr5p73_2 r5p73_2 0 0 sky130_fd_pr__res_high_po_5p73 L=10 mult=1 m=1
+Vr1p41_1 r1p41_1 0 0.01
+Xr1p41_1 r1p41_1 0 0 sky130_fd_pr__res_high_po_1p41 L=10 mult=1 m=1
+Vr1p41_2 r1p41_2 0 0.01
+Xr1p41_2 r1p41_2 0 0 sky130_fd_pr__res_high_po_1p41 L=10 mult=1 m=1
+.control
+op
+let vgs=v(n1)
+let dv_mv=1e3*(v(n1)-v(n2))
+let r5p73_1=-v(r5p73_1)/i(vr5p73_1)
+let r5p73_2=-v(r5p73_2)/i(vr5p73_2)
+let dr5p73_pct=200*(r5p73_1-r5p73_2)/(r5p73_1+r5p73_2)
+let r1p41_1=-v(r1p41_1)/i(vr1p41_1)
+let r1p41_2=-v(r1p41_2)/i(vr1p41_2)
+let dr1p41_pct=200*(r1p41_1-r1p41_2)/(r1p41_1+r1p41_2)
+quit
+.endc
+.end

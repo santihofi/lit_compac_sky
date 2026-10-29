@@ -86,3 +86,32 @@ Its inverter DC result is unchanged at vgsp_at_vcm = 0.9071777 V.
 The startup probe verifies that the intended SKY130 optimization setting becomes active even when Chipify launches ngspice from a scratch directory.
 GitHub rejected the template push for lack of write access.
 The destination design repository still needs a remote.
+
+## Bandwidth and sizing tradeoffs at identical load
+
+A separate bare-core comparison uses the same 100 fF load on each output, 1.5 V supply, 0.75 V input and output references, and one input fixed at 100 mV while the other receives the small-signal AC stimulus.
+The IHP reference gives 426.673 MHz on input 1 and 836.155 MHz on input 2, with 718.416 uA supply current.
+This is a different load from the current mult_cell bench's next-stage inputs and output buffer.
+
+The first SKY130 speed sweep used folding mirrors of L=0.15 or 0.25 um.
+Its 24 points were valid, but K100/K10 ranged from 0.836181 to 0.902001.
+Bandwidth alone therefore cannot select the port.
+A second 24-point sweep used 0.5 or 1.25 um folding mirrors and smaller quad devices.
+One point, mirror W=80 um L=0.5 um, quad W=10 um L=0.15 um, pair W=74.625 um L=0.35 um, reaches K100=-9.45796, ratio 0.978145 and bandwidth 487.322/787.450 MHz.
+Its 14.660 mV mirror margin remains too small to accept without corner checks.
+Longer 1.25 um mirrors improve some curvature points but lower input-1 bandwidth to 149 to 254 MHz.
+Parallel circuit scaling and resistor adjustment remain exploratory, with no accepted final sizing.
+
+## Statistical model controls
+
+Thirty-two primitive cases separate deterministic models, local mismatch and global process variation.
+Eight seeds of tt with mc_pr_switch=1 gave exactly the same measured values as deterministic tt.
+The mc section gave 6.542 mV sample standard deviation in the diode-connected LVT NMOS VGS, while the difference between equal devices stayed zero.
+The tt_mm section gave 2.160 mV standard deviation in the pair difference.
+Both precision-poly families have local mismatch in their wrapper models, contrary to the earlier template guide.
+At L=10 um the eight-seed relative pair-difference standard deviations are 0.4784% for 5.73 um and 0.8464% for 1.41 um resistors.
+These controls establish model activation, not reliable spread or yield estimates.
+
+The template guide and inverter CACE process selection were corrected.
+A 200-sample process-only inverter run using mc passed its existing limits, with gain 25.138 to 34.881 dB and bandwidth 689.573 kHz to 1.98538 MHz.
+The primitive controls are also provided as a reusable Chipify project in testbenches/chipify/sky_statistics.

@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  case:
+  - 0
+tests:
+  multiplicity:
+    source: netlist
+    engine: ngspice
+    base: {}
+    mult2: {}
+    m2: {}
