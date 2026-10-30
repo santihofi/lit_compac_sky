@@ -49,6 +49,8 @@ def main():
        'let outdiff=v(outp)-v(outn)','let vocm=(v(outp)+v(outn))/2',
        'let points=length(outdiff)','quit','.endc']
     transfer=re.sub(r'\.control\b.*?\.endc',lambda m:'\n'.join(c),s,flags=re.S)
+    if args.project.startswith('sky_'):
+        transfer=transfer.replace('.option method=gear','.option method=gear\n.option rshunt=1e12\n.nodeset v(outp)=0.75 v(outn)=0.75 v(vbias)=0.67 v(x2.vref_int)=0.75')
     (p/'tb/transfer.spice').write_text(transfer)
     sheet['tests']={'transfer':{'source':'netlist','engine':'ngspice',
                     'points':{'min':1681,'max':1681},

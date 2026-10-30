@@ -1,0 +1,33 @@
+[
+  {
+    "setting": "default",
+    "return_code": 0,
+    "seconds": 19.659151921019657,
+    "dynamic_gmin_starts": 11,
+    "data_rows": 11,
+    "max_voltage_delta_v": 0.0
+  },
+  {
+    "setting": "klu",
+    "return_code": 0,
+    "seconds": 33.54018397099571,
+    "dynamic_gmin_starts": 1,
+    "data_rows": 0
+  },
+  {
+    "setting": "rshunt",
+    "return_code": 0,
+    "seconds": 22.710347637010273,
+    "dynamic_gmin_starts": 11,
+    "data_rows": 11,
+    "max_voltage_delta_v": 4.5000000059580714e-08
+  },
+  {
+    "setting": "nodeset_rshunt",
+    "return_code": 0,
+    "seconds": 20.75929244598956,
+    "dynamic_gmin_starts": 0,
+    "data_rows": 11,
+    "max_voltage_delta_v": 4.900000005747529e-08
+  }
+]

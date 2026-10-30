@@ -28,6 +28,8 @@ Egt4 gt4 GND VOL=' v(vdd)*(1-(floor((v(gcode)+0.5)/16)-2*floor((v(gcode)+0.5)/32
 .temp {{ temp }}
 .option SEED = {{ (seed|int) + 1 }}
 .option method=gear
+.option rshunt=1e12
+.nodeset v(outp)=0.75 v(outn)=0.75 v(vbias)=0.67 v(x2.vref_int)=0.75
 
 .control
 save v(vdin1) v(vdin2) v(outp) v(outn)

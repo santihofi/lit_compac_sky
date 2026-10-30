@@ -196,3 +196,57 @@ The next compensation experiment separates the slow integrating loop with a larg
 
 Evidence: `evidence/ihp_core_noise.csv`, `evidence/ihp_core_stability.csv`, `evidence/sky_degenerated_noise.csv`, `evidence/sky_degenerated_stability.csv` and `evidence/sky_degenerated_corners.csv`.
 The independent corner audit distinguishes valid data from failed specifications.
+
+## Full transfer surface and separate input curvature
+
+The nominal transfer surfaces contain all 1681 combinations of input differentials from -100 to +100 mV in 5 mV steps.
+A least-squares fit uses constant, input-1 feedthrough, input-2 feedthrough and product terms.
+Residuals are normalized by the fitted product gain times 0.01 V^2, so gain error and shape error remain distinct.
+
+| Nominal fitted metric | IHP current core | SKY130 degeneration candidate |
+|---|---:|---:|
+| Product gain | -10.0064 V^-1 | -10.0853 V^-1 |
+| Peak residual | 1.38132 mV | 2.36880 mV |
+| Peak residual / fitted full scale | 1.38043% | 2.34877% |
+| RMS residual / fitted full scale | 0.48130% | 0.82899% |
+
+![IHP full transfer surface](figures/ihp_core_transfer.png)
+
+![SKY130 candidate full transfer surface](figures/sky_degenerated_transfer.png)
+
+The SKY130 candidate's combined gain ratio of 1.01218 hides opposing errors on its two axes.
+Holding input 2 at 10 mV, increasing input 1 from 10 to 100 mV changes normalized gain from -9.87541 to -9.47623 V^-1.
+Holding input 1 at 10 mV, increasing input 2 to 100 mV instead gives -10.74152 V^-1.
+A further 120-case sizing sweep therefore measures each axis separately.
+No configuration in that sweep keeps combined gain curvature within the provisional corner window, even at fixed 27 C and 1.5 V.
+Its best worst-corner deviation is 4.936%.
+The next experiment widens the quad further while reducing input-pair transconductance.
+
+## Loop compensation and DC convergence controls
+
+Increasing the slow-loop MOS capacitor to sixteen times its mapped multiplicity, with fast-loop resistance scaled by 1.5, gives 71.5876 degrees phase margin and 10.5120 dB gain margin at 100 fF.
+The nominal 30 fF result is 70.7993 degrees and 10.3237 dB.
+This is a compensation experiment, with additional area and settling cost still to evaluate.
+A current-kick bench uses trapezoidal integration and checks both 100 ps and 50 ps maximum steps.
+
+The original dense SKY130 DC surface timed out after 600 seconds.
+An eleven-point control compared unchanged circuit outputs with alternate solver settings.
+Adding 1e12 ohm shunts alone changed output voltages by at most 45 nV but did not remove repeated gmin recovery.
+Adding initial guesses on the two outputs, load-gate bias and integrator node removed recovery in that control, with at most 49 nV difference from the original result.
+The full 1681-point surface then completed in 58.27 seconds.
+These numerical aids are explicit in the generated transfer bench.
+They are initial guesses and weak conductances, not forced node voltages.
+
+KLU aborted the same control with no DC data despite returning exit code zero.
+It is not selected for these benches.
+The audit checks waveform completeness and finite values independently of the simulator exit code.
+Evidence and the reproducible control are `evidence/sky_dc_solver_probe.json` and `scripts/probe_sky_dc_solver.py`.
+
+## Matched-skew corner comparison
+
+![Matched transistor-skew comparison](figures/matched_corner_comparison.png)
+
+Each bar spans the nine combinations of supply and temperature for one transistor skew.
+IHP and SKY130 skew corners are paired by NMOS/PMOS behavior, not by the literal sf/fs strings.
+The SKY130 candidate improves nominal noise and some bandwidth values, but uses more current and has larger transfer error.
+It remains a rejected schematic candidate.
