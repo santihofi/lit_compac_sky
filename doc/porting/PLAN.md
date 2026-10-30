@@ -65,3 +65,13 @@ The four-copy degeneration candidate improves nominal speed and noise at 3.63 ti
 Continue with full transfer surfaces and separate slow/fast CMFB compensation.
 Do not start the port layout from these rejected sizes.
 The reusable template now includes measured MOS corner-identity controls and corrected skew-corner ordering.
+
+## Further characterization on 2026-10-30
+
+Full nominal transfer surfaces now distinguish gain from shape error.
+The first source-degenerated candidate has 2.35 percent peak fitted residual against IHP 1.38 percent.
+Explicit convergence controls reduce its dense sweep from a timeout to a valid 58-second run.
+Large-signal CMFB traces expose the slow-capacitor settling cost, and load geometry offers a separate compensation path.
+Five quantized bias settings pass the nominal process-corner diagonal ratio screen at the original supply, with supply/temperature and full-surface checks still pending.
+A separately labeled 1.8 V, 0.9 V common-mode branch remains exploratory.
+See REPRODUCE.md for project identities and execution rules.

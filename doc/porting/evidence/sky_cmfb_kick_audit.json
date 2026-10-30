@@ -1,0 +1,13 @@
+{
+  "cases": 8,
+  "scalar_values": 24,
+  "waveform_files": 8,
+  "status": "valid",
+  "specification_status": "fail",
+  "failed_limits": [
+    "Case 000002: residual_mv=1.65098 above 1",
+    "Case 000003: residual_mv=1.6509 above 1",
+    "Case 000006: residual_mv=1.28636 above 1",
+    "Case 000007: residual_mv=1.28627 above 1"
+  ]
+}

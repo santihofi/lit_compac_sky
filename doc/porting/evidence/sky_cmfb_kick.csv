@@ -1,0 +1,9 @@
+temp,seed,vdd,vincm,vref,corner_mos,corner_res,corner_cap,gcode,ibias,c_load,vd1,vd2,mirror_scale,mirror_l,pair_scale,pair_l,quad_scale,quad_l,rscale,power_m,quad_model,body_tied,native_nf,rquad,tail_width,cmfb_rscale,cmfb_cscale,maxstep,sim_error,run_id,kick__error,end_time,end_time_pass,peak_mv,peak_mv_pass,residual_mv,residual_mv_pass,kick_overall_pass,global_pass
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,1.5,1,100p,None,000000,None,1e-06,True,746.587,True,1.10508e-06,True,True,True
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,1.5,1,50p,None,000001,None,1e-06,True,746.585,True,6.82399e-07,True,True,True
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,1.5,16,100p,None,000002,None,1e-06,True,747.456,True,1.65098,False,False,False
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,3.0,1,100p,None,000004,None,1e-06,True,748.839,True,2.77423e-06,True,True,True
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,1.5,16,50p,None,000003,None,1e-06,True,747.46,True,1.6509,False,False,False
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,3.0,16,100p,None,000006,None,1e-06,True,749.517,True,1.28636,False,False,False
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,3.0,1,50p,None,000005,None,1e-06,True,748.846,True,2.23658e-06,True,True,True
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,4e-05,100f,0,0,6,0.5,2,0.35,2,0.15,0.99,4,nfet_01v8_lvt,0,1,240,2,3.0,16,50p,None,000007,None,1e-06,True,749.519,True,1.28627,False,False,False

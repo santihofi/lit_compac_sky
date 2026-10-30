@@ -1,0 +1,13 @@
+{
+  "cases": 15,
+  "scalar_values": 270,
+  "waveform_files": 0,
+  "status": "valid",
+  "specification_status": "fail",
+  "failed_limits": [
+    "Case 000000: compr=0.966346 below 0.96758",
+    "Case 000002: compr=0.960316 below 0.96758",
+    "Case 000004: compr=0.93263 below 0.96758",
+    "Case 000009: compr=0.956239 below 0.96758"
+  ]
+}

@@ -58,10 +58,11 @@ def audit(sheet_path,out,enforce_limits=True):
                     failed_limits.append(violation)
                     if enforce_limits: raise ValueError(violation)
                 checked+=1
-            for kind,field in [("dc","dc_signals"),("tran","transient_signals"),("ac","ac_signals")]:
+            for kind,field in [("dc","dc_signals"),("transient","transient_signals"),("ac","ac_signals")]:
                 signals=tests.get(field,[])
                 if not signals: continue
                 folder=meta.get("analysis_dirs",{}).get(kind)
+                if kind=="transient" and not folder: folder=meta.get("tran_dir")
                 if not folder: raise ValueError(f"Missing {kind} capture directory")
                 folder=Path(folder);folder=folder if folder.is_absolute() else out/folder
                 wave=folder/f"run_{rid}__{tb}.csv"

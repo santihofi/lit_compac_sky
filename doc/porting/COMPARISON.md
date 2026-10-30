@@ -250,3 +250,66 @@ Each bar spans the nine combinations of supply and temperature for one transisto
 IHP and SKY130 skew corners are paired by NMOS/PMOS behavior, not by the literal sf/fs strings.
 The SKY130 candidate improves nominal noise and some bandwidth values, but uses more current and has larger transfer error.
 It remains a rejected schematic candidate.
+
+## Compensation cost and large-signal recovery
+
+An 80 uA, 20 ns current pulse into the load-gate bias drives the candidate close to the supply rail in common mode.
+At fast-loop resistance scale 1.5, the original integrating capacitor settles within 1 mV about 199.9 ns after the pulse ends.
+The sixteenfold capacitor does not settle within 1 mV before the 1 us simulation ends.
+Its maximum error between 900 ns and 1 us is 1.65098 mV.
+Repeating with 50 ps instead of 100 ps maximum steps gives 1.65090 mV.
+This is a settling penalty rather than evidence that the larger capacitor is a complete fix.
+
+![Common-mode current-kick recovery](figures/sky_cmfb_kick.png)
+
+Scaling the entire fast OTA by four, with reciprocal resistor scaling and the slow loop unchanged, improves nominal margins to 83.1195 degrees and 14.7666 dB with capacitor scale four.
+Supply current rises from 2.611 to 3.319 mA.
+Shortening both PMOS load and mirror-master devices to 0.35 um while preserving their W/L gives 118.826 degrees and 14.9866 dB at resistance scale one, with current 2.608 mA.
+That geometry change requires new transfer, mismatch and corner checks.
+It is not included in the previously reported transfer or noise candidate.
+
+The transient audit was corrected to use Chipify's transient metadata key and legacy tran_dir fallback.
+All eight traces are finite and reach 1 us.
+Missing-waveform and nonfinite-sample controls are rejected.
+The complete traces are retained in evidence/sky_cmfb_kick_waveforms.npz.
+
+## Bias calibration experiment at the original supply
+
+A wider quad improves voltage margin but does not remove process-dependent curvature at a single fixed bias.
+A fifteen-case current sweep shows that bias can tune curvature substantially.
+The following nominal experiment keeps 1.5 V and 0.75 V common mode, uses a 4x quad-width scale, 0.5x input-pair scale, 0.3 um folding mirrors, four circuit copies and 180 ohm unit degeneration resistors.
+The effective source resistance is one quarter of the unit value.
+Load resistance scale is 1.3.
+
+The ideal reference currents are quantized to (21 + code) times 1.25 uA per circuit copy.
+The codes for ff, fs, sf, ss and tt are respectively 3, 11, 12, 30 and 12.
+This retains a five-bit code but changes the current-DAC unit from the IHP schematic's approximately 0.95 uA, before the fourfold circuit scaling.
+No SKY130 DAC implementation is claimed by this ideal-source experiment.
+
+| SKY130 corner at 27 C | Unit reference current | K100 | K100/K10 |
+|---|---:|---:|---:|
+| ff | 30.00 uA | -8.98496 V^-1 | 1.02141 |
+| fs | 40.00 uA | -9.48636 V^-1 | 1.01437 |
+| sf | 41.25 uA | -8.81761 V^-1 | 1.02346 |
+| ss | 63.75 uA | -9.93479 V^-1 | 1.02076 |
+| tt | 41.25 uA | -9.74103 V^-1 | 1.01800 |
+
+All five pass the provisional diagonal ratio window.
+Input-axis curvature, full surfaces, current-source temperature dependence, trim coverage, real bias circuitry and loaded bandwidth still determine acceptance.
+The fixed per-corner settings are being checked across the original supply and temperature range.
+
+## Separate 1.8 V and 0.9 V common-mode alternative
+
+Raising both supply and signal common mode enables a less aggressive undegenerated LVT core.
+One two-copy nominal point uses 40/0.5 um folding mirrors, 20/0.5 um quad devices and the initial mapped input pair.
+At load-resistance scale one it gives K100=-9.74012, ratio 0.983951, bandwidth 720.638/1008.690 MHz and supply current 1.379 mA.
+
+With resistor scale 1.03, nominal gain becomes -9.99626 V^-1.
+Eleven of fifteen MOS/temperature cases at 1.8 V meet the provisional ratio window.
+The worst ratio is 0.932630 at sf and 0 C, so the higher common mode alone does not complete the port.
+This experiment changes supply and common mode and is not mixed into equal-supply conclusions.
+
+Differential AC admittance at 1 MHz gives nominal effective capacitance per input pin of 170.400/231.979 fF for this alternative.
+The matching IHP measurement gives 171.090/131.584 fF.
+The second input therefore loads a preceding stage more heavily even though the fixed-100-fF bare-core bandwidth is higher.
+The next-stage transistor load must be included before accepting tree bandwidth.

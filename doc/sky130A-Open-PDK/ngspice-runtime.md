@@ -19,3 +19,18 @@ The existing inverter DC bench produced vgsp_at_vcm = 0.9071777 V with both the 
 The wrong-PDK guard returned 2 and bash -n passed.
 The image does not provide ShellCheck or REUSE executables, so those checks were not run locally.
 The template's existing license-check CI remains the REUSE gate.
+
+## Dense analog DC sweeps
+
+Inspect the simulator log when a DC sweep repeatedly times out.
+Repeated dynamic gmin recovery can dominate a run even when every recovered point eventually converges.
+Keep convergence aids in the affected bench so their electrical effect can be compared with an unchanged reference.
+
+In a measured SKY130 analog example, initial guesses on the outputs and common-mode control nodes plus rshunt=1e12 reduced a 1681-point sweep from a 600-second timeout to 58.27 seconds.
+An eleven-point control differed from the original result by at most 49 nV on the two outputs.
+That result does not establish suitable guesses or shunt values for another circuit.
+A nodeset supplies a starting guess, while a shunt adds conductance and must be included in the accuracy check.
+
+KLU aborted that example without DC vectors even though ngspice returned zero.
+Require the expected point count, sweep endpoints and finite requested vectors.
+The runtime wrapper deliberately leaves solver selection and convergence aids to each bench.
