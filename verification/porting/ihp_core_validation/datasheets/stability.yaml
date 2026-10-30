@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 13
+  ibias:
+  - 40u
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+tests:
+  stability:
+    source: netlist
+    engine: ngspice
+    pm:
+      min: 45
+      max: 180
+    gm_db:
+      min: 10
+    ncross:
+      min: 1
+    fu: {}
+    f180: {}
+    t0_db: {}
+    vbias_dc: {}
+    voutcm_dc: {}
+    ac_signals:
+    - ac2.tloop

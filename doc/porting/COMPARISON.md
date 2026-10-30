@@ -140,3 +140,59 @@ The native 3.3 V NMOS quad gives 353 to 523 mV nominal mirror margin in the firs
 These are schematic alternatives, not selected physical implementations.
 The first native sweep failed because 5 um fingers fell outside all nine model bins.
 The corrected probes use supported 4 um fingers at L=0.5 um, as described in [the geometry guide](../sky130A-Open-PDK/device-model-geometry.md).
+
+## Skew-corner interpretation and native-quad rejection
+
+The SKY130 device probes show sf means fast NMOS and slow PMOS in the installed models, while fs means slow NMOS and fast PMOS.
+This reverses the IHP library's documented transistor order.
+Semantic cross-process comparisons therefore map IHP mos_sf to SKY130 fs and IHP mos_fs to SKY130 sf.
+Raw evidence keeps each PDK's own labels.
+
+The 45-case IHP bare-core bandwidth sweep gives 379.086 to 456.491 MHz on input 1 and 800.967 to 864.774 MHz on input 2.
+Its tail margin reaches -17.9 mV at a few low-supply points while the measured gain remains well behaved.
+A zero-margin screen is therefore conservative and cannot serve as the sole equivalence criterion.
+The saturation indicators also come from different compact models.
+
+The native-quad candidate has positive folding-mirror margin, but its quad margin reaches -84.4 mV at the SKY130 sf corner.
+A native transistor's gate and drain at the same common-mode voltage do not guarantee saturation.
+Across the 45 cases its gain magnitude spans 2.3803 to 14.6000 V^-1.
+The native substitution is rejected for equivalent transfer behavior, despite the large mirror margin.
+The next candidate uses modeled source-degeneration resistors with wider LVT quad and tail devices.
+
+## Source degeneration, noise and common-mode feedback
+
+The four-copy source-degeneration candidate uses 60 ohm effective source resistors in each LVT quad arm, implemented by four parallel res_high_po_5p73 devices rather than ideal resistors.
+Its unit dimensions are 120/0.5 um folding mirrors, 149.25/0.35 um input devices and 40/0.15 um quad devices.
+Doubling the tail mirror width improves tail headroom.
+At tt, 27 C, 1.5 V, code 13 and 100 fF per output, K100 is -9.99565 V^-1, K100/K10 is 1.01218, bandwidth is 474.822/1119.29 MHz and supply current is 2.611 mA.
+The IHP bare core draws 0.718416 mA under the same bias and load definition.
+The SKY130 candidate therefore costs about 3.63 times the bare-core current.
+
+All 45 MOS/supply/temperature cases produce valid measurements.
+Only 23 meet the provisional 0.96758 to 1.03242 gain-ratio window.
+The ff and fs corners show expansion, with fs reaching 1.1123, while ss can compress to 0.9511.
+The fs folding-mirror margin reaches -5.9 mV.
+This candidate is not accepted as an equivalent port.
+
+Matching nominal noise benches hold one input at 100 mV differential and measure noise referred to the other input.
+Both integrate from 1 kHz to 100 MHz and use the same 100 fF output loads.
+
+| Nominal schematic metric | Current IHP | SKY130 degeneration candidate |
+|---|---:|---:|
+| Input-1 noise at 1 MHz | 20.3362 nV/sqrt(Hz) | 7.79333 nV/sqrt(Hz) |
+| Input-2 noise at 1 MHz | 20.3247 nV/sqrt(Hz) | 6.58537 nV/sqrt(Hz) |
+| Input-1 integrated noise | 149.052 uVrms | 74.9687 uVrms |
+| Input-2 integrated noise | 146.311 uVrms | 63.4849 uVrms |
+| CMFB phase margin | 60.5671 degrees | 47.6232 degrees |
+| CMFB gain margin | 18.0002 dB | 9.59422 dB |
+| CMFB unity frequency | 14.4654 MHz | 18.3655 MHz |
+
+These are schematic nominal measurements, not mismatch, PEX or loaded-tree results.
+The noise source must have an AC magnitude of one or ngspice cannot compute the input-referred quantity.
+The initial missing-AC bench was corrected before retaining these values.
+The SKY130 common-mode loop fails the 10 dB minimum gain margin.
+Increasing only the fast-loop degeneration resistance worsened phase margin, reaching 26.65 degrees at three times the mapped resistance and 100 fF load.
+The next compensation experiment separates the slow integrating loop with a larger gate capacitor before tuning the fast-loop resistance.
+
+Evidence: `evidence/ihp_core_noise.csv`, `evidence/ihp_core_stability.csv`, `evidence/sky_degenerated_noise.csv`, `evidence/sky_degenerated_stability.csv` and `evidence/sky_degenerated_corners.csv`.
+The independent corner audit distinguishes valid data from failed specifications.

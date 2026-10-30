@@ -1,0 +1,71 @@
+SKY130 primitive mapping characterization
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice {{corner}}
+.temp {{temp}}
+.options reltol=1e-6
+Vr_5p73_0 r_5p73_0 0 0.01
+Xr_5p73_0 r_5p73_0 0 0 sky130_fd_pr__res_high_po_5p73 L=0.5 mult=1
+Vr_5p73_1 r_5p73_1 0 0.01
+Xr_5p73_1 r_5p73_1 0 0 sky130_fd_pr__res_high_po_5p73 L=0.75 mult=1
+Vr_5p73_2 r_5p73_2 0 0.01
+Xr_5p73_2 r_5p73_2 0 0 sky130_fd_pr__res_high_po_5p73 L=1 mult=1
+Vr_5p73_3 r_5p73_3 0 0.01
+Xr_5p73_3 r_5p73_3 0 0 sky130_fd_pr__res_high_po_5p73 L=2 mult=1
+Vr_5p73_4 r_5p73_4 0 0.01
+Xr_5p73_4 r_5p73_4 0 0 sky130_fd_pr__res_high_po_5p73 L=5 mult=1
+Vr_5p73_5 r_5p73_5 0 0.01
+Xr_5p73_5 r_5p73_5 0 0 sky130_fd_pr__res_high_po_5p73 L=10 mult=1
+Vr_5p73_6 r_5p73_6 0 0.01
+Xr_5p73_6 r_5p73_6 0 0 sky130_fd_pr__res_high_po_5p73 L=15 mult=1
+Vr_5p73_7 r_5p73_7 0 0.01
+Xr_5p73_7 r_5p73_7 0 0 sky130_fd_pr__res_high_po_5p73 L=22.705 mult=1
+Vr_1p41_0 r_1p41_0 0 0.01
+Xr_1p41_0 r_1p41_0 0 0 sky130_fd_pr__res_high_po_1p41 L=0.5 mult=1
+Vr_1p41_1 r_1p41_1 0 0.01
+Xr_1p41_1 r_1p41_1 0 0 sky130_fd_pr__res_high_po_1p41 L=0.75 mult=1
+Vr_1p41_2 r_1p41_2 0 0.01
+Xr_1p41_2 r_1p41_2 0 0 sky130_fd_pr__res_high_po_1p41 L=1 mult=1
+Vr_1p41_3 r_1p41_3 0 0.01
+Xr_1p41_3 r_1p41_3 0 0 sky130_fd_pr__res_high_po_1p41 L=2 mult=1
+Vr_1p41_4 r_1p41_4 0 0.01
+Xr_1p41_4 r_1p41_4 0 0 sky130_fd_pr__res_high_po_1p41 L=5 mult=1
+Vr_1p41_5 r_1p41_5 0 0.01
+Xr_1p41_5 r_1p41_5 0 0 sky130_fd_pr__res_high_po_1p41 L=10 mult=1
+Vr_1p41_6 r_1p41_6 0 0.01
+Xr_1p41_6 r_1p41_6 0 0 sky130_fd_pr__res_high_po_1p41 L=15 mult=1
+Vr_1p41_7 r_1p41_7 0 0.01
+Xr_1p41_7 r_1p41_7 0 0 sky130_fd_pr__res_high_po_1p41 L=22.705 mult=1
+Infetsvt 0 nfetsvt 80u
+Xnfetsvt nfetsvt nfetsvt 0 0 sky130_fd_pr__nfet_01v8 W=20 L=0.5 nf=4
+Infetlvt 0 nfetlvt 80u
+Xnfetlvt nfetlvt nfetlvt 0 0 sky130_fd_pr__nfet_01v8_lvt W=20 L=0.5 nf=4
+Ipfetsvt pfetsvt 0 160u
+Vpfetsvt pfetsvt_s 0 1.5
+Xpfetsvt pfetsvt pfetsvt pfetsvt_s pfetsvt_s sky130_fd_pr__pfet_01v8 W=74.625 L=0.35 nf=12
+Ipfetlvt pfetlvt 0 160u
+Vpfetlvt pfetlvt_s 0 1.5
+Xpfetlvt pfetlvt pfetlvt pfetlvt_s pfetlvt_s sky130_fd_pr__pfet_01v8_lvt W=74.625 L=0.35 nf=12
+.control
+op
+let r_5p73_0 = -v(r_5p73_0)/i(vr_5p73_0)
+let r_5p73_1 = -v(r_5p73_1)/i(vr_5p73_1)
+let r_5p73_2 = -v(r_5p73_2)/i(vr_5p73_2)
+let r_5p73_3 = -v(r_5p73_3)/i(vr_5p73_3)
+let r_5p73_4 = -v(r_5p73_4)/i(vr_5p73_4)
+let r_5p73_5 = -v(r_5p73_5)/i(vr_5p73_5)
+let r_5p73_6 = -v(r_5p73_6)/i(vr_5p73_6)
+let r_5p73_7 = -v(r_5p73_7)/i(vr_5p73_7)
+let r_1p41_0 = -v(r_1p41_0)/i(vr_1p41_0)
+let r_1p41_1 = -v(r_1p41_1)/i(vr_1p41_1)
+let r_1p41_2 = -v(r_1p41_2)/i(vr_1p41_2)
+let r_1p41_3 = -v(r_1p41_3)/i(vr_1p41_3)
+let r_1p41_4 = -v(r_1p41_4)/i(vr_1p41_4)
+let r_1p41_5 = -v(r_1p41_5)/i(vr_1p41_5)
+let r_1p41_6 = -v(r_1p41_6)/i(vr_1p41_6)
+let r_1p41_7 = -v(r_1p41_7)/i(vr_1p41_7)
+let nfetsvt_vgs = v(nfetsvt)
+let nfetlvt_vgs = v(nfetlvt)
+let pfetsvt_vgs = 1.5-v(pfetsvt)
+let pfetlvt_vgs = 1.5-v(pfetlvt)
+quit
+.endc
+.end

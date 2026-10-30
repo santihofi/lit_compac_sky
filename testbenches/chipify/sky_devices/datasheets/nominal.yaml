@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  corner:
+  - tt
+  temp:
+  - 27
+tests:
+  primitives:
+    source: netlist
+    engine: ngspice
+    r_5p73_0: {}
+    r_5p73_1: {}
+    r_5p73_2: {}
+    r_5p73_3: {}
+    r_5p73_4: {}
+    r_5p73_5: {}
+    r_5p73_6: {}
+    r_5p73_7: {}
+    r_1p41_0: {}
+    r_1p41_1: {}
+    r_1p41_2: {}
+    r_1p41_3: {}
+    r_1p41_4: {}
+    r_1p41_5: {}
+    r_1p41_6: {}
+    r_1p41_7: {}
+    nfetsvt_vgs: {}
+    nfetlvt_vgs: {}
+    pfetsvt_vgs: {}
+    pfetlvt_vgs: {}

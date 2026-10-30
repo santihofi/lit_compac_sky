@@ -56,3 +56,12 @@ Do not claim layout signoff from an empty report or schematic equivalence from a
 The destination repository has no remote configured yet.
 The reference knowledge repository uses an HTTPS remote that needs credentials inside the container.
 GitHub SSH access works after adding the container account corresponding to UID 1000.
+
+## Checkpoint on 2026-10-30
+
+Current IHP bare-core corners, nominal noise and CMFB stability have been reproduced.
+The all-LVT, native-quad and source-degeneration SKY130 candidates remain rejected at corners.
+The four-copy degeneration candidate improves nominal speed and noise at 3.63 times the bare-core supply current, with insufficient loop gain margin.
+Continue with full transfer surfaces and separate slow/fast CMFB compensation.
+Do not start the port layout from these rejected sizes.
+The reusable template now includes measured MOS corner-identity controls and corrected skew-corner ordering.

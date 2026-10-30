@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 13
+  ibias:
+  - 40u
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+tests:
+  noise:
+    source: netlist
+    engine: ngspice
+    onoise1_nv:
+      min: 0
+    inoise1_nv:
+      min: 0
+    onoise1_uv:
+      min: 0
+    inoise1_uv:
+      min: 0
+    onoise2_nv:
+      min: 0
+    inoise2_nv:
+      min: 0
+    onoise2_uv:
+      min: 0
+    inoise2_uv:
+      min: 0
+    frequency_hz:
+      min: 999999
+      max: 1000001

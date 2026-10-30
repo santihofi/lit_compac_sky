@@ -104,3 +104,9 @@ path = "testbenches/chipify/sky_statistics/**"
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2026 Santiago Hofwimmer"
 SPDX-License-Identifier = "Apache-2.0 WITH SHL-2.1"
+
+[[annotations]]
+path = "testbenches/chipify/sky_devices/**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Santiago Hofwimmer"
+SPDX-License-Identifier = "Apache-2.0 WITH SHL-2.1"

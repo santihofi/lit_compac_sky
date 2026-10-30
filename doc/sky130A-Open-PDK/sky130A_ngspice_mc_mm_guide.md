@@ -29,7 +29,7 @@ A section name has up to three parts: the MOS corner, the resistor and capacitor
 
 | Part | Values | Meaning |
 | --- | --- | --- |
-| MOS corner | `tt`, `ss`, `ff`, `sf`, `fs` | typical, slow, fast, slow nmos with fast pmos, fast nmos with slow pmos |
+| MOS corner | `tt`, `ss`, `ff`, `sf`, `fs` | typical, slow, fast, slow pmos with fast nmos, fast pmos with slow nmos |
 | RC corner | omitted, `hh`, `hl`, `lh`, `ll` | resistance and capacitance high or low, in that order, omitted means typical |
 | Mismatch | omitted or `_mm` | device to device mismatch off or on |
 
@@ -192,3 +192,25 @@ source .designinit
 cd macros/inverter
 ../../scripts/with_sky130_ngspice.sh cace verification/cace/inverter.yaml -s schematic -p ac_mc_params -j 4
 ```
+
+## Skew corners are named differently from IHP
+
+The installed SKY130 `sf` case has faster NMOS and slower PMOS behavior.
+The `fs` case has slower NMOS and faster PMOS behavior.
+This reverses the transistor order of the IHP `mos_sf` and `mos_fs` labels, whose library comments explicitly say slow n/fast p and fast n/slow p.
+
+A 2026-10-30 diode-connected device control confirms this for both the standard and low-threshold SKY130 families.
+At 27 C, the low-threshold NMOS (20/0.5 um, nf=4, 80 uA) and PMOS (74.625/0.35 um, nf=12, 160 uA) give:
+
+| Library section | NMOS VGS | PMOS magnitude of VGS |
+| --- | ---: | ---: |
+| tt | 620.176 mV | 474.340 mV |
+| ss | 640.352 mV | 573.328 mV |
+| ff | 600.278 mV | 374.829 mV |
+| sf | 593.038 mV | 618.794 mV |
+| fs | 647.600 mV | 329.512 mV |
+
+For semantic corner comparisons, pair IHP `mos_sf` with SKY130 `fs` and IHP `mos_fs` with SKY130 `sf`.
+Keep the original library labels in raw result files.
+The family parameter shifts and corner magnitudes still differ, so this mapping aligns the transistor direction, not a statistical percentile.
+The reusable probe is in [sky_devices](../../testbenches/chipify/sky_devices/README.md).

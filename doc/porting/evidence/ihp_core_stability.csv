@@ -1,0 +1,2 @@
+temp,seed,vdd,vincm,vref,corner_mos,corner_res,corner_cap,gcode,ibias,c_load,vd1,vd2,sim_error,run_id,stability__error,pm,pm_pass,gm_db,gm_db_pass,ncross,ncross_pass,fu,fu_pass,f180,f180_pass,t0_db,t0_db_pass,vbias_dc,vbias_dc_pass,voutcm_dc,voutcm_dc_pass,stability_overall_pass,global_pass
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,40u,100f,0,0,None,000000,None,60.5671,True,18.0002,True,1.0,True,14465400.0,True,64768600.0,True,51.4305,True,0.817829,True,0.757967,True,True,True
