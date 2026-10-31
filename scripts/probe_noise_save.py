@@ -3,8 +3,11 @@
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 """Distinguish a selective save from save all before ngspice noise analysis."""
 from pathlib import Path
-import json,re,subprocess,tempfile
+import argparse,json,re,subprocess,tempfile
 ROOT=Path(__file__).resolve().parents[1]
+ap=argparse.ArgumentParser()
+ap.add_argument('--output',type=Path,default=ROOT/'verification/controls/noise_save_controls.json')
+args=ap.parse_args()
 records=[]
 with tempfile.TemporaryDirectory(prefix='noise-save-control-') as folder:
     for name,save in [('default',''),('all','save all'),('selected','save v(out)')]:
@@ -30,5 +33,6 @@ quit
         records.append(record)
 assert records[0]['noise_v_per_rt_hz']==records[1]['noise_v_per_rt_hz'] and records[0]['noise_v_per_rt_hz']>0
 assert records[2]['noise_v_per_rt_hz'] is None and 'no data saved for Noise analysis' in records[2]['log']
-(ROOT/'doc/porting/evidence/noise_save_controls.json').write_text(json.dumps(records,indent=2)+'\n')
+args.output.parent.mkdir(parents=True,exist_ok=True)
+args.output.write_text(json.dumps(records,indent=2)+'\n')
 print(json.dumps([{k:v for k,v in r.items() if k!='log'} for r in records],indent=2))

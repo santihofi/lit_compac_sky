@@ -1,0 +1,25 @@
+{
+  "status": "verified",
+  "controls": [
+    {
+      "op_analyses": 1,
+      "destroy_all": false,
+      "first_ac_plot": "ac1"
+    },
+    {
+      "op_analyses": 2,
+      "destroy_all": false,
+      "first_ac_plot": "ac2"
+    },
+    {
+      "op_analyses": 17,
+      "destroy_all": false,
+      "first_ac_plot": "ac17"
+    },
+    {
+      "op_analyses": 17,
+      "destroy_all": true,
+      "first_ac_plot": "ac1"
+    }
+  ]
+}

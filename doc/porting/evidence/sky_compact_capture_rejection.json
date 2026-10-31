@@ -1,0 +1,8 @@
+{
+  "status": "rejected",
+  "cases": 18,
+  "capture_failures": 18,
+  "cause": "Seventeen retained OP plots change first AC plot name to ac17. Chipify 1960c81 injects setplot ac1.",
+  "tool_claimed_global_pass": 9,
+  "first_capture_error": "ac produced no data - ngspice wrote no ac tab to capture (does the testbench run its .ac analysis?) | ngspice: Error: no such plot named ac1"
+}

@@ -48,6 +48,10 @@ No clean target is needed.
 | sky_cmfb_kick | Trapezoidal current-kick transients at two maximum time steps |
 | sky_cmfb_drive | Fast-loop drive scaling at constant device voltage |
 | sky_cmfb_loads | Shorter PMOS loads and mirror-master devices |
+| sky_pair_degenerated | Added PMOS source resistors, bias sweep and fixed-code PVT |
+| sky_pair_ac | Large pair candidate bandwidth and differential input loading |
+| sky_compact_pair | Smaller pair/quad devices with curvature and AC capture |
+| sky_compact_loads | Compact candidate with shorter PMOS loads at constant W/L |
 | sky_higher_cm | Separate 1.8 V supply and 0.9 V common-mode alternative |
 
 The prepare_core_exploration, prepare_core_scaling, prepare_quad_options, prepare_core_degeneration and prepare_degenerated_candidate scripts form the initial dependency chain.

@@ -34,3 +34,21 @@ A nodeset supplies a starting guess, while a shunt adds conductance and must be 
 KLU aborted that example without DC vectors even though ngspice returned zero.
 Require the expected point count, sweep endpoints and finite requested vectors.
 The runtime wrapper deliberately leaves solver selection and convergence aids to each bench.
+
+## Noise analysis and save selection
+
+On ngspice 47, save all before noise preserves the noise spectra.
+A selective voltage save, such as save v(out), suppresses the noise result and produces a no-data diagnostic even when the simulator returns zero.
+A two-resistor control gives 2.878894 nV/sqrt(Hz) with either no save command or save all, and no noise result with the selective save.
+Run python3 scripts/probe_noise_save.py to reproduce all three controls.
+The output is verification/controls/noise_save_controls.json.
+Use the output option to retain it elsewhere.
+
+## AC plot names after repeated operating points
+
+Ngspice 47 names the first AC plot ac2 after two retained op plots, and ac17 after seventeen.
+Do not assume that the first AC command always creates ac1.
+Chipify 1960c81 hard-codes ac1 for managed AC capture.
+Keep AC in a separate testbench, or save any needed scalars as control variables and run destroy all before AC.
+The latter clears the previous vectors, so copy them before clearing.
+Run python3 scripts/probe_ngspice_plot_names.py to reproduce one, two and seventeen operating points, plus the clear-before-AC control.

@@ -296,7 +296,7 @@ No SKY130 DAC implementation is claimed by this ideal-source experiment.
 
 All five pass the provisional diagonal ratio window.
 Input-axis curvature, full surfaces, current-source temperature dependence, trim coverage, real bias circuitry and loaded bandwidth still determine acceptance.
-The fixed per-corner settings are being checked across the original supply and temperature range.
+The completed original-range sweep and its failures are reported below.
 
 ## Separate 1.8 V and 0.9 V common-mode alternative
 
@@ -327,10 +327,62 @@ At 1.65 V they become positive and the same fixed currents produce expansion.
 These results identify tail compliance as a remaining supply-sensitivity mechanism.
 Nominal bias calibration is insufficient.
 
-The next circuit experiment enlarges the PMOS input pair and adds modeled source resistors.
-The aim is to reduce the pair's gate-source voltage while retaining moderate effective transconductance, improving the tail's available drain-source voltage.
-This is an unqualified experiment, not a change to the selected schematic.
+The follow-up experiment enlarges the PMOS input pair and adds modeled source resistors.
+It recovers tail voltage but imposes the loading and bandwidth costs reported below.
+It has not been promoted into the drawn prototype.
 
 The separate higher-common-mode mirror sweep produces 30 valid cases, with 23 inside the provisional ratio window.
 At mirror length 0.3 um the ratio spans 0.979283 to 1.04059.
 It also remains unqualified.
+
+
+## Pair-source degeneration trades compliance for input loading
+
+The four-copy follow-up uses pair scale two, quad scale four, folding mirrors at scale eight and length 0.3 um, tail width scale four, load resistance scale 1.38 and unit pair/quad source resistances 240/180 ohm.
+Actual source resistances are 60/45 ohm after parallel scaling.
+Five-bit bias codes ff=0, fs=8, sf=5, ss=17 and tt=8 use the same ideal (21 + code) times 1.25 uA unit-current experiment.
+The fixed currents pass 42 of 45 MOS/supply/temperature cases.
+
+| SKY130 corner | Minimum K100/K10 | Maximum K100/K10 | Minimum tail indicator |
+|---|---:|---:|---:|
+| ff | 0.999810 | 1.03158 | 242.244 mV |
+| fs | 1.00366 | 1.02525 | 237.206 mV |
+| sf | 0.974835 | 1.04296 | 45.462 mV |
+| ss | 0.980761 | 1.03454 | 36.359 mV |
+| tt | 0.994579 | 1.03031 | 134.451 mV |
+
+Every tail indicator is positive, yet three cases still fail the provisional curvature screen.
+This separates the remaining temperature dependence from the earlier loss of tail compliance.
+It does not establish full-surface accuracy across corners or a physical bias implementation.
+
+The nominal input capacitances are 502.672/619.235 fF per pin at 1 MHz under symmetric differential drive, compared with IHP 171.090/131.584 fF.
+The fixed-100-fF bandwidths are 366.019/624.410 MHz, compared with IHP 426.673/836.155 MHz.
+Supply current is 2.31553 mA against IHP 0.718416 mA.
+The large geometry therefore fails the speed comparison even before its heavier load is applied to a preceding stage.
+Scaling circuit current and all device sizes together cannot remove intrinsic cascade loading.
+The retained data are evidence/sky_pair_degenerated_pvt.csv, evidence/sky_pair_degenerated_ac.csv and the independent PVT audit.
+
+## AC capture after repeated operating points
+
+The initial compact sizing run produced finite scalar metrics but no requested AC traces in all eighteen cases.
+Ngspice 47 names the first AC plot ac17 after seventeen retained operating-point plots.
+Chipify 1960c81 injects setplot ac1 and cannot capture that run as declared.
+The independent auditor rejected the output despite scalar pass flags.
+The rejection record is evidence/sky_compact_capture_rejection.json.
+
+The compact bench now saves scalar values as control variables and clears the old plots before AC.
+This restores ac1/ac2 without changing the circuit.
+scripts/probe_ngspice_plot_names.py reproduces the plot-name behavior in a PDK-independent RC circuit using the same runtime wrapper.
+
+## Compact candidate speed recovery
+
+After the capture correction, eighteen sizing cases and their AC traces pass the data-integrity audit.
+Nine meet the diagonal curvature screen.
+A follow-up shortens the core PMOS loads and the fast-OTA mirror devices at constant W/L.
+All six nominal combinations of mirror length 0.25/0.3 um and PMOS load length 0.35/0.5/1 um produce valid data and meet that screen.
+
+At mirror length 0.3 um and PMOS load length 0.35 um, the two-copy circuit gives K100=-9.51697 V^-1, ratio 1.01034, bandwidths 609.274/884.406 MHz, input capacitances 161.882/83.8877 fF and current 1.21753 mA.
+These measurements use pair scale one, quad scale one, mirror scale four, tail width scale four, pair and quad unit resistors 120 ohm, load-resistance scale 1.38 and 40 uA unit bias.
+This recovers nominal speed with input capacitance below the matched IHP values.
+Gain, full transfer shape, corner coverage, feedback margins, noise and actual cascaded loading still require qualification.
+The retained sweeps are evidence/sky_compact_pair_sizing.csv and evidence/sky_compact_load_sizing.csv.
