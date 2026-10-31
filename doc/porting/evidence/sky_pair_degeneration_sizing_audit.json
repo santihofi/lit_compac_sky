@@ -1,0 +1,33 @@
+{
+  "cold_sf": {
+    "cases": 6,
+    "scalar_values": 96,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "cold_ss": {
+    "cases": 6,
+    "scalar_values": 96,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000002: compr=0.931335 below 0.96758",
+      "Case 000003: compr=0.931545 below 0.96758",
+      "Case 000001: compr=0.929236 below 0.96758",
+      "Case 000000: compr=0.925397 below 0.96758",
+      "Case 000005: compr=0.946395 below 0.96758",
+      "Case 000004: compr=0.940525 below 0.96758"
+    ]
+  },
+  "nominal": {
+    "cases": 6,
+    "scalar_values": 96,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  }
+}
