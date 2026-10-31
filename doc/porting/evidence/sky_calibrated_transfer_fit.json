@@ -1,0 +1,18 @@
+{
+  "audit": {
+    "cases": 1,
+    "scalar_values": 1,
+    "waveform_files": 1,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "fit_offset_v": 1.4017047922094795e-10,
+  "fit_input1_feedthrough": 5.419131809958344e-11,
+  "fit_input2_feedthrough": -4.6394998384516223e-11,
+  "fit_product_gain_per_v": -9.780818172683194,
+  "peak_residual_v": 0.001004600724751753,
+  "rms_residual_v": 0.0003848291514946338,
+  "peak_residual_percent_fullscale": 1.0271131790973256,
+  "rms_residual_percent_fullscale": 0.39345292459215886
+}

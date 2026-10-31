@@ -1,0 +1,57 @@
+{
+  "trim_ff": {
+    "cases": 9,
+    "scalar_values": 144,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "trim_fs": {
+    "cases": 9,
+    "scalar_values": 144,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "trim_sf": {
+    "cases": 9,
+    "scalar_values": 144,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000000: compr=0.947973 below 0.96758",
+      "Case 000002: compr=1.05464 above 1.03242",
+      "Case 000005: compr=1.06342 above 1.03242",
+      "Case 000006: compr=1.03389 above 1.03242",
+      "Case 000007: compr=1.04692 above 1.03242",
+      "Case 000008: compr=1.06481 above 1.03242"
+    ]
+  },
+  "trim_ss": {
+    "cases": 9,
+    "scalar_values": 144,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000000: compr=0.955037 below 0.96758",
+      "Case 000002: compr=1.0692 above 1.03242",
+      "Case 000005: compr=1.06871 above 1.03242",
+      "Case 000007: compr=1.03749 above 1.03242",
+      "Case 000008: compr=1.06116 above 1.03242"
+    ]
+  },
+  "trim_tt": {
+    "cases": 9,
+    "scalar_values": 144,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000008: compr=1.03332 above 1.03242"
+    ]
+  }
+}

@@ -313,3 +313,24 @@ Differential AC admittance at 1 MHz gives nominal effective capacitance per inpu
 The matching IHP measurement gives 171.090/131.584 fF.
 The second input therefore loads a preceding stage more heavily even though the fixed-100-fF bare-core bandwidth is higher.
 The next-stage transistor load must be included before accepting tree bandwidth.
+
+## Calibrated-candidate follow-up on 2026-10-31
+
+The nominal calibrated 1.5 V candidate gives a fitted product gain of -9.78082 V^-1.
+Its full 1681-point transfer surface has 1.02711 percent peak residual and 0.39345 percent RMS residual, both below the IHP nominal values of 1.38043 and 0.48130 percent.
+This is an improvement in nominal shape error, with gain still requiring trim.
+
+The fixed per-corner bias settings pass 33 of 45 combinations of 1.45/1.5/1.65 V and 0/27/80 C.
+The ss ratio spans 0.955037 to 1.06920 and sf spans 0.947973 to 1.06481.
+At 1.45 V and 0 C, tail saturation indicators are -62.65 mV at ss and -41.48 mV at sf.
+At 1.65 V they become positive and the same fixed currents produce expansion.
+These results identify tail compliance as a remaining supply-sensitivity mechanism.
+Nominal bias calibration is insufficient.
+
+The next circuit experiment enlarges the PMOS input pair and adds modeled source resistors.
+The aim is to reduce the pair's gate-source voltage while retaining moderate effective transconductance, improving the tail's available drain-source voltage.
+This is an unqualified experiment, not a change to the selected schematic.
+
+The separate higher-common-mode mirror sweep produces 30 valid cases, with 23 inside the provisional ratio window.
+At mirror length 0.3 um the ratio spans 0.979283 to 1.04059.
+It also remains unqualified.
