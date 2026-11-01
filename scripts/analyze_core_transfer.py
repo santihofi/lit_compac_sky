@@ -16,12 +16,14 @@ def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--project',required=True)
     ap.add_argument('--label',required=True)
+    ap.add_argument('--results',default='out',help='Result directory relative to the experiment project')
     args=ap.parse_args()
     p=ROOT/'verification/porting'/args.project
-    result=audit(p/'datasheets/transfer.yaml',p/'out')
-    meta=max((p/'out/history').glob('*.meta.json'),key=lambda f:f.stat().st_mtime)
+    out=p/args.results
+    result=audit(p/'datasheets/transfer.yaml',out)
+    meta=max((out/'history').glob('*.meta.json'),key=lambda f:f.stat().st_mtime)
     info=json.loads(meta.read_text())
-    waves=list((p/'out'/info['analysis_dirs']['dc']).glob('*__transfer.csv'))
+    waves=list((out/info['analysis_dirs']['dc']).glob('*__transfer.csv'))
     if len(waves)!=1:raise ValueError('Expected exactly one nominal transfer surface')
     data=pd.read_csv(waves[0])
     x=data['v(vdin1)'].to_numpy();y=data['v(vdin2)'].to_numpy()

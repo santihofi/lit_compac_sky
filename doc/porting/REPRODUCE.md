@@ -51,7 +51,9 @@ No clean target is needed.
 | sky_pair_degenerated | Added PMOS source resistors, bias sweep and fixed-code PVT |
 | sky_pair_ac | Large pair candidate bandwidth and differential input loading |
 | sky_compact_pair | Smaller pair/quad devices with curvature and AC capture |
-| sky_compact_loads | Compact candidate with shorter PMOS loads at constant W/L |
+| sky_compact_loads | Compact candidate with shorter PMOS loads, bias trim and PVT |
+| sky_compact_validation | Compact nominal noise, CMFB and full transfer surface |
+| ihp_core_fanout and sky_compact_fanout | Matched transistor receiver loads and 25/50 fF wire load |
 | sky_higher_cm | Separate 1.8 V supply and 0.9 V common-mode alternative |
 
 The prepare_core_exploration, prepare_core_scaling, prepare_quad_options, prepare_core_degeneration and prepare_degenerated_candidate scripts form the initial dependency chain.
@@ -61,6 +63,8 @@ Rerunning a preparation script can restore its default datasheets, so inspect th
 
 Full transfer captures are frozen by scripts/analyze_core_transfer.py.
 It checks all 1681 input pairs, fits constant, feedthrough and product terms, and writes residual metrics and figures.
+For batch output, pass the results option with out/transfer relative to the project.
+scripts/check_core_ac_capture.py takes the datasheet and output directory and verifies captured core curves against scalar gain and bandwidth, in addition to the general integrity audit.
 scripts/analyze_cmfb_kick.py audits transient captures, checks their final time, freezes a compressed waveform archive and plots recovery.
 scripts/probe_sky_dc_solver.py runs direct ngspice controls on an unchanged rendered circuit to isolate solver behavior.
 

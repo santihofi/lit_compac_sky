@@ -1,0 +1,32 @@
+{
+  "trim_ff": {
+    "status": "valid",
+    "cases": 9,
+    "anchored_curves": 18,
+    "maximum_relative_bandwidth_difference": 5.334034684167932e-06
+  },
+  "trim_fs": {
+    "status": "valid",
+    "cases": 9,
+    "anchored_curves": 18,
+    "maximum_relative_bandwidth_difference": 1.0621326702597855e-06
+  },
+  "trim_sf": {
+    "status": "valid",
+    "cases": 9,
+    "anchored_curves": 18,
+    "maximum_relative_bandwidth_difference": 3.88179404442468e-06
+  },
+  "trim_ss": {
+    "status": "valid",
+    "cases": 9,
+    "anchored_curves": 18,
+    "maximum_relative_bandwidth_difference": 9.40818153050138e-07
+  },
+  "trim_tt": {
+    "status": "valid",
+    "cases": 9,
+    "anchored_curves": 18,
+    "maximum_relative_bandwidth_difference": 7.873409831882228e-07
+  }
+}

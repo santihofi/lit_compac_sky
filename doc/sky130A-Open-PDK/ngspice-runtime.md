@@ -52,3 +52,10 @@ Chipify 1960c81 hard-codes ac1 for managed AC capture.
 Keep AC in a separate testbench, or save any needed scalars as control variables and run destroy all before AC.
 The latter clears the previous vectors, so copy them before clearing.
 Run python3 scripts/probe_ngspice_plot_names.py to reproduce one, two and seventeen operating points, plus the clear-before-AC control.
+
+A second control demonstrates a more subtle capture error on Chipify 1960c81.
+A divider has first-AC gain 0.5 and second-AC gain 0.75.
+After one op, managed capture exports the intended first AC curve.
+After two op commands, its failed setplot ac1 leaves the second AC current and exports gain 0.75, while all scalar and pass fields remain valid.
+Finite waveform data alone cannot establish analysis identity.
+Run python3 scripts/probe_chipify_ac_selection.py and compare the captured gain with the explicit first-AC scalar.

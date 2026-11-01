@@ -75,3 +75,11 @@ Large-signal CMFB traces expose the slow-capacitor settling cost, and load geome
 Five quantized bias settings pass the nominal process-corner diagonal ratio screen at the original supply, with supply/temperature and full-surface checks still pending.
 A separately labeled 1.8 V, 0.9 V common-mode branch remains exploratory.
 See REPRODUCE.md for project identities and execution rules.
+
+## Checkpoint on 2026-11-01
+
+The compact two-copy candidate improves nominal full-surface shape and all matched core-to-core bandwidth paths, with input capacitance below the current IHP core.
+The fixed-current PVT sweep passes 36 of 45 diagonal-curvature cases, so it remains unqualified.
+The remaining experiments separate folding-mirror headroom, input-pair body effect and tail output conductance.
+New waveform checks compare AC captures with independent scalar anchors after a reproducible wrong-curve capture in Chipify.
+Template controls and design results are committed incrementally, with upstream access limitations unchanged.

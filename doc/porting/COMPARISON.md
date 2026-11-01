@@ -1,7 +1,35 @@
 # IHP SG13CMOS5L versus SKY130A
 
 This report is incremental.
-Initial SKY130 schematic results are measured below. No schematic equivalence or physical signoff is established yet.
+The compact two-copy candidate improves nominal fitted transfer error and core-to-core bandwidth, but passes only 36 of 45 original-range curvature cases.
+No schematic equivalence or physical signoff is established.
+The latest measured checkpoint is summarized first, with the earlier candidates retained below to explain the sizing decisions.
+
+## Current compact-candidate checkpoint
+
+The following nominal results use tt, 27 C, 1.5 V, common mode 0.75 V, gain code 13, 100 fF per output and 40 uA unit reference.
+SKY130 uses two parallel circuit copies, 0.35 um PMOS loads and resistance scale 1.46.
+The full operating range remains 1.45/1.5/1.65 V and 0/27/80 C.
+
+| Metric | Current IHP core | Compact SKY130 candidate |
+|---|---:|---:|
+| Fitted product gain | -10.00640 V^-1 | -9.98681 V^-1 |
+| Peak fitted transfer error | 1.38043% | 1.00259% |
+| RMS fitted transfer error | 0.48130% | 0.39114% |
+| Bare-core bandwidth, inputs 1/2 | 426.673/836.155 MHz | 589.672/843.913 MHz |
+| Input capacitance per pin at 1 MHz, inputs 1/2 | 171.090/131.584 fF | 161.882/about 84 fF |
+| Input noise at 1 MHz, inputs 1/2 | 20.3362/20.3247 nV/sqrt(Hz) | 16.7830/14.2383 nV/sqrt(Hz) |
+| Integrated input noise, 1 kHz to 100 MHz | 149.052/146.311 uVrms | 149.133/124.296 uVrms |
+| CMFB phase margin | 60.5671 degrees | 68.4452 degrees |
+| CMFB gain margin | 18.0002 dB | 15.0589 dB |
+| Supply current | 0.718416 mA | about 1.218 mA |
+
+Noise uses the other differential input held at 100 mV.
+The first-input integrated noise is essentially unchanged, and the gain margin remains lower.
+The small nominal input-2 bandwidth advantage still needs extracted confirmation.
+These measurements do not qualify mismatch, startup, actual bias circuitry or physical layout.
+
+![Compact candidate transfer and fitted residual](figures/sky_compact_transfer.png)
 
 ## Comparison protocol
 
@@ -18,7 +46,7 @@ The current cell uses 59.7/0.28 um PMOS inputs, 20/0.5 um NMOS quad devices and 
 The supplied bench's 40 uA reference therefore represents approximately 320 uA in the core tail.
 Older results for a smaller 40 uA-tail cell must not be treated as this revision's bandwidth or mismatch results.
 
-| Metric | IHP measured, schematic | SKY130 |
+| Metric | IHP measured, schematic | Initial SKY130 mapping |
 |---|---:|---:|
 | Supply and temperature | 1.5 V, 27 C | 1.5 V, 27 C |
 | Gain at four quadrant 100 mV inputs | -10.0387 V^-1 | -5.90626 V^-1 |
@@ -34,9 +62,12 @@ The nominal scalar table has no min/max limits, so its reported 100 percent yiel
 It is not an equivalence or signoff verdict.
 Full scalar values and the generated reference netlist template are retained under evidence/.
 
-## Required remaining sections
+## Remaining qualification
 
-Primitive mapping and model scope, resistor voltage/temperature coefficients, BJT choice, geometry and finger semantics, schematic sizing rationale, PVT and trim coverage, mismatch controls, loop stability, startup, noise, bandwidth, power, physical area, DRC/LVS, extraction and tree-level results remain to be measured.
+Core sizing and bias must first meet the original-range corner requirements.
+Complete the real current DAC and voltage references, output stage, bandgap, mismatch qualification, startup and tree-level stability.
+Python-generated layout, physical area, DRC/LVS and extracted performance follow schematic qualification.
+The measurements below cover primitive mapping, candidate sizing, nominal noise and loop gain, input loading, transfer surfaces and several rejected PVT families.
 
 ## Current IHP schematic across corners
 
@@ -386,3 +417,46 @@ These measurements use pair scale one, quad scale one, mirror scale four, tail w
 This recovers nominal speed with input capacitance below the matched IHP values.
 Gain, full transfer shape, corner coverage, feedback margins, noise and actual cascaded loading still require qualification.
 The retained sweeps are evidence/sky_compact_pair_sizing.csv and evidence/sky_compact_load_sizing.csv.
+
+
+## Compact candidate across supply and temperature
+
+Five ideal fixed current codes ff=3, fs=2, sf=10, ss=14 and tt=11 use (21 + code) times 1.25 uA per copy.
+All 45 cases and their 90 AC curves pass data-integrity and gain/bandwidth identity checks.
+Thirty-six cases meet the provisional diagonal-ratio screen.
+The sf range is 0.955138 to 1.04897, and ss is 0.959437 to 1.04788.
+At the worst low-supply cold point, sf retains only 6.578 mV tail margin.
+At fs the folding-mirror indicator reaches -0.111 mV and input-2 bandwidth falls to 690.072 MHz.
+Positive tail indicators in the remaining failures show that nominal saturation alone does not establish supply-independent bias.
+The results reject this candidate as a completed port.
+
+The exported curves are independently checked against each run's scalar low-frequency gain and 3 dB crossing by scripts/check_core_ac_capture.py.
+This catches wrong-plot capture even when every sample is finite.
+The retained PVT audit covers all cases, and evidence/sky_compact_pvt_ac_anchors.json records the waveform identity checks.
+
+## Nominal bandwidth with an actual next-core input
+
+Each driver now feeds input 1 or input 2 of a second identical core, with that receiver's other differential input held at 100 mV.
+The receiver includes its own CMFB and 100 fF per output.
+The driver also sees the stated wire capacitance on each output.
+These are core-to-core benches, with tile output stages and offset DACs still to be added.
+
+| Receiver input | Wire capacitance per output | IHP driver bandwidth, inputs 1/2 | SKY130 driver bandwidth, inputs 1/2 |
+|---|---:|---:|---:|
+| 1 | 25 fF | 331.819/511.728 MHz | 471.907/607.915 MHz |
+| 2 | 25 fF | 373.239/612.754 MHz | 575.346/811.244 MHz |
+| 1 | 50 fF | 315.648/463.835 MHz | 445.801/563.500 MHz |
+| 2 | 50 fF | 352.942/548.314 MHz | 539.004/733.938 MHz |
+
+The compact candidate improves all eight nominal path/load combinations.
+This validates the nominal loading benefit beyond a fixed-capacitor bench, while its PVT failures remain unresolved.
+The source builder is scripts/prepare_core_fanout.py.
+The matched evidence tables are evidence/ihp_core_fanout.csv and evidence/sky_compact_fanout.csv.
+
+## Wrong finite AC curve control
+
+A separate resistor-divider test confirms that a failed managed plot selection can export a complete but incorrect curve.
+After two operating points and two AC analyses, Chipify 1960c81 exports the second gain of 0.75 instead of the intended first gain of 0.5.
+Scalar metrics, finite samples and global pass flags all look valid.
+The reusable control is scripts/probe_chipify_ac_selection.py.
+The core AC auditor now compares every captured curve with its corresponding scalar gain and bandwidth.

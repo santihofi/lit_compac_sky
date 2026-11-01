@@ -1,0 +1,23 @@
+{
+  "status": "wrong_plot_reproduced",
+  "controls": [
+    {
+      "op_count": 1,
+      "first_ac_gain": 0.5,
+      "last_ac_gain": 0.75,
+      "captured_gain": 0.5,
+      "captures_first_ac": true,
+      "chipify_global_pass": true,
+      "sim_error": null
+    },
+    {
+      "op_count": 2,
+      "first_ac_gain": 0.5,
+      "last_ac_gain": 0.75,
+      "captured_gain": 0.75,
+      "captures_first_ac": false,
+      "chipify_global_pass": true,
+      "sim_error": null
+    }
+  ]
+}
