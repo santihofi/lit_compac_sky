@@ -1,0 +1,135 @@
+{
+  "ac": {
+    "reference_project": "sky_replica_ac",
+    "reference_datasheet": "ac",
+    "reference_run_id": "000000",
+    "audit": {
+      "cases": 1,
+      "scalar_values": 9,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "maximum_absolute_scalar_differences": {
+      "bw_in1_mhz": 0.0,
+      "bw_in2_mhz": 0.0,
+      "acgain_in1": 0.0,
+      "acgain_in2": 0.0,
+      "cin1_per_pin_ff": 0.0,
+      "cin2_per_pin_ff": 0.0,
+      "cin1_100mhz_ff": 0.0,
+      "cin2_100mhz_ff": 0.0,
+      "idd": 0.0
+    }
+  },
+  "noise": {
+    "reference_project": "sky_replica_validation",
+    "reference_datasheet": "noise",
+    "reference_run_id": "000000",
+    "audit": {
+      "cases": 1,
+      "scalar_values": 9,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "maximum_absolute_scalar_differences": {
+      "onoise1_nv": 0.0,
+      "inoise1_nv": 0.0,
+      "onoise1_uv": 0.0,
+      "inoise1_uv": 0.0,
+      "onoise2_nv": 0.0,
+      "inoise2_nv": 0.0,
+      "onoise2_uv": 0.0,
+      "inoise2_uv": 0.0,
+      "frequency_hz": 0.0
+    }
+  },
+  "replica": {
+    "reference_project": "sky_replica_tail",
+    "reference_datasheet": "calibration/trim_tt",
+    "reference_run_id": "000004",
+    "audit": {
+      "cases": 1,
+      "scalar_values": 21,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "maximum_absolute_scalar_differences": {
+      "k100": 0.0,
+      "k10": 0.0,
+      "compr": 0.0,
+      "vocm": 0.0,
+      "idd": 0.0,
+      "vos": 3.2436999999999968e-12,
+      "tail_margin": 0.0,
+      "pair_margin": 0.0,
+      "mirror_margin": 0.0,
+      "quad_margin": 0.0,
+      "qs": 0.0,
+      "sp": 0.0,
+      "kaxis1": 0.0,
+      "kaxis2": 0.0,
+      "axis1": 0.0,
+      "axis2": 0.0,
+      "tail_current": 0.0,
+      "tail_gate_v": 0.0,
+      "tail_drop_v": 0.0,
+      "replica_error_v": 0.0,
+      "tail_ratio": 0.0
+    }
+  },
+  "stability": {
+    "reference_project": "sky_replica_validation",
+    "reference_datasheet": "stability",
+    "reference_run_id": "000000",
+    "audit": {
+      "cases": 1,
+      "scalar_values": 8,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "maximum_absolute_scalar_differences": {
+      "pm": 0.0,
+      "gm_db": 0.0,
+      "ncross": 0.0,
+      "fu": 0.0,
+      "f180": 0.0,
+      "t0_db": 0.0,
+      "vbias_dc": 0.0,
+      "voutcm_dc": 0.0
+    }
+  },
+  "transfer": {
+    "reference_project": "sky_replica_validation",
+    "reference_datasheet": "transfer",
+    "reference_run_id": "000000",
+    "audit": {
+      "cases": 1,
+      "scalar_values": 1,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "fit": {
+        "fit_offset_v": 2.898792649009261e-10,
+        "fit_input1_feedthrough": -2.970601542529039e-11,
+        "fit_input2_feedthrough": -4.927979726860612e-12,
+        "fit_product_gain_per_v": -9.977829814796703,
+        "peak_residual_percent_fullscale": 1.0234587068060361,
+        "rms_residual_percent_fullscale": 0.39972910486125046,
+        "vocm_min_v": 0.752277794,
+        "vocm_max_v": 0.752982741
+      }
+    },
+    "maximum_absolute_scalar_differences": {
+      "points": 0.0
+    }
+  }
+}

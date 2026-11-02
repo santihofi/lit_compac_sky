@@ -1,0 +1,852 @@
+{
+  "grid_um": 0.005,
+  "changed_instances": 66,
+  "changes": [
+    {
+      "cell": "gilbert_cell",
+      "instance": "XM1",
+      "model": "sky130_fd_pr__pfet_01v8_lvt",
+      "parameters": {
+        "W": {
+          "before": "74.625",
+          "after": "74.64"
+        },
+        "ad": {
+          "before": "10.820625",
+          "after": "10.8228"
+        },
+        "as": {
+          "before": "12.624062499999999",
+          "after": "12.6266"
+        },
+        "pd": {
+          "before": "78.105",
+          "after": "78.12"
+        },
+        "ps": {
+          "before": "91.1225",
+          "after": "91.14"
+        },
+        "nrd": {
+          "before": "0.0038860971524288103",
+          "after": "0.003885316184351554"
+        },
+        "nrs": {
+          "before": "0.0038860971524288103",
+          "after": "0.003885316184351554"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XM2",
+      "model": "sky130_fd_pr__pfet_01v8_lvt",
+      "parameters": {
+        "W": {
+          "before": "74.625",
+          "after": "74.64"
+        },
+        "ad": {
+          "before": "10.820625",
+          "after": "10.8228"
+        },
+        "as": {
+          "before": "12.624062499999999",
+          "after": "12.6266"
+        },
+        "pd": {
+          "before": "78.105",
+          "after": "78.12"
+        },
+        "ps": {
+          "before": "91.1225",
+          "after": "91.14"
+        },
+        "nrd": {
+          "before": "0.0038860971524288103",
+          "after": "0.003885316184351554"
+        },
+        "nrs": {
+          "before": "0.0038860971524288103",
+          "after": "0.003885316184351554"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XR7",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "19.585527913567127",
+          "after": "19.585"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XR5",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "19.585527913567127",
+          "after": "19.585"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XMDP",
+      "model": "sky130_fd_pr__pfet_01v8_lvt",
+      "parameters": {
+        "W": {
+          "before": "24.875",
+          "after": "24.88"
+        },
+        "ad": {
+          "before": "3.6068749999999996",
+          "after": "3.6076"
+        },
+        "as": {
+          "before": "5.4103125",
+          "after": "5.4114"
+        },
+        "pd": {
+          "before": "26.035",
+          "after": "26.04"
+        },
+        "ps": {
+          "before": "39.0525",
+          "after": "39.06"
+        },
+        "nrd": {
+          "before": "0.011658291457286432",
+          "after": "0.01165594855305466"
+        },
+        "nrs": {
+          "before": "0.011658291457286432",
+          "after": "0.01165594855305466"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRD1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "19.585527913567127",
+          "after": "19.585"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRD2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "19.585527913567127",
+          "after": "19.585"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRdegen7",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRdegen8",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRdegen9",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRdegen10",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRP1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRP2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XMrep1",
+      "model": "sky130_fd_pr__pfet_01v8_lvt",
+      "parameters": {
+        "W": {
+          "before": "18.65625",
+          "after": "18.66"
+        },
+        "ad": {
+          "before": "3.6068749999999996",
+          "after": "3.6076"
+        },
+        "as": {
+          "before": "3.6068749999999996",
+          "after": "3.6076"
+        },
+        "pd": {
+          "before": "26.035",
+          "after": "26.04"
+        },
+        "ps": {
+          "before": "26.035",
+          "after": "26.04"
+        },
+        "nrd": {
+          "before": "0.015544388609715241",
+          "after": "0.01554126473740622"
+        },
+        "nrs": {
+          "before": "0.015544388609715241",
+          "after": "0.01554126473740622"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_3",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_4",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_5",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_6",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep1_7",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XMrep2",
+      "model": "sky130_fd_pr__pfet_01v8_lvt",
+      "parameters": {
+        "W": {
+          "before": "18.65625",
+          "after": "18.66"
+        },
+        "ad": {
+          "before": "3.6068749999999996",
+          "after": "3.6076"
+        },
+        "as": {
+          "before": "3.6068749999999996",
+          "after": "3.6076"
+        },
+        "pd": {
+          "before": "26.035",
+          "after": "26.04"
+        },
+        "ps": {
+          "before": "26.035",
+          "after": "26.04"
+        },
+        "nrd": {
+          "before": "0.015544388609715241",
+          "after": "0.01554126473740622"
+        },
+        "nrs": {
+          "before": "0.015544388609715241",
+          "after": "0.01554126473740622"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_3",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_4",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_5",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_6",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gilbert_cell",
+      "instance": "XRrep2_7",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "0.9201204392490259",
+          "after": "0.92"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P3",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P4",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P5",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P6",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4P7",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3P0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3P1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3P2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3P3",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS2P0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS2P1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS1P0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS0P",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N3",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N4",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N5",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N6",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS4N7",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3N0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3N1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3N2",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS3N3",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS2N0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS2N1",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS1N0",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRS0N",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRDP",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRDN",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "1.8319279135671271",
+          "after": "1.83"
+        }
+      }
+    },
+    {
+      "cell": "gain_trim",
+      "instance": "XRDS",
+      "model": "sky130_fd_pr__res_high_po_5p73",
+      "parameters": {
+        "L": {
+          "before": "16.264027913567126",
+          "after": "16.265"
+        }
+      }
+    }
+  ]
+}

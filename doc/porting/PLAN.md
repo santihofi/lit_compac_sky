@@ -4,10 +4,14 @@ Status: characterization and schematic design in progress, no SKY130 multiplier 
 
 ## Scope and acceptance
 
-The reference is lit_compac commit 3764a02d8641559aa58ec8521680424afc38a178.
+The electrical baseline was frozen at lit_compac commit 3764a02d8641559aa58ec8521680424afc38a178.
+The system architecture now follows source revision 93ff95680bd88ea07e60e80863d4a75e9d8106df, observed on 2026-11-02.
+The multiplier, gain-trim and OTA schematic blobs are unchanged between those revisions.
 The starting template is sky130A-ams-chip-template commit a84f4514d727b58cd475a67000aac230d8d367ea, aligned structurally with the IHP AMS template.
 Work is on work-santi.
-Pending confirmation, preserve the 1.45 to 1.65 V external supply range, 0 to 80 C specified temperature range, sixteen tiles with a 432-bit serial trim chain, the separate bandgap and all analog interfaces.
+Pending confirmation, preserve the 1.45 to 1.65 V external supply range, 0 to 80 C specified temperature range, sixteen tiles with a 512-bit serial trim chain, the separate bandgap and the latest analog interfaces.
+The updated source adds idac_ostg in each bias channel, extends each register from 27 to 32 bits and removes the external vb_ostg tree pin.
+The five new bits drive active-low readout DAC switches through register-output inverters.
 Keep the source project's low-pass filter deferred.
 Prioritize multiplier accuracy, bandwidth, noise and stability, and quantify any power or area cost.
 Evaluate 1.8 V separately as an alternative, never mix its results into an equal-supply comparison.

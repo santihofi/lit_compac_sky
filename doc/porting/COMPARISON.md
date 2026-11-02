@@ -6,7 +6,8 @@ Its nominal full-surface error is below the IHP reference.
 All 45 bandwidth captures and both sets of 45 feedback-loop captures pass the independent waveform audit.
 The two feedback loops meet their provisional margin limits.
 Fifteen full transfer surfaces at 1.5 V show lower peak error than IHP in every matched MOS/temperature case, with three RMS-error regressions.
-No schematic equivalence or physical signoff is established.
+The drawn replica view is electrically equivalent to its characterized source at nominal conditions.
+Full-port equivalence and physical signoff remain open.
 The latest measured checkpoint is summarized first, with the earlier candidates retained below to explain the sizing decisions.
 
 ## Current transistor-replica checkpoint
@@ -99,6 +100,20 @@ Supply-extreme full surfaces, gain-trim coverage, mismatch and real bias referen
 
 ![Matched corner surface residual ratios](figures/replica_ihp_matched_surfaces.png)
 
+## Drawn view and reference update
+
+The replica candidate now has separate wired Xschem sheets for the core, gain trim and OTA under verification/porting/sky_replica_schematic.
+A netlist comparison verifies all 132 instances, ordered device terminals, external ports and numerical parameters.
+Its negative controls reject a shorted quad bulk and a one-percent width error.
+Chipify replay of the drawn netlists matches 48 nominal scalar measurements and all three requested waveform captures, including every point of the transfer square.
+The main chip macro folders remain the initial mapping, and the experimental view is not a released physical design.
+
+The IHP source advanced from 3764a02 to 93ff956 during this work.
+Git blob checks confirm that the multiplier, gain-trim and OTA schematics used for the core baseline are unchanged.
+The new system adds a readout current DAC in every bias channel, grows the tile register to 32 bits and the full frame to 512 bits, and removes the vb_ostg tree pin.
+The port plan follows that updated interface.
+Earlier tile, readout and bias-chain measurements remain identified with the original source snapshot, and do not qualify the updated system.
+
 ## Comparison protocol
 
 Use identical input amplitudes, common-mode references, loads and definitions, with the original 1.45 to 1.65 V supply range as the primary comparison.
@@ -110,7 +125,7 @@ The reference design is pinned in evidence/provenance.json.
 ## Reproduced IHP reference
 
 Measured with Chipify 0.2.3 from local source commit 1960c81 and the image's ngspice 47.
-The current cell uses 59.7/0.28 um PMOS inputs, 20/0.5 um NMOS quad devices and an eightfold tail mirror.
+The frozen cell uses 59.7/0.28 um PMOS inputs, 20/0.5 um NMOS quad devices and an eightfold tail mirror.
 The supplied bench's 40 uA reference therefore represents approximately 320 uA in the core tail.
 Older results for a smaller 40 uA-tail cell must not be treated as this revision's bandwidth or mismatch results.
 

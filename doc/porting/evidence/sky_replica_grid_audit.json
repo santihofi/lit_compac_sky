@@ -1,0 +1,34 @@
+{
+  "ac.yaml": {
+    "cases": 1,
+    "scalar_values": 9,
+    "waveform_files": 1,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "noise.yaml": {
+    "cases": 1,
+    "scalar_values": 9,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "replica.yaml": {
+    "cases": 1,
+    "scalar_values": 21,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "transfer.yaml": {
+    "cases": 1,
+    "scalar_values": 1,
+    "waveform_files": 1,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  }
+}

@@ -1,0 +1,60 @@
+** sch_path: ./verification/porting/sky_replica_schematic/schematic/ota.sch
+.subckt ota vdd out inn inp vss ibias1 ntap ptap
+*.PININFO out:O inp:I ibias1:I inn:I ntap:B ptap:B vdd:B vss:B
+XM5 vd_m5 vd_m5 vdd ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=1.54 nf=2 ad=0.2233 as=0.4466 pd=2.12 ps=4.24 nrd=0.1883116883116883
++ nrs=0.1883116883116883 sa=0 sb=0 sd=0 mult=2.0 m=2.0
+XM6 out out vdd ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=1.54 nf=2 ad=0.2233 as=0.4466 pd=2.12 ps=4.24 nrd=0.1883116883116883
++ nrs=0.1883116883116883 sa=0 sb=0 sd=0 mult=2.0 m=2.0
+XM1 vd_m5 inp sa ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XM2 out vref_int sb ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125
++ sa=0 sb=0 sd=0 mult=2.0 m=2.0
+XRS1 rs1 sa ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS2 rs2 rs1 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS3 rs3 rs2 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS4 rs4 rs3 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS5 rs5 rs4 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS6 rs6 rs5 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS7 rs7 rs6 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS8 rs8 rs7 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS9 rs9 rs8 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS10 rs10 rs9 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS11 rs11 rs10 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XRS12 sb rs11 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult=2.0 m=2.0
+XM3 sa ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XM3B sb ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XM4 ibias1 ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=32 nf=8 ad=4.64 as=5.8 pd=34.32 ps=42.9 nrd=0.0090625 nrs=0.0090625
++ sa=0 sb=0 sd=0 mult=2.0 m=2.0
+XM10 vd_m10 vd_m10 vdd ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=2.0 m=2.0
+XM11 vref_int vd_m10 vdd ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=2.0 m=2.0
+XM7 vd_m10 inn vtail_slow ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd=0.145 nrs=0.145 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XM8 vref_int inp vtail_slow ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd=0.145 nrs=0.145 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XM9 vtail_slow ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=5 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XMC vss vref_int vss ptap sky130_fd_pr__nfet_01v8_lvt L=6 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd=0.04833333333333333
++ nrs=0.04833333333333333 sa=0 sb=0 sd=0 mult=2.0 m=2.0
+Rtap_R2 vdd ntap 1m
+Rtap_R7 vss ptap 1m
+XMDA sa sa sa ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125 sa=0 sb=0
++ sd=0 mult=2.0 m=2.0
+XMDB sb sb sb ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125 sa=0 sb=0
++ sd=0 mult=2.0 m=2.0
+XMD3 vss vss vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd=0.018125 nrs=0.018125 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XMD5 vd_m5 vdd vd_m5 ntap sky130_fd_pr__pfet_01v8_lvt L=1 W=4.4 nf=2 ad=0.638 as=1.276 pd=4.98 ps=9.96 nrd=0.0659090909090909
++ nrs=0.0659090909090909 sa=0 sb=0 sd=0 mult=2.0 m=2.0
+XMD7 vd_m10 vd_m10 vd_m10 ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd=0.145 nrs=0.145 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XMD10 vd_m10 vdd vd_m10 ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0 sb=0
++ sd=0 mult=2.0 m=2.0
+XMD11 vref_int vdd vref_int ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd=0.29 nrs=0.29 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+XMD8 vref_int vss vref_int ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd=0.145 nrs=0.145 sa=0
++ sb=0 sd=0 mult=2.0 m=2.0
+.ends

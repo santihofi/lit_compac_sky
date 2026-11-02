@@ -2,12 +2,14 @@
 
 All commands run inside iic-osic-tools.
 The container mounts this repository at /foss/designs/lit_compac_sky and the IHP reference at /foss/designs/lit_compac.
-The reference revision is 3764a02 and the measured tool image reports 2026.10.
+The frozen electrical reference is 3764a02 and the measured tool image reports 2026.10.
+The system architecture was updated to reference 93ff956 on 2026-11-02, with the three measured core schematic blobs unchanged.
 Chipify is the local master revision 1960c81, version 0.2.3.
 It predates strict verdict exit codes and resume support.
 
 These are exploratory source decks and datasheets.
-The drawn SKY130 prototype is still the initial mapping, not the rejected candidates or a qualified final schematic.
+The main macro schematic folders still contain the initial mapping.
+A separate drawn replica candidate and its nominal replay are under verification/porting/sky_replica_schematic, with no claim of final schematic qualification.
 The inherited counter, inverter and chip-top template views do not represent a completed multiplier port.
 
 ## Run one SKY130 experiment
@@ -102,3 +104,14 @@ Raw fs/sf labels have opposite N/P speed meanings between the PDKs.
 Batch output directories use datasheet basenames, irrespective of the input subfolder.
 Surface datasheets therefore have a surface_ prefix to avoid overwriting the CMFB trim_* result directories.
 Use distinct basenames when retaining separate sweeps in one Chipify project.
+
+## Drawn replica and geometry grid
+
+scripts/draw_replica_candidate.py writes the experimental core, OTA and gain-trim sheets.
+scripts/verify_replica_schematic.py uses fresh Xschem netlists, checks all 132 instances against the rendered source and prepares frozen nominal replay decks.
+The replay project README gives the exact Chipify commands.
+scripts/audit_replica_replay.py compares measurements and captures against the original experiments.
+
+scripts/prepare_replica_grid.py prepares a separate nominal control after rounding lengths and per-finger widths to 0.005 um.
+It recalculates diffusion areas, perimeters and source/drain squares when a finger width changes, and retains every changed parameter in geometry_changes.json.
+The exploratory source candidate and its earlier measurements remain intact.

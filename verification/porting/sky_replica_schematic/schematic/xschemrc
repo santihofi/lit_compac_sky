@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+source $env(PDK_ROOT)/sky130A/libs.tech/xschem/xschemrc
+set candidate_dir [file dirname [file normalize [info script]]]
+set XSCHEM_LIBRARY_PATH $candidate_dir:$XSCHEM_LIBRARY_PATH
+append XSCHEM_LIBRARY_PATH :/foss/designs
+set spiceprefix 1

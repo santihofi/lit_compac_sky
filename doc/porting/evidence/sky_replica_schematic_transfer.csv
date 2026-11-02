@@ -1,0 +1,2 @@
+temp,seed,vdd,vincm,vref,corner_mos,corner_res,corner_cap,gcode,ibias,c_load,vd1,vd2,mirror_scale,mirror_l,pair_scale,pair_l,quad_scale,quad_l,rscale,power_m,quad_model,body_tied,native_nf,rquad,tail_width,rpair,pload_l,tail_length_scale,pair_body_tied,sim_error,run_id,transfer__error,points,points_pass,transfer_overall_pass,global_pass
+27,0.0,1.5,0.75,0.75,tt,typ,typ,13,3.375e-05,100f,0,0,4,0.3,1,0.35,1,0.15,1.46,2,nfet_01v8_lvt,0,1,120,4,120,0.35,1,0,None,000000,None,1681.0,True,True,True

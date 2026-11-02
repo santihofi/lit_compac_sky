@@ -1,0 +1,35 @@
+{
+  "original_reference": "3764a02d8641559aa58ec8521680424afc38a178",
+  "updated_reference": "93ff95680bd88ea07e60e80863d4a75e9d8106df",
+  "core_checks": [
+    {
+      "path": "macros/gilbert_cell/schematic/xschem/gilbert_cell.sch",
+      "original_blob": "2c0fa36fe911145a701ef0890c6c5eff252a7a04",
+      "updated_blob": "2c0fa36fe911145a701ef0890c6c5eff252a7a04",
+      "unchanged": true
+    },
+    {
+      "path": "macros/gilbert_cell/schematic/xschem/gain_trim.sch",
+      "original_blob": "1c42112b0c59bcbfb85e30865e316af88043b0e4",
+      "updated_blob": "1c42112b0c59bcbfb85e30865e316af88043b0e4",
+      "unchanged": true
+    },
+    {
+      "path": "macros/ota/schematic/xschem/ota.sch",
+      "original_blob": "ae9c60579a9b5711b5424d2b7a977bfff8a53e1b",
+      "updated_blob": "ae9c60579a9b5711b5424d2b7a977bfff8a53e1b",
+      "unchanged": true
+    }
+  ],
+  "architecture": {
+    "tile_register_bits": 32,
+    "tree_register_bits": 512,
+    "added_block": "idac_ostg",
+    "removed_tree_pin": "vb_ostg",
+    "readout_code_bits": "q27..q31, inverted at the register outputs",
+    "source_tile_dimensions_um": [
+      302.96,
+      111.32
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "status": "equivalent",
+  "cells": {
+    "gilbert_cell": {
+      "devices": 51,
+      "nets": 48,
+      "ports": 18
+    },
+    "ota": {
+      "devices": 35,
+      "nets": 25,
+      "ports": 8
+    },
+    "gain_trim": {
+      "devices": 46,
+      "nets": 39,
+      "ports": 9
+    }
+  },
+  "rejected_negative_controls": [
+    "quad_bulk_short",
+    "quad_width_plus_one_percent"
+  ]
+}
