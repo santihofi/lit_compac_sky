@@ -95,5 +95,7 @@ The destination design still has no configured remote, and the private reference
 
 The transistor-replica tail candidate is the first to pass the 45-case diagonal-curvature screen with fixed per-corner current codes.
 Its nominal full-surface error improves over IHP and both CMFB and local replica loops pass their provisional margins.
+The 45-case bandwidth and both feedback-loop sweeps now have independent waveform audits.
+Both loops pass their provisional margin limits, but input-2 bandwidth is lower than IHP in some corners.
 The next gates are full-surface corners, loaded bandwidth, gain-trim range, transient recovery, mismatch and real bias circuitry.
 The candidate remains in source-deck form until those checks justify promoting its topology into the drawn schematic.

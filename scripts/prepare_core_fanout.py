@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 """Compare bare cores driving the actual input of a second identical core."""
+import argparse
 import json
 from pathlib import Path
 import re
@@ -12,10 +13,16 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 header = "# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer\n# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1\n"
+parser = argparse.ArgumentParser()
+parser.add_argument("--source", help="Generate only this source project")
+args = parser.parse_args()
 for src, sheet, name in [
     ("ihp_input_capacitance", "nominal.yaml", "ihp_core_fanout"),
     ("sky_compact_loads", "nominal.yaml", "sky_compact_fanout"),
+    ("sky_replica_tail", "nominal.yaml", "sky_replica_fanout"),
 ]:
+    if args.source and args.source != src:
+        continue
     subprocess.run([sys.executable, str(ROOT / "scripts/prepare_core_ac.py"),
                     "--project", src, "--sheet", sheet, "--out", name], check=True)
     project = ROOT / "verification/porting" / name

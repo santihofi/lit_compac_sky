@@ -1,0 +1,47 @@
+{
+  "trim_ff.yaml": {
+    "cases": 9,
+    "scalar_values": 72,
+    "waveform_files": 9,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 9
+  },
+  "trim_fs.yaml": {
+    "cases": 9,
+    "scalar_values": 72,
+    "waveform_files": 9,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 9
+  },
+  "trim_sf.yaml": {
+    "cases": 9,
+    "scalar_values": 72,
+    "waveform_files": 9,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 9
+  },
+  "trim_ss.yaml": {
+    "cases": 9,
+    "scalar_values": 72,
+    "waveform_files": 9,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 9
+  },
+  "trim_tt.yaml": {
+    "cases": 9,
+    "scalar_values": 72,
+    "waveform_files": 9,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 9
+  }
+}

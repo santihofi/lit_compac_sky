@@ -3,7 +3,8 @@
 This report is incremental.
 The transistor-replica version of the compact two-copy candidate passes all 45 original-range diagonal-curvature cases with fixed per-corner current codes.
 Its nominal full-surface error is below the IHP reference.
-Corner checks of bandwidth and both feedback loops are running, with full transfer surfaces across corners prepared next.
+All 45 bandwidth captures and both sets of 45 feedback-loop captures pass the independent waveform audit.
+The two feedback loops meet their provisional margin limits, while full transfer surfaces across corners are still being evaluated.
 No schematic equivalence or physical signoff is established.
 The latest measured checkpoint is summarized first, with the earlier candidates retained below to explain the sizing decisions.
 
@@ -36,6 +37,34 @@ The small nominal input-2 bandwidth advantage still needs extracted confirmation
 These measurements do not qualify mismatch, startup, actual bias circuitry or physical layout.
 
 ![Transistor-replica candidate transfer and fitted residual](figures/sky_replica_transfer.png)
+
+## Replica feedback and bandwidth across PVT
+
+All runs retain one fixed current code per raw SKY130 MOS corner, with supplies 1.45/1.5/1.65 V and temperatures 0/27/80 C.
+The feedback-loop measurements use ideal input common-mode, output common-mode and bias references.
+Their exported complex return ratios independently reproduce the scalar margins and crossing counts.
+
+| Measurement | Minimum over 45 cases | Maximum over 45 cases |
+|---|---:|---:|
+| Input-1 bandwidth | 478.294 MHz | 655.962 MHz |
+| Input-2 bandwidth | 693.129 MHz | 1077.460 MHz |
+| Input-1 capacitance per pin | 146.738 fF | 223.750 fF |
+| Input-2 capacitance per pin | 74.7499 fF | 94.0107 fF |
+| CMFB phase margin | 81.6713 degrees | 111.164 degrees |
+| CMFB gain margin | 14.1532 dB | 15.5771 dB |
+| Replica-bias phase margin | 85.7102 degrees | 92.5843 degrees |
+| Replica-bias gain margin | 32.5053 dB | 38.7649 dB |
+
+Every loop capture has exactly one unity crossing.
+The 90 core gain curves were checked against separately captured DC-frequency gain and 3 dB bandwidth.
+The 90 loop curves were checked against phase margin, gain margin, unity frequency, phase-crossing frequency, DC gain and crossing count.
+Frozen scalar tables, waveform archives and audits carry the sky_replica_ac_pvt, sky_replica_cmfb_pvt and sky_replica_bias_loop_pvt prefixes in evidence/.
+
+The earlier IHP bare-core PVT bandwidth spans 379.086 to 456.491 MHz on input 1 and 800.967 to 864.774 MHz on input 2.
+The SKY130 input-2 minimum remains below that IHP range.
+This is not full-range performance equivalence.
+The comparison also retains fixed gain code 13, so gain normalization and actual DAC/reference impedance remain separate checks.
+
 
 ## Comparison protocol
 

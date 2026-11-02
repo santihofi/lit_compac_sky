@@ -55,6 +55,11 @@ No clean target is needed.
 | sky_compact_compliance | Input-pair well ties and tail-length controls |
 | sky_regulated_tail | Ideal error-amplifier diagnostic with explicit gate-voltage limits |
 | sky_replica_tail | Transistor input-pair replica for the tail reference |
+| sky_replica_ac | Replica bare-core bandwidth and input capacitance |
+| sky_replica_validation | Replica noise, CMFB and transfer surfaces |
+| sky_replica_stability | Replica local bias-loop return ratio |
+| sky_replica_fanout | Replica core driving an identical receiver |
+| ihp_surface_corners | Matched IHP transfer surfaces at 1.5 V and three temperatures |
 | sky_compact_validation | Compact nominal noise, CMFB and full transfer surface |
 | ihp_core_fanout and sky_compact_fanout | Matched transistor receiver loads and 25/50 fF wire load |
 | sky_higher_cm | Separate 1.8 V supply and 0.9 V common-mode alternative |
@@ -81,3 +86,19 @@ The 1.8 V alternative is not an equal-supply replacement for the 1.5 V reference
 Bandwidth figures with 100 fF per output are bare-core measurements.
 Input capacitance, actual next-stage loading, bias circuitry, PVT, mismatch, startup, extraction and layout remain separate acceptance checks.
 No port candidate has reached physical signoff.
+
+## Replica corner capture
+
+Run the pvt batch folder in sky_replica_ac and sky_replica_stability, and the cmfb_pvt folder in sky_replica_validation.
+After those complete, scripts/freeze_replica_corners.py independently checks all scalar values and anchors every exported core or loop curve before writing the evidence files.
+scripts/check_loop_capture.py also accepts one datasheet and output directory for an individual feedback-loop audit.
+
+Run the surface_corners batch in sky_replica_validation only after its CMFB batch finishes.
+Use the same batch folder in ihp_surface_corners with the IHP environment.
+scripts/analyze_corner_surfaces.py accepts project and label options, checks each complete 41 by 41 grid and freezes fitted shape metrics plus the raw waveforms.
+The initial surface grid is five MOS corners by three temperatures at 1.5 V, not the full supply grid.
+Raw fs/sf labels have opposite N/P speed meanings between the PDKs.
+
+Batch output directories use datasheet basenames, irrespective of the input subfolder.
+Surface datasheets therefore have a surface_ prefix to avoid overwriting the CMFB trim_* result directories.
+Use distinct basenames when retaining separate sweeps in one Chipify project.
