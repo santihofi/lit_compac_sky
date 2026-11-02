@@ -1,0 +1,41 @@
+{
+  "sf": {
+    "cases": 16,
+    "scalar_values": 272,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000000: compr=0.955138 below 0.96758",
+      "Case 000001: compr=0.96567 below 0.96758",
+      "Case 000006: compr=1.06542 above 1.03242",
+      "Case 000007: compr=1.06902 above 1.03242",
+      "Case 000010: compr=1.04909 above 1.03242",
+      "Case 000011: compr=1.05254 above 1.03242",
+      "Case 000013: compr=1.0546 above 1.03242",
+      "Case 000012: compr=1.04897 above 1.03242",
+      "Case 000014: compr=1.05964 above 1.03242",
+      "Case 000015: compr=1.06181 above 1.03242"
+    ]
+  },
+  "ss": {
+    "cases": 16,
+    "scalar_values": 272,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000000: compr=0.959437 below 0.96758",
+      "Case 000004: compr=1.03579 above 1.03242",
+      "Case 000005: compr=1.047 above 1.03242",
+      "Case 000006: compr=1.08577 above 1.03242",
+      "Case 000007: compr=1.09043 above 1.03242",
+      "Case 000011: compr=1.04611 above 1.03242",
+      "Case 000010: compr=1.04137 above 1.03242",
+      "Case 000012: compr=1.04788 above 1.03242",
+      "Case 000013: compr=1.05517 above 1.03242",
+      "Case 000015: compr=1.06078 above 1.03242",
+      "Case 000014: compr=1.05789 above 1.03242"
+    ]
+  }
+}

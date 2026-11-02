@@ -460,3 +460,23 @@ After two operating points and two AC analyses, Chipify 1960c81 exports the seco
 Scalar metrics, finite samples and global pass flags all look valid.
 The reusable control is scripts/probe_chipify_ac_selection.py.
 The core AC auditor now compares every captured curve with its corresponding scalar gain and bandwidth.
+
+## Tail-compliance and mirror follow-up
+
+At sf and 0 C, the unmodified compact tail current rises from 334 uA at 1.45 V to 462 uA at 1.65 V, although its external reference remains fixed.
+The corresponding diagonal ratio changes from 0.955138 to 1.02049.
+A source-tied input pair improves cold low-supply margin by about 10.6 mV, but its high-supply hot ratio grows to 1.05460.
+Doubling tail length from 0.65 to 1.3 um while preserving W/L raises current and does not remove the voltage dependence.
+That change multiplies tail gate area by four, from 1664 to 6656 um2 for M13 alone in this two-copy candidate.
+These are geometric gate areas, not routed macro areas.
+Only eleven of the 32 combined well-tie and length cases pass the provisional ratio window.
+
+The twelve-case wider folding-mirror follow-up recovers a small nominal fs margin but reduces input-1 bandwidth.
+Its best fs margin in this set is 7.638 mV, still insufficient to establish a robust voltage budget.
+The next diagnostic matches the tail-reference drain voltage to the core tail drain, first with an ideal error amplifier.
+That ideal amplifier is a causal control, not a qualified implementation.
+A separate scaled input-pair replica tests a transistor implementation of the same voltage matching.
+
+The low-threshold PMOS input pair is already at its installed 0.35 um minimum length.
+The TT model-bin scan and KLayout PCell coercion both confirm that limit.
+A shorter low-threshold pair cannot be used to recover headroom with this PDK.

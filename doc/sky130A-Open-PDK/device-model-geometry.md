@@ -3,6 +3,17 @@
 Checked in IIC-OSIC-TOOLS 2026.10 on 2026-10-29.
 A layout generator's minimum width and length do not establish the simulator model's supported geometry range.
 
+## Low-threshold PMOS has a different minimum length
+
+The installed TT model bins start at L=0.35 um for pfet_01v8_lvt.
+The standard pfet_01v8, nfet_01v8 and nfet_01v8_lvt bins start at 0.15 um.
+The KLayout cells/fet.py also clamps the low-threshold PMOS length to 0.35 um.
+A 0.15 um low-threshold PMOS is therefore not a supported speed or headroom experiment with these models and PCells.
+
+Run python3 scripts/probe_sky_model_lengths.py after selecting sky130A to record the limits and model-file hashes.
+These minima are bounds across all bins, so a specific width and length must still lie inside the same valid bin.
+Replacing a low-threshold device with a standard device to obtain a shorter length requires new gate-voltage, current and corner checks.
+
 ## Native NMOS has discrete model bins
 
 The installed `sky130_fd_pr__nfet_03v3_nvt.pm3.spice` defines nine narrow geometry bins.

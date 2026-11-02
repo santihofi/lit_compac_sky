@@ -1,0 +1,26 @@
+{
+  "pfet_01v8_lvt": {
+    "minimum_length_um": 0.35,
+    "model_path": "libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8_lvt__tt.pm3.spice",
+    "sha256": "57d99ed36c675cf756a33916a462c3b7235cbc2364e2c871133551c77ffb564f",
+    "bins": 48
+  },
+  "pfet_01v8": {
+    "minimum_length_um": 0.15,
+    "model_path": "libs.ref/sky130_fd_pr/spice/sky130_fd_pr__pfet_01v8__tt.pm3.spice",
+    "sha256": "c943246ce012ea3db2777e3f4633ddccdfee7c8f1bf4dca79af9f7ff17b3d51f",
+    "bins": 108
+  },
+  "nfet_01v8_lvt": {
+    "minimum_length_um": 0.15,
+    "model_path": "libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8_lvt__tt.pm3.spice",
+    "sha256": "7e946eed0e30b40fd1f1788510a2e8ab128ea0fa93865cf9f9204004276d20bc",
+    "bins": 88
+  },
+  "nfet_01v8": {
+    "minimum_length_um": 0.15,
+    "model_path": "libs.ref/sky130_fd_pr/spice/sky130_fd_pr__nfet_01v8__tt.pm3.spice",
+    "sha256": "459eca963a134574cf7c842ad6d3814e7e0752bfb5de8e581c2f483534b5ad06",
+    "bins": 180
+  }
+}
