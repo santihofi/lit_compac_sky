@@ -4,7 +4,8 @@ This report is incremental.
 The transistor-replica version of the compact two-copy candidate passes all 45 original-range diagonal-curvature cases with fixed per-corner current codes.
 Its nominal full-surface error is below the IHP reference.
 All 45 bandwidth captures and both sets of 45 feedback-loop captures pass the independent waveform audit.
-The two feedback loops meet their provisional margin limits, while full transfer surfaces across corners are still being evaluated.
+The two feedback loops meet their provisional margin limits.
+Fifteen full transfer surfaces at 1.5 V show lower peak error than IHP in every matched MOS/temperature case, with three RMS-error regressions.
 No schematic equivalence or physical signoff is established.
 The latest measured checkpoint is summarized first, with the earlier candidates retained below to explain the sizing decisions.
 
@@ -65,6 +66,38 @@ The SKY130 input-2 minimum remains below that IHP range.
 This is not full-range performance equivalence.
 The comparison also retains fixed gain code 13, so gain normalization and actual DAC/reference impedance remain separate checks.
 
+
+## Replica receiver loading and corner surface shape
+
+A driver feeds input 1 or input 2 of an identical receiver core with its own CMFB loop and bias.
+The receiver's other differential input is held at 100 mV and its output load is 100 fF per pin.
+The table gives driver bandwidth, with 25/50 fF added per driver output as a wire-capacitance proxy.
+Both designs use nominal conditions and gain code 13.
+The load excludes the offset DAC and tile output buffer.
+
+| Receiver input | Wire load per output | IHP driver BW, inputs 1/2 | Replica driver BW, inputs 1/2 |
+|---|---:|---:|---:|
+| 1 | 25 fF | 331.819/511.728 MHz | 449.019/566.773 MHz |
+| 2 | 25 fF | 373.239/612.754 MHz | 578.295/813.008 MHz |
+| 1 | 50 fF | 315.648/463.835 MHz | 425.050/528.008 MHz |
+| 2 | 50 fF | 352.942/548.314 MHz | 541.655/735.518 MHz |
+
+All eight nominal bandwidth comparisons improve over IHP despite the replica's extra input-1 capacitance.
+These are transistor receiver loads, not extracted tree interconnect.
+
+The matched full-surface grid covers five MOS corners and 0/27/80 C at 1.5 V only.
+Each case uses all 1681 input pairs from -100 to +100 mV in 5 mV steps.
+A constant, two feedthrough terms and the product term are fitted independently, and shape error is normalized to that case's fitted full scale.
+The SKY130 and IHP skew labels are reversed before matching N/P speed cases.
+
+SKY130 peak residual spans 0.827867 to 1.530329 percent, versus IHP's 1.118381 to 1.587047 percent.
+Every one of the fifteen matched cases has lower peak residual on SKY130.
+RMS residual improves in twelve cases but worsens at all three temperatures of the N-fast/P-slow corner.
+The worst RMS comparison is SKY130 sf at 0 C, 0.617139 percent versus IHP fs at 0 C, 0.540532 percent.
+Thus lower peak error does not imply uniformly lower distortion over the full input square.
+Supply-extreme full surfaces, gain-trim coverage, mismatch and real bias references remain open.
+
+![Matched corner surface residual ratios](figures/replica_ihp_matched_surfaces.png)
 
 ## Comparison protocol
 

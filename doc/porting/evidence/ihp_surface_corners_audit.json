@@ -1,0 +1,42 @@
+{
+  "surface_ff.yaml": {
+    "cases": 3,
+    "scalar_values": 3,
+    "waveform_files": 3,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "surface_fs.yaml": {
+    "cases": 3,
+    "scalar_values": 3,
+    "waveform_files": 3,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "surface_sf.yaml": {
+    "cases": 3,
+    "scalar_values": 3,
+    "waveform_files": 3,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "surface_ss.yaml": {
+    "cases": 3,
+    "scalar_values": 3,
+    "waveform_files": 3,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "surface_tt.yaml": {
+    "cases": 3,
+    "scalar_values": 3,
+    "waveform_files": 3,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  }
+}
