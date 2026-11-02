@@ -1,35 +1,41 @@
 # IHP SG13CMOS5L versus SKY130A
 
 This report is incremental.
-The compact two-copy candidate improves nominal fitted transfer error and core-to-core bandwidth, but passes only 36 of 45 original-range curvature cases.
+The transistor-replica version of the compact two-copy candidate passes all 45 original-range diagonal-curvature cases with fixed per-corner current codes.
+Its nominal full-surface error is below the IHP reference.
+Corner checks of bandwidth and both feedback loops are running, with full transfer surfaces across corners prepared next.
 No schematic equivalence or physical signoff is established.
 The latest measured checkpoint is summarized first, with the earlier candidates retained below to explain the sizing decisions.
 
-## Current compact-candidate checkpoint
+## Current transistor-replica checkpoint
 
-The following nominal results use tt, 27 C, 1.5 V, common mode 0.75 V, gain code 13, 100 fF per output and 40 uA unit reference.
-SKY130 uses two parallel circuit copies, 0.35 um PMOS loads and resistance scale 1.46.
+The following nominal results use tt, 27 C, 1.5 V, common mode 0.75 V, gain code 13 and 100 fF per output.
+IHP uses a 40 uA unit reference.
+SKY130 uses two parallel circuit copies, 0.35 um PMOS loads, resistance scale 1.46 and 33.75 uA unit reference.
 The full operating range remains 1.45/1.5/1.65 V and 0/27/80 C.
 
-| Metric | Current IHP core | Compact SKY130 candidate |
+| Metric | Current IHP core | SKY130 transistor-replica candidate |
 |---|---:|---:|
-| Fitted product gain | -10.00640 V^-1 | -9.98681 V^-1 |
-| Peak fitted transfer error | 1.38043% | 1.00259% |
-| RMS fitted transfer error | 0.48130% | 0.39114% |
-| Bare-core bandwidth, inputs 1/2 | 426.673/836.155 MHz | 589.672/843.913 MHz |
-| Input capacitance per pin at 1 MHz, inputs 1/2 | 171.090/131.584 fF | 161.882/about 84 fF |
-| Input noise at 1 MHz, inputs 1/2 | 20.3362/20.3247 nV/sqrt(Hz) | 16.7830/14.2383 nV/sqrt(Hz) |
-| Integrated input noise, 1 kHz to 100 MHz | 149.052/146.311 uVrms | 149.133/124.296 uVrms |
-| CMFB phase margin | 60.5671 degrees | 68.4452 degrees |
-| CMFB gain margin | 18.0002 dB | 15.0589 dB |
-| Supply current | 0.718416 mA | about 1.218 mA |
+| Fitted product gain | -10.00640 V^-1 | -9.97783 V^-1 |
+| Peak fitted transfer error | 1.38043% | 1.02346% |
+| RMS fitted transfer error | 0.48130% | 0.39973% |
+| Bare-core bandwidth, inputs 1/2 | 426.673/836.155 MHz | 592.706/845.691 MHz |
+| Input capacitance per pin at 1 MHz, inputs 1/2 | 171.090/131.584 fF | 185.419/83.8715 fF |
+| Input noise at 1 MHz, inputs 1/2 | 20.3362/20.3247 nV/sqrt(Hz) | 16.8151/14.2876 nV/sqrt(Hz) |
+| Integrated input noise, 1 kHz to 100 MHz | 149.052/146.311 uVrms | 149.314/124.668 uVrms |
+| CMFB phase margin | 60.5671 degrees | 101.600 degrees |
+| CMFB gain margin | 18.0002 dB | 14.3740 dB |
+| Supply current | 0.718416 mA | about 1.199 mA |
 
 Noise uses the other differential input held at 100 mV.
-The first-input integrated noise is essentially unchanged, and the gain margin remains lower.
+The first-input integrated noise is essentially unchanged, and the CMFB gain margin remains lower.
+The replica adds about 12.5 percent to input-1 capacitance relative to the preceding compact candidate.
+Its local bias loop has nominal phase margin 85.9634 degrees and gain margin 33.0437 dB.
+The loop bench breaks the shared gate connection so both the reference and main tail gate loads remain present.
 The small nominal input-2 bandwidth advantage still needs extracted confirmation.
 These measurements do not qualify mismatch, startup, actual bias circuitry or physical layout.
 
-![Compact candidate transfer and fitted residual](figures/sky_compact_transfer.png)
+![Transistor-replica candidate transfer and fitted residual](figures/sky_replica_transfer.png)
 
 ## Comparison protocol
 
@@ -500,3 +506,26 @@ The pair-drain operating voltages differ between the replica and signal path.
 Per-corner current trim must therefore be repeated.
 The current sweep places useful shape settings near 26.25 to 33.75 uA, and the fixed-code supply/temperature sweep is the next acceptance check.
 Both the active and transistor-replica results are retained as experiments.
+
+
+![Nominal return ratios of both replica-candidate loops](figures/sky_replica_loops.png)
+
+## First complete fixed-code curvature screen
+
+The transistor-replica codes ff=1, fs=1, sf=0, ss=4 and tt=6 correspond to unit currents 27.5/27.5/26.25/31.25/33.75 uA.
+Each code stays fixed over the three supplies and three temperatures.
+All 45 cases meet the provisional ratio limits, with an overall range 0.995562 to 1.02830.
+The reference current sources are still ideal, so real DAC and bandgap qualification remains required.
+
+| SKY130 corner | Minimum ratio | Maximum ratio | Minimum tail voltage |
+|---|---:|---:|---:|
+| ff | 1.00452 | 1.02341 | 270.134 mV |
+| fs | 1.00641 | 1.02737 | 306.080 mV |
+| sf | 1.00117 | 1.02767 | 56.900 mV |
+| ss | 0.995562 | 1.02830 | 81.173 mV |
+| tt | 1.01324 | 1.02347 | 163.579 mV |
+
+This is a pass of the diagonal shape screen, not a claim that every electrical requirement is met.
+Tail-current ratio still reaches 1.26308 at fs, showing that exact mirror tracking is not what passed.
+The observed transfer and the separate noise, bandwidth, feedback and transient tests determine acceptance.
+The calibrated nominal surface, AC, noise and both loop data are retained under evidence/sky_replica_*.

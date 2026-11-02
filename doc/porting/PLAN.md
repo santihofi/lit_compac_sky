@@ -90,3 +90,10 @@ Template controls and design results are committed incrementally.
 The SKY130 template work-santi branch now pushes successfully.
 The latest published template update records model-bin channel-length limits and file hashes.
 The destination design still has no configured remote, and the private reference repository still requires HTTPS credentials.
+
+## Replica checkpoint on 2026-11-02
+
+The transistor-replica tail candidate is the first to pass the 45-case diagonal-curvature screen with fixed per-corner current codes.
+Its nominal full-surface error improves over IHP and both CMFB and local replica loops pass their provisional margins.
+The next gates are full-surface corners, loaded bandwidth, gain-trim range, transient recovery, mismatch and real bias circuitry.
+The candidate remains in source-deck form until those checks justify promoting its topology into the drawn schematic.

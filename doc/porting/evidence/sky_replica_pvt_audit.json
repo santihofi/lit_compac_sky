@@ -1,0 +1,42 @@
+{
+  "trim_ff": {
+    "cases": 9,
+    "scalar_values": 189,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "trim_fs": {
+    "cases": 9,
+    "scalar_values": 189,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "trim_sf": {
+    "cases": 9,
+    "scalar_values": 189,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "trim_ss": {
+    "cases": 9,
+    "scalar_values": 189,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "trim_tt": {
+    "cases": 9,
+    "scalar_values": 189,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  }
+}
