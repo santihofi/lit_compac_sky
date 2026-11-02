@@ -1,0 +1,25 @@
+{
+  "range_fs.yaml": {
+    "cases": 6,
+    "scalar_values": 126,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000002: compr=1.04251 above 1.03242",
+      "Case 000005: compr=1.06417 above 1.03242"
+    ]
+  },
+  "range_tt.yaml": {
+    "cases": 6,
+    "scalar_values": 126,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000002: compr=1.04742 above 1.03242",
+      "Case 000004: compr=1.04974 above 1.03242",
+      "Case 000005: compr=1.09777 above 1.03242"
+    ]
+  }
+}

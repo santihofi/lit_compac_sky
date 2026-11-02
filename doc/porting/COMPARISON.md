@@ -141,6 +141,32 @@ At comparison code 13, the maxima are 3.59 percent and 3.80 percent.
 All nominal 1.5 V comparisons are unaffected.
 The historical reference tables remain preserved, and the normalized code-13 control is retained separately in evidence/ihp_midcode_rails.csv.
 
+## Nominal gain-code resolution
+
+A complete 32-code sweep at tt, 27 C and 1.5 V confirms strictly increasing gain magnitude in both designs.
+The reference current and other conditions match the endpoint screen.
+
+| Nominal code sweep | IHP | Original SKY130 replica |
+|---|---:|---:|
+| K100 magnitude range | 8.73787 to 11.7761 V^-1 | 9.38744 to 10.6451 V^-1 |
+| K100 step, percent of target gain 10 | 0.9480 to 1.0146% | 0.3920 to 0.4198% |
+| Nearest K100 code and residual | 13, +0.387% | 15, +0.066% |
+| K10 magnitude range | 8.62523 to 11.4864 V^-1 | 9.27627 to 10.4082 V^-1 |
+| Nearest K10 code and residual | 15, +0.427% | 20, +0.177% |
+
+The smaller SKY130 step improves nominal quantization but reduces available correction range.
+These monotonicity results apply to one nominal point, not mismatch or all PVT combinations.
+All 32 SKY130 codes meet the provisional diagonal-ratio screen.
+
+A separate resistor-range experiment scales the fixed loads and the gain-trim segments independently.
+At fixed-load scale 0.8 and trim-segment scale 2, the fs endpoints span K100 magnitudes 9.67735 to 12.0350, but the tt lower endpoint is already 10.4735.
+Multiplying the trim resistance alone therefore cannot center every corner.
+At trim-segment scale 4 both corners also fail the endpoint shape screen.
+The next control reduces the fixed-load scale to 0.6 while retaining trim scale 2.
+These controls preserve all MOS dimensions and the replica current calibration.
+
+![Nominal gain-code range and step](figures/replica_ihp_gain_steps.png)
+
 ## Manufacturing-grid control
 
 Continuous electrical exploration produced dimensions such as 6.21875 um input-pair finger width and 0.920120439 um source-resistor length.

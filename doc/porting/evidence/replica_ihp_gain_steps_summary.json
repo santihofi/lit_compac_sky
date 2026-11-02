@@ -1,0 +1,66 @@
+{
+  "IHP": {
+    "audit": {
+      "cases": 32,
+      "scalar_values": 512,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "metrics": {
+      "k100": {
+        "minimum_gain": 8.73787,
+        "maximum_gain": 11.7761,
+        "strictly_monotonic": true,
+        "minimum_step_per_v": 0.09479999999999933,
+        "maximum_step_per_v": 0.10146000000000122,
+        "nearest_code": 13,
+        "nearest_gain": 10.0387,
+        "nearest_error_percent": 0.387000000000004
+      },
+      "k10": {
+        "minimum_gain": 8.62523,
+        "maximum_gain": 11.4864,
+        "strictly_monotonic": true,
+        "minimum_step_per_v": 0.08830000000000027,
+        "maximum_step_per_v": 0.09651999999999994,
+        "nearest_code": 15,
+        "nearest_gain": 10.0427,
+        "nearest_error_percent": 0.4269999999999996
+      }
+    }
+  },
+  "SKY130 replica": {
+    "audit": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "metrics": {
+      "k100": {
+        "minimum_gain": 9.38744,
+        "maximum_gain": 10.6451,
+        "strictly_monotonic": true,
+        "minimum_step_per_v": 0.039199999999999235,
+        "maximum_step_per_v": 0.04198000000000057,
+        "nearest_code": 15,
+        "nearest_gain": 10.0066,
+        "nearest_error_percent": 0.0660000000000105
+      },
+      "k10": {
+        "minimum_gain": 9.27627,
+        "maximum_gain": 10.4082,
+        "strictly_monotonic": true,
+        "minimum_step_per_v": 0.03500000000000014,
+        "maximum_step_per_v": 0.03806999999999938,
+        "nearest_code": 20,
+        "nearest_gain": 10.0177,
+        "nearest_error_percent": 0.17700000000000493
+      }
+    }
+  }
+}

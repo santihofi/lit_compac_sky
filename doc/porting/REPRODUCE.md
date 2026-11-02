@@ -115,3 +115,16 @@ scripts/audit_replica_replay.py compares measurements and captures against the o
 scripts/prepare_replica_grid.py prepares a separate nominal control after rounding lengths and per-finger widths to 0.005 um.
 It recalculates diffusion areas, perimeters and source/drain squares when a finger width changes, and retains every changed parameter in geometry_changes.json.
 The exploratory source candidate and its earlier measurements remain intact.
+
+## Gain-code coverage and resolution
+
+scripts/prepare_replica_gain_trim.py prepares the endpoint, code-13 rail-control and nominal 32-code projects.
+Run each project's endpoint configuration before its separate steps batch.
+scripts/analyze_replica_gain_trim.py freezes the endpoint and rail-control data.
+scripts/analyze_gain_steps.py verifies all 32 code identities, measures monotonicity and computes the nearest-code residual.
+
+scripts/prepare_replica_trim_range.py prepares independent fixed-load and trim-segment resistance controls.
+Its root datasheets test fixed-load scale 0.8 and trim scales 1/2/4 at tt/fs.
+Its centered batch tests fixed-load scale 0.6 and trim scale 2 at all five MOS corners, 22/27 C and 1.5 V.
+Use scripts/analyze_trim_range.py with group initial or centered to audit and freeze the corresponding results.
+The minimum and maximum gains are endpoint brackets, not a guarantee of an acceptable intermediate code.
