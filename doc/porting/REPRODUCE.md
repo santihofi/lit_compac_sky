@@ -52,6 +52,9 @@ No clean target is needed.
 | sky_pair_ac | Large pair candidate bandwidth and differential input loading |
 | sky_compact_pair | Smaller pair/quad devices with curvature and AC capture |
 | sky_compact_loads | Compact candidate with shorter PMOS loads, bias trim and PVT |
+| sky_compact_compliance | Input-pair well ties and tail-length controls |
+| sky_regulated_tail | Ideal error-amplifier diagnostic with explicit gate-voltage limits |
+| sky_replica_tail | Transistor input-pair replica for the tail reference |
 | sky_compact_validation | Compact nominal noise, CMFB and full transfer surface |
 | ihp_core_fanout and sky_compact_fanout | Matched transistor receiver loads and 25/50 fF wire load |
 | sky_higher_cm | Separate 1.8 V supply and 0.9 V common-mode alternative |

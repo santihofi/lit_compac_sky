@@ -1,0 +1,22 @@
+{
+  "cases": 15,
+  "scalar_values": 300,
+  "waveform_files": 0,
+  "status": "valid",
+  "specification_status": "fail",
+  "failed_limits": [
+    "Case 000000: compr=0.961966 below 0.96758",
+    "Case 000002: compr=1.1172 above 1.03242",
+    "Case 000002: tail_gate_v=-213.825 below 0",
+    "Case 000001: compr=1.04916 above 1.03242",
+    "Case 000005: compr=1.14728 above 1.03242",
+    "Case 000004: compr=1.08222 above 1.03242",
+    "Case 000007: compr=1.07519 above 1.03242",
+    "Case 000006: compr=0.963714 below 0.96758",
+    "Case 000010: compr=1.10609 above 1.03242",
+    "Case 000011: compr=1.17862 above 1.03242",
+    "Case 000008: compr=1.16745 above 1.03242",
+    "Case 000014: compr=1.16765 above 1.03242",
+    "Case 000013: compr=1.10341 above 1.03242"
+  ]
+}

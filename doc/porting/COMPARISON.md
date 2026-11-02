@@ -480,3 +480,23 @@ A separate scaled input-pair replica tests a transistor implementation of the sa
 The low-threshold PMOS input pair is already at its installed 0.35 um minimum length.
 The TT model-bin scan and KLayout PCell coercion both confirm that limit.
 A shorter low-threshold pair cannot be used to recover headroom with this PDK.
+
+## Tail-reference voltage matching controls
+
+The active-matching diagnostic moves the tail-reference transistor's gate off its drain and uses an ideal gain-10000 error amplifier to equalize reference and output drain voltages.
+Fourteen nominal bias/corner points regulate tail current near the intended eightfold reference ratio.
+One tt, 55 uA point converges to a nonphysical -213.825 V gate solution.
+The gate-voltage limit rejects that case, so the result is not treated as physical feasibility evidence.
+Ideal dependent-source experiments require explicit voltage-domain checks.
+
+The transistor replica uses a one-eighth copy of each input-pair branch and eight series source-resistor units in the reference path.
+Its two branch gates follow the corresponding real inputs.
+With two circuit copies, each replica PMOS has three full-size fingers, preserving integer physical geometry.
+The original reference current flows through this replica and sets the shared tail gate without an ideal error amplifier.
+
+At nominal conditions its tail current is 3.30 to 9.39 percent above the ideal eightfold value over the tested currents and MOS corners.
+The replica's source differs from the real pair source by 6.53 to 129.10 mV, so it is not an exact drain-voltage copy.
+The pair-drain operating voltages differ between the replica and signal path.
+Per-corner current trim must therefore be repeated.
+The current sweep places useful shape settings near 26.25 to 33.75 uA, and the fixed-code supply/temperature sweep is the next acceptance check.
+Both the active and transistor-replica results are retained as experiments.

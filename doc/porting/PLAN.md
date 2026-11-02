@@ -82,4 +82,11 @@ The compact two-copy candidate improves nominal full-surface shape and all match
 The fixed-current PVT sweep passes 36 of 45 diagonal-curvature cases, so it remains unqualified.
 The remaining experiments separate folding-mirror headroom, input-pair body effect and tail output conductance.
 New waveform checks compare AC captures with independent scalar anchors after a reproducible wrong-curve capture in Chipify.
-Template controls and design results are committed incrementally, with upstream access limitations unchanged.
+Template controls and design results are committed incrementally.
+
+
+## Publishing checkpoint on 2026-11-02
+
+The SKY130 template work-santi branch now pushes successfully.
+The latest published template update records model-bin channel-length limits and file hashes.
+The destination design still has no configured remote, and the private reference repository still requires HTTPS credentials.
