@@ -1,0 +1,20 @@
+{
+  "SKY130 replica, VDD drive": {
+    "k100": 18,
+    "k10": 15
+  },
+  "IHP, historical 1.5 V drive": {
+    "k100": 30,
+    "k10": 30
+  },
+  "IHP, VDD drive": {
+    "k100": 28,
+    "k10": 30
+  },
+  "ihp_maximum_relative_change_from_gate_rail": {
+    "k100": 0.07219572157751009,
+    "k10": 0.06946544479868388,
+    "bw_in1_mhz": 0.03144390830805732,
+    "bw_in2_mhz": 0.09038826983864467
+  }
+}

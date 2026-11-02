@@ -62,7 +62,9 @@ The 90 core gain curves were checked against separately captured DC-frequency ga
 The 90 loop curves were checked against phase margin, gain margin, unity frequency, phase-crossing frequency, DC gain and crossing count.
 Frozen scalar tables, waveform archives and audits carry the sky_replica_ac_pvt, sky_replica_cmfb_pvt and sky_replica_bias_loop_pvt prefixes in evidence/.
 
-The earlier IHP bare-core PVT bandwidth spans 379.086 to 456.491 MHz on input 1 and 800.967 to 864.774 MHz on input 2.
+The historical IHP bench holds its trim-drive high level at 1.5 V during the supply sweep.
+Its bare-core PVT bandwidth spans 379.086 to 456.491 MHz on input 1 and 800.967 to 864.774 MHz on input 2.
+With that drive tracking VDD, the matched code-13 ranges become 377.324 to 461.305 MHz and 790.231 to 886.981 MHz.
 The SKY130 input-2 minimum remains below that IHP range.
 This is not full-range performance equivalence.
 The comparison also retains fixed gain code 13, so gain normalization and actual DAC/reference impedance remain separate checks.
@@ -113,6 +115,45 @@ Git blob checks confirm that the multiplier, gain-trim and OTA schematics used f
 The new system adds a readout current DAC in every bias channel, grows the tile register to 32 bits and the full frame to 512 bits, and removes the vb_ostg tree pin.
 The port plan follows that updated interface.
 Earlier tile, readout and bias-chain measurements remain identified with the original source snapshot, and do not qualify the updated system.
+
+## Gain-trim coverage and trim-drive control
+
+Endpoint screening uses gain codes 0 and 31 over five MOS corners, three supplies and three temperatures, with nominal resistor models and ideal bias references.
+SKY130 retains the per-corner current codes selected by the diagonal-curvature screen.
+IHP uses a 40 uA reference throughout.
+A target bracket means only that the two endpoint magnitudes straddle 10 per volt.
+It does not prove monotonicity, a sufficiently fine code step or a code meeting both gain and shape limits.
+
+| Endpoint screen | K100 target bracket | K10 target bracket |
+|---|---:|---:|
+| SKY130 replica, trim high tracks VDD | 18/45 | 15/45 |
+| IHP, historical fixed 1.5 V trim high | 30/45 | 30/45 |
+| IHP, trim high tracks VDD | 28/45 | 30/45 |
+
+All fifteen 80 C cases lack K100 endpoint coverage for both PDKs under these fixed ideal-current conditions.
+The SKY130 candidate also misses six cases at 0 C and six at 27 C.
+Its 90 endpoint measurements are valid, but three endpoints exceed the provisional diagonal-ratio limit.
+These results do not establish actual bias-chain or per-die calibration performance.
+
+The IHP gate-drive control matters even with unchanged device geometry.
+At codes 0 and 31, replacing the fixed 1.5 V trim-high level with VDD changes K100 by up to 7.22 percent and input-2 bandwidth by up to 9.04 percent.
+At comparison code 13, the maxima are 3.59 percent and 3.80 percent.
+All nominal 1.5 V comparisons are unaffected.
+The historical reference tables remain preserved, and the normalized code-13 control is retained separately in evidence/ihp_midcode_rails.csv.
+
+## Manufacturing-grid control
+
+Continuous electrical exploration produced dimensions such as 6.21875 um input-pair finger width and 0.920120439 um source-resistor length.
+A separate control rounds per-finger width, channel length and resistor length to 0.005 um, consistent with the template's layout database grid.
+The pair finger becomes 6.22 um and the replica remains exactly one eighth of the pair width.
+The source resistor length becomes 0.92 um.
+The generator recalculates source/drain area, perimeter and squares when a MOS finger width changes.
+
+At nominal conditions the quantized candidate gives fitted gain -9.97638 per volt, peak/RMS residual 1.02313/0.39961 percent, and bandwidth 592.871/846.038 MHz.
+Input capacitances are 185.442/83.8718 fF.
+Input noise at 1 MHz is 16.8139/14.2866 nV/sqrt(Hz), and integrated noise is 149.304/124.660 uVrms.
+The small nominal changes support using a grid-aligned candidate for further checks.
+They do not transfer the earlier corner, loop or layout verdicts to this geometry automatically.
 
 ## Comparison protocol
 

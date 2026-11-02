@@ -171,126 +171,102 @@ C {ipin.sym} -40 0 0 0 {name=p2 lab=inp}
 C {lab_pin.sym} 80 0 2 0 {name=p23 sig_type=std_logic lab=ptap}
 C {lab_pin.sym} 380 0 2 0 {name=p24 sig_type=std_logic lab=vref_int}
 C {lab_pin.sym} 260 0 2 1 {name=p25 sig_type=std_logic lab=ptap}
-C {sky130_fd_pr/res_high_po_1p41.sym} 760 80 0 0 {name=RS1
+C {sky130_fd_pr/res_high_po_1p41.sym} 800 80 3 0 {name=RS1
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 760 50 760 30 {lab=sa}
-C {lab_pin.sym} 760 30 1 0 {name=prs1a sig_type=std_logic lab=sa}
-N 760 110 760 130 {lab=rs1}
-C {lab_pin.sym} 760 130 3 0 {name=prs1b sig_type=std_logic lab=rs1}
-C {sky130_fd_pr/res_high_po_1p41.sym} 840 80 0 0 {name=RS2
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 900 80 3 0 {name=RS2
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 840 50 840 30 {lab=rs1}
-C {lab_pin.sym} 840 30 1 0 {name=prs2a sig_type=std_logic lab=rs1}
-N 840 110 840 130 {lab=rs2}
-C {lab_pin.sym} 840 130 3 0 {name=prs2b sig_type=std_logic lab=rs2}
-C {sky130_fd_pr/res_high_po_1p41.sym} 920 80 0 0 {name=RS3
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1000 80 3 0 {name=RS3
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 920 50 920 30 {lab=rs2}
-C {lab_pin.sym} 920 30 1 0 {name=prs3a sig_type=std_logic lab=rs2}
-N 920 110 920 130 {lab=rs3}
-C {lab_pin.sym} 920 130 3 0 {name=prs3b sig_type=std_logic lab=rs3}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1000 80 0 0 {name=RS4
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1100 80 3 0 {name=RS4
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1000 50 1000 30 {lab=rs3}
-C {lab_pin.sym} 1000 30 1 0 {name=prs4a sig_type=std_logic lab=rs3}
-N 1000 110 1000 130 {lab=rs4}
-C {lab_pin.sym} 1000 130 3 0 {name=prs4b sig_type=std_logic lab=rs4}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1080 80 0 0 {name=RS5
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1200 80 3 0 {name=RS5
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1080 50 1080 30 {lab=rs4}
-C {lab_pin.sym} 1080 30 1 0 {name=prs5a sig_type=std_logic lab=rs4}
-N 1080 110 1080 130 {lab=rs5}
-C {lab_pin.sym} 1080 130 3 0 {name=prs5b sig_type=std_logic lab=rs5}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1160 80 0 0 {name=RS6
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1300 80 3 0 {name=RS6
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1160 50 1160 30 {lab=rs5}
-C {lab_pin.sym} 1160 30 1 0 {name=prs6a sig_type=std_logic lab=rs5}
-N 1160 110 1160 130 {lab=rs6}
-C {lab_pin.sym} 1160 130 3 0 {name=prs6b sig_type=std_logic lab=rs6}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1240 80 0 0 {name=RS7
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1400 80 3 0 {name=RS7
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1240 50 1240 30 {lab=rs6}
-C {lab_pin.sym} 1240 30 1 0 {name=prs7a sig_type=std_logic lab=rs6}
-N 1240 110 1240 130 {lab=rs7}
-C {lab_pin.sym} 1240 130 3 0 {name=prs7b sig_type=std_logic lab=rs7}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1320 80 0 0 {name=RS8
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1500 80 3 0 {name=RS8
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1320 50 1320 30 {lab=rs7}
-C {lab_pin.sym} 1320 30 1 0 {name=prs8a sig_type=std_logic lab=rs7}
-N 1320 110 1320 130 {lab=rs8}
-C {lab_pin.sym} 1320 130 3 0 {name=prs8b sig_type=std_logic lab=rs8}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1400 80 0 0 {name=RS9
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1600 80 3 0 {name=RS9
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1400 50 1400 30 {lab=rs8}
-C {lab_pin.sym} 1400 30 1 0 {name=prs9a sig_type=std_logic lab=rs8}
-N 1400 110 1400 130 {lab=rs9}
-C {lab_pin.sym} 1400 130 3 0 {name=prs9b sig_type=std_logic lab=rs9}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1480 80 0 0 {name=RS10
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1700 80 3 0 {name=RS10
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1480 50 1480 30 {lab=rs9}
-C {lab_pin.sym} 1480 30 1 0 {name=prs10a sig_type=std_logic lab=rs9}
-N 1480 110 1480 130 {lab=rs10}
-C {lab_pin.sym} 1480 130 3 0 {name=prs10b sig_type=std_logic lab=rs10}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1560 80 0 0 {name=RS11
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1800 80 3 0 {name=RS11
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1560 50 1560 30 {lab=rs10}
-C {lab_pin.sym} 1560 30 1 0 {name=prs11a sig_type=std_logic lab=rs10}
-N 1560 110 1560 130 {lab=rs11}
-C {lab_pin.sym} 1560 130 3 0 {name=prs11b sig_type=std_logic lab=rs11}
-C {sky130_fd_pr/res_high_po_1p41.sym} 1640 80 0 0 {name=RS12
+
+
+C {sky130_fd_pr/res_high_po_1p41.sym} 1900 80 3 0 {name=RS12
 L=22.705
 mult=2.0
 model=res_high_po_1p41
 spiceprefix=X
 }
-N 1640 50 1640 30 {lab=rs11}
-C {lab_pin.sym} 1640 30 1 0 {name=prs12a sig_type=std_logic lab=rs11}
-N 1640 110 1640 130 {lab=sb}
-C {lab_pin.sym} 1640 130 3 0 {name=prs12b sig_type=std_logic lab=sb}
+
+
 C {lab_wire.sym} 90 80 0 0 {name=p26 sig_type=std_logic lab=sa}
 C {lab_wire.sym} 250 80 0 0 {name=p27 sig_type=std_logic lab=sb}
 C {sky130_fd_pr/nfet_01v8_lvt.sym} 20 150 0 0 {name=M3
@@ -682,15 +658,56 @@ C {lab_pin.sym} 980 640 0 0 {name=pdm31 sig_type=std_logic lab=vss}
 N 1060 640 1100 640 {lab=ptap}
 C {lab_pin.sym} 1100 640 2 0 {name=pdm32 sig_type=std_logic lab=ptap}
 
-C {devices/lab_pin.sym} 1620 80 0 0 {name=body_RS12 lab=ptap}
-C {devices/lab_pin.sym} 1540 80 0 0 {name=body_RS11 lab=ptap}
-C {devices/lab_pin.sym} 1460 80 0 0 {name=body_RS10 lab=ptap}
-C {devices/lab_pin.sym} 1380 80 0 0 {name=body_RS9 lab=ptap}
-C {devices/lab_pin.sym} 1300 80 0 0 {name=body_RS8 lab=ptap}
-C {devices/lab_pin.sym} 1220 80 0 0 {name=body_RS7 lab=ptap}
-C {devices/lab_pin.sym} 1140 80 0 0 {name=body_RS6 lab=ptap}
-C {devices/lab_pin.sym} 1060 80 0 0 {name=body_RS5 lab=ptap}
-C {devices/lab_pin.sym} 980 80 0 0 {name=body_RS4 lab=ptap}
-C {devices/lab_pin.sym} 900 80 0 0 {name=body_RS3 lab=ptap}
-C {devices/lab_pin.sym} 820 80 0 0 {name=body_RS2 lab=ptap}
-C {devices/lab_pin.sym} 740 80 0 0 {name=body_RS1 lab=ptap}
+
+
+
+
+
+
+
+
+
+
+
+
+N 800 100 800 140 {}
+N 830 80 870 80 {}
+C {devices/lab_pin.sym} 850 80 1 0 {name=candidate_label53 sig_type=std_logic lab=rs1}
+N 900 100 900 140 {}
+N 930 80 970 80 {}
+C {devices/lab_pin.sym} 950 80 1 0 {name=candidate_label54 sig_type=std_logic lab=rs2}
+N 1000 100 1000 140 {}
+N 1030 80 1070 80 {}
+C {devices/lab_pin.sym} 1050 80 1 0 {name=candidate_label55 sig_type=std_logic lab=rs3}
+N 1100 100 1100 140 {}
+N 1130 80 1170 80 {}
+C {devices/lab_pin.sym} 1150 80 1 0 {name=candidate_label56 sig_type=std_logic lab=rs4}
+N 1200 100 1200 140 {}
+N 1230 80 1270 80 {}
+C {devices/lab_pin.sym} 1250 80 1 0 {name=candidate_label57 sig_type=std_logic lab=rs5}
+N 1300 100 1300 140 {}
+N 1330 80 1370 80 {}
+C {devices/lab_pin.sym} 1350 80 1 0 {name=candidate_label58 sig_type=std_logic lab=rs6}
+N 1400 100 1400 140 {}
+N 1430 80 1470 80 {}
+C {devices/lab_pin.sym} 1450 80 1 0 {name=candidate_label59 sig_type=std_logic lab=rs7}
+N 1500 100 1500 140 {}
+N 1530 80 1570 80 {}
+C {devices/lab_pin.sym} 1550 80 1 0 {name=candidate_label60 sig_type=std_logic lab=rs8}
+N 1600 100 1600 140 {}
+N 1630 80 1670 80 {}
+C {devices/lab_pin.sym} 1650 80 1 0 {name=candidate_label61 sig_type=std_logic lab=rs9}
+N 1700 100 1700 140 {}
+N 1730 80 1770 80 {}
+C {devices/lab_pin.sym} 1750 80 1 0 {name=candidate_label62 sig_type=std_logic lab=rs10}
+N 1800 100 1800 140 {}
+N 1830 80 1870 80 {}
+C {devices/lab_pin.sym} 1850 80 1 0 {name=candidate_label63 sig_type=std_logic lab=rs11}
+N 1900 100 1900 140 {}
+N 800 140 1900 140 {}
+C {devices/lab_pin.sym} 800 140 0 0 {name=candidate_label64 sig_type=std_logic lab=ptap}
+N 730 80 770 80 {}
+C {devices/lab_pin.sym} 730 80 0 0 {name=candidate_label65 sig_type=std_logic lab=sa}
+N 1930 80 1970 80 {}
+C {devices/lab_pin.sym} 1970 80 0 1 {name=candidate_label66 sig_type=std_logic lab=sb}
+T {Fast-loop degeneration, twelve series resistor units} 760 -180 0 0 0.4 0.4 {}

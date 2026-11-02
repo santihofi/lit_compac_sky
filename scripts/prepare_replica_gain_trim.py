@@ -43,3 +43,21 @@ sheet = yaml.safe_load((source/"datasheets/corners.yaml").read_text())
 sheet["parameters"].update(gcode=[0, 31], gate_tracks_vdd=[0, 1])
 (target/"datasheets/endpoints.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))
 (target/"settings.json").write_text(json.dumps({"num_cores": 2, "sim_timeout_sec": 600})+"\n")
+
+# The code-13 control separates the historical bench rail from the PVT baseline.
+midcode = yaml.safe_load((target/"datasheets/endpoints.yaml").read_text())
+midcode["parameters"]["gcode"] = [13]
+(target/"datasheets/midcode").mkdir(exist_ok=True)
+(target/"datasheets/midcode/midcode.yaml").write_text(header+yaml.safe_dump(midcode,sort_keys=False))
+
+for project, template in [
+    ("sky_replica_gain_trim", ROOT/"verification/porting/sky_replica_tail/datasheets/nominal.yaml"),
+    ("ihp_gain_trim", ROOT/"verification/porting/ihp_core_tradeoffs/datasheets/corners.yaml"),
+]:
+    p = ROOT/"verification/porting"/project
+    sheet = yaml.safe_load(template.read_text())
+    sheet["parameters"].update(temp=[27], vdd=[1.5], corner_mos=["tt"], gcode=list(range(32)))
+    if project.startswith("ihp"):
+        sheet["parameters"]["gate_tracks_vdd"] = [1]
+    (p/"datasheets/steps").mkdir(exist_ok=True)
+    (p/"datasheets/steps/steps_tt.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))

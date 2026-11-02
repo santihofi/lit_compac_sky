@@ -161,6 +161,35 @@ for cell in ["gilbert_cell", "ota", "gain_trim"]:
         text += wire(-1540, -400, -1440, -400) + wire(-1440, -400, -1040, -400)
         text += label(-1540, -400, "ibias")
         text += "T {Experimental replica candidate, schematic qualification in progress} -650 -1280 0 0 0.6 0.6 {}\n"
+    if cell == "ota":
+        old_columns = [760+80*i for i in range(12)]
+        for m, end, a in reversed(list(components(text))):
+            sym, x, y, rotation, flip = m.groups()
+            name = attr(a, "name", "")
+            if re.fullmatch(r"RS\d+", name):
+                number = int(name[2:])
+                text = text[:m.start()] + instance(
+                    definitions[cell]["X"+name], 800+100*(number-1), 80, 3).rstrip() + text[end:]
+            elif "lab_pin.sym" in sym and (
+                (int(x) in old_columns and int(y) in [30, 130]) or
+                (int(x)+20 in old_columns and int(y) == 80)):
+                text = text[:m.start()] + text[end:]
+        for x in old_columns:
+            for y1, y2 in [(30, 50), (110, 130)]:
+                pattern = rf"^N {x} {y1} {x} {y2} .*\n|^N {x} {y2} {x} {y1} .*\n"
+                text, count = re.subn(pattern, "", text, flags=re.M)
+                if count != 1:
+                    raise ValueError(f"Missing OTA resistor stub {x} {y1} {y2}")
+        for index in range(12):
+            x = 800+100*index
+            text += wire(x, 100, x, 140)
+            if index < 11:
+                text += wire(x+30, 80, x+70, 80)
+                text += label(x+50, 80, f"rs{index+1}", 1)
+        text += wire(800, 140, 1900, 140) + label(800, 140, "ptap")
+        text += wire(730, 80, 770, 80) + label(730, 80, "sa")
+        text += wire(1930, 80, 1970, 80) + label(1970, 80, "sb", flip=1)
+        text += "T {Fast-loop degeneration, twelve series resistor units} 760 -180 0 0 0.4 0.4 {}\n"
     (SCHEMATIC / (cell + ".sch")).write_text(text)
     symbol = source.with_suffix(".sym").read_text()
     if "spectre_format=" not in symbol:
