@@ -792,3 +792,13 @@ This is a pass of the diagonal shape screen, not a claim that every electrical r
 Tail-current ratio still reaches 1.26308 at fs, showing that exact mirror tracking is not what passed.
 The observed transfer and the separate noise, bandwidth, feedback and transient tests determine acceptance.
 The calibrated nominal surface, AC, noise and both loop data are retained under evidence/sky_replica_*.
+
+## Joint code feasibility under the clarified criterion
+
+Re-auditing all 160 wider-trim measurements at 27 C and 1.5 V gives joint DC-feasible codes ff={8}, fs={12,13}, sf={10,11}, ss={6,7} and tt={2,3} at a provisional one-percent K100 tolerance.
+Every listed code also satisfies the diagonal-shape screen and keeps the shared tail gate within the supply rails.
+This establishes five of five nominal MOS points for that provisional DC screen.
+It does not establish full PVT coverage or bandwidth, noise and stability at the same codes.
+The explicit tolerance is not an approved gain specification.
+Evidence: evidence/sky_wide_codes_nominal_summary.json.
+The complete transmission-gate 32-code sweep is in progress and no result is inferred from its endpoints.
