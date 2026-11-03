@@ -101,5 +101,11 @@ The transistor-replica tail candidate is the first to pass the 45-case diagonal-
 Its nominal full-surface error improves over IHP and both CMFB and local replica loops pass their provisional margins.
 The 45-case bandwidth and both feedback-loop sweeps now have independent waveform audits.
 Both loops pass their provisional margin limits, but input-2 bandwidth is lower than IHP in some corners.
-The next gates are full-surface corners, loaded bandwidth, gain-trim range, transient recovery, mismatch and real bias circuitry.
-The candidate remains in source-deck form until those checks justify promoting its topology into the drawn schematic.
+Fifteen nominal-supply full surfaces and the nominal receiver-load comparison are complete, with the mixed shape and speed results recorded in COMPARISON.md.
+The separate drawn experimental schematic passes electrical comparison and nominal simulation replay.
+The wider trim network now brackets gain 10 at 22/27 C in all five MOS corners and is monotonic across all 32 codes at 27 C.
+Its nearest-code residual reaches 0.64 percent versus IHP's 0.44 percent.
+Fixed calibrated-code PVT gain and bandwidth checks are running.
+The original replica also passes eight nominal loop-current kick controls with independently checked waveforms.
+Supply-extreme full surfaces, passive corners, calibrated loop margins, startup, mismatch and real bias circuitry remain open.
+The main macro folders have not been promoted to an accepted replacement.

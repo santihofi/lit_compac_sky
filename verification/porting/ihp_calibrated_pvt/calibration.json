@@ -1,0 +1,14 @@
+{
+  "target_metric": "k100",
+  "target_magnitude_per_v": 10,
+  "temperature_c": 27,
+  "supply_v": 1.5,
+  "gain_codes": {
+    "ff": 11,
+    "fs": 12,
+    "sf": 12,
+    "ss": 14,
+    "tt": 13
+  },
+  "source_evidence": "ihp_gain_calibration_summary.json"
+}

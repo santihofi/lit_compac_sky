@@ -128,3 +128,14 @@ Its root datasheets test fixed-load scale 0.8 and trim scales 1/2/4 at tt/fs.
 Its centered batch tests fixed-load scale 0.6 and trim scale 2 at all five MOS corners, 22/27 C and 1.5 V.
 Use scripts/analyze_trim_range.py with group initial or centered to audit and freeze the corresponding results.
 The minimum and maximum gains are endpoint brackets, not a guarantee of an acceptable intermediate code.
+
+## Laboratory calibration and replica recovery
+
+scripts/analyze_gain_calibration.py with design ihp or sky audits all five 32-code sweeps at 27 C and 1.5 V.
+Its source summaries are required by scripts/prepare_calibrated_pvt.py.
+That builder selects the nearest K100 code per corner and prepares separate SKY130 DC and AC projects plus the IHP comparison, with each code fixed over supply and temperature.
+
+scripts/prepare_replica_kick.py builds the original replica's closed-loop current-kick project.
+Run its kick.yaml with the SKY130 wrapper, then scripts/analyze_replica_kick.py.
+The auditor checks waveform completion and scalar anchors, freezes every trace and compares the 100 ps and 50 ps time steps.
+This recovery bench does not exercise power-up.

@@ -40,7 +40,7 @@ for corner in ["tt","fs"]:
     sheet["parameters"].update(temp=[27],vdd=[1.5],gcode=[0,31],
                                rbase_scale=[.8],rtrim_scale=[1,2,4])
     (target/f"datasheets/range_{corner}.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))
-(target/"settings.json").write_text(json.dumps({"num_cores":3,"sim_timeout_sec":600})+"\n")
+(target/"settings.json").write_text(json.dumps({"num_cores":4,"sim_timeout_sec":600})+"\n")
 
 followup = target/"datasheets/centered"
 followup.mkdir(exist_ok=True)
@@ -49,3 +49,10 @@ for corner in ["tt","ff","fs","sf","ss"]:
     sheet["parameters"].update(temp=[22,27],vdd=[1.5],gcode=[0,31],
                                rbase_scale=[.6],rtrim_scale=[2])
     (followup/f"centered_{corner}.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))
+
+steps = target/"datasheets/steps"
+steps.mkdir(exist_ok=True)
+for corner in ["tt","ff","fs","sf","ss"]:
+    sheet=yaml.safe_load((followup/f"centered_{corner}.yaml").read_text())
+    sheet["parameters"].update(temp=[27],gcode=list(range(32)))
+    (steps/f"centered_steps_{corner}.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))

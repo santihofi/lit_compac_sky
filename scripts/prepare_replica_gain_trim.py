@@ -61,3 +61,11 @@ for project, template in [
         sheet["parameters"]["gate_tracks_vdd"] = [1]
     (p/"datasheets/steps").mkdir(exist_ok=True)
     (p/"datasheets/steps/steps_tt.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))
+
+p = ROOT/"verification/porting/ihp_gain_trim"
+lab = p/"datasheets/lab_steps"
+lab.mkdir(exist_ok=True)
+for corner in ["ff","fs","sf","ss"]:
+    sheet=yaml.safe_load((p/"datasheets/steps/steps_tt.yaml").read_text())
+    sheet["parameters"]["corner_mos"] = [corner]
+    (lab/f"lab_steps_{corner}.yaml").write_text(header+yaml.safe_dump(sheet,sort_keys=False))

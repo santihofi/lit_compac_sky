@@ -1,0 +1,14 @@
+{
+  "target_metric": "k100",
+  "target_magnitude_per_v": 10,
+  "temperature_c": 27,
+  "supply_v": 1.5,
+  "gain_codes": {
+    "ff": 8,
+    "fs": 13,
+    "sf": 10,
+    "ss": 6,
+    "tt": 2
+  },
+  "source_evidence": "sky_centered_gain_calibration_summary.json"
+}

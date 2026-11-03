@@ -167,6 +167,51 @@ These controls preserve all MOS dimensions and the replica current calibration.
 
 ![Nominal gain-code range and step](figures/replica_ihp_gain_steps.png)
 
+## Wider trim and laboratory calibration
+
+Separating the fixed and bypassed resistance gives a useful room-temperature range.
+With fixed-load factor 0.6 and trim-segment factor 2, all five MOS corners bracket both K100 and K10 magnitudes of 10 at 22 C and 27 C.
+All 160 code measurements at 27 C are valid and strictly monotonic.
+Some high-gain codes fail the shape limit, but each nearest target code passes it.
+
+The following settings minimize the K100 error at 27 C and 1.5 V with nominal resistors.
+Skew corners are matched by transistor speed rather than by their raw PDK names.
+
+| N/P speed | SKY130 raw corner, code | SKY130 residual | IHP raw corner, code | IHP residual |
+|---|---|---:|---|---:|
+| fast/fast | ff, 8 | +0.2300% | ff, 11 | -0.0060% |
+| slow/fast | fs, 13 | +0.2910% | sf, 12 | -0.3521% |
+| fast/slow | sf, 10 | -0.5719% | fs, 12 | -0.4330% |
+| slow/slow | ss, 6 | -0.2095% | ss, 14 | +0.3020% |
+| typical | tt, 2 | -0.6362% | tt, 13 | +0.3870% |
+
+The new SKY130 range reaches every nominal-resistor MOS corner, but its worst quantization residual exceeds IHP.
+The per-corner current settings remain ideal sources.
+The selected codes are now held fixed for a separate supply/temperature comparison.
+These measurements do not establish passive-corner coverage, temperature compensation or real calibration-circuit performance.
+The original narrow trim and the wider experimental network remain separate candidates.
+
+## Nominal recovery of both replica loops
+
+The original replica at tt, 27 C, 1.5 V and gain code 13 was tested with a 20 ns current pulse of either polarity at the CMFB load-gate node and at the shared replica/main tail-gate node.
+Amplitude is 40 uA, compared with the 67.5 uA total ideal reference.
+Both loops remain closed.
+Eight runs cover the four kicks at maximum steps of 100 ps and 50 ps using trapezoidal integration.
+
+All eight runs finish and pass independent waveform/scalar checks.
+Output common-mode excursions reach 457 to 753 mV, so these are large-signal stress kicks.
+Recovery to within 1 mV takes at most 197.405 ns after the pulse.
+The directly disturbed tail gate returns within 1 mV in at most 21.325 ns.
+The largest output waveform difference after halving the time step is 0.176 mV.
+The two step choices agree on common-mode settling within 0.03 ns.
+The final 900 to 1000 ns window has no sustained oscillation, with output residual below 0.004 uV peak to peak.
+
+These are nominal recovery measurements about an established operating point with ideal references.
+They do not establish startup, PVT recovery or the wider trim network's transient behavior.
+The evidence is sky_replica_kick.csv, its waveform archive and the independently computed summary.
+
+![Replica loop current-kick recovery](figures/sky_replica_kick.png)
+
 ## Manufacturing-grid control
 
 Continuous electrical exploration produced dimensions such as 6.21875 um input-pair finger width and 0.920120439 um source-resistor length.

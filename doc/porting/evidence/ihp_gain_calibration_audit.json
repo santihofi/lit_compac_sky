@@ -1,0 +1,42 @@
+{
+  "lab_steps_ff": {
+    "cases": 32,
+    "scalar_values": 512,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "lab_steps_fs": {
+    "cases": 32,
+    "scalar_values": 512,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "lab_steps_sf": {
+    "cases": 32,
+    "scalar_values": 512,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "lab_steps_ss": {
+    "cases": 32,
+    "scalar_values": 512,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "steps_tt": {
+    "cases": 32,
+    "scalar_values": 512,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  }
+}

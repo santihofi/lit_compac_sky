@@ -1,0 +1,51 @@
+{
+  "centered_ff.yaml": {
+    "cases": 4,
+    "scalar_values": 84,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000001: compr=1.04671 above 1.03242",
+      "Case 000003: compr=1.04688 above 1.03242"
+    ]
+  },
+  "centered_fs.yaml": {
+    "cases": 4,
+    "scalar_values": 84,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "centered_sf.yaml": {
+    "cases": 4,
+    "scalar_values": 84,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000001: compr=1.05803 above 1.03242",
+      "Case 000003: compr=1.05647 above 1.03242"
+    ]
+  },
+  "centered_ss.yaml": {
+    "cases": 4,
+    "scalar_values": 84,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "centered_tt.yaml": {
+    "cases": 4,
+    "scalar_values": 84,
+    "waveform_files": 0,
+    "status": "valid",
+    "specification_status": "fail",
+    "failed_limits": [
+      "Case 000001: compr=1.04548 above 1.03242",
+      "Case 000003: compr=1.04439 above 1.03242"
+    ]
+  }
+}
