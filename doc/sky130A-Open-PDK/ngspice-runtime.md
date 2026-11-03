@@ -59,3 +59,11 @@ After one op, managed capture exports the intended first AC curve.
 After two op commands, its failed setplot ac1 leaves the second AC current and exports gain 0.75, while all scalar and pass fields remain valid.
 Finite waveform data alone cannot establish analysis identity.
 Run python3 scripts/probe_chipify_ac_selection.py and compare the captured gain with the explicit first-AC scalar.
+
+## Unused sweep parameters
+
+A parameter listed in a datasheet does not change the circuit unless the template or an evaluation expression consumes it.
+Chipify 1960c81 accepts a two-label resistor-corner sweep of an unchanged resistor divider, reports both cases as passing and emits no unused-parameter diagnostic.
+Run python3 scripts/probe_chipify_unused_parameter.py with an output path to reproduce that control.
+Inspect the selected model entry points as well as the result labels.
+The separate [passive-corner control](passive-corners.md) verifies the installed SKY130 model responses.

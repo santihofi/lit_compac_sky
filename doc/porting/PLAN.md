@@ -105,7 +105,9 @@ Fifteen nominal-supply full surfaces and the nominal receiver-load comparison ar
 The separate drawn experimental schematic passes electrical comparison and nominal simulation replay.
 The wider trim network now brackets gain 10 at 22/27 C in all five MOS corners and is monotonic across all 32 codes at 27 C.
 Its nearest-code residual reaches 0.64 percent versus IHP's 0.44 percent.
-Fixed calibrated-code PVT gain and bandwidth checks are running.
+Fixed calibrated-code PVT checks reject the wider resistor network: 40 of 45 shape passes, and input-2 bandwidth below IHP in every matched case.
+An independent trim-gate rail control confirms substantial switch-drive sensitivity.
+Further switch and resistor-distribution controls must preserve the nominal gain while recovering speed and shape.
 The original replica also passes eight nominal loop-current kick controls with independently checked waveforms.
 Supply-extreme full surfaces, passive corners, calibrated loop margins, startup, mismatch and real bias circuitry remain open.
 The main macro folders have not been promoted to an accepted replacement.

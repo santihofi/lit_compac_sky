@@ -1,0 +1,60 @@
+{
+  "ihp_calibrated_pvt": {
+    "k100": {
+      "min": -11.405,
+      "max": -7.7982
+    },
+    "k10": {
+      "min": -11.179,
+      "max": -7.72541
+    },
+    "compr": {
+      "min": 1.0082,
+      "max": 1.02597
+    },
+    "bw_in1_mhz": {
+      "min": 376.278,
+      "max": 466.438
+    },
+    "bw_in2_mhz": {
+      "min": 783.939,
+      "max": 911.809
+    },
+    "shape_passes": 45
+  },
+  "sky_centered_dc": {
+    "k100": {
+      "min": -11.8391,
+      "max": -7.36686
+    },
+    "k10": {
+      "min": -11.4587,
+      "max": -7.31116
+    },
+    "compr": {
+      "min": 0.994979,
+      "max": 1.04583
+    },
+    "shape_passes": 40
+  },
+  "sky_centered_ac": {
+    "bw_in1_mhz": {
+      "min": 321.821,
+      "max": 607.173
+    },
+    "bw_in2_mhz": {
+      "min": 392.448,
+      "max": 862.94
+    }
+  },
+  "input1_bandwidth_comparison": {
+    "sky_faster_cases": 27,
+    "minimum_ratio": 0.7249330978618347,
+    "maximum_ratio": 1.4198289691411827
+  },
+  "input2_bandwidth_comparison": {
+    "sky_faster_cases": 0,
+    "minimum_ratio": 0.4727172860384776,
+    "maximum_ratio": 0.988789124625884
+  }
+}

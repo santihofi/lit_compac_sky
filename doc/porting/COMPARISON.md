@@ -191,6 +191,30 @@ The selected codes are now held fixed for a separate supply/temperature comparis
 These measurements do not establish passive-corner coverage, temperature compensation or real calibration-circuit performance.
 The original narrow trim and the wider experimental network remain separate candidates.
 
+## Wider trim rejected by calibrated PVT
+
+Holding the selected room-temperature codes fixed gives 40 of 45 SKY130 shape passes, compared with 45 of 45 for IHP.
+All scalar results are valid, and all 90 SKY130 gain curves independently reproduce their gain and bandwidth anchors.
+
+| Calibrated fixed-code range | IHP | Wider SKY130 replica |
+|---|---:|---:|
+| K100/K10 | 1.00820 to 1.02597 | 0.994979 to 1.04583 |
+| Input-1 bandwidth | 376.278 to 466.438 MHz | 321.821 to 607.173 MHz |
+| Input-2 bandwidth | 783.939 to 911.809 MHz | 392.448 to 862.940 MHz |
+
+SKY130 is faster on input 1 in 27 of 45 matched cases and on input 2 in none.
+Its worst input-2 ratio to IHP is 0.4727.
+The five shape failures are fs at 0 C/1.65 V, sf at 0 C/1.45 V and 27 C/1.45 V, ss at 0 C/1.45 V, and tt at 0 C/1.45 V.
+This rejects the widened-resistor implementation as an equivalent port, despite its useful nominal trim coverage.
+The preceding original replica measurements remain valid for that separate geometry.
+
+An independent gate-drive diagnostic holds sf at 1.45 V and gain code 10.
+At 0 C, raising only the ideal trim-high rail from 1.45 to 1.65 V changes K100 magnitude from 11.3708 to 9.41784, diagonal ratio from 1.04583 to 1.01648 and input-2 bandwidth from 617.098 to 736.863 MHz.
+At 27 C the corresponding ratios are 1.03622 and 1.01267.
+The unchanged-rail DC controls reproduce their PVT values to saved precision, and the bandwidth controls agree within 3.3 parts per million.
+This isolates a substantial trim-drive dependence, but does not prove improved shape at matched gain.
+The over-rail settings are diagnostic stimuli, not proposed chip interfaces.
+
 ## Nominal recovery of both replica loops
 
 The original replica at tt, 27 C, 1.5 V and gain code 13 was tested with a 20 ns current pulse of either polarity at the CMFB load-gate node and at the shared replica/main tail-gate node.

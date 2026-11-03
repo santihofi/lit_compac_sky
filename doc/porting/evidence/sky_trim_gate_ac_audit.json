@@ -1,0 +1,11 @@
+{
+  "cases": 6,
+  "scalar_values": 54,
+  "waveform_files": 6,
+  "status": "valid",
+  "specification_status": "pass",
+  "failed_limits": [],
+  "anchored_curves": 12,
+  "unchanged_rail_cases_reproduced": 2,
+  "maximum_unchanged_rail_relative_difference": 3.282261346715387e-06
+}

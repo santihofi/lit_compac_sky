@@ -139,3 +139,10 @@ scripts/prepare_replica_kick.py builds the original replica's closed-loop curren
 Run its kick.yaml with the SKY130 wrapper, then scripts/analyze_replica_kick.py.
 The auditor checks waveform completion and scalar anchors, freezes every trace and compares the 100 ps and 50 ps time steps.
 This recovery bench does not exercise power-up.
+
+scripts/analyze_calibrated_pvt.py freezes the three completed calibrated PVT projects and anchors all 90 SKY130 AC curves.
+scripts/prepare_trim_gate_control.py prepares a separate ideal trim-rail diagnostic, and scripts/analyze_trim_gate_control.py checks both its waveform anchors and its unchanged-rail controls.
+
+scripts/prepare_gain_dc_sweep.py builds the separate in-simulator code sweep.
+After its control.yaml run, scripts/audit_gain_dc_sweep.py compares all 32 waveform points with the independent code runs.
+A one-row waveform sweep is not a replacement for per-code specification checks.

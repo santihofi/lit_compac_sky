@@ -1,0 +1,59 @@
+{
+  "pdk": "sky130A",
+  "temperature_c": 27,
+  "resistor": "res_high_po_5p73, L=1/10 um, 1 mV bias, bulk=0",
+  "capacitor": "cap_mim_m3_1, 5x5 um, 0.75 V, 1 MHz",
+  "records": [
+    {
+      "bundle": "library_tt",
+      "r_l1_ohm": 124.51,
+      "r_l10_ohm": 632.65,
+      "mim_5x5_f": 5.32822e-14
+    },
+    {
+      "bundle": "res_typical__cap_typical",
+      "r_l1_ohm": 124.51,
+      "r_l10_ohm": 632.65,
+      "mim_5x5_f": 5.32822e-14
+    },
+    {
+      "bundle": "res_low__cap_low",
+      "r_l1_ohm": 93.138,
+      "r_l10_ohm": 547.092,
+      "mim_5x5_f": 4.54177e-14
+    },
+    {
+      "bundle": "res_low__cap_high",
+      "r_l1_ohm": 93.138,
+      "r_l10_ohm": 547.092,
+      "mim_5x5_f": 6.3727e-14
+    },
+    {
+      "bundle": "res_high__cap_low",
+      "r_l1_ohm": 155.882,
+      "r_l10_ohm": 718.208,
+      "mim_5x5_f": 4.34534e-14
+    },
+    {
+      "bundle": "res_high__cap_high",
+      "r_l1_ohm": 155.882,
+      "r_l10_ohm": 718.208,
+      "mim_5x5_f": 6.11145e-14
+    }
+  ],
+  "selection_sha256": {
+    "libs.tech/ngspice/corners/tt/specialized_cells.spice": "658f71e2e534f48984ca055aa3c73982dedc3e52abdaf16b324576dc0fdb62ac",
+    "libs.tech/ngspice/corners/tt.spice": "961b2e4f381bb8a6306a16840afacd8772b400b42cd4dee6c284d58e03983d9d",
+    "libs.tech/ngspice/r+c/res_high__cap_high.spice": "38ec47a4a5fa0d5a23dcab8dee6c43086503204c71ea956e0d78471cadc909a4",
+    "libs.tech/ngspice/r+c/res_high__cap_high__lin.spice": "a7e7c905ed3c7857fb72a6c55046f335caaa9eb2e09dc725c5bbed6d52a03a09",
+    "libs.tech/ngspice/r+c/res_high__cap_low.spice": "fa31c9c9a72f46cd4666428ff3c338a2e912578914f77049d7d15980fb546b85",
+    "libs.tech/ngspice/r+c/res_high__cap_low__lin.spice": "c602a648587cab46b5db98a994656bdfad8b8970d658bab404890f65504be20e",
+    "libs.tech/ngspice/r+c/res_low__cap_high.spice": "30bf08f792bb9c569f76b3fe3c81825551f5a0750a65208b49a2010ad9b765c3",
+    "libs.tech/ngspice/r+c/res_low__cap_high__lin.spice": "459dde9efbf35abed0554d5203fc2ed4e8a10a25422a6794bf7662a71517dc75",
+    "libs.tech/ngspice/r+c/res_low__cap_low.spice": "8d8f19bfd7d9728508b0a45bfbfae293fed168b902cb2fc820fb40a7c2627ac0",
+    "libs.tech/ngspice/r+c/res_low__cap_low__lin.spice": "3b09fb3584bdc4f8992f651c3137eaacb8c513bbbc04b71318a7e1e67868f7c6",
+    "libs.tech/ngspice/r+c/res_typical__cap_typical.spice": "7c29723076a22fe5b080d245adb97451de5ad0812f0344f6bfe31c9697b71f0d",
+    "libs.tech/ngspice/r+c/res_typical__cap_typical__lin.spice": "4deedaa4be27f2e1f083567a945cbaed02027e018fcd09431e57a02c08a117b1",
+    "libs.tech/ngspice/sky130.lib.spice": "17c208a699228f5acb87bf59c09c22a4c4d3937b6766b4957737d34e8e075f64"
+  }
+}

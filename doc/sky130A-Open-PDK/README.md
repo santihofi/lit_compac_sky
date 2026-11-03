@@ -47,6 +47,10 @@ The authoritative sky130 documentation is online, the PDK carries the decks inst
 | `libs.ref/sky130_sram_macros/` | the OpenRAM SRAMs |
 | `libs.ref/sky130_fd_pr/` | the device models, including the mismatch corner files |
 
+## Deterministic passive models
+
+[Passive corner selection and measured controls](passive-corners.md) explains the installed RC bundles and why MOS corners alone keep passives typical.
+
 ## Layout numbers
 
 The metal stack, the via table and the current limits are in [../librelane/librelane_cheatsheet.md](../librelane/librelane_cheatsheet.md), read out of `sky130_fd_sc_hd__nom.tlef`. The two numbers that decide most layout work:

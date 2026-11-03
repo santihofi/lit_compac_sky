@@ -1,0 +1,16 @@
+{
+  "audit": {
+    "cases": 1,
+    "scalar_values": 5,
+    "waveform_files": 1,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": []
+  },
+  "code_points": 32,
+  "maximum_relative_differences": {
+    "k100": 4.62329258854588e-06,
+    "k10": 4.586691227270734e-06,
+    "compr": 4.665492957744988e-06
+  }
+}

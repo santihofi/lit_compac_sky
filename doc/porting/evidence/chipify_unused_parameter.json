@@ -1,0 +1,15 @@
+{
+  "cases": 2,
+  "labels": [
+    "low",
+    "high"
+  ],
+  "output_v": [
+    0.5,
+    0.5
+  ],
+  "all_pass": true,
+  "parameter_occurs_in_template": false,
+  "unused_parameter_diagnostic_seen": false,
+  "interpretation": "Two labelled cases do not demonstrate two resistor models"
+}

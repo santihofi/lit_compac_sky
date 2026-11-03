@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - tt
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 0
+  ibias:
+  - 3.375e-05
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+  mirror_scale:
+  - 4
+  mirror_l:
+  - 0.3
+  pair_scale:
+  - 1
+  pair_l:
+  - 0.35
+  quad_scale:
+  - 1
+  quad_l:
+  - 0.15
+  rscale:
+  - 1.46
+  power_m:
+  - 2
+  quad_model:
+  - nfet_01v8_lvt
+  body_tied:
+  - 0
+  native_nf:
+  - 1
+  rquad:
+  - 120
+  tail_width:
+  - 4
+  rpair:
+  - 120
+  pload_l:
+  - 0.35
+  tail_length_scale:
+  - 1
+  pair_body_tied:
+  - 0
+  rbase_scale:
+  - 0.6
+  rtrim_scale:
+  - 2
+tests:
+  code_curve:
+    source: netlist
+    engine: ngspice
+    points:
+      min: 32
+      max: 32
+    k100_first: {}
+    k100_last: {}
+    k10_first: {}
+    k10_last: {}
+    dc_signals:
+    - dc8.k100_curve
+    - dc8.k10_curve
+    - dc8.compr_curve

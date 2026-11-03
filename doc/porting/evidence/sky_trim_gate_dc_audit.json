@@ -1,0 +1,14 @@
+{
+  "cases": 6,
+  "scalar_values": 126,
+  "waveform_files": 0,
+  "status": "valid",
+  "specification_status": "fail",
+  "failed_limits": [
+    "Case 000001: compr=1.03603 above 1.03242",
+    "Case 000000: compr=1.04583 above 1.03242",
+    "Case 000003: compr=1.03622 above 1.03242"
+  ],
+  "unchanged_rail_cases_reproduced": 2,
+  "maximum_unchanged_rail_relative_difference": 0.0
+}
