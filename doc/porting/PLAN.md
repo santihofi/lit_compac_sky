@@ -57,7 +57,7 @@ Do not claim layout signoff from an empty report or schematic equivalence from a
 
 ## Current external dependencies
 
-The destination repository has no remote configured yet.
+The destination now has a configured upstream, lit_compac_sky/work-santi.
 The reference knowledge repository uses an HTTPS remote that needs credentials inside the container.
 GitHub SSH access works after adding the container account corresponding to UID 1000.
 
