@@ -153,3 +153,7 @@ scripts/prepare_trim_switch_probe.py generates the type comparison and the separ
 Run probe.yaml in sky_trim_switch_probe or sky_trim_switch_lengths.
 scripts/analyze_trim_switch_probe.py accepts the project name, checks the supply axis and scalar anchors, and verifies the PMOS multiplicity and parallel transmission-gate conductance identities.
 The saved curves retain all five supply values for each process and length condition.
+
+scripts/prepare_trim_switch_candidates.py generates the PMOS-only and transmission-gate endpoint projects.
+Run each endpoints batch, then scripts/analyze_trim_switch_candidates.py to audit all twenty cases and freeze their coverage.
+The two projects use different output directories and may run concurrently.

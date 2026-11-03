@@ -1,0 +1,102 @@
+{
+  "audits": {
+    "tg2_ff.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.03261 above 1.03242"
+      ]
+    },
+    "tg2_fs.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "tg2_sf.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.04076 above 1.03242"
+      ]
+    },
+    "tg2_ss.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "tg2_tt.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.03354 above 1.03242"
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "corner": "ff",
+      "k100_min": 8.86746,
+      "k100_max": 11.6885,
+      "k100_brackets10": true,
+      "k10_min": 8.87119,
+      "k10_max": 11.3194,
+      "k10_brackets10": true,
+      "endpoint_shape_passes": 1
+    },
+    {
+      "corner": "fs",
+      "k100_min": 7.69502,
+      "k100_max": 10.1455,
+      "k100_brackets10": true,
+      "k10_min": 7.65191,
+      "k10_max": 9.94709,
+      "k10_brackets10": false,
+      "endpoint_shape_passes": 2
+    },
+    {
+      "corner": "sf",
+      "k100_min": 9.27303,
+      "k100_max": 11.4124,
+      "k100_brackets10": true,
+      "k10_min": 9.17061,
+      "k10_max": 10.9654,
+      "k10_brackets10": true,
+      "endpoint_shape_passes": 1
+    },
+    {
+      "corner": "ss",
+      "k100_min": 9.09682,
+      "k100_max": 10.915,
+      "k100_brackets10": true,
+      "k10_min": 9.02099,
+      "k10_max": 10.6921,
+      "k10_brackets10": true,
+      "endpoint_shape_passes": 2
+    },
+    {
+      "corner": "tt",
+      "k100_min": 9.48262,
+      "k100_max": 11.9571,
+      "k100_brackets10": true,
+      "k10_min": 9.36719,
+      "k10_max": 11.569,
+      "k10_brackets10": true,
+      "endpoint_shape_passes": 1
+    }
+  ]
+}

@@ -259,6 +259,25 @@ Minimum channel length is therefore not a general solution to this mid-rail swit
 Longer devices reduce relative sensitivity but increase resistance.
 Mismatch, capacitance and equal-gain circuit comparisons remain required.
 
+## PMOS and transmission-gate trim endpoint screens
+
+Two new candidates retain the original segment proportions and scale both fixed and trim resistors by 1.7.
+The PMOS-only candidate replaces each inherited NMOS group with four parallel PMOS copies.
+The transmission-gate candidate retains the NMOS group and adds two parallel PMOS copies.
+Each PMOS well connects to the core supply, and ideal complementary gate levels preserve code polarity.
+The physical complement drivers are not qualified.
+
+All twenty endpoint cases are valid at 27 C and 1.5 V with nominal passives and the retained per-corner current settings.
+The PMOS-only candidate brackets K100 magnitude 10 in four of five MOS corners.
+At sf its minimum is 10.1380, already above target.
+The transmission-gate candidate brackets K100 in all five corners.
+Its ranges are ff 8.86746 to 11.6885, fs 7.69502 to 10.1455, sf 9.27303 to 11.4124, ss 9.09682 to 10.9150, and tt 9.48262 to 11.9571 per volt.
+
+Both candidates miss the K10 target at fs, where the upper endpoint is 9.94709.
+Both also exceed the diagonal-shape limit at the maximum code in ff, sf and tt.
+Thus endpoint coverage selects the transmission gate for a matched-gain follow-up, but establishes neither an acceptable intermediate code nor speed, loop, passive-corner or mismatch performance.
+The retained evidence uses the sky_trim_pmos4_endpoints and sky_trim_tg2_endpoints prefixes.
+
 ## Manufacturing-grid control
 
 Continuous electrical exploration produced dimensions such as 6.21875 um input-pair finger width and 0.920120439 um source-resistor length.
