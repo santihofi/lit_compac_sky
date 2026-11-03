@@ -1,0 +1,171 @@
+{
+  "scope": "DC screening only, nominal passive models, ideal current and gate controls",
+  "acceptance": "For every PVT point at least one single code must satisfy all applicable specs",
+  "gain_tolerance_percent": 1.0,
+  "gain_tolerance_status": "explicit sensitivity screen, not approved specification",
+  "missing": [
+    "bandwidth",
+    "noise",
+    "loop stability",
+    "passive corners",
+    "physical bias circuitry"
+  ],
+  "audits": {
+    "centered_steps_ff.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000021: compr=1.03312 above 1.03242",
+        "Case 000022: compr=1.0346 above 1.03242",
+        "Case 000023: compr=1.03607 above 1.03242",
+        "Case 000024: compr=1.03725 above 1.03242",
+        "Case 000025: compr=1.03867 above 1.03242",
+        "Case 000026: compr=1.04007 above 1.03242",
+        "Case 000028: compr=1.04283 above 1.03242",
+        "Case 000027: compr=1.04147 above 1.03242",
+        "Case 000029: compr=1.0442 above 1.03242",
+        "Case 000031: compr=1.04688 above 1.03242",
+        "Case 000030: compr=1.04554 above 1.03242"
+      ]
+    },
+    "centered_steps_fs.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "centered_steps_sf.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000015: compr=1.0329 above 1.03242",
+        "Case 000018: compr=1.0352 above 1.03242",
+        "Case 000019: compr=1.03699 above 1.03242",
+        "Case 000017: compr=1.0334 above 1.03242",
+        "Case 000020: compr=1.03871 above 1.03242",
+        "Case 000023: compr=1.04388 above 1.03242",
+        "Case 000022: compr=1.04217 above 1.03242",
+        "Case 000021: compr=1.04045 above 1.03242",
+        "Case 000024: compr=1.04531 above 1.03242",
+        "Case 000026: compr=1.04859 above 1.03242",
+        "Case 000025: compr=1.04696 above 1.03242",
+        "Case 000027: compr=1.05021 above 1.03242",
+        "Case 000028: compr=1.05179 above 1.03242",
+        "Case 000029: compr=1.05336 above 1.03242",
+        "Case 000031: compr=1.05647 above 1.03242",
+        "Case 000030: compr=1.05492 above 1.03242"
+      ]
+    },
+    "centered_steps_ss.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "centered_steps_tt.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000015: compr=1.03274 above 1.03242",
+        "Case 000019: compr=1.03357 above 1.03242",
+        "Case 000018: compr=1.03256 above 1.03242",
+        "Case 000023: compr=1.03738 above 1.03242",
+        "Case 000021: compr=1.03547 above 1.03242",
+        "Case 000022: compr=1.03642 above 1.03242",
+        "Case 000020: compr=1.03449 above 1.03242",
+        "Case 000024: compr=1.0381 above 1.03242",
+        "Case 000025: compr=1.03903 above 1.03242",
+        "Case 000026: compr=1.03993 above 1.03242",
+        "Case 000027: compr=1.04084 above 1.03242",
+        "Case 000028: compr=1.04174 above 1.03242",
+        "Case 000029: compr=1.04263 above 1.03242",
+        "Case 000031: compr=1.04439 above 1.03242",
+        "Case 000030: compr=1.04351 above 1.03242"
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        8
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 8,
+      "nearest_gain_error_percent": 0.22999999999999687,
+      "nearest_gain_shape": 1.01547,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        12,
+        13
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 13,
+      "nearest_gain_error_percent": 0.2909999999999968,
+      "nearest_gain_shape": 1.01967,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        11,
+        10
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 10,
+      "nearest_gain_error_percent": -0.571900000000003,
+      "nearest_gain_shape": 1.0231,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 6,
+      "nearest_gain_error_percent": -0.2094999999999958,
+      "nearest_gain_shape": 1.01631,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        3,
+        2
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 2,
+      "nearest_gain_error_percent": -0.6361999999999979,
+      "nearest_gain_shape": 1.0188,
+      "full_spec_coverage": "unverified"
+    }
+  ]
+}

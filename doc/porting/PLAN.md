@@ -4,6 +4,15 @@ Status: characterization and schematic design in progress, no SKY130 multiplier 
 
 ## Scope and acceptance
 
+The user clarified on 2026-11-03 that each PVT corner needs at least one code satisfying all applicable specifications simultaneously.
+The passing code may differ between PVT corners.
+Unused codes may fail without disqualifying the circuit.
+Keep circuit geometry fixed across corners and record every selected gain and bias code.
+Fixed-code sweeps measure drift without recalibration and cannot establish that a corner has no feasible code.
+Endpoint bracketing is only a preliminary screen.
+A DC-feasible code still needs bandwidth, noise, stability and loading verification at that same code.
+The numerical gain-error tolerance remains to be confirmed, so tolerance sweeps are explicitly provisional.
+
 The electrical baseline was frozen at lit_compac commit 3764a02d8641559aa58ec8521680424afc38a178.
 The system architecture now follows source revision 93ff95680bd88ea07e60e80863d4a75e9d8106df, observed on 2026-11-02.
 The multiplier, gain-trim and OTA schematic blobs are unchanged between those revisions.
@@ -64,10 +73,11 @@ GitHub SSH access works after adding the container account corresponding to UID 
 ## Checkpoint on 2026-10-30
 
 Current IHP bare-core corners, nominal noise and CMFB stability have been reproduced.
-The all-LVT, native-quad and source-degeneration SKY130 candidates remain rejected at corners.
+The all-LVT, native-quad and source-degeneration SKY130 candidates failed their tested corner settings.
+Those screens do not exhaust per-corner calibration choices.
 The four-copy degeneration candidate improves nominal speed and noise at 3.63 times the bare-core supply current, with insufficient loop gain margin.
 Continue with full transfer surfaces and separate slow/fast CMFB compensation.
-Do not start the port layout from these rejected sizes.
+Do not start the port layout from these unqualified sizes.
 The reusable template now includes measured MOS corner-identity controls and corrected skew-corner ordering.
 
 ## Further characterization on 2026-10-30
@@ -105,7 +115,8 @@ Fifteen nominal-supply full surfaces and the nominal receiver-load comparison ar
 The separate drawn experimental schematic passes electrical comparison and nominal simulation replay.
 The wider trim network now brackets gain 10 at 22/27 C in all five MOS corners and is monotonic across all 32 codes at 27 C.
 Its nearest-code residual reaches 0.64 percent versus IHP's 0.44 percent.
-Fixed calibrated-code PVT checks reject the wider resistor network: 40 of 45 shape passes, and input-2 bandwidth below IHP in every matched case.
+Fixed calibrated-code PVT checks expose limitations of the wider resistor network: 40 of 45 shape passes, and input-2 bandwidth below IHP in every matched case.
+These measurements do not exhaust alternative codes at each PVT corner and therefore do not prove infeasibility under per-corner calibration.
 An independent trim-gate rail control confirms substantial switch-drive sensitivity.
 Further switch and resistor-distribution controls must preserve the nominal gain while recovering speed and shape.
 The original replica also passes eight nominal loop-current kick controls with independently checked waveforms.

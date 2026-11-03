@@ -1,5 +1,12 @@
 # IHP SG13CMOS5L versus SKY130A
 
+Acceptance clarification, 2026-11-03: every PVT corner needs at least one code satisfying all applicable specifications simultaneously, and the code may change with PVT.
+Failures at unused codes are allowed.
+Earlier fixed-code comparisons below characterize drift and the tested operating settings, not exhaustive per-corner infeasibility.
+A gain-only or shape-only passing code does not establish full specification coverage.
+Numerical gain tolerance is pending confirmation.
+
+
 This report is incremental.
 The transistor-replica version of the compact two-copy candidate passes all 45 original-range diagonal-curvature cases with fixed per-corner current codes.
 Its nominal full-surface error is below the IHP reference.
@@ -191,7 +198,7 @@ The selected codes are now held fixed for a separate supply/temperature comparis
 These measurements do not establish passive-corner coverage, temperature compensation or real calibration-circuit performance.
 The original narrow trim and the wider experimental network remain separate candidates.
 
-## Wider trim rejected by calibrated PVT
+## Wider trim limitations at fixed calibrated codes
 
 Holding the selected room-temperature codes fixed gives 40 of 45 SKY130 shape passes, compared with 45 of 45 for IHP.
 All scalar results are valid, and all 90 SKY130 gain curves independently reproduce their gain and bandwidth anchors.
@@ -205,7 +212,8 @@ All scalar results are valid, and all 90 SKY130 gain curves independently reprod
 SKY130 is faster on input 1 in 27 of 45 matched cases and on input 2 in none.
 Its worst input-2 ratio to IHP is 0.4727.
 The five shape failures are fs at 0 C/1.65 V, sf at 0 C/1.45 V and 27 C/1.45 V, ss at 0 C/1.45 V, and tt at 0 C/1.45 V.
-This rejects the widened-resistor implementation as an equivalent port, despite its useful nominal trim coverage.
+These selected fixed codes do not establish an equivalent port.
+The experiment does not determine whether different codes at each PVT point can satisfy all specifications simultaneously.
 The preceding original replica measurements remain valid for that separate geometry.
 
 An independent gate-drive diagnostic holds sf at 1.45 V and gain code 10.

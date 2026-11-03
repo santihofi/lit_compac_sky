@@ -157,3 +157,14 @@ The saved curves retain all five supply values for each process and length condi
 scripts/prepare_trim_switch_candidates.py generates the PMOS-only and transmission-gate endpoint projects.
 Run each endpoints batch, then scripts/analyze_trim_switch_candidates.py to audit all twenty cases and freeze their coverage.
 The two projects use different output directories and may run concurrently.
+
+## Per-corner gain-code coverage
+
+Run scripts/prepare_trim_code_coverage.py with --grid nominal for all 32 codes at five MOS corners, 27 C and 1.5 V.
+Run with --grid pvt for all 32 codes at five MOS corners, three temperatures and three supplies.
+Inside verification/porting/sky_trim_tg2, use the SKY130 ngspice wrapper with chipify-cli --batch datasheets/codes_nominal --json or datasheets/codes_pvt.
+Then run scripts/analyze_trim_code_coverage.py with the matching --grid and an explicit --gain-tolerance-percent.
+The tolerance is a sensitivity screen until a gain specification is confirmed.
+The report groups codes by PVT and requires gain, diagonal shape and gate-rail bounds at the same code.
+Every point must contain all 32 codes, with no duplicates, before the report is written.
+This DC screen cannot assert complete specification coverage because AC, noise, loops and passive corners remain separate requirements.
