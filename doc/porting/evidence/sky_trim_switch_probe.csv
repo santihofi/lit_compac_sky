@@ -1,0 +1,6 @@
+corner_mos,temp,sim_error,run_id,switches__error,points,points_pass,ron_n_150,ron_n_150_pass,ron_p_150,ron_p_150_pass,ron_p2_150,ron_p2_150_pass,ron_tg_150,ron_tg_150_pass,ron_tg2_150,ron_tg2_150_pass,switches_overall_pass,global_pass
+fs,27,,000002,,5.0,True,2743.24,True,1977.54,True,988.771,True,1149.15,True,726.803,True,True,True
+tt,27,,000000,,5.0,True,1752.14,True,3257.47,True,1628.73,True,1139.32,True,844.093,True,True,True
+ff,27,,000001,,5.0,True,1296.91,True,2178.69,True,1089.35,True,812.973,True,592.051,True,True,True
+sf,27,,000003,,5.0,True,1191.99,True,8005.86,True,4002.93,True,1037.51,True,918.483,True,True,True
+ss,27,,000004,,5.0,True,2449.62,True,5767.09,True,2883.54,True,1719.33,True,1324.47,True,True,True

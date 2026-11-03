@@ -146,3 +146,10 @@ scripts/prepare_trim_gate_control.py prepares a separate ideal trim-rail diagnos
 scripts/prepare_gain_dc_sweep.py builds the separate in-simulator code sweep.
 After its control.yaml run, scripts/audit_gain_dc_sweep.py compares all 32 waveform points with the independent code runs.
 A one-row waveform sweep is not a replacement for per-code specification checks.
+
+## Mid-rail switch controls
+
+scripts/prepare_trim_switch_probe.py generates the type comparison and the separate NMOS length sweep.
+Run probe.yaml in sky_trim_switch_probe or sky_trim_switch_lengths.
+scripts/analyze_trim_switch_probe.py accepts the project name, checks the supply axis and scalar anchors, and verifies the PMOS multiplicity and parallel transmission-gate conductance identities.
+The saved curves retain all five supply values for each process and length condition.

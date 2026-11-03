@@ -1,0 +1,54 @@
+Mid-rail trim-switch conductance
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice {{corner_mos}}
+.temp {{temp}}
+Vdd vdd 0 1.5
+Vcm vcmi 0 0.75
+Vdiff vd 0 0.001
+Ep_n d_n vcmi VOL='v(vd)/2'
+En_n s_n vcmi VOL='-v(vd)/2'
+Xn_n d_n vdd s_n 0 sky130_fd_pr__nfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=1 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+Ep_p d_p vcmi VOL='v(vd)/2'
+En_p s_p vcmi VOL='-v(vd)/2'
+Xp_p d_p 0 s_p vdd sky130_fd_pr__pfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=1 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+Ep_p2 d_p2 vcmi VOL='v(vd)/2'
+En_p2 s_p2 vcmi VOL='-v(vd)/2'
+Xp_p2 d_p2 0 s_p2 vdd sky130_fd_pr__pfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=2 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+Ep_tg d_tg vcmi VOL='v(vd)/2'
+En_tg s_tg vcmi VOL='-v(vd)/2'
+Xn_tg d_tg vdd s_tg 0 sky130_fd_pr__nfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=1 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+Xp_tg d_tg 0 s_tg vdd sky130_fd_pr__pfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=1 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+Ep_tg2 d_tg2 vcmi VOL='v(vd)/2'
+En_tg2 s_tg2 vcmi VOL='-v(vd)/2'
+Xn_tg2 d_tg2 vdd s_tg2 0 sky130_fd_pr__nfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=1 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+Xp_tg2 d_tg2 0 s_tg2 vdd sky130_fd_pr__pfet_01v8_lvt
++ l=0.35 w=7.365 nf=1 m=2 ad=2.13585 as=2.13585
++ pd=15.31 ps=15.31 nrd=0.039375424304141204 nrs=0.039375424304141204 sa=0 sb=0 sd=0
+.control
+save all
+dc Vdd 1.45 1.65 0.05
+let points=length(v(vdd))
+let ron_n=v(vd)/((i(En_n)-i(Ep_n))/2)
+let ron_n_150=ron_n[1]
+let ron_p=v(vd)/((i(En_p)-i(Ep_p))/2)
+let ron_p_150=ron_p[1]
+let ron_p2=v(vd)/((i(En_p2)-i(Ep_p2))/2)
+let ron_p2_150=ron_p2[1]
+let ron_tg=v(vd)/((i(En_tg)-i(Ep_tg))/2)
+let ron_tg_150=ron_tg[1]
+let ron_tg2=v(vd)/((i(En_tg2)-i(Ep_tg2))/2)
+let ron_tg2_150=ron_tg2[1]
+quit
+.endc
+.end

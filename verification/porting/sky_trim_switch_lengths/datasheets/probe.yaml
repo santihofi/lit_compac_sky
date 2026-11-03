@@ -1,0 +1,44 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  corner_mos:
+  - tt
+  - ff
+  - fs
+  - sf
+  - ss
+  temp:
+  - 27
+  n_length:
+  - 0.15
+  - 0.35
+  - 0.5
+  - 1
+tests:
+  switches:
+    source: netlist
+    engine: ngspice
+    points:
+      min: 5
+      max: 5
+    ron_n_150:
+      min: 0
+      max: 1000000000.0
+    ron_p_150:
+      min: 0
+      max: 1000000000.0
+    ron_p2_150:
+      min: 0
+      max: 1000000000.0
+    ron_tg_150:
+      min: 0
+      max: 1000000000.0
+    ron_tg2_150:
+      min: 0
+      max: 1000000000.0
+    dc_signals:
+    - ron_n
+    - ron_p
+    - ron_p2
+    - ron_tg
+    - ron_tg2

@@ -236,6 +236,29 @@ The evidence is sky_replica_kick.csv, its waveform archive and the independently
 
 ![Replica loop current-kick recovery](figures/sky_replica_kick.png)
 
+## Mid-rail switch type and length controls
+
+Independent fixtures hold each switch source/drain pair at 0.75 V common mode and 1 mV differential bias.
+Each unit has width 7.365 um.
+Five MOS corners and five supplies from 1.45 to 1.65 V are measured at 27 C.
+The original type comparison uses 0.35 um channel length, with one NMOS, one or two PMOS units, and their parallel transmission-gate combinations.
+Every captured curve passes scalar anchors and parallel-conductance checks.
+
+At tt, the NMOS resistance falls from 3024.59 to 691.94 ohm across the supply range.
+The PMOS resistance instead rises from 3174.48 to 3530.10 ohm.
+At 1.5 V, the PMOS resistance ranges from 1977.54 to 8005.86 ohm over MOS corners.
+Two PMOS units in parallel reduce that resistance, but add device area and capacitance.
+The transmission-gate controls still have substantial supply dependence.
+These primitive results do not qualify a replacement switch network.
+
+A separate 20-case sweep changes only NMOS length to 0.15/0.35/0.5/1 um.
+At fs and 1.5 V, shortening from 0.35 to 0.15 um increases resistance from 2743.24 to 3794.02 ohm.
+The ratio of resistance at 1.65 V to that at 1.45 V falls from 0.17465 to 0.06731, so supply sensitivity worsens.
+At tt, the shorter device lowers nominal resistance from 1752.14 to 1388.95 ohm but also worsens this ratio from 0.22877 to 0.12933.
+Minimum channel length is therefore not a general solution to this mid-rail switching problem.
+Longer devices reduce relative sensitivity but increase resistance.
+Mismatch, capacitance and equal-gain circuit comparisons remain required.
+
 ## Manufacturing-grid control
 
 Continuous electrical exploration produced dimensions such as 6.21875 um input-pair finger width and 0.920120439 um source-resistor length.
