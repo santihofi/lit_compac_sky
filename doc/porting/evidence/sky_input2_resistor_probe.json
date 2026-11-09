@@ -1,0 +1,38 @@
+{
+  "target_resistance_ohm": 1366.81037,
+  "temperature_c": 27,
+  "voltage_v": 0.001,
+  "ac_frequency_hz": 1000000.0,
+  "models": {
+    "5p73": {
+      "rcon": 68.05,
+      "rsheet": 56.46,
+      "a": 0.0,
+      "model_sha256": "6f255b1ba5a50a8ba84d90518bd4cfc382ec566aa432c01572b701cf888684e8",
+      "length_um": 23.00319465108041,
+      "minimum_model_resistance_ohm": 68.05,
+      "resistance_1mv_ohm": 1366.81,
+      "driven_end_capacitance_ff": 10.54185
+    },
+    "2p85": {
+      "rcon": 130.36,
+      "rsheet": 113.56,
+      "a": 20.618422702078476,
+      "model_sha256": "7cf177af04ad913db53ce388d9a2140b27a355670e9964510dddf8d9765a8eab",
+      "length_um": 10.871378932528039,
+      "minimum_model_resistance_ohm": 227.1366104396725,
+      "resistance_1mv_ohm": 1366.811,
+      "driven_end_capacitance_ff": 3.407745
+    },
+    "1p41": {
+      "rcon": 254.77,
+      "rsheet": 230.05,
+      "a": 46.08253447749805,
+      "model_sha256": "125257861ec797b4abc7160c13b6a06f6ebaacbb43e1f32df0fe832c14a4cc77",
+      "length_um": 4.792106183327488,
+      "minimum_model_resistance_ohm": 460.6951034385893,
+      "resistance_1mv_ohm": 1366.806,
+      "driven_end_capacitance_ff": 1.273102
+    }
+  }
+}

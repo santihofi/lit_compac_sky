@@ -174,3 +174,13 @@ Inside verification/porting/sky_trim_tg2_ac, run the SKY130 ngspice wrapper with
 Run scripts/analyze_trim_feasible_ac.py to check every captured AC curve and join the results to exactly the DC-feasible code set.
 Run scripts/plot_trim_code_coverage.py to regenerate the comparison figure.
 The bandwidth reference is the nominal per-MOS IHP calibration with the trim gate rail tracking VDD.
+
+## Input-2 speed controls
+
+Run scripts/prepare_input2_speed.py, scripts/prepare_input2_load_resistors.py and scripts/prepare_input2_parallel.py in that order.
+The generated projects are verification/porting/sky_input2_speed, sky_input2_load_resistors and sky_input2_parallel.
+From each project directory, run the SKY130 ngspice wrapper with chipify-cli -c speed_fs.yaml, load_fs.yaml or parallel_fs.yaml respectively.
+Freeze the first two studies with scripts/analyze_input2_speed.py and its --study loads option.
+Use --study parallel after the third run.
+Run scripts/probe_input2_load_resistors.py for the independent resistance and capacitance controls.
+All scripts use the installed SKY130 models, and the resistor mapping records model hashes.

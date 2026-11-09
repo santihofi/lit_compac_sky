@@ -1,0 +1,26 @@
+{
+  "cases": 9,
+  "scalar_values": 261,
+  "waveform_files": 9,
+  "status": "valid",
+  "specification_status": "fail",
+  "failed_limits": [
+    "Case 000000: compr=1.13647 above 1.03242",
+    "Case 000002: compr=0.958447 below 0.96758",
+    "Case 000003: compr=1.19298 above 1.03242",
+    "Case 000004: compr=1.09554 above 1.03242",
+    "Case 000007: compr=1.1633 above 1.03242",
+    "Case 000006: compr=1.20843 above 1.03242",
+    "Case 000008: compr=1.08925 above 1.03242"
+  ],
+  "anchored_curves": 18,
+  "unchanged_control": {
+    "k100": -9.99478,
+    "compr": 1.0191,
+    "idd": 0.000987304,
+    "bw_in1_mhz": 419.998,
+    "bw_in2_mhz": 567.085,
+    "cin2_per_pin_ff": 93.7376
+  },
+  "scope": "Fixed-code sensitivity only, not gain-calibrated acceptance"
+}

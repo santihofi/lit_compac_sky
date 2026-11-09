@@ -832,3 +832,39 @@ The full 1440-case gain-code PVT sweep has been launched, but passive-corner, ph
 Evidence: evidence/sky_tg2_codes_nominal_summary.json and evidence/sky_tg2_feasible_ac_summary.json.
 
 ![Transmission-gate gain, shape and matched bandwidth](figures/tg2_nominal_code_coverage.png)
+
+## Input-2 speed experiments, 2026-11-09
+
+The nominal SKY130 fs corner is the first optimization point because its best DC-feasible input-2 bandwidth is only 68.9 percent of matched IHP.
+The initial sensitivity grid retains gain code 29, 1.5 V, 27 C and 100 fF per output.
+It varies quad width by 0.5, 1 and 2 and unit reference current over 27.5, 35 and 45 uA.
+All nine cases are valid and all eighteen AC curves reproduce their scalar anchors.
+The unchanged control reproduces the earlier gain, shape, current, bandwidth and input-capacitance values.
+
+Halving quad width reduces input-2 capacitance from 93.74 to about 48.14 fF at the original current, but gain falls from 9.995 to 7.133 per volt and the diagonal ratio rises to 1.13647.
+Increasing current with the original quad raises bandwidth only from 567.085 to 603.207 MHz at 45 uA while the ratio rises to 1.16330.
+Doubling quad width at 35 uA gives ratio 1.01805, but bandwidth falls to 514.485 MHz and gain is 11.7551.
+These fixed-code points identify tradeoffs, not an exhaustive calibration result.
+
+A separate experiment changes only the two fixed core loads and their two dummy resistors.
+The narrower precision-poly families are matched to 1366.81037 ohm per unit at zero differential voltage and 27 C using each model's end expression.
+A 1 mV primitive check reproduces this target within four parts per million.
+
+| Precision-poly width | Matched length | Driven-end capacitance per unit | Circuit input-2 bandwidth |
+|---|---:|---:|---:|
+| 5.73 um | 23.0032 um | 10.5419 fF | 567.085 MHz |
+| 2.85 um | 10.8714 um | 3.40775 fF | 613.989 MHz |
+| 1.41 um | 4.79211 um | 1.27310 fF | 629.565 MHz |
+
+The 1.41 um load improves input-2 bandwidth by about eleven percent without a material gain, shape or current change at this point.
+K100 is -9.99447 and the diagonal ratio is 1.01907.
+All six load-study AC curves and the unchanged 5.73 um replay pass the independent checks.
+The trim and source resistors remain 5.73 um.
+The zero-voltage model lower bounds over positive length are about 227.14 ohm for 2.85 um and 460.70 ohm for 1.41 um, before imposing layout constraints.
+These end-resistance terms prevent treating the narrower types as universal replacements for short, low-value trim segments.
+Mismatch, resistor corners, physical geometry and full transfer surfaces still need qualification.
+
+A follow-up measures two, four and six parallel copies with the narrow fixed loads.
+Any fixed-load speed gain must be reported alongside increased supply current and input capacitance.
+An identical downstream receiver also grows with parallel scaling, so a 100 fF benchmark alone cannot establish tree-level improvement.
+Evidence: evidence/sky_input2_speed.csv, evidence/sky_input2_load_resistors.csv and evidence/sky_input2_resistor_probe.json.
