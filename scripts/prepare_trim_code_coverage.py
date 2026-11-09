@@ -3,13 +3,17 @@
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 """Generate exhaustive gain-code screens with explicit per-PVT coverage."""
 import argparse
+import json
 from pathlib import Path
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--grid", choices=["nominal", "pvt"], default="nominal")
+parser.add_argument("--workers", type=int, help="Set project workers before starting a run")
 args = parser.parse_args()
+if args.workers is not None and args.workers < 1:
+    parser.error("Workers must be positive")
 project = ROOT / "verification/porting/sky_trim_tg2"
 header = "# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer\n# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1\n"
 folder = project / "datasheets" / ("codes_" + args.grid)
@@ -20,4 +24,8 @@ for corner in ["tt", "ff", "fs", "sf", "ss"]:
     if args.grid == "pvt":
         sheet["parameters"].update(temp=[0, 27, 80], vdd=[1.45, 1.5, 1.65])
     (folder / f"tg2_{args.grid}_{corner}.yaml").write_text(header + yaml.safe_dump(sheet, sort_keys=False))
+if args.workers is not None:
+    settings = json.loads((project / "settings.json").read_text())
+    settings["num_cores"] = args.workers
+    (project / "settings.json").write_text(json.dumps(settings) + "\n")
 print(folder)
