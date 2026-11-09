@@ -50,7 +50,7 @@ for key, group in data.groupby(["corner_mos", "temp", "vdd"]):
     best = group.loc[group.gain_error_percent.abs().idxmin()]
     records.append({
         "corner_mos": key[0], "temp": float(key[1]), "vdd": float(key[2]),
-        "dc_feasible_codes": [int(x) for x in feasible.gcode],
+        "dc_feasible_codes": sorted(int(x) for x in feasible.gcode),
         "dc_covered": bool(len(feasible)),
         "nearest_gain_code": int(best.gcode),
         "nearest_gain_error_percent": float(best.gain_error_percent),

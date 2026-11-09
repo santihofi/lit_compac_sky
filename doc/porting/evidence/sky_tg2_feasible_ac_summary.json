@@ -1,0 +1,115 @@
+{
+  "audits": {
+    "tg2_ac_ff.yaml": {
+      "cases": 2,
+      "scalar_values": 18,
+      "waveform_files": 2,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_core_curves": 4
+    },
+    "tg2_ac_fs.yaml": {
+      "cases": 3,
+      "scalar_values": 27,
+      "waveform_files": 3,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_core_curves": 6
+    },
+    "tg2_ac_sf.yaml": {
+      "cases": 3,
+      "scalar_values": 27,
+      "waveform_files": 3,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_core_curves": 6
+    },
+    "tg2_ac_ss.yaml": {
+      "cases": 3,
+      "scalar_values": 27,
+      "waveform_files": 3,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_core_curves": 6
+    },
+    "tg2_ac_tt.yaml": {
+      "cases": 3,
+      "scalar_values": 27,
+      "waveform_files": 3,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_core_curves": 6
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "tested_codes": [
+        11,
+        12
+      ],
+      "dc_and_matched_bw_codes": [],
+      "best_input2_ratio": 0.9340921665003833,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "tested_codes": [
+        28,
+        29,
+        30
+      ],
+      "dc_and_matched_bw_codes": [],
+      "best_input2_ratio": 0.6890788957668041,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "tested_codes": [
+        9,
+        10,
+        11
+      ],
+      "dc_and_matched_bw_codes": [
+        9
+      ],
+      "best_input2_ratio": 1.0005478511153267,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "tested_codes": [
+        14,
+        15,
+        16
+      ],
+      "dc_and_matched_bw_codes": [],
+      "best_input2_ratio": 0.8077782030463266,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "tested_codes": [
+        5,
+        6,
+        7
+      ],
+      "dc_and_matched_bw_codes": [],
+      "best_input2_ratio": 0.936606251233324,
+      "full_spec_coverage": "unverified"
+    }
+  ],
+  "bandwidth_reference": "IHP nominal per-MOS nearest K100 code, VDD-tracking gate rail",
+  "dc_gain_tolerance_percent": 1.0,
+  "missing": [
+    "PVT coverage",
+    "noise",
+    "loop stability",
+    "physical bias circuitry"
+  ]
+}

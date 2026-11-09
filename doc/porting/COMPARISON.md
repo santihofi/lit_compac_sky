@@ -801,4 +801,34 @@ This establishes five of five nominal MOS points for that provisional DC screen.
 It does not establish full PVT coverage or bandwidth, noise and stability at the same codes.
 The explicit tolerance is not an approved gain specification.
 Evidence: evidence/sky_wide_codes_nominal_summary.json.
-The complete transmission-gate 32-code sweep is in progress and no result is inferred from its endpoints.
+The complete nominal transmission-gate 32-code sweep and same-code AC follow-up are reported below.
+
+## Transmission-gate joint nominal coverage, 2026-11-09
+
+All 160 nominal code cases are valid at 1.5 V, 27 C and nominal passives.
+The retained ideal current setting still differs by MOS corner.
+The nearest K100 codes are ff=12, fs=29, sf=10, ss=15 and tt=6.
+Their gain errors are +0.1780, -0.0522, -0.0069, -0.0897 and -0.1359 percent respectively.
+Every MOS corner contains codes passing the provisional one-percent gain window, diagonal-shape window and tail-gate rail bounds.
+
+All fourteen DC-feasible codes were then measured with the two-input AC bench using the identical core, trim and OTA subcircuits.
+All twenty-eight captured gain curves independently reproduce the scalar gain and bandwidth.
+The comparison uses the IHP nearest nominal gain code in each corresponding MOS corner with VDD-tracking gate controls.
+
+| SKY130 corner | Joint DC-feasible codes | Best input-2 bandwidth / IHP among those codes | Codes also matching both IHP bandwidths |
+|---|---|---:|---|
+| ff | 11, 12 | 0.93409 | None |
+| fs | 28, 29, 30 | 0.68908 | None |
+| sf | 9, 10, 11 | 1.00055 | 9 |
+| ss | 14, 15, 16 | 0.80778 | None |
+| tt | 5, 6, 7 | 0.93661 | None |
+
+The sf code-9 input-2 advantage is only 0.055 percent, so it provides essentially no design margin.
+Input-1 bandwidth is 416.045 to 555.888 MHz across these fourteen codes, and input-2 bandwidth is 559.151 to 856.541 MHz.
+At the retained bias settings, four nominal MOS corners have no gain code satisfying this combined gain, shape and matched-bandwidth screen.
+This is a same-code intersection over the complete nominal gain-code space at the provisional gain tolerance.
+It is not an exhaustive search over bias codes or other geometries.
+The full 1440-case gain-code PVT sweep has been launched, but passive-corner, physical bias, noise and loop qualification remain open.
+Evidence: evidence/sky_tg2_codes_nominal_summary.json and evidence/sky_tg2_feasible_ac_summary.json.
+
+![Transmission-gate gain, shape and matched bandwidth](figures/tg2_nominal_code_coverage.png)

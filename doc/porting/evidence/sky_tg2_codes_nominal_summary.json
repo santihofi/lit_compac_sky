@@ -1,0 +1,147 @@
+{
+  "scope": "DC screening only, nominal passive models, ideal current and gate controls",
+  "acceptance": "For every PVT point at least one single code must satisfy all applicable specs",
+  "gain_tolerance_percent": 1.0,
+  "gain_tolerance_status": "explicit sensitivity screen, not approved specification",
+  "missing": [
+    "bandwidth",
+    "noise",
+    "loop stability",
+    "passive corners",
+    "physical bias circuitry"
+  ],
+  "audits": {
+    "tg2_nominal_ff.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000031: compr=1.03261 above 1.03242"
+      ]
+    },
+    "tg2_nominal_fs.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "tg2_nominal_sf.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000022: compr=1.03276 above 1.03242",
+        "Case 000023: compr=1.03366 above 1.03242",
+        "Case 000024: compr=1.03462 above 1.03242",
+        "Case 000025: compr=1.03551 above 1.03242",
+        "Case 000026: compr=1.0364 above 1.03242",
+        "Case 000027: compr=1.03728 above 1.03242",
+        "Case 000030: compr=1.0399 above 1.03242",
+        "Case 000031: compr=1.04076 above 1.03242",
+        "Case 000028: compr=1.03816 above 1.03242",
+        "Case 000029: compr=1.03903 above 1.03242"
+      ]
+    },
+    "tg2_nominal_ss.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "tg2_nominal_tt.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000030: compr=1.03293 above 1.03242",
+        "Case 000031: compr=1.03354 above 1.03242"
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": 0.17799999999998928,
+      "nearest_gain_shape": 1.01306,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        28,
+        29,
+        30
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 29,
+      "nearest_gain_error_percent": -0.05219999999999114,
+      "nearest_gain_shape": 1.0191,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        9,
+        10,
+        11
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 10,
+      "nearest_gain_error_percent": -0.006900000000009676,
+      "nearest_gain_shape": 1.02123,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        14,
+        15,
+        16
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 15,
+      "nearest_gain_error_percent": -0.08969999999999256,
+      "nearest_gain_shape": 1.01419,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        5,
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 6,
+      "nearest_gain_error_percent": -0.135900000000011,
+      "nearest_gain_shape": 1.01655,
+      "full_spec_coverage": "unverified"
+    }
+  ]
+}

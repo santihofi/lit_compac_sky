@@ -168,3 +168,9 @@ The tolerance is a sensitivity screen until a gain specification is confirmed.
 The report groups codes by PVT and requires gain, diagonal shape and gate-rail bounds at the same code.
 Every point must contain all 32 codes, with no duplicates, before the report is written.
 This DC screen cannot assert complete specification coverage because AC, noise, loops and passive corners remain separate requirements.
+
+Run scripts/prepare_trim_feasible_ac.py after freezing nominal code coverage.
+Inside verification/porting/sky_trim_tg2_ac, run the SKY130 ngspice wrapper with chipify-cli --batch datasheets/feasible --json.
+Run scripts/analyze_trim_feasible_ac.py to check every captured AC curve and join the results to exactly the DC-feasible code set.
+Run scripts/plot_trim_code_coverage.py to regenerate the comparison figure.
+The bandwidth reference is the nominal per-MOS IHP calibration with the trim gate rail tracking VDD.

@@ -122,3 +122,13 @@ Further switch and resistor-distribution controls must preserve the nominal gain
 The original replica also passes eight nominal loop-current kick controls with independently checked waveforms.
 Supply-extreme full surfaces, passive corners, calibrated loop margins, startup, mismatch and real bias circuitry remain open.
 The main macro folders have not been promoted to an accepted replacement.
+
+## Joint nominal code coverage, 2026-11-09
+
+The transmission-gate candidate has DC-feasible codes in all five nominal MOS corners at a provisional one-percent gain tolerance.
+All fourteen such codes have valid and independently anchored AC measurements.
+Only sf code 9 matches both IHP bandwidths, with just 0.055 percent input-2 margin.
+The other four corners need a bias or circuit change to meet the matched-bandwidth screen at this tolerance.
+These results do not exhaust bias-code choices.
+A 1440-case gain-code sweep over the 45 MOS, voltage and temperature points is running with nominal passive models.
+Retain gain, shape, speed and loop results keyed to the same complete calibration setting before declaring corner coverage.
