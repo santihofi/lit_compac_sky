@@ -1,0 +1,23 @@
+{
+  "package_version": "0.2.3",
+  "installed_path": "/usr/local/lib/python3.12/dist-packages/chipify",
+  "source_commit": "e318888764770c3f5d55751580679df1054e7cac",
+  "cli_executable": "/usr/local/bin/chipify-cli",
+  "files": {
+    "cli.py": {
+      "installed_sha256": "9b9b5e57a06c73f143caae29de6b79b7cc87fc6de6c87e8d955571088b29dd3a",
+      "source_sha256": "9b9b5e57a06c73f143caae29de6b79b7cc87fc6de6c87e8d955571088b29dd3a",
+      "matches_source": true
+    },
+    "analyses.py": {
+      "installed_sha256": "4a2ccee07343c836e113ffec8dbd8c57ebba32b72bdf57112389bfaea6641bf8",
+      "source_sha256": "4a2ccee07343c836e113ffec8dbd8c57ebba32b72bdf57112389bfaea6641bf8",
+      "matches_source": true
+    },
+    "engines/abort.py": {
+      "installed_sha256": "407abc4ba47a213c2baffd96dc4a2fd1a8b29235e2584d2ef16aeaa65b3bc592",
+      "source_sha256": "407abc4ba47a213c2baffd96dc4a2fd1a8b29235e2584d2ef16aeaa65b3bc592",
+      "matches_source": true
+    }
+  }
+}

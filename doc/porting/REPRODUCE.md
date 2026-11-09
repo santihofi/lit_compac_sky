@@ -184,3 +184,19 @@ Freeze the first two studies with scripts/analyze_input2_speed.py and its --stud
 Use --study parallel after the third run.
 Run scripts/probe_input2_load_resistors.py for the independent resistance and capacitance controls.
 All scripts use the installed SKY130 models, and the resistor mapping records model hashes.
+
+## Chipify release transition on 2026-11-09
+
+The installed 0.2.3 release is source revision e318888764770c3f5d55751580679df1054e7cac.
+Installed CLI, analysis and abort-module hashes match the corresponding local release files.
+The old batch used /headless/.local/bin/chipify-cli, which was removed during the package upgrade.
+Its ff, fs and sf PVT datasheets completed with 288 valid cases each.
+Its ss sweep stalled when replacement workers could not reopen the old executable path, and tt had not started.
+The stale process tree was stopped before restarting work.
+The new release executable is /usr/local/bin/chipify-cli.
+An unchanged two-copy narrow-load fs control reproduces ten prior scalar values and both independently anchored AC curves.
+
+To repeat only the unfinished corners, use chipify-cli -c codes_pvt/tg2_pvt_ss.yaml --out out/tg2_pvt_ss --cores 4 --json and then the corresponding tt command from verification/porting/sky_trim_tg2 with the SKY130 ngspice wrapper.
+Do not use --resume for the old build's interrupted work because it did not write the new run journal.
+The released CLI supports --cores and --out directly, so worker and result-directory changes no longer require editing project settings.
+Keep completed corner provenance separate from release-replay evidence.

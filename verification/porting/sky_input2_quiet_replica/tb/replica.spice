@@ -1,0 +1,408 @@
+{% set rc = {'5p73': 68.05, '2p85': 130.36, '1p41': 254.77}[load_family] %}
+{% set rs = {'5p73': 56.46, '2p85': 113.56, '1p41': 230.05}[load_family] %}
+{% set aa = {'5p73': 0.0, '2p85': 20.618422702078476, '1p41': 46.08253447749805}[load_family] %}
+{% set wanted_r = (68.05+56.46*13.035)*rscale*rbase_scale %}
+** sch_path: /foss/designs/lit_compac_sky/verification/porting/sky_gilbert/tb/tb_gilbert_cell_mult.sch
+**.subckt tb_gilbert_cell_mult
+Vdd vdd GND {{vdd}}
+.save i(vdd)
+Vcmi vcmi GND {{vincm}}
+Vref vref GND {{vref}}
+I0 ibias GND {{ibias*power_m}}
+I1 vdd ibias_ota {{ibias*power_m}}
+Vd1 vdin1 GND {{vd1}}
+E1 in1p vcmi VOL=' v(vdin1)/2 '
+E2 in1n vcmi VOL=' -v(vdin1)/2 '
+Vd2 vdin2 GND {{vd2}}
+E4 in2p vcmi VOL=' v(vdin2)/2 '
+E5 in2n vcmi VOL=' -v(vdin2)/2 '
+x1 vdd vbias outp outn in1n in1p in2p in2n GND ibias vdd GND vcm_sense gt0 gt1 gt2 gt3 gt4 vref gilbert_cell
+Cloadp outp GND {{c_load}}
+Cloadn outn GND {{c_load}}
+x2 vdd vbias vref vcm_sense GND ibias_ota vdd GND ota
+Vgcode gcode GND {{gcode}}
+Egt0 gt0 GND VOL=' v(vdd)*(1-(floor((v(gcode)+0.5)/1)-2*floor((v(gcode)+0.5)/2))) '
+Egt1 gt1 GND VOL=' v(vdd)*(1-(floor((v(gcode)+0.5)/2)-2*floor((v(gcode)+0.5)/4))) '
+Egt2 gt2 GND VOL=' v(vdd)*(1-(floor((v(gcode)+0.5)/4)-2*floor((v(gcode)+0.5)/8))) '
+Egt3 gt3 GND VOL=' v(vdd)*(1-(floor((v(gcode)+0.5)/8)-2*floor((v(gcode)+0.5)/16))) '
+Egt4 gt4 GND VOL=' v(vdd)*(1-(floor((v(gcode)+0.5)/16)-2*floor((v(gcode)+0.5)/32))) '
+**** begin user architecture code
+
+
+.temp {{ temp }}
+.option SEED = {{ (seed|int) + 1 }}
+.option method=gear
+
+.control
+save all
+op
+let vo=v(outp)-v(outn)
+let cm=(v(outp)+v(outn))/2
+let idd=-i(vdd)
+let tail_gate_v=v(ibias)
+let tail_drop_v=v(vdd)-v(x1.vcm1)
+let replica_error_v=v(x1.rvcm1)-v(x1.vcm1)
+let tail_current=abs(@m.x1.xm13.msky130_fd_pr__pfet_01v8_lvt[id])
+let tail_margin=(v(vdd)-v(x1.vcm1))-abs(@m.x1.xm13.msky130_fd_pr__pfet_01v8_lvt[vdsat])
+let pair_margin=(v(x1.ps1)-v(x1.net1))-abs(@m.x1.xm1.msky130_fd_pr__pfet_01v8_lvt[vdsat])
+let mirror_margin=(v(x1.qs1))-abs(@m.x1.xm5.msky130_fd_pr__nfet_01v8_lvt[vdsat])
+let quad_margin=(v(outp)-v(x1.qd7))-abs(@m.x1.xm7.msky130_fd_pr__{{quad_model}}[vdsat])
+let qs=v(x1.qs1)
+let sp=v(x1.vcm1)
+alter vd1 dc=0.1
+alter vd2 dc=0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.1
+alter vd2 dc=0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.1
+alter vd2 dc=-0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=0.1
+alter vd2 dc=-0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=0.01
+alter vd2 dc=0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.01
+alter vd2 dc=0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.01
+alter vd2 dc=-0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=0.01
+alter vd2 dc=-0.01
+op
+let vo=v(outp)-v(outn)
+let k100=(op2.vo-op3.vo+op4.vo-op5.vo)/0.04
+let k10=(op6.vo-op7.vo+op8.vo-op9.vo)/0.0004
+let compr=k100/k10
+let vocm=op1.cm
+let idd=op1.idd
+let vos=op1.vo
+let tail_margin=op1.tail_margin
+let pair_margin=op1.pair_margin
+let mirror_margin=op1.mirror_margin
+let quad_margin=op1.quad_margin
+let qs=op1.qs
+let sp=op1.sp
+alter vd1 dc=0.1
+alter vd2 dc=0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.1
+alter vd2 dc=0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.1
+alter vd2 dc=-0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=0.1
+alter vd2 dc=-0.01
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=0.01
+alter vd2 dc=0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.01
+alter vd2 dc=0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=-0.01
+alter vd2 dc=-0.1
+op
+let vo=v(outp)-v(outn)
+alter vd1 dc=0.01
+alter vd2 dc=-0.1
+op
+let vo=v(outp)-v(outn)
+let kaxis1=(op10.vo-op11.vo+op12.vo-op13.vo)/0.004
+let kaxis2=(op14.vo-op15.vo+op16.vo-op17.vo)/0.004
+let axis1=kaxis1/op9.k10
+let axis2=kaxis2/op9.k10
+let k100=op9.k100
+let k10=op9.k10
+let compr=op9.compr
+let vocm=op9.vocm
+let idd=op9.idd
+let vos=op9.vos
+let tail_margin=op9.tail_margin
+let pair_margin=op9.pair_margin
+let mirror_margin=op9.mirror_margin
+let quad_margin=op9.quad_margin
+let qs=op9.qs
+let sp=op9.sp
+let tail_current=op1.tail_current
+let tail_gate_v=op1.tail_gate_v
+let tail_drop_v=op1.tail_drop_v
+let replica_error_v=op1.replica_error_v
+let tail_ratio=tail_current/(8*{{ibias*power_m}})
+quit
+.endc
+
+
+
+
+
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice {{ corner_mos }}
+
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  lit_compac_sky/macros/gilbert_cell/schematic/xschem/gilbert_cell.sym # of pins=18
+** sym_path: /foss/designs/lit_compac_sky/macros/gilbert_cell/schematic/xschem/gilbert_cell.sym
+** sch_path: /foss/designs/lit_compac_sky/macros/gilbert_cell/schematic/xschem/gilbert_cell.sch
+.subckt gilbert_cell vdd vbias outp outn in1n in1p in2p in2n vss ibias ntap ptap vcm gt0 gt1 gt2 gt3 gt4 replica_cm
+*.iopin vdd
+*.ipin in1n
+*.opin outp
+*.opin outn
+*.iopin vss
+*.ipin in1p
+*.ipin in2n
+*.ipin in2p
+*.ipin vbias
+*.ipin ibias
+*.iopin ptap
+*.opin vcm
+*.iopin ntap
+*.ipin gt0
+*.ipin gt1
+*.ipin gt2
+*.ipin gt3
+*.ipin gt4
+XM5 qs1 net2 vss ptap sky130_fd_pr__nfet_01v8_lvt L={{mirror_l}} W={{20.0*mirror_scale}} nf={{(4*mirror_scale)|int}} ad={{(((4*mirror_scale+1)/2)|int)*5.0*0.29}} as={{(((4*mirror_scale+2)/2)|int)*5.0*0.29}} pd={{2*(((4*mirror_scale+1)/2)|int)*(5.0+0.29)}} ps={{2*(((4*mirror_scale+2)/2)|int)*(5.0+0.29)}} nrd={{0.29/(20.0*mirror_scale)}} nrs={{0.29/(20.0*mirror_scale)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM6 qs2 net1 vss ptap sky130_fd_pr__nfet_01v8_lvt L={{mirror_l}} W={{20.0*mirror_scale}} nf={{(4*mirror_scale)|int}} ad={{(((4*mirror_scale+1)/2)|int)*5.0*0.29}} as={{(((4*mirror_scale+2)/2)|int)*5.0*0.29}} pd={{2*(((4*mirror_scale+1)/2)|int)*(5.0+0.29)}} ps={{2*(((4*mirror_scale+2)/2)|int)*(5.0+0.29)}} nrd={{0.29/(20.0*mirror_scale)}} nrs={{0.29/(20.0*mirror_scale)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM7 outp in2n qd7 {{'qs1' if body_tied else 'ptap'}} sky130_fd_pr__{{quad_model}} L={{quad_l}} W={{(4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale)}} nf={{(native_nf) if quad_model=='nfet_03v3_nvt' else ((4*quad_scale)|int)}} ad={{((((native_nf+1)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+1)/2)|int)*5.0*0.29)}} as={{((((native_nf+2)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+2)/2)|int)*5.0*0.29)}} pd={{(2*(((native_nf+1)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+1)/2)|int)*(5.0+0.29))}} ps={{(2*(((native_nf+2)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+2)/2)|int)*(5.0+0.29))}} nrd={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} nrs={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM9 outp in2p qd9 {{'qs2' if body_tied else 'ptap'}} sky130_fd_pr__{{quad_model}} L={{quad_l}} W={{(4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale)}} nf={{(native_nf) if quad_model=='nfet_03v3_nvt' else ((4*quad_scale)|int)}} ad={{((((native_nf+1)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+1)/2)|int)*5.0*0.29)}} as={{((((native_nf+2)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+2)/2)|int)*5.0*0.29)}} pd={{(2*(((native_nf+1)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+1)/2)|int)*(5.0+0.29))}} ps={{(2*(((native_nf+2)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+2)/2)|int)*(5.0+0.29))}} nrd={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} nrs={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM10 outn in2n qd10 {{'qs2' if body_tied else 'ptap'}} sky130_fd_pr__{{quad_model}} L={{quad_l}} W={{(4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale)}} nf={{(native_nf) if quad_model=='nfet_03v3_nvt' else ((4*quad_scale)|int)}} ad={{((((native_nf+1)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+1)/2)|int)*5.0*0.29)}} as={{((((native_nf+2)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+2)/2)|int)*5.0*0.29)}} pd={{(2*(((native_nf+1)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+1)/2)|int)*(5.0+0.29))}} ps={{(2*(((native_nf+2)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+2)/2)|int)*(5.0+0.29))}} nrd={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} nrs={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM8 outn in2p qd8 {{'qs1' if body_tied else 'ptap'}} sky130_fd_pr__{{quad_model}} L={{quad_l}} W={{(4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale)}} nf={{(native_nf) if quad_model=='nfet_03v3_nvt' else ((4*quad_scale)|int)}} ad={{((((native_nf+1)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+1)/2)|int)*5.0*0.29)}} as={{((((native_nf+2)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+2)/2)|int)*5.0*0.29)}} pd={{(2*(((native_nf+1)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+1)/2)|int)*(5.0+0.29))}} ps={{(2*(((native_nf+2)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+2)/2)|int)*(5.0+0.29))}} nrd={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} nrs={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM11 outp vbias vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{pload_l}} W={{32.0*pload_l}} nf=8 ad={{4*(4.0*pload_l)*0.29}} as={{5*(4.0*pload_l)*0.29}} pd={{8*((4.0*pload_l)+0.29)}} ps={{10*((4.0*pload_l)+0.29)}} nrd={{0.29/(32.0*pload_l)}} nrs={{0.29/(32.0*pload_l)}}
++ sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM12 outn vbias vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{pload_l}} W={{32.0*pload_l}} nf=8 ad={{4*(4.0*pload_l)*0.29}} as={{5*(4.0*pload_l)*0.29}} pd={{8*((4.0*pload_l)+0.29)}} ps={{10*((4.0*pload_l)+0.29)}} nrd={{0.29/(32.0*pload_l)}} nrs={{0.29/(32.0*pload_l)}}
++ sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM1 net1 in1n ps1 {{'ps1' if pair_body_tied else 'ntap'}} sky130_fd_pr__pfet_01v8_lvt L={{pair_l}} W={{74.625*pair_scale}} nf={{(12*pair_scale)|int}} ad={{(((12*pair_scale+1)/2)|int)*6.21875*0.29}} as={{(((12*pair_scale+2)/2)|int)*6.21875*0.29}} pd={{2*(((12*pair_scale+1)/2)|int)*(6.21875+0.29)}} ps={{2*(((12*pair_scale+2)/2)|int)*(6.21875+0.29)}}
++ nrd={{0.29/(74.625*pair_scale)}} nrs={{0.29/(74.625*pair_scale)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM13 vcm1 ibias vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{0.65*tail_length_scale}} W={{40.0*(tail_width*tail_length_scale)}} nf={{(4*(tail_width*tail_length_scale))|int}} ad={{(((4*(tail_width*tail_length_scale)+1)/2)|int)*10.0*0.29}} as={{(((4*(tail_width*tail_length_scale)+2)/2)|int)*10.0*0.29}} pd={{2*(((4*(tail_width*tail_length_scale)+1)/2)|int)*(10.0+0.29)}} ps={{2*(((4*(tail_width*tail_length_scale)+2)/2)|int)*(10.0+0.29)}} nrd={{0.29/(40.0*(tail_width*tail_length_scale))}} nrs={{0.29/(40.0*(tail_width*tail_length_scale))}} sa=0
++ sb=0 sd=0 mult={{8.0*power_m}} m={{8.0*power_m}}
+XM3 net1 net1 vss ptap sky130_fd_pr__nfet_01v8_lvt L={{mirror_l}} W={{20.0*mirror_scale}} nf={{(4*mirror_scale)|int}} ad={{(((4*mirror_scale+1)/2)|int)*5.0*0.29}} as={{(((4*mirror_scale+2)/2)|int)*5.0*0.29}} pd={{2*(((4*mirror_scale+1)/2)|int)*(5.0+0.29)}} ps={{2*(((4*mirror_scale+2)/2)|int)*(5.0+0.29)}} nrd={{0.29/(20.0*mirror_scale)}} nrs={{0.29/(20.0*mirror_scale)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM4 net2 net2 vss ptap sky130_fd_pr__nfet_01v8_lvt L={{mirror_l}} W={{20.0*mirror_scale}} nf={{(4*mirror_scale)|int}} ad={{(((4*mirror_scale+1)/2)|int)*5.0*0.29}} as={{(((4*mirror_scale+2)/2)|int)*5.0*0.29}} pd={{2*(((4*mirror_scale+1)/2)|int)*(5.0+0.29)}} ps={{2*(((4*mirror_scale+2)/2)|int)*(5.0+0.29)}} nrd={{0.29/(20.0*mirror_scale)}} nrs={{0.29/(20.0*mirror_scale)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM2 net2 in1p ps2 {{'ps2' if pair_body_tied else 'ntap'}} sky130_fd_pr__pfet_01v8_lvt L={{pair_l}} W={{74.625*pair_scale}} nf={{(12*pair_scale)|int}} ad={{(((12*pair_scale+1)/2)|int)*6.21875*0.29}} as={{(((12*pair_scale+2)/2)|int)*6.21875*0.29}} pd={{2*(((12*pair_scale+1)/2)|int)*(6.21875+0.29)}} ps={{2*(((12*pair_scale+2)/2)|int)*(6.21875+0.29)}}
++ nrd={{0.29/(74.625*pair_scale)}} nrs={{0.29/(74.625*pair_scale)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM14 rvcm1 ibias vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{0.65*tail_length_scale}} W={{40.0*(tail_width*tail_length_scale)}} nf={{(4*(tail_width*tail_length_scale))|int}} ad={{(((4*(tail_width*tail_length_scale)+1)/2)|int)*10.0*0.29}} as={{(((4*(tail_width*tail_length_scale)+2)/2)|int)*10.0*0.29}} pd={{2*(((4*(tail_width*tail_length_scale)+1)/2)|int)*(10.0+0.29)}} ps={{2*(((4*(tail_width*tail_length_scale)+2)/2)|int)*(10.0+0.29)}} nrd={{0.29/(40.0*(tail_width*tail_length_scale))}} nrs={{0.29/(40.0*(tail_width*tail_length_scale))}}
++ sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+Rtap_R1 vss ptap 1m
+XR7 t4p outp ptap sky130_fd_pr__res_high_po_{{load_family}} L={{((wanted_r-rc)+((wanted_r-rc)**2-4*rs*aa)**0.5)/(2*rs)}} mult={{1.0*power_m}} m={{1*power_m}}
+XR5 outn t4n ptap sky130_fd_pr__res_high_po_{{load_family}} L={{((wanted_r-rc)+((wanted_r-rc)**2-4*rs*aa)**0.5)/(2*rs)}} mult={{1.0*power_m}} m={{1*power_m}}
+Rtap_R2 vdd ntap 1m
+xtrim t4p t4n vcm gt0 gt1 gt2 gt3 gt4 ptap ntap gain_trim
+XMDP vcm1 vcm1 vcm1 {{'vcm1' if pair_body_tied else 'ntap'}} sky130_fd_pr__pfet_01v8_lvt L={{pair_l}} W={{24.875*pair_scale}} nf={{(4*pair_scale)|int}} ad={{(((4*pair_scale+1)/2)|int)*6.21875*0.29}} as={{(((4*pair_scale+2)/2)|int)*6.21875*0.29}} pd={{2*(((4*pair_scale+1)/2)|int)*(6.21875+0.29)}} ps={{2*(((4*pair_scale+2)/2)|int)*(6.21875+0.29)}}
++ nrd={{0.29/(24.875*pair_scale)}} nrs={{0.29/(24.875*pair_scale)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDM vss vss vss ptap sky130_fd_pr__nfet_01v8_lvt L={{mirror_l}} W={{10.0*mirror_scale}} nf={{(2*mirror_scale)|int}} ad={{(((2*mirror_scale+1)/2)|int)*5.0*0.29}} as={{(((2*mirror_scale+2)/2)|int)*5.0*0.29}} pd={{2*(((2*mirror_scale+1)/2)|int)*(5.0+0.29)}} ps={{2*(((2*mirror_scale+2)/2)|int)*(5.0+0.29)}} nrd={{0.29/(10.0*mirror_scale)}} nrs={{0.29/(10.0*mirror_scale)}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDQ1 qs1 qs1 qs1 {{'qs1' if body_tied else 'ptap'}} sky130_fd_pr__{{quad_model}} L={{quad_l}} W={{(4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale)}} nf={{(native_nf) if quad_model=='nfet_03v3_nvt' else ((4*quad_scale)|int)}} ad={{((((native_nf+1)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+1)/2)|int)*5.0*0.29)}} as={{((((native_nf+2)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+2)/2)|int)*5.0*0.29)}} pd={{(2*(((native_nf+1)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+1)/2)|int)*(5.0+0.29))}} ps={{(2*(((native_nf+2)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+2)/2)|int)*(5.0+0.29))}} nrd={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} nrs={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDQ2 qs2 qs2 qs2 {{'qs2' if body_tied else 'ptap'}} sky130_fd_pr__{{quad_model}} L={{quad_l}} W={{(4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale)}} nf={{(native_nf) if quad_model=='nfet_03v3_nvt' else ((4*quad_scale)|int)}} ad={{((((native_nf+1)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+1)/2)|int)*5.0*0.29)}} as={{((((native_nf+2)/2)|int)*4*0.29) if quad_model=='nfet_03v3_nvt' else ((((4*quad_scale+2)/2)|int)*5.0*0.29)}} pd={{(2*(((native_nf+1)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+1)/2)|int)*(5.0+0.29))}} ps={{(2*(((native_nf+2)/2)|int)*4.29) if quad_model=='nfet_03v3_nvt' else (2*(((4*quad_scale+2)/2)|int)*(5.0+0.29))}} nrd={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} nrs={{0.29/((4*native_nf) if quad_model=='nfet_03v3_nvt' else (20.0*quad_scale))}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDL vdd vdd vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{pload_l}} W={{16.0*pload_l}} nf=4 ad={{2*(4.0*pload_l)*0.29}} as={{3*(4.0*pload_l)*0.29}} pd={{4*((4.0*pload_l)+0.29)}} ps={{6*((4.0*pload_l)+0.29)}} nrd={{0.29/(16.0*pload_l)}} nrs={{0.29/(16.0*pload_l)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDT vdd vdd vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{0.65*tail_length_scale}} W={{20.0*(tail_width*tail_length_scale)}} nf={{(2*(tail_width*tail_length_scale))|int}} ad={{(((2*(tail_width*tail_length_scale)+1)/2)|int)*10.0*0.29}} as={{(((2*(tail_width*tail_length_scale)+2)/2)|int)*10.0*0.29}} pd={{2*(((2*(tail_width*tail_length_scale)+1)/2)|int)*(10.0+0.29)}} ps={{2*(((2*(tail_width*tail_length_scale)+2)/2)|int)*(10.0+0.29)}} nrd={{0.29/(20.0*(tail_width*tail_length_scale))}} nrs={{0.29/(20.0*(tail_width*tail_length_scale))}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XRD1 ntap ntap ptap sky130_fd_pr__res_high_po_{{load_family}} L={{((wanted_r-rc)+((wanted_r-rc)**2-4*rs*aa)**0.5)/(2*rs)}} mult={{1.0*power_m}} m={{1*power_m}}
+XRD2 ntap ntap ptap sky130_fd_pr__res_high_po_{{load_family}} L={{((wanted_r-rc)+((wanted_r-rc)**2-4*rs*aa)**0.5)/(2*rs)}} mult={{1.0*power_m}} m={{1*power_m}}
+
+XRdegen7 qd7 qs1 ptap sky130_fd_pr__res_high_po_5p73 L={{(rquad-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRdegen8 qd8 qs1 ptap sky130_fd_pr__res_high_po_5p73 L={{(rquad-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRdegen9 qd9 qs2 ptap sky130_fd_pr__res_high_po_5p73 L={{(rquad-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRdegen10 qd10 qs2 ptap sky130_fd_pr__res_high_po_5p73 L={{(rquad-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRP1 vcm1 ps1 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRP2 vcm1 ps2 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XMrep1 ibias {{'in1n' if replica_tracks_signal else 'replica_cm'}} rps1 ntap sky130_fd_pr__pfet_01v8_lvt L={{pair_l}} W={{(74.625*pair_scale*power_m/8)}} nf={{(12*pair_scale*power_m/8)|int}} ad={{((((12*pair_scale*power_m/8)+1)/2)|int)*6.21875*0.29}} as={{((((12*pair_scale*power_m/8)+2)/2)|int)*6.21875*0.29}} pd={{2*((((12*pair_scale*power_m/8)+1)/2)|int)*(6.21875+0.29)}} ps={{2*((((12*pair_scale*power_m/8)+2)/2)|int)*(6.21875+0.29)}} nrd={{0.29/(74.625*pair_scale*power_m/8)}} nrs={{0.29/(74.625*pair_scale*power_m/8)}} sa=0 sb=0 sd=0 mult=1 m=1
+XRrep1_0 rvcm1 rp1_1 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_1 rp1_1 rp1_2 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_2 rp1_2 rp1_3 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_3 rp1_3 rp1_4 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_4 rp1_4 rp1_5 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_5 rp1_5 rp1_6 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_6 rp1_6 rp1_7 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep1_7 rp1_7 rps1 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XMrep2 ibias {{'in1p' if replica_tracks_signal else 'replica_cm'}} rps2 ntap sky130_fd_pr__pfet_01v8_lvt L={{pair_l}} W={{(74.625*pair_scale*power_m/8)}} nf={{(12*pair_scale*power_m/8)|int}} ad={{((((12*pair_scale*power_m/8)+1)/2)|int)*6.21875*0.29}} as={{((((12*pair_scale*power_m/8)+2)/2)|int)*6.21875*0.29}} pd={{2*((((12*pair_scale*power_m/8)+1)/2)|int)*(6.21875+0.29)}} ps={{2*((((12*pair_scale*power_m/8)+2)/2)|int)*(6.21875+0.29)}} nrd={{0.29/(74.625*pair_scale*power_m/8)}} nrs={{0.29/(74.625*pair_scale*power_m/8)}} sa=0 sb=0 sd=0 mult=1 m=1
+XRrep2_0 rvcm1 rp2_1 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_1 rp2_1 rp2_2 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_2 rp2_2 rp2_3 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_3 rp2_3 rp2_4 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_4 rp2_4 rp2_5 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_5 rp2_5 rp2_6 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_6 rp2_6 rp2_7 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+XRrep2_7 rp2_7 rps2 ptap sky130_fd_pr__res_high_po_5p73 L={{(rpair-68.05)/56.46}} mult={{power_m}} m={{power_m}}
+.ends
+
+
+* expanding   symbol:  lit_compac_sky/macros/ota/schematic/xschem/ota.sym # of pins=8
+** sym_path: /foss/designs/lit_compac_sky/macros/ota/schematic/xschem/ota.sym
+** sch_path: /foss/designs/lit_compac_sky/macros/ota/schematic/xschem/ota.sch
+.subckt ota vdd out inn inp vss ibias1 ntap ptap
+*.opin out
+*.ipin inp
+*.ipin ibias1
+*.ipin inn
+*.iopin ntap
+*.iopin ptap
+*.iopin vdd
+*.iopin vss
+XM5 vd_m5 vd_m5 vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{pload_l}} W={{4.4*pload_l}} nf=2 ad={{1*(2.2*pload_l)*0.29}} as={{2*(2.2*pload_l)*0.29}} pd={{2*((2.2*pload_l)+0.29)}} ps={{4*((2.2*pload_l)+0.29)}} nrd={{0.29/(4.4*pload_l)}}
++ nrs={{0.29/(4.4*pload_l)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM6 out out vdd ntap sky130_fd_pr__pfet_01v8_lvt L={{pload_l}} W={{4.4*pload_l}} nf=2 ad={{1*(2.2*pload_l)*0.29}} as={{2*(2.2*pload_l)*0.29}} pd={{2*((2.2*pload_l)+0.29)}} ps={{4*((2.2*pload_l)+0.29)}} nrd={{0.29/(4.4*pload_l)}}
++ nrs={{0.29/(4.4*pload_l)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM1 vd_m5 inp sa ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM2 out vref_int sb ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}}
++ sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XRS1 rs1 sa ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS2 rs2 rs1 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS3 rs3 rs2 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS4 rs4 rs3 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS5 rs5 rs4 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS6 rs6 rs5 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS7 rs7 rs6 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS8 rs8 rs7 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS9 rs9 rs8 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS10 rs10 rs9 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS11 rs11 rs10 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XRS12 sb rs11 ptap sky130_fd_pr__res_high_po_1p41 L=22.705 mult={{1.0*power_m}} m={{1*power_m}}
+XM3 sa ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM3B sb ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM4 ibias1 ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=32 nf=8 ad=4.64 as=5.8 pd=34.32 ps=42.9 nrd={{0.29/(32)}} nrs={{0.29/(32)}}
++ sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM10 vd_m10 vd_m10 vdd ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd={{0.29/(1)}} nrs={{0.29/(1)}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM11 vref_int vd_m10 vdd ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd={{0.29/(1)}} nrs={{0.29/(1)}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM7 vd_m10 inn vtail_slow ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd={{0.29/(2)}} nrs={{0.29/(2)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM8 vref_int inp vtail_slow ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd={{0.29/(2)}} nrs={{0.29/(2)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XM9 vtail_slow ibias1 vss ptap sky130_fd_pr__nfet_01v8_lvt L=5 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd={{0.29/(1)}} nrs={{0.29/(1)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMC vss vref_int vss ptap sky130_fd_pr__nfet_01v8_lvt L=6 W=6 nf=1 ad=1.74 as=1.74 pd=12.58 ps=12.58 nrd={{0.29/(6)}}
++ nrs={{0.29/(6)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+Rtap_R2 vdd ntap 1m
+Rtap_R7 vss ptap 1m
+XMDA sa sa sa ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDB sb sb sb ptap sky130_fd_pr__nfet_01v8_lvt L=1 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMD3 vss vss vss ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=16 nf=4 ad=2.32 as=3.48 pd=17.16 ps=25.74 nrd={{0.29/(16)}} nrs={{0.29/(16)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMD5 vd_m5 vdd vd_m5 ntap sky130_fd_pr__pfet_01v8_lvt L=1 W=4.4 nf=2 ad=0.638 as=1.276 pd=4.98 ps=9.96 nrd={{0.29/(4.4)}}
++ nrs={{0.29/(4.4)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMD7 vd_m10 vd_m10 vd_m10 ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd={{0.29/(2)}} nrs={{0.29/(2)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMD10 vd_m10 vdd vd_m10 ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd={{0.29/(1)}} nrs={{0.29/(1)}} sa=0 sb=0
++ sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMD11 vref_int vdd vref_int ntap sky130_fd_pr__pfet_01v8_lvt L=4 W=1 nf=1 ad=0.29 as=0.29 pd=2.58 ps=2.58 nrd={{0.29/(1)}} nrs={{0.29/(1)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMD8 vref_int vss vref_int ptap sky130_fd_pr__nfet_01v8_lvt L=2 W=2 nf=2 ad=0.29 as=0.58 pd=2.58 ps=5.16 nrd={{0.29/(2)}} nrs={{0.29/(2)}} sa=0
++ sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+.ends
+
+
+* expanding   symbol:  lit_compac_sky/macros/gilbert_cell/schematic/xschem/gain_trim.sym # of pins=9
+** sym_path: /foss/designs/lit_compac_sky/macros/gilbert_cell/schematic/xschem/gain_trim.sym
+** sch_path: /foss/designs/lit_compac_sky/macros/gilbert_cell/schematic/xschem/gain_trim.sch
+.subckt gain_trim t4p t4n vcm gt0 gt1 gt2 gt3 gt4 ptap ntap
+Egp0 gp0 ptap VOL='v(ntap,ptap)-v(gt0,ptap)'
+Egp1 gp1 ptap VOL='v(ntap,ptap)-v(gt1,ptap)'
+Egp2 gp2 ptap VOL='v(ntap,ptap)-v(gt2,ptap)'
+Egp3 gp3 ptap VOL='v(ntap,ptap)-v(gt3,ptap)'
+Egp4 gp4 ptap VOL='v(ntap,ptap)-v(gt4,ptap)'
+*.iopin t4p
+*.iopin t4n
+*.iopin vcm
+*.ipin gt0
+*.ipin gt1
+*.ipin gt2
+*.ipin gt3
+*.ipin gt4
+*.iopin ptap
+XRS4P0 net1 t4p ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P1 net2 net1 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P2 net3 net2 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P3 net4 net3 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P4 net5 net4 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P5 net6 net5 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P6 net7 net6 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4P7 t3p net7 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3P0 net8 t3p ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3P1 net9 net8 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3P2 net10 net9 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3P3 t2p net10 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS2P0 net11 t2p ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS2P1 t1p net11 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS1P0 t0p t1p ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS0P vcm t0p ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{4.0*power_m}} m={{4.0*power_m}}
+XMSW4P t3p gt4 t4p ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW4P_P t3p gp4 t4p ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW3P t2p gt3 t3p ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=14.73 nf=2 ad=2.13585 as=4.2717 pd=15.31 ps=30.62 nrd={{0.29/(14.73)}} nrs={{0.29/(14.73)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW3P_P t2p gp3 t3p ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=14.73 nf=2 ad=2.13585 as=4.2717 pd=15.31 ps=30.62 nrd={{0.29/(14.73)}} nrs={{0.29/(14.73)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW2P t1p gt2 t2p ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=29.46 nf=4 ad=4.2717 as=6.40755 pd=30.62 ps=45.93 nrd={{0.29/(29.46)}} nrs={{0.29/(29.46)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW2P_P t1p gp2 t2p ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=29.46 nf=4 ad=4.2717 as=6.40755 pd=30.62 ps=45.93 nrd={{0.29/(29.46)}} nrs={{0.29/(29.46)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW1P t0p gt1 t1p ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=58.92 nf=8 ad=8.5434 as=10.67925 pd=61.24 ps=76.55 nrd={{0.29/(58.92)}} nrs={{0.29/(58.92)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW1P_P t0p gp1 t1p ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=58.92 nf=8 ad=8.5434 as=10.67925 pd=61.24 ps=76.55 nrd={{0.29/(58.92)}} nrs={{0.29/(58.92)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XRS4N0 net12 t4n ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N1 net13 net12 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N2 net14 net13 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N3 net15 net14 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N4 net16 net15 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N5 net17 net16 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N6 net18 net17 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS4N7 t3n net18 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3N0 net19 t3n ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3N1 net20 net19 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3N2 net21 net20 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS3N3 t2n net21 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS2N0 net22 t2n ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS2N1 t1n net22 ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS1N0 t0n t1n ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{2.0*power_m}} m={{2.0*power_m}}
+XRS0N vcm t0n ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{4.0*power_m}} m={{4.0*power_m}}
+XMSW4N t4n gt4 t3n ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW4N_P t4n gp4 t3n ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW3N t3n gt3 t2n ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=14.73 nf=2 ad=2.13585 as=4.2717 pd=15.31 ps=30.62 nrd={{0.29/(14.73)}} nrs={{0.29/(14.73)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW3N_P t3n gp3 t2n ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=14.73 nf=2 ad=2.13585 as=4.2717 pd=15.31 ps=30.62 nrd={{0.29/(14.73)}} nrs={{0.29/(14.73)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW2N t2n gt2 t1n ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=29.46 nf=4 ad=4.2717 as=6.40755 pd=30.62 ps=45.93 nrd={{0.29/(29.46)}} nrs={{0.29/(29.46)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW2N_P t2n gp2 t1n ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=29.46 nf=4 ad=4.2717 as=6.40755 pd=30.62 ps=45.93 nrd={{0.29/(29.46)}} nrs={{0.29/(29.46)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW1N t1n gt1 t0n ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=58.92 nf=8 ad=8.5434 as=10.67925 pd=61.24 ps=76.55 nrd={{0.29/(58.92)}} nrs={{0.29/(58.92)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW1N_P t1n gp1 t0n ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=58.92 nf=8 ad=8.5434 as=10.67925 pd=61.24 ps=76.55 nrd={{0.29/(58.92)}} nrs={{0.29/(58.92)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMSW0 t0p gt0 t0n ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=58.92 nf=8 ad=8.5434 as=10.67925 pd=61.24 ps=76.55 nrd={{0.29/(58.92)}} nrs={{0.29/(58.92)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMSW0_P t0p gp0 t0n ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=58.92 nf=8 ad=8.5434 as=10.67925 pd=61.24 ps=76.55 nrd={{0.29/(58.92)}} nrs={{0.29/(58.92)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XRDP ptap ptap ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{6.0*power_m}} m={{6.0*power_m}}
+XRDN ptap ptap ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*0.875)*rscale*rtrim_scale-68.05)/56.46}} mult={{6.0*power_m}} m={{6.0*power_m}}
+XRDS ptap ptap ptap sky130_fd_pr__res_high_po_5p73 L={{((68.05+56.46*10.76)*rscale*rtrim_scale-68.05)/56.46}} mult={{8.0*power_m}} m={{8.0*power_m}}
+XMDSP t4p t4p t4p ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDSP_P t4p t4p t4p ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+XMDSN t4n t4n t4n ptap sky130_fd_pr__nfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{1.0*power_m}} m={{1*power_m}}
+XMDSN_P t4n t4n t4n ntap sky130_fd_pr__pfet_01v8_lvt L=0.35 W=7.365 nf=1 ad=2.13585 as=2.13585 pd=15.31 ps=15.31 nrd={{0.29/(7.365)}} nrs={{0.29/(7.365)}} sa=0 sb=0 sd=0 mult={{2*power_m}} m={{2*power_m}}
+.ends
+
+.GLOBAL GND
+.end

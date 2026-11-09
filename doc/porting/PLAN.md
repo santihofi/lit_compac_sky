@@ -132,3 +132,15 @@ The other four corners need a bias or circuit change to meet the matched-bandwid
 These results do not exhaust bias-code choices.
 A 1440-case gain-code sweep over the 45 MOS, voltage and temperature points is running with nominal passive models.
 Retain gain, shape, speed and loop results keyed to the same complete calibration setting before declaring corner coverage.
+
+## Input-2 candidate progress, 2026-11-09
+
+Narrow fixed loads improve slow-corner bandwidth by eleven percent at unchanged current.
+Six exact parallel copies then pass gain, shape and both fixed-load bandwidth screens at all five nominal MOS corners, at about three times the original two-copy supply current.
+Five-copy results are diagnostic because the inherited replica nf expression truncates a fractional finger count.
+Actual receiver loading leaves one six-copy slow-corner shortfall.
+Biasing the replica gates from an explicit common-mode reference closes that loaded case without a material DC change at the measured point.
+The five-corner common-mode-replica extension is running.
+No full-PVT, noise, loop or layout acceptance is claimed.
+The older two-copy gain-code PVT sweep completed ff, fs and sf before the Chipify upgrade interrupted ss.
+SS and TT were restarted on release 0.2.3 after an unchanged-control replay.

@@ -1,0 +1,51 @@
+{
+  "audits": {
+    "candidate_ff": {
+      "cases": 1,
+      "scalar_values": 29,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "candidate_fs": {
+      "cases": 1,
+      "scalar_values": 29,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "candidate_sf": {
+      "cases": 1,
+      "scalar_values": 29,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "candidate_ss": {
+      "cases": 1,
+      "scalar_values": 29,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "candidate_tt": {
+      "cases": 1,
+      "scalar_values": 29,
+      "waveform_files": 1,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "package_version": "0.2.3",
+  "joint_dc_bw_passes": 5,
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "replica_finger_counts_integral": false,
+  "physical_candidate_status": "diagnostic only, replica finger truncation invalidates exact-copy geometry"
+}

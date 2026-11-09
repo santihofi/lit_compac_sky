@@ -1,0 +1,5 @@
+temp,seed,vdd,vincm,vref,corner_mos,corner_res,corner_cap,gcode,ibias,c_load,vd1,vd2,fanout_input,sim_error,run_id,ac__error,bw_in1_mhz,bw_in1_mhz_pass,bw_in2_mhz,bw_in2_mhz_pass,acgain_in1,acgain_in1_pass,acgain_in2,acgain_in2_pass,cin1_per_pin_ff,cin1_per_pin_ff_pass,cin2_per_pin_ff,cin2_per_pin_ff_pass,cin1_100mhz_ff,cin1_100mhz_ff_pass,cin2_100mhz_ff,cin2_100mhz_ff_pass,idd,idd_pass,ac_overall_pass,global_pass
+27,0,1.5,0.75,0.75,sf,typ,typ,12,40u,25f,0,0,1,,000000,,331.206,True,505.378,True,1.02592,True,0.955635,True,174.201,True,129.798,True,173.087,True,129.795,True,0.000720191,True,True,True
+27,0,1.5,0.75,0.75,sf,typ,typ,12,40u,25f,0,0,2,,000001,,377.135,True,619.203,True,1.02592,True,0.955636,True,174.201,True,129.798,True,173.087,True,129.796,True,0.000720191,True,True,True
+27,0,1.5,0.75,0.75,sf,typ,typ,12,40u,50f,0,0,1,,000002,,315.036,True,458.606,True,1.02592,True,0.955635,True,174.201,True,129.798,True,173.087,True,129.795,True,0.000720191,True,True,True
+27,0,1.5,0.75,0.75,sf,typ,typ,12,40u,50f,0,0,2,,000003,,356.427,True,553.39,True,1.02592,True,0.955636,True,174.201,True,129.798,True,173.087,True,129.796,True,0.000720191,True,True,True

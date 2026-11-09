@@ -1,0 +1,40 @@
+{
+  "audits": {
+    "sky": {
+      "cases": 8,
+      "scalar_values": 72,
+      "waveform_files": 8,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_curves": 16
+    },
+    "ihp": {
+      "cases": 4,
+      "scalar_values": 36,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": [],
+      "anchored_curves": 8
+    }
+  },
+  "replica_finger_counts_integral": false,
+  "scope": "Nominal slow-N fast-P driver plus identical receiver, 25/50 fF wire per output",
+  "results": [
+    {
+      "power_m": 2,
+      "both_bandwidths_at_least_ihp": 0,
+      "cases": 4,
+      "input2_minimum_ratio_ihp": 0.9025026811614277,
+      "input2_maximum_ratio_ihp": 0.9540884367263592
+    },
+    {
+      "power_m": 5,
+      "both_bandwidths_at_least_ihp": 2,
+      "cases": 4,
+      "input2_minimum_ratio_ihp": 0.948812571975828,
+      "input2_maximum_ratio_ihp": 1.0721227344187645
+    }
+  ]
+}

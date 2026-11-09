@@ -1,0 +1,25 @@
+{
+  "cases": 2,
+  "scalar_values": 74,
+  "waveform_files": 4,
+  "status": "valid",
+  "specification_status": "pass",
+  "failed_limits": [],
+  "anchored_curves": 8,
+  "unchanged_controls": {
+    "k100": -9.99447,
+    "compr": 1.01907,
+    "idd": 0.00296191,
+    "bw_in1_mhz": 537.24,
+    "bw_in2_mhz": 890.093,
+    "cin1_per_pin_ff": 483.15,
+    "cin2_per_pin_ff": 281.213,
+    "loaded_bw_in1_mhz": 376.556,
+    "loaded_bw_in2_mhz": 481.508,
+    "loaded_acgain_in1": 1.03418,
+    "loaded_acgain_in2": 0.969638
+  },
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified"
+}

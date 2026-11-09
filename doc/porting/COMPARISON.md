@@ -868,3 +868,60 @@ A follow-up measures two, four and six parallel copies with the narrow fixed loa
 Any fixed-load speed gain must be reported alongside increased supply current and input capacitance.
 An identical downstream receiver also grows with parallel scaling, so a 100 fF benchmark alone cannot establish tree-level improvement.
 Evidence: evidence/sky_input2_speed.csv, evidence/sky_input2_load_resistors.csv and evidence/sky_input2_resistor_probe.json.
+
+### Parallel-copy control and geometry restriction
+
+At the narrow-load fs point, two, four and six copies give input-2 bandwidths 629.565, 806.398 and 890.093 MHz into 100 fF.
+Their K100=-9.99447 and diagonal ratio 1.01907 are unchanged to the reported precision.
+Supply current scales from 0.9873 to 1.9746 and 2.9619 mA, and input-2 capacitance scales from 93.7376 to 187.475 and 281.213 fF.
+The six-copy point exceeds matched IHP input-2 bandwidth at this operating point.
+This gain costs three times the original two-copy current and gate loading.
+
+An intermediate five-copy diagnostic passed the nominal scalar gain, shape and fixed-load bandwidth screens, but exposed an inherited replica-sizing restriction.
+At pair_scale=1, the exact one-eighth replica needs 12*power_m/8 fingers.
+Five copies require 7.5 fingers, while the template truncates nf to seven and keeps diffusion expressions based on the original finger width.
+The resulting model geometry is not the intended exact-copy layout geometry.
+Those five-copy results remain diagnostic, not an accepted sizing choice.
+The six-copy candidate uses nine replica fingers and retains the intended unit finger dimensions.
+The candidate generator now rejects a nonintegral replica finger count.
+A different five-copy replica geometry could be designed explicitly, but is not qualified here.
+Evidence: evidence/sky_input2_parallel.csv and evidence/sky_input2_candidate_nominal5_audit.json.
+
+### Six-copy nominal and receiver-loaded results
+
+The six-copy narrow-load candidate has one measured code per nominal MOS corner passing the provisional one-percent gain window, diagonal shape and both matched IHP fixed-load bandwidths.
+The gain codes remain ff=12, fs=29, sf=10, ss=15 and tt=6.
+All ten bare-core AC curves are independently anchored.
+
+| Raw SKY130 corner | Input-2 bandwidth | Input-2 bandwidth / IHP | Supply current |
+|---|---:|---:|---:|
+| ff | 1316.960 MHz | 1.50853 | 3.064 mA |
+| fs | 890.093 MHz | 1.06100 | 2.962 mA |
+| sf | 1396.520 MHz | 1.63131 | 2.917 mA |
+| ss | 877.821 MHz | 1.08731 | 3.256 mA |
+| tt | 1265.360 MHz | 1.51331 | 3.596 mA |
+
+The full receiver-loaded comparison uses raw SKY130 fs against raw IHP sf, with each design's nominal gain code and an identical downstream receiver.
+All twenty-four SKY130/IHP AC curves reproduce their scalar anchors.
+For six copies, the input-2 bandwidth ratios to IHP are 0.95277 and 1.02150 when driving receiver input 1 with 25 and 50 fF wire capacitance, and 1.00648 and 1.08698 when driving receiver input 2.
+Thus the six-copy signal-tracking replica still misses one loaded case despite passing the fixed-load comparison.
+Evidence: evidence/sky_input2_candidate_nominal6.csv and evidence/input2_fanout6_summary.json.
+
+![Fixed-load and receiver-loaded input-2 comparison](figures/input2_improvement.png)
+
+### Common-mode-biased replica control
+
+A further experiment connects both replica gates to a new explicit replica_cm port, driven by the existing ideal common-mode reference in the bench.
+This removes their signal-input loading without changing transistor dimensions, reference currents, resistors or gain codes.
+The signal-tracking control reproduces both earlier bare-core and receiver-loaded measurements.
+All eight curves from the two-mode comparison reproduce their scalar anchors.
+
+At fs, 1.5 V, 27 C, gain code 29 and six copies, input-1 capacitance falls from 483.150 to 392.054 fF.
+Receiver-loaded input-2 bandwidth rises from 481.508 to 535.746 MHz for receiver input 1 and 25 fF wire per output.
+The latter is 1.06009 times matched IHP.
+K100 changes only from -9.99447 to -9.99449, and the diagonal ratio remains 1.01907.
+Current remains about 2.962 mA and bare input-2 bandwidth stays about 890.09 MHz.
+This closes the previously failing loaded case at the tested nominal point.
+The reference driver is ideal, so input common-mode variation, reference impedance and noise, startup, feedback stability, full surfaces and PVT remain qualification requirements.
+The five-MOS-corner extension is running.
+Evidence: evidence/sky_input2_quiet_replica.csv.

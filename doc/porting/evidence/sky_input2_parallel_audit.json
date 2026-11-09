@@ -1,0 +1,18 @@
+{
+  "cases": 3,
+  "scalar_values": 87,
+  "waveform_files": 3,
+  "status": "valid",
+  "specification_status": "pass",
+  "failed_limits": [],
+  "anchored_curves": 6,
+  "unchanged_control": {
+    "k100": -9.99447,
+    "compr": 1.01907,
+    "idd": 0.000987304,
+    "bw_in1_mhz": 448.654,
+    "bw_in2_mhz": 629.565,
+    "cin2_per_pin_ff": 93.7376
+  },
+  "scope": "Fixed-code sensitivity only, not gain-calibrated acceptance"
+}
