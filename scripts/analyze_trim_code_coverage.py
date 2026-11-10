@@ -11,7 +11,7 @@ from check_chipify_results import audit
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("--grid", choices=["nominal", "pvt"], default="nominal")
-parser.add_argument("--candidate", choices=["tg2", "wide"], default="tg2")
+parser.add_argument("--candidate", choices=["tg2", "wide", "quiet"], default="tg2")
 parser.add_argument("--gain-tolerance-percent", type=float, required=True,
                     help="Explicit screening tolerance, not an inferred specification")
 args = parser.parse_args()
@@ -20,8 +20,10 @@ if not 0 <= args.gain_tolerance_percent < 100:
 if args.candidate == "wide" and args.grid != "nominal":
     parser.error("The wider network has no exhaustive PVT code sweep yet")
 project = ROOT / "verification/porting" / (
-    "sky_trim_tg2" if args.candidate == "tg2" else "sky_replica_trim_range")
-folder = "codes_" + args.grid if args.candidate == "tg2" else "steps"
+    {"tg2": "sky_trim_tg2", "wide": "sky_replica_trim_range", "quiet": "sky_input2_quiet_pvt"}[args.candidate])
+if args.candidate == "quiet" and args.grid != "pvt":
+    parser.error("The quiet project provides only the exhaustive PVT grid")
+folder = "steps" if args.candidate == "wide" else "codes_" + args.grid
 frames, audits = [], {}
 for sheet in sorted((project / "datasheets" / folder).glob("*.yaml")):
     out = project / "out" / sheet.stem
@@ -29,8 +31,12 @@ for sheet in sorted((project / "datasheets" / folder).glob("*.yaml")):
     frame = pd.read_csv(out / "simulation_results.csv")
     import yaml
     parameters = yaml.safe_load(sheet.read_text())["parameters"]
-    for name in ["corner_mos", "temp", "vdd", "gcode", "ibias", "rscale"]:
-        if set(frame[name]) != set(parameters[name]):
+    for name, declared in parameters.items():
+        if declared == "range(1)":
+            declared = [0]
+        if not isinstance(declared, list):
+            raise ValueError(f"Unsupported parameter expression: {name}={declared}")
+        if set(frame[name]) != set(declared):
             raise ValueError(f"Unexpected {name} values in {sheet.name}")
     frames.append(frame)
 if len(frames) != 5:

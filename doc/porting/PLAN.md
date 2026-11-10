@@ -147,6 +147,8 @@ SS and TT completed on release 0.2.3 after an unchanged-control replay.
 
 ## Next qualification, 2026-11-10
 
-Check both CMFB and local replica-bias loops at ff=12, fs=29, sf=10, ss=16 and tt=6 on the six-copy quiet replica.
+Both CMFB and local replica-bias loops now pass the nominal small-signal screens at ff=12, fs=29, sf=10, ss=16 and tt=6 on the six-copy quiet replica, with ten independently anchored curves.
 Then qualify real reference impedance, full surfaces, noise and per-PVT code coverage before promoting the schematic or generating multiplier layout.
 The one-percent gain tolerance remains provisional.
+
+The new quiet-replica 1440-case DC PVT code search is running in its own Chipify project.

@@ -955,7 +955,25 @@ Coverage is ff=7/9, fs=4/9, sf=8/9, ss=8/9 and tt=7/9.
 The four points with separate gain and shape feasibility but no intersection are ff at 80 C and 1.5 or 1.65 V, and fs at 1.65 V and 0 or 27 C.
 Gain stays below the window at all three fs 80 C supplies and ss at 80 C, 1.45 V.
 Gain stays above the window at sf at 0 C, 1.45 V and tt at 0 C, 1.45 or 1.5 V.
-No recorded trim-gate rail violation occurs.
+No recorded tail-gate rail violation occurs.
 This exhausts gain codes at the retained bias settings, not alternative bias calibration.
 It is a DC screen of the older wide-load, signal-tracking circuit, not full-PVT qualification of the new six-copy quiet replica.
 Evidence: evidence/sky_tg2_codes_pvt.csv and evidence/sky_tg2_codes_pvt_summary.json.
+
+### Quiet-replica nominal loop qualification
+
+Both feedback loops pass the provisional small-signal screens at the same selected nominal codes.
+The test uses zero differential inputs, 100 fF per output and an ideal reference, with the other loop closed.
+
+| Raw SKY130 corner | Code | CMFB phase margin | CMFB gain margin | Bias phase margin | Bias gain margin |
+|---|---:|---:|---:|---:|---:|
+| ff | 12 | 97.5399 deg | 21.2031 dB | 87.7247 deg | 33.9428 dB |
+| fs | 29 | 85.8144 deg | 18.6503 dB | 88.9020 deg | 33.9164 dB |
+| sf | 10 | 103.9610 deg | 18.8256 dB | 87.2810 deg | 35.1877 dB |
+| ss | 16 | 73.2453 deg | 21.1788 dB | 86.7630 deg | 34.0076 dB |
+| tt | 6 | 94.6577 deg | 18.1803 dB | 85.9781 deg | 33.0497 dB |
+
+All ten captured loop curves independently reproduce six scalar anchors and have exactly one unity crossing.
+The nominal small-signal result does not establish startup, large-signal stability, receiver-loaded stability or behavior with a real reference driver.
+The separate 1440-case quiet-replica PVT gain-code search is running.
+Evidence: evidence/sky_input2_quiet_loops.csv and evidence/sky_input2_quiet_loops_audit.json.

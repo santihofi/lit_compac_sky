@@ -67,3 +67,18 @@ Chipify 1960c81 accepts a two-label resistor-corner sweep of an unchanged resist
 Run python3 scripts/probe_chipify_unused_parameter.py with an output path to reproduce that control.
 Inspect the selected model entry points as well as the result labels.
 The separate [passive-corner control](passive-corners.md) verifies the installed SKY130 model responses.
+
+## Chipify 0.2.3 run controls and environment changes
+
+Release e318888 provides --cores N and --out DIR for per-run worker and output-directory selection.
+Use the SKY130 ngspice wrapper with these options so simulator initialization stays the same in scratch directories.
+The --resume option continues a compatible interrupted run from its saved journal.
+An interrupted older build without that journal must be rerun, while completed datasheets can be retained separately.
+The --strict option classifies individual row failures in the exit status.
+When unused calibration codes may fail, evaluate the existence of a jointly passing code per operating condition separately from row yield.
+
+Keep the executing CLI path and installed package stable during a multiprocessing run.
+In a measured update from an older installation, removing its CLI executable left replacement workers repeatedly failing to reopen that path.
+The completed datasheets survived, but the active datasheet required recovery.
+After an environment change, check the installed path and source-file hashes and replay an unchanged control before combining new measurements with earlier results.
+The released 0.2.3 installation reproduced ten analog scalar values and two independently anchored AC curves in that control.

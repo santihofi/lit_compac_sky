@@ -1,0 +1,47 @@
+{
+  "loops_ff.yaml": {
+    "cases": 1,
+    "scalar_values": 16,
+    "waveform_files": 2,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 2
+  },
+  "loops_fs.yaml": {
+    "cases": 1,
+    "scalar_values": 16,
+    "waveform_files": 2,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 2
+  },
+  "loops_sf.yaml": {
+    "cases": 1,
+    "scalar_values": 16,
+    "waveform_files": 2,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 2
+  },
+  "loops_ss.yaml": {
+    "cases": 1,
+    "scalar_values": 16,
+    "waveform_files": 2,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 2
+  },
+  "loops_tt.yaml": {
+    "cases": 1,
+    "scalar_values": 16,
+    "waveform_files": 2,
+    "status": "valid",
+    "specification_status": "pass",
+    "failed_limits": [],
+    "anchored_loop_curves": 2
+  }
+}

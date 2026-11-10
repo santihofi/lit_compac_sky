@@ -1,0 +1,107 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - sf
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 10
+  ibias:
+  - 2.625e-05
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+  mirror_scale:
+  - 4
+  mirror_l:
+  - 0.3
+  pair_scale:
+  - 1
+  pair_l:
+  - 0.35
+  quad_scale:
+  - 1
+  quad_l:
+  - 0.15
+  rscale:
+  - 1.7
+  power_m:
+  - 6
+  quad_model:
+  - nfet_01v8_lvt
+  body_tied:
+  - 0
+  native_nf:
+  - 1
+  rquad:
+  - 120
+  tail_width:
+  - 4
+  rpair:
+  - 120
+  pload_l:
+  - 0.35
+  tail_length_scale:
+  - 1
+  pair_body_tied:
+  - 0
+  rbase_scale:
+  - 1
+  rtrim_scale:
+  - 1
+  load_family:
+  - 1p41
+  replica_tracks_signal:
+  - 0
+tests:
+  cmfb:
+    source: netlist
+    engine: ngspice
+    ac_signals:
+    - ac2.tloop
+    cmfb_pm:
+      min: 45
+      max: 180
+    cmfb_gm_db:
+      min: 10
+    cmfb_ncross:
+      min: 1
+      max: 1
+    cmfb_fu: {}
+    cmfb_f180: {}
+    cmfb_t0_db: {}
+    cmfb_vbias_dc: {}
+    cmfb_voutcm_dc: {}
+  bias:
+    source: netlist
+    engine: ngspice
+    ac_signals:
+    - ac2.tloop
+    bias_pm:
+      min: 45
+      max: 180
+    bias_gm_db:
+      min: 10
+    bias_ncross:
+      min: 1
+      max: 1
+    bias_fu: {}
+    bias_f180: {}
+    bias_t0_db: {}
+    bias_voutcm_dc: {}
+    bias_bias_gate_v: {}

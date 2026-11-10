@@ -200,3 +200,18 @@ To repeat only the unfinished corners, use chipify-cli -c codes_pvt/tg2_pvt_ss.y
 Do not use --resume for the old build's interrupted work because it did not write the new run journal.
 The released CLI supports --cores and --out directly, so worker and result-directory changes no longer require editing project settings.
 Keep completed corner provenance separate from release-replay evidence.
+
+## Quiet-replica selected codes and qualification
+
+Run python scripts/analyze_input2_quiet_corners.py and python scripts/analyze_input2_quiet_codes.py to reconstruct the nominal joint selection from completed batches.
+The latter replaces the selected-code evidence only when an SS code is feasible.
+
+Run python scripts/prepare_input2_quiet_loops.py, then run the wrapper with chipify-cli --batch datasheets/nominal --cores 3 --json from verification/porting/sky_input2_quiet_loops.
+After completion run python scripts/analyze_input2_quiet_loops.py from the repository root.
+The loop auditor requires all five selected parameter tuples and reconstructs the captured return-ratio margins.
+
+Run python scripts/prepare_input2_quiet_pvt.py to create a separate exhaustive DC project.
+From verification/porting/sky_input2_quiet_pvt run the wrapper with chipify-cli --batch datasheets/codes_pvt --cores 4 --json.
+After all five sheets complete, run python scripts/analyze_trim_code_coverage.py --candidate quiet --grid pvt --gain-tolerance-percent 1 from the repository root.
+This is 1440 gain-code cases at retained bias currents, with nominal passives and ideal references.
+Bandwidth, noise and stability must subsequently be checked at the same feasible settings.
