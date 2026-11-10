@@ -1,0 +1,897 @@
+{
+  "scope": "DC screening only, nominal passive models, ideal current and gate controls",
+  "acceptance": "For every PVT point at least one single code must satisfy all applicable specs",
+  "gain_tolerance_percent": 1.0,
+  "gain_tolerance_status": "explicit sensitivity screen, not approved specification",
+  "missing": [
+    "bandwidth",
+    "noise",
+    "loop stability",
+    "passive corners",
+    "physical bias circuitry"
+  ],
+  "audits": {
+    "tg2_pvt_ff.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000091: compr=1.03334 above 1.03242",
+        "Case 000092: compr=1.03464 above 1.03242",
+        "Case 000093: compr=1.03593 above 1.03242",
+        "Case 000094: compr=1.03721 above 1.03242",
+        "Case 000095: compr=1.03848 above 1.03242",
+        "Case 000159: compr=1.03261 above 1.03242",
+        "Case 000182: compr=1.0327 above 1.03242",
+        "Case 000183: compr=1.03392 above 1.03242",
+        "Case 000188: compr=1.0399 above 1.03242",
+        "Case 000189: compr=1.04107 above 1.03242",
+        "Case 000190: compr=1.04223 above 1.03242",
+        "Case 000191: compr=1.04338 above 1.03242",
+        "Case 000184: compr=1.03514 above 1.03242",
+        "Case 000185: compr=1.03634 above 1.03242",
+        "Case 000186: compr=1.03753 above 1.03242",
+        "Case 000187: compr=1.03872 above 1.03242",
+        "Case 000220: compr=1.0325 above 1.03242",
+        "Case 000221: compr=1.03325 above 1.03242",
+        "Case 000222: compr=1.034 above 1.03242",
+        "Case 000223: compr=1.03474 above 1.03242",
+        "Case 000252: compr=1.03564 above 1.03242",
+        "Case 000253: compr=1.03645 above 1.03242",
+        "Case 000254: compr=1.03726 above 1.03242",
+        "Case 000255: compr=1.03806 above 1.03242",
+        "Case 000249: compr=1.03318 above 1.03242",
+        "Case 000250: compr=1.034 above 1.03242",
+        "Case 000251: compr=1.03482 above 1.03242",
+        "Case 000280: compr=1.04138 above 1.03242",
+        "Case 000281: compr=1.04236 above 1.03242",
+        "Case 000282: compr=1.04332 above 1.03242",
+        "Case 000283: compr=1.04428 above 1.03242",
+        "Case 000272: compr=1.03331 above 1.03242",
+        "Case 000273: compr=1.03435 above 1.03242",
+        "Case 000274: compr=1.03538 above 1.03242",
+        "Case 000275: compr=1.03639 above 1.03242",
+        "Case 000276: compr=1.03741 above 1.03242",
+        "Case 000277: compr=1.03841 above 1.03242",
+        "Case 000278: compr=1.03941 above 1.03242",
+        "Case 000279: compr=1.0404 above 1.03242",
+        "Case 000284: compr=1.04524 above 1.03242",
+        "Case 000285: compr=1.04618 above 1.03242",
+        "Case 000286: compr=1.04712 above 1.03242",
+        "Case 000287: compr=1.04805 above 1.03242"
+      ]
+    },
+    "tg2_pvt_fs.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000080: compr=1.0325 above 1.03242",
+        "Case 000081: compr=1.03309 above 1.03242",
+        "Case 000082: compr=1.03368 above 1.03242",
+        "Case 000083: compr=1.03427 above 1.03242",
+        "Case 000084: compr=1.03486 above 1.03242",
+        "Case 000085: compr=1.03544 above 1.03242",
+        "Case 000086: compr=1.03603 above 1.03242",
+        "Case 000087: compr=1.0366 above 1.03242",
+        "Case 000092: compr=1.03949 above 1.03242",
+        "Case 000093: compr=1.04005 above 1.03242",
+        "Case 000094: compr=1.04062 above 1.03242",
+        "Case 000095: compr=1.04118 above 1.03242",
+        "Case 000088: compr=1.0372 above 1.03242",
+        "Case 000089: compr=1.03778 above 1.03242",
+        "Case 000090: compr=1.03835 above 1.03242",
+        "Case 000091: compr=1.03892 above 1.03242",
+        "Case 000183: compr=1.03266 above 1.03242",
+        "Case 000184: compr=1.03321 above 1.03242",
+        "Case 000185: compr=1.03374 above 1.03242",
+        "Case 000186: compr=1.03426 above 1.03242",
+        "Case 000187: compr=1.03479 above 1.03242",
+        "Case 000188: compr=1.03532 above 1.03242",
+        "Case 000189: compr=1.03584 above 1.03242",
+        "Case 000190: compr=1.03636 above 1.03242",
+        "Case 000191: compr=1.03687 above 1.03242",
+        "Case 000277: compr=1.03284 above 1.03242",
+        "Case 000278: compr=1.03329 above 1.03242",
+        "Case 000279: compr=1.03374 above 1.03242",
+        "Case 000284: compr=1.03596 above 1.03242",
+        "Case 000285: compr=1.03639 above 1.03242",
+        "Case 000286: compr=1.03682 above 1.03242",
+        "Case 000287: compr=1.03726 above 1.03242",
+        "Case 000280: compr=1.0342 above 1.03242",
+        "Case 000281: compr=1.03464 above 1.03242",
+        "Case 000282: compr=1.03508 above 1.03242",
+        "Case 000283: compr=1.03552 above 1.03242"
+      ]
+    },
+    "tg2_pvt_sf.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000020: compr=1.04638 above 1.03242",
+        "Case 000021: compr=1.04713 above 1.03242",
+        "Case 000022: compr=1.04788 above 1.03242",
+        "Case 000023: compr=1.04862 above 1.03242",
+        "Case 000012: compr=1.03922 above 1.03242",
+        "Case 000013: compr=1.04 above 1.03242",
+        "Case 000014: compr=1.04076 above 1.03242",
+        "Case 000015: compr=1.04153 above 1.03242",
+        "Case 000008: compr=1.03607 above 1.03242",
+        "Case 000009: compr=1.03686 above 1.03242",
+        "Case 000010: compr=1.03764 above 1.03242",
+        "Case 000011: compr=1.03842 above 1.03242",
+        "Case 000024: compr=1.04954 above 1.03242",
+        "Case 000025: compr=1.05028 above 1.03242",
+        "Case 000026: compr=1.05101 above 1.03242",
+        "Case 000027: compr=1.05175 above 1.03242",
+        "Case 000016: compr=1.04331 above 1.03242",
+        "Case 000017: compr=1.04408 above 1.03242",
+        "Case 000018: compr=1.04484 above 1.03242",
+        "Case 000019: compr=1.0456 above 1.03242",
+        "Case 000004: compr=1.03272 above 1.03242",
+        "Case 000005: compr=1.03352 above 1.03242",
+        "Case 000006: compr=1.03432 above 1.03242",
+        "Case 000007: compr=1.03511 above 1.03242",
+        "Case 000028: compr=1.05251 above 1.03242",
+        "Case 000029: compr=1.05324 above 1.03242",
+        "Case 000030: compr=1.05396 above 1.03242",
+        "Case 000031: compr=1.05468 above 1.03242",
+        "Case 000052: compr=1.03743 above 1.03242",
+        "Case 000053: compr=1.03838 above 1.03242",
+        "Case 000054: compr=1.03933 above 1.03242",
+        "Case 000055: compr=1.04028 above 1.03242",
+        "Case 000048: compr=1.03353 above 1.03242",
+        "Case 000049: compr=1.03451 above 1.03242",
+        "Case 000050: compr=1.03548 above 1.03242",
+        "Case 000051: compr=1.03645 above 1.03242",
+        "Case 000056: compr=1.0413 above 1.03242",
+        "Case 000057: compr=1.04223 above 1.03242",
+        "Case 000058: compr=1.04316 above 1.03242",
+        "Case 000059: compr=1.04409 above 1.03242",
+        "Case 000060: compr=1.04503 above 1.03242",
+        "Case 000061: compr=1.04594 above 1.03242",
+        "Case 000062: compr=1.04686 above 1.03242",
+        "Case 000063: compr=1.04776 above 1.03242",
+        "Case 000092: compr=1.03526 above 1.03242",
+        "Case 000093: compr=1.03655 above 1.03242",
+        "Case 000094: compr=1.03783 above 1.03242",
+        "Case 000095: compr=1.03911 above 1.03242",
+        "Case 000090: compr=1.03264 above 1.03242",
+        "Case 000091: compr=1.03396 above 1.03242",
+        "Case 000110: compr=1.03255 above 1.03242",
+        "Case 000111: compr=1.03333 above 1.03242",
+        "Case 000112: compr=1.03481 above 1.03242",
+        "Case 000113: compr=1.03559 above 1.03242",
+        "Case 000114: compr=1.03636 above 1.03242",
+        "Case 000115: compr=1.03712 above 1.03242",
+        "Case 000116: compr=1.03791 above 1.03242",
+        "Case 000117: compr=1.03866 above 1.03242",
+        "Case 000118: compr=1.03942 above 1.03242",
+        "Case 000119: compr=1.04017 above 1.03242",
+        "Case 000124: compr=1.04403 above 1.03242",
+        "Case 000125: compr=1.04476 above 1.03242",
+        "Case 000126: compr=1.04549 above 1.03242",
+        "Case 000127: compr=1.04621 above 1.03242",
+        "Case 000120: compr=1.04105 above 1.03242",
+        "Case 000121: compr=1.04179 above 1.03242",
+        "Case 000122: compr=1.04253 above 1.03242",
+        "Case 000123: compr=1.04327 above 1.03242",
+        "Case 000156: compr=1.03816 above 1.03242",
+        "Case 000157: compr=1.03903 above 1.03242",
+        "Case 000158: compr=1.0399 above 1.03242",
+        "Case 000159: compr=1.04076 above 1.03242",
+        "Case 000150: compr=1.03276 above 1.03242",
+        "Case 000151: compr=1.03366 above 1.03242",
+        "Case 000152: compr=1.03462 above 1.03242",
+        "Case 000153: compr=1.03551 above 1.03242",
+        "Case 000154: compr=1.0364 above 1.03242",
+        "Case 000155: compr=1.03728 above 1.03242",
+        "Case 000188: compr=1.03266 above 1.03242",
+        "Case 000189: compr=1.03383 above 1.03242",
+        "Case 000190: compr=1.03498 above 1.03242",
+        "Case 000191: compr=1.03613 above 1.03242"
+      ]
+    },
+    "tg2_pvt_ss.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000012: compr=1.03245 above 1.03242",
+        "Case 000013: compr=1.03272 above 1.03242",
+        "Case 000014: compr=1.033 above 1.03242",
+        "Case 000015: compr=1.03328 above 1.03242",
+        "Case 000016: compr=1.03516 above 1.03242",
+        "Case 000017: compr=1.03544 above 1.03242",
+        "Case 000018: compr=1.03572 above 1.03242",
+        "Case 000019: compr=1.036 above 1.03242",
+        "Case 000020: compr=1.03633 above 1.03242",
+        "Case 000021: compr=1.03661 above 1.03242",
+        "Case 000022: compr=1.03689 above 1.03242",
+        "Case 000023: compr=1.03717 above 1.03242",
+        "Case 000024: compr=1.0377 above 1.03242",
+        "Case 000025: compr=1.03798 above 1.03242",
+        "Case 000026: compr=1.03826 above 1.03242",
+        "Case 000027: compr=1.03854 above 1.03242",
+        "Case 000028: compr=1.03886 above 1.03242",
+        "Case 000029: compr=1.03914 above 1.03242",
+        "Case 000030: compr=1.03942 above 1.03242",
+        "Case 000031: compr=1.0397 above 1.03242",
+        "Case 000060: compr=1.03276 above 1.03242",
+        "Case 000061: compr=1.03311 above 1.03242",
+        "Case 000062: compr=1.03346 above 1.03242",
+        "Case 000063: compr=1.03381 above 1.03242"
+      ]
+    },
+    "tg2_pvt_tt.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000019: compr=1.03291 above 1.03242",
+        "Case 000020: compr=1.03353 above 1.03242",
+        "Case 000021: compr=1.03411 above 1.03242",
+        "Case 000022: compr=1.03469 above 1.03242",
+        "Case 000023: compr=1.03526 above 1.03242",
+        "Case 000024: compr=1.03602 above 1.03242",
+        "Case 000025: compr=1.0366 above 1.03242",
+        "Case 000026: compr=1.03717 above 1.03242",
+        "Case 000027: compr=1.03774 above 1.03242",
+        "Case 000028: compr=1.03834 above 1.03242",
+        "Case 000029: compr=1.03891 above 1.03242",
+        "Case 000030: compr=1.03947 above 1.03242",
+        "Case 000031: compr=1.04004 above 1.03242",
+        "Case 000055: compr=1.03304 above 1.03242",
+        "Case 000056: compr=1.03383 above 1.03242",
+        "Case 000057: compr=1.0345 above 1.03242",
+        "Case 000058: compr=1.03516 above 1.03242",
+        "Case 000059: compr=1.03583 above 1.03242",
+        "Case 000060: compr=1.0365 above 1.03242",
+        "Case 000061: compr=1.03716 above 1.03242",
+        "Case 000062: compr=1.03781 above 1.03242",
+        "Case 000063: compr=1.03846 above 1.03242",
+        "Case 000089: compr=1.03268 above 1.03242",
+        "Case 000090: compr=1.03358 above 1.03242",
+        "Case 000091: compr=1.03448 above 1.03242",
+        "Case 000092: compr=1.03537 above 1.03242",
+        "Case 000093: compr=1.03625 above 1.03242",
+        "Case 000094: compr=1.03713 above 1.03242",
+        "Case 000095: compr=1.03801 above 1.03242",
+        "Case 000124: compr=1.03249 above 1.03242",
+        "Case 000125: compr=1.03304 above 1.03242",
+        "Case 000126: compr=1.03359 above 1.03242",
+        "Case 000127: compr=1.03414 above 1.03242",
+        "Case 000158: compr=1.03293 above 1.03242",
+        "Case 000159: compr=1.03354 above 1.03242",
+        "Case 000188: compr=1.03278 above 1.03242",
+        "Case 000189: compr=1.03357 above 1.03242",
+        "Case 000190: compr=1.03437 above 1.03242",
+        "Case 000191: compr=1.03516 above 1.03242",
+        "Case 000286: compr=1.03298 above 1.03242",
+        "Case 000287: compr=1.03362 above 1.03242"
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        2,
+        3
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 3,
+      "nearest_gain_error_percent": 0.23800000000000487,
+      "nearest_gain_shape": 1.00062,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        4,
+        5
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 4,
+      "nearest_gain_error_percent": -0.3715000000000024,
+      "nearest_gain_shape": 1.00001,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 7,
+      "nearest_gain_error_percent": 0.15899999999999803,
+      "nearest_gain_shape": 1.00526,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 11,
+      "nearest_gain_error_percent": -0.3398000000000012,
+      "nearest_gain_shape": 1.01108,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": 0.17799999999998928,
+      "nearest_gain_shape": 1.01306,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        12,
+        13
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": -0.3027000000000002,
+      "nearest_gain_shape": 1.01998,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        27
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 28,
+      "nearest_gain_error_percent": -0.016099999999996673,
+      "nearest_gain_shape": 1.0325,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 27,
+      "nearest_gain_error_percent": 0.15600000000000058,
+      "nearest_gain_shape": 1.03482,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 24,
+      "nearest_gain_error_percent": -0.4157999999999995,
+      "nearest_gain_shape": 1.04138,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        23,
+        24,
+        25
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 24,
+      "nearest_gain_error_percent": -0.05969999999999587,
+      "nearest_gain_shape": 1.01796,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        23,
+        24
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 24,
+      "nearest_gain_error_percent": 0.378999999999996,
+      "nearest_gain_shape": 1.02115,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 23,
+      "nearest_gain_error_percent": -0.18319999999999448,
+      "nearest_gain_shape": 1.0366,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        29,
+        30,
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 30,
+      "nearest_gain_error_percent": -0.004700000000001925,
+      "nearest_gain_shape": 1.01486,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        28,
+        29,
+        30
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 29,
+      "nearest_gain_error_percent": -0.05219999999999114,
+      "nearest_gain_shape": 1.0191,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 28,
+      "nearest_gain_error_percent": 0.2610000000000001,
+      "nearest_gain_shape": 1.03532,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -8.8144,
+      "nearest_gain_shape": 1.02056,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -8.0804,
+      "nearest_gain_shape": 1.0246,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -6.72330000000001,
+      "nearest_gain_shape": 1.03726,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 5.0939999999999985,
+      "nearest_gain_shape": 1.02945,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        0
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 0.822999999999996,
+      "nearest_gain_shape": 1.01666,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 7,
+      "nearest_gain_error_percent": 0.22299999999999542,
+      "nearest_gain_shape": 1.00592,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        6,
+        7,
+        8
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 7,
+      "nearest_gain_error_percent": 0.059000000000009045,
+      "nearest_gain_shape": 1.02683,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        9,
+        10,
+        11
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 10,
+      "nearest_gain_error_percent": -0.006900000000009676,
+      "nearest_gain_shape": 1.02123,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        13,
+        14
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 13,
+      "nearest_gain_error_percent": -0.39170000000000593,
+      "nearest_gain_shape": 1.01419,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        30,
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -0.34199999999999786,
+      "nearest_gain_shape": 1.0305,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        29,
+        30,
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 30,
+      "nearest_gain_error_percent": -0.2102999999999966,
+      "nearest_gain_shape": 1.02816,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        27,
+        28,
+        29
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 28,
+      "nearest_gain_error_percent": 0.07500000000000284,
+      "nearest_gain_shape": 1.0259,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        0,
+        1,
+        2
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 1,
+      "nearest_gain_error_percent": 0.15300000000000313,
+      "nearest_gain_shape": 1.02904,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        4,
+        5,
+        6
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 5,
+      "nearest_gain_error_percent": 0.10400000000001519,
+      "nearest_gain_shape": 1.02292,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": 0.32600000000000406,
+      "nearest_gain_shape": 1.0162,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 14,
+      "nearest_gain_error_percent": -0.19259999999998723,
+      "nearest_gain_shape": 1.01874,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        14,
+        15,
+        16
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 15,
+      "nearest_gain_error_percent": -0.08969999999999256,
+      "nearest_gain_shape": 1.01419,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        17,
+        18
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 17,
+      "nearest_gain_error_percent": -0.13520000000000199,
+      "nearest_gain_shape": 1.01008,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -1.783199999999996,
+      "nearest_gain_shape": 1.00764,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -0.7971000000000061,
+      "nearest_gain_shape": 1.0064,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        28,
+        29,
+        30
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 29,
+      "nearest_gain_error_percent": -0.1276000000000055,
+      "nearest_gain_shape": 1.00652,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 5.105000000000004,
+      "nearest_gain_shape": 1.02006,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 2.654000000000001,
+      "nearest_gain_shape": 1.01589,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        3,
+        4
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 3,
+      "nearest_gain_error_percent": -0.5747000000000058,
+      "nearest_gain_shape": 1.01139,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        4,
+        5
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 5,
+      "nearest_gain_error_percent": 0.3470000000000084,
+      "nearest_gain_shape": 1.01812,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        5,
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 6,
+      "nearest_gain_error_percent": -0.135900000000011,
+      "nearest_gain_shape": 1.01655,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        9,
+        10
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 9,
+      "nearest_gain_error_percent": -0.23849999999999705,
+      "nearest_gain_shape": 1.01661,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        23,
+        24,
+        25
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 24,
+      "nearest_gain_error_percent": 0.21599999999999397,
+      "nearest_gain_shape": 1.02257,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        22,
+        23,
+        24
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 23,
+      "nearest_gain_error_percent": 0.16300000000000203,
+      "nearest_gain_shape": 1.02288,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        21,
+        22
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 21,
+      "nearest_gain_error_percent": -0.4039000000000015,
+      "nearest_gain_shape": 1.02702,
+      "full_spec_coverage": "unverified"
+    }
+  ]
+}

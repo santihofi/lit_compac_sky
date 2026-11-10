@@ -1,0 +1,18 @@
+{
+  "cases": 3,
+  "scalar_values": 111,
+  "waveform_files": 6,
+  "status": "valid",
+  "specification_status": "pass",
+  "failed_limits": [],
+  "anchored_curves": 12,
+  "unchanged_code15_control": "pass",
+  "feasible_ss_codes": [
+    16
+  ],
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "selected_ss_code": 16,
+  "joint_nominal_passes": 5
+}

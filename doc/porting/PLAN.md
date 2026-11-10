@@ -130,7 +130,7 @@ All fourteen such codes have valid and independently anchored AC measurements.
 Only sf code 9 matches both IHP bandwidths, with just 0.055 percent input-2 margin.
 The other four corners need a bias or circuit change to meet the matched-bandwidth screen at this tolerance.
 These results do not exhaust bias-code choices.
-A 1440-case gain-code sweep over the 45 MOS, voltage and temperature points is running with nominal passive models.
+The completed 1440-case gain-code sweep covers 34 of 45 points under the provisional DC screen at retained bias settings, with nominal passive models.
 Retain gain, shape, speed and loop results keyed to the same complete calibration setting before declaring corner coverage.
 
 ## Input-2 candidate progress, 2026-11-09
@@ -140,7 +140,13 @@ Six exact parallel copies then pass gain, shape and both fixed-load bandwidth sc
 Five-copy results are diagnostic because the inherited replica nf expression truncates a fractional finger count.
 Actual receiver loading leaves one six-copy slow-corner shortfall.
 Biasing the replica gates from an explicit common-mode reference closes that loaded case without a material DC change at the measured point.
-The five-corner common-mode-replica extension is running.
+The five-corner common-mode-replica extension passes the nominal joint gain, shape, bare and receiver-loaded bandwidth screen after selecting SS code 16.
 No full-PVT, noise, loop or layout acceptance is claimed.
 The older two-copy gain-code PVT sweep completed ff, fs and sf before the Chipify upgrade interrupted ss.
-SS and TT were restarted on release 0.2.3 after an unchanged-control replay.
+SS and TT completed on release 0.2.3 after an unchanged-control replay.
+
+## Next qualification, 2026-11-10
+
+Check both CMFB and local replica-bias loops at ff=12, fs=29, sf=10, ss=16 and tt=6 on the six-copy quiet replica.
+Then qualify real reference impedance, full surfaces, noise and per-PVT code coverage before promoting the schematic or generating multiplier layout.
+The one-percent gain tolerance remains provisional.

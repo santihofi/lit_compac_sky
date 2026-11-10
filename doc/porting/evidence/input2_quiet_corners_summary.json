@@ -1,0 +1,104 @@
+{
+  "audits": {
+    "sky": {
+      "quiet_ff": {
+        "cases": 1,
+        "scalar_values": 37,
+        "waveform_files": 2,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_fs": {
+        "cases": 1,
+        "scalar_values": 37,
+        "waveform_files": 2,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_sf": {
+        "cases": 1,
+        "scalar_values": 37,
+        "waveform_files": 2,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_ss": {
+        "cases": 1,
+        "scalar_values": 37,
+        "waveform_files": 2,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_tt": {
+        "cases": 1,
+        "scalar_values": 37,
+        "waveform_files": 2,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      }
+    },
+    "ihp": {
+      "quiet_reference_ff": {
+        "cases": 1,
+        "scalar_values": 9,
+        "waveform_files": 1,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_reference_fs": {
+        "cases": 1,
+        "scalar_values": 9,
+        "waveform_files": 1,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_reference_sf": {
+        "cases": 1,
+        "scalar_values": 9,
+        "waveform_files": 1,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_reference_ss": {
+        "cases": 1,
+        "scalar_values": 9,
+        "waveform_files": 1,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      },
+      "quiet_reference_tt": {
+        "cases": 1,
+        "scalar_values": 9,
+        "waveform_files": 1,
+        "status": "valid",
+        "specification_status": "pass",
+        "failed_limits": []
+      }
+    }
+  },
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "joint_nominal_passes": 4,
+  "nominal_points": 5,
+  "anchored_curves": 30,
+  "loaded_scope": "Identical receiver input 1, 25 fF wire per output",
+  "full_spec_coverage": "unverified",
+  "remaining": [
+    "voltage and temperature",
+    "passive corners",
+    "full transfer surfaces",
+    "noise",
+    "loop stability",
+    "real reference driver",
+    "layout"
+  ]
+}

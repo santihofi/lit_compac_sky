@@ -923,5 +923,39 @@ K100 changes only from -9.99447 to -9.99449, and the diagonal ratio remains 1.01
 Current remains about 2.962 mA and bare input-2 bandwidth stays about 890.09 MHz.
 This closes the previously failing loaded case at the tested nominal point.
 The reference driver is ideal, so input common-mode variation, reference impedance and noise, startup, feedback stability, full surfaces and PVT remain qualification requirements.
-The five-MOS-corner extension is running.
+The five-MOS-corner extension and follow-up SS code search are complete, as reported below.
 Evidence: evidence/sky_input2_quiet_replica.csv.
+
+### Joint nominal selection with the quiet replica, 2026-11-10
+
+At 1.5 V and 27 C with nominal passives, the initial nearest-gain codes pass the provisional one-percent gain and diagonal-shape screens in all five MOS corners.
+Receiver input 1 with 25 fF wire exposes a remaining SS bandwidth shortfall at code 15.
+The three DC-feasible SS codes give the following same-code results.
+
+| SS gain code | K100 error | Diagonal ratio | Bare input-2 bandwidth | Loaded input-2 bandwidth | Loaded bandwidth / IHP |
+|---|---:|---:|---:|---:|---:|
+| 14 | -0.7528% | 1.01305 | 897.074 MHz | 473.347 MHz | 0.943855 |
+| 15 | -0.1702% | 1.01341 | 879.070 MHz | 467.073 MHz | 0.931345 |
+| 16 | +0.4870% | 1.01453 | 1057.760 MHz | 508.904 MHz | 1.014756 |
+
+Choosing code 16 closes SS under this screen.
+The selected codes are ff=12, fs=29, sf=10, ss=16 and tt=6.
+All five simultaneously pass gain, diagonal shape, both bare bandwidths and both receiver-loaded bandwidths at nominal supply and temperature.
+The initial paired comparison has thirty independently anchored curves, and the SS follow-up adds twelve with code 15 reproducing its prior result.
+Nearest gain is therefore not a sufficient code-selection objective.
+The large speed change across the 15-to-16 binary carry needs a separate topology investigation before assigning its cause.
+This result does not qualify noise, reference-driver impedance, common-mode range, full surfaces, full PVT or physical implementation.
+Evidence: evidence/input2_quiet_selected_nominal.csv and evidence/sky_input2_quiet_ss_codes_audit.json.
+
+### Completed original transmission-gate PVT code search
+
+All 1440 cases of the older two-copy transmission-gate candidate are valid.
+At the retained per-MOS bias currents, at least one of the 32 gain codes passes the provisional one-percent gain and diagonal-shape screen at 34 of 45 PVT points.
+Coverage is ff=7/9, fs=4/9, sf=8/9, ss=8/9 and tt=7/9.
+The four points with separate gain and shape feasibility but no intersection are ff at 80 C and 1.5 or 1.65 V, and fs at 1.65 V and 0 or 27 C.
+Gain stays below the window at all three fs 80 C supplies and ss at 80 C, 1.45 V.
+Gain stays above the window at sf at 0 C, 1.45 V and tt at 0 C, 1.45 or 1.5 V.
+No recorded trim-gate rail violation occurs.
+This exhausts gain codes at the retained bias settings, not alternative bias calibration.
+It is a DC screen of the older wide-load, signal-tracking circuit, not full-PVT qualification of the new six-copy quiet replica.
+Evidence: evidence/sky_tg2_codes_pvt.csv and evidence/sky_tg2_codes_pvt_summary.json.
