@@ -13,15 +13,17 @@ from check_chipify_results import audit
 
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("study", choices=["refine", "range"])
+parser.add_argument("study", choices=["refine", "range", "range14"])
 args = parser.parse_args()
 evidence = ROOT / "doc/porting/evidence"
 project = ROOT / f"verification/porting/sky_input2_quiet_{args.study}"
-folder = "refine" if args.study == "refine" else "endpoints"
+folder = {"refine": "refine", "range": "endpoints", "range14": "codes"}[args.study]
 bias = pd.read_csv(evidence / "sky_quiet_bias_sensitivity.csv")
 baseline = pd.read_csv(evidence / "sky_quiet_codes_pvt.csv")
 baseline["bias_factor"] = 1.0
 controls = pd.concat([bias, baseline], ignore_index=True)
+if args.study == "range14":
+    controls = pd.read_csv(evidence / "sky_quiet_range.csv")
 keys = ["corner_mos", "temp", "vdd", "gcode", "bias_factor", "rbase_scale", "rtrim_scale"]
 if args.study == "refine":
     expected = set()
@@ -34,8 +36,13 @@ else:
     points = [(c, 27, 1.5, 1.) for c in ["ff", "fs", "sf", "ss", "tt"]]
     points += [("fs", 80, v, .9) for v in [1.45, 1.5, 1.65]]
     points += [("ss", 80, 1.45, .9), ("tt", 0, 1.45, .9)]
-    expected = {(c, t, v, g, f, rb, rt) for c, t, v, f in points
-                for g, rb, rt in itertools.product([0, 31], [.8, .9, 1.], [1., 1.2, 1.4])}
+    if args.study == "range":
+        expected = {(c, t, v, g, f, rb, rt) for c, t, v, f in points
+                    for g, rb, rt in itertools.product([0, 31], [.8, .9, 1.], [1., 1.2, 1.4])}
+    else:
+        expected = {(c, t, v, g, .85 if (c, t, v) == ("tt", 0, 1.45) else f, .8, 1.4)
+                    for c, t, v, f in points for g in range(32)}
+        expected.update({("tt", 0, 1.45, g, .9, .8, 1.4) for g in [0, 31]})
 frames, audits, replayed = [], {}, 0
 for sheet in sorted((project / "datasheets" / folder).glob("*.yaml")):
     out = project / "out" / sheet.stem
@@ -77,6 +84,21 @@ if args.study == "range":
     summary["endpoint_diagnostics"] = records
     print(pd.DataFrame(records).groupby(["rbase_scale", "rtrim_scale"])[
         ["endpoint_span_overlaps_gain_window", "endpoint_span_brackets_target"]].sum().to_string())
+elif args.study == "range14":
+    records = []
+    # Replay-only TT rows are excluded from the exhaustive code-grid verdict.
+    selected = data[~((data.corner_mos == "tt") & (data.temp == 0) &
+                      (data.vdd == 1.45) & (data.bias_factor == .9))]
+    for key, group in selected.groupby(["corner_mos", "temp", "vdd", "bias_factor"]):
+        assert sorted(group.gcode) == list(range(32))
+        good = group[group.dc_screen_pass]
+        records.append(dict(zip(["corner_mos", "temp", "vdd", "bias_factor"], key),
+                            dc_feasible_codes=sorted(map(int, good.gcode)),
+                            dc_covered=bool(len(good))))
+    assert len(records) == 10
+    summary["coverage"] = records
+    summary["scope"] = "ten-point screening subset with one global resistor network"
+    print(pd.DataFrame(records).to_string(index=False))
 else:
     summary["sampled_feasible_settings"] = data.loc[data.dc_screen_pass,
         keys + ["gain_error_percent", "compr"]].to_dict("records")

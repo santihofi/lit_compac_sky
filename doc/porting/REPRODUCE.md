@@ -232,3 +232,11 @@ Run the wrapper with chipify-cli --batch datasheets/refine --cores 4 --json in t
 After each batch completes, run python scripts/analyze_input2_quiet_followups.py refine or range from the repository root.
 Run python scripts/summarize_input2_quiet_calibration.py after the refinement audit to combine observed DC settings for the unchanged resistor network.
 It explicitly excludes resistor-range variants.
+
+## Global widened-network code screen
+
+Run python scripts/prepare_input2_quiet_range14.py after the endpoint study.
+From verification/porting/sky_input2_quiet_range14 run the wrapper with chipify-cli --batch datasheets/codes --cores 4 --json.
+After completion, run python scripts/analyze_input2_quiet_followups.py range14.
+The analyzer requires all 322 tuples, reproduces twenty prior endpoints and excludes the two replay-only rows from the ten-point all-code verdict.
+This study uses one global resistor network and cannot be merged into the previous network's calibration coverage.
