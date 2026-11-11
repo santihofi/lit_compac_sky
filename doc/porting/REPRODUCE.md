@@ -215,3 +215,11 @@ From verification/porting/sky_input2_quiet_pvt run the wrapper with chipify-cli 
 After all five sheets complete, run python scripts/analyze_trim_code_coverage.py --candidate quiet --grid pvt --gain-tolerance-percent 1 from the repository root.
 This is 1440 gain-code cases at retained bias currents, with nominal passives and ideal references.
 Bandwidth, noise and stability must subsequently be checked at the same feasible settings.
+
+## Bias sensitivity at the uncovered quiet-replica PVT points
+
+After the exhaustive quiet PVT audit, run python scripts/prepare_input2_quiet_bias.py.
+Run the wrapper with chipify-cli --batch datasheets/sensitivity --cores 4 --json from verification/porting/sky_input2_quiet_bias.
+After all thirteen sheets finish, run python scripts/analyze_input2_quiet_bias.py from the repository root.
+The analyzer requires the intended 150 parameter tuples, including thirty unchanged-current controls, and checks six control metrics against the original sweep.
+A lack of passing sampled codes does not reject untested gain or bias codes.
