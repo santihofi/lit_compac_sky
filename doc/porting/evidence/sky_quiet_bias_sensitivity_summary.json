@@ -1,0 +1,271 @@
+{
+  "audits": {
+    "bias_ff_80C_1500mV.yaml": {
+      "cases": 15,
+      "scalar_values": 315,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000004: compr=1.04102 above 1.03242",
+        "Case 000007: compr=1.03457 above 1.03242",
+        "Case 000008: compr=1.05101 above 1.03242",
+        "Case 000009: compr=1.06573 above 1.03242",
+        "Case 000012: compr=1.03781 above 1.03242",
+        "Case 000013: compr=1.05425 above 1.03242",
+        "Case 000014: compr=1.06896 above 1.03242"
+      ]
+    },
+    "bias_ff_80C_1650mV.yaml": {
+      "cases": 15,
+      "scalar_values": 315,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000004: compr=1.04545 above 1.03242",
+        "Case 000007: compr=1.04209 above 1.03242",
+        "Case 000008: compr=1.05817 above 1.03242",
+        "Case 000009: compr=1.0725 above 1.03242",
+        "Case 000012: compr=1.0478 above 1.03242",
+        "Case 000013: compr=1.06388 above 1.03242",
+        "Case 000014: compr=1.07818 above 1.03242"
+      ]
+    },
+    "bias_fs_0C_1650mV.yaml": {
+      "cases": 15,
+      "scalar_values": 315,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.949138 below 0.96758",
+        "Case 000003: compr=1.05667 above 1.03242",
+        "Case 000004: compr=1.08797 above 1.03242",
+        "Case 000005: compr=0.962058 below 0.96758",
+        "Case 000007: compr=1.03665 above 1.03242",
+        "Case 000008: compr=1.07115 above 1.03242",
+        "Case 000009: compr=1.10269 above 1.03242",
+        "Case 000010: compr=0.966281 below 0.96758",
+        "Case 000012: compr=1.04122 above 1.03242",
+        "Case 000013: compr=1.07584 above 1.03242",
+        "Case 000014: compr=1.10744 above 1.03242"
+      ]
+    },
+    "bias_fs_27C_1650mV.yaml": {
+      "cases": 15,
+      "scalar_values": 315,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.956482 below 0.96758",
+        "Case 000003: compr=1.04903 above 1.03242",
+        "Case 000004: compr=1.07612 above 1.03242",
+        "Case 000007: compr=1.0353 above 1.03242",
+        "Case 000008: compr=1.06505 above 1.03242",
+        "Case 000009: compr=1.09232 above 1.03242",
+        "Case 000012: compr=1.03686 above 1.03242",
+        "Case 000013: compr=1.06663 above 1.03242",
+        "Case 000014: compr=1.09392 above 1.03242"
+      ]
+    },
+    "bias_fs_80C_1450mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.96105 below 0.96758",
+        "Case 000004: compr=1.05304 above 1.03242",
+        "Case 000008: compr=1.04333 above 1.03242",
+        "Case 000009: compr=1.06476 above 1.03242"
+      ]
+    },
+    "bias_fs_80C_1500mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.96404 below 0.96758",
+        "Case 000003: compr=1.03487 above 1.03242",
+        "Case 000004: compr=1.05618 above 1.03242",
+        "Case 000008: compr=1.04739 above 1.03242",
+        "Case 000009: compr=1.0687 above 1.03242"
+      ]
+    },
+    "bias_fs_80C_1650mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000003: compr=1.04545 above 1.03242",
+        "Case 000004: compr=1.06633 above 1.03242",
+        "Case 000007: compr=1.03714 above 1.03242",
+        "Case 000008: compr=1.06006 above 1.03242",
+        "Case 000009: compr=1.08095 above 1.03242"
+      ]
+    },
+    "bias_sf_0C_1450mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000002: compr=1.03546 above 1.03242",
+        "Case 000003: compr=1.05958 above 1.03242",
+        "Case 000004: compr=1.08039 above 1.03242",
+        "Case 000007: compr=1.0596 above 1.03242",
+        "Case 000008: compr=1.08392 above 1.03242",
+        "Case 000009: compr=1.10476 above 1.03242"
+      ]
+    },
+    "bias_sf_0C_1500mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.960448 below 0.96758",
+        "Case 000003: compr=1.04726 above 1.03242",
+        "Case 000004: compr=1.07113 above 1.03242",
+        "Case 000007: compr=1.05115 above 1.03242",
+        "Case 000008: compr=1.07798 above 1.03242",
+        "Case 000009: compr=1.10204 above 1.03242"
+      ]
+    },
+    "bias_ss_80C_1450mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.951462 below 0.96758",
+        "Case 000004: compr=1.03989 above 1.03242",
+        "Case 000005: compr=0.960953 below 0.96758",
+        "Case 000009: compr=1.04995 above 1.03242"
+      ]
+    },
+    "bias_ss_80C_1500mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.94983 below 0.96758",
+        "Case 000004: compr=1.03734 above 1.03242",
+        "Case 000005: compr=0.960316 below 0.96758",
+        "Case 000009: compr=1.04862 above 1.03242"
+      ]
+    },
+    "bias_tt_0C_1450mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.962454 below 0.96758",
+        "Case 000003: compr=1.0459 above 1.03242",
+        "Case 000004: compr=1.06938 above 1.03242",
+        "Case 000007: compr=1.04004 above 1.03242",
+        "Case 000008: compr=1.06577 above 1.03242",
+        "Case 000009: compr=1.08929 above 1.03242"
+      ]
+    },
+    "bias_tt_0C_1500mV.yaml": {
+      "cases": 10,
+      "scalar_values": 210,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=0.958729 below 0.96758",
+        "Case 000003: compr=1.04158 above 1.03242",
+        "Case 000004: compr=1.065 above 1.03242",
+        "Case 000007: compr=1.03855 above 1.03242",
+        "Case 000008: compr=1.06425 above 1.03242",
+        "Case 000009: compr=1.08779 above 1.03242"
+      ]
+    }
+  },
+  "control_replay": "pass",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "scope": "sparse bias sensitivity, not exhaustive calibration",
+  "cases": 150,
+  "sampled_feasible_settings": [
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "gcode": 27,
+      "bias_factor": 0.9,
+      "gain_error_percent": -0.8006999999999875,
+      "compr": 1.01623
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "gcode": 31,
+      "bias_factor": 0.8,
+      "gain_error_percent": 0.714999999999999,
+      "compr": 0.998962
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "gcode": 25,
+      "bias_factor": 0.9,
+      "gain_error_percent": -0.3475000000000117,
+      "compr": 1.02408
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "gcode": 23,
+      "bias_factor": 0.9,
+      "gain_error_percent": 0.9099999999999886,
+      "compr": 1.00001
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "gcode": 0,
+      "bias_factor": 0.8,
+      "gain_error_percent": 0.818999999999992,
+      "compr": 0.976488
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "gcode": 0,
+      "bias_factor": 0.9,
+      "gain_error_percent": -0.9608999999999979,
+      "compr": 0.991911
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "gcode": 31,
+      "bias_factor": 0.9,
+      "gain_error_percent": -0.8197999999999928,
+      "compr": 0.983588
+    }
+  ]
+}

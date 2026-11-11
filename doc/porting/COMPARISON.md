@@ -1001,3 +1001,27 @@ Both ideal current sources scale together, including the tail-ratio normalizatio
 Factor-one rows replay the unchanged circuit.
 This sparse test identifies useful directions and cannot establish infeasibility for unsampled codes.
 Evidence: evidence/sky_quiet_codes_pvt.csv and evidence/sky_quiet_codes_pvt_summary.json.
+
+### Completed bias-sensitivity recovery
+
+All 150 sparse bias cases are valid, and thirty unchanged-current controls reproduce six baseline metrics.
+Seven sampled settings recover six previously uncovered points under the provisional DC screen.
+
+| Raw corner | Temperature | Supply | Code | Bias factor | Gain error | Diagonal ratio |
+|---|---:|---:|---:|---:|---:|---:|
+| ff | 80 C | 1.5 V | 27 | 0.9 | -0.8007% | 1.01623 |
+| ff | 80 C | 1.5 V | 31 | 0.8 | +0.7150% | 0.998962 |
+| ff | 80 C | 1.65 V | 25 | 0.9 | -0.3475% | 1.02408 |
+| fs | 0 C | 1.65 V | 23 | 0.9 | +0.9100% | 1.00001 |
+| sf | 0 C | 1.45 V | 0 | 0.8 | +0.8190% | 0.976488 |
+| sf | 0 C | 1.5 V | 0 | 0.9 | -0.9609% | 0.991911 |
+| ss | 80 C | 1.5 V | 31 | 0.9 | -0.8198% | 0.983588 |
+
+Together with the prior retained-bias search, this establishes DC-feasible settings at 38/45 points.
+It does not establish bandwidth, noise or loop margins at the new settings.
+Reducing current can restore both gain and shape, but the optimum is not monotonic in bias.
+The remaining seven points are fs at 27 C/1.65 V, fs at 80 C at all three supplies, ss at 80 C/1.45 V, and tt at 0 C at 1.45 and 1.5 V.
+A finer code/current test targets fs at 27 C/1.65 V and tt at 0 C/1.5 V.
+A separate endpoint study tests nine fixed-load/trim-resistance combinations at all nominal MOS corners and the other five unresolved points.
+Any selected resistor network must be global, with per-PVT calibration repeated afterwards.
+Evidence: evidence/sky_quiet_bias_sensitivity.csv and evidence/sky_quiet_bias_sensitivity_summary.json.

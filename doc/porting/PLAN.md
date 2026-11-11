@@ -151,4 +151,4 @@ Both CMFB and local replica-bias loops now pass the nominal small-signal screens
 Then qualify real reference impedance, full surfaces, noise and per-PVT code coverage before promoting the schematic or generating multiplier layout.
 The one-percent gain tolerance remains provisional.
 
-The quiet-replica 1440-case DC PVT code search completed with 32/45 points covered at retained bias currents. A 150-case bias-sensitivity screen is running at the thirteen uncovered points.
+The quiet-replica 1440-case DC PVT code search completed with 32/45 points covered at retained bias currents. The completed 150-case bias-sensitivity screen recovers six points, giving 38/45 DC-covered points. Fine calibration and resistor-range controls target the remaining seven.
