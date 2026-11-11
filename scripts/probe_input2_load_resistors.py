@@ -2,6 +2,8 @@
 # SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 """Measure resistance and driven-end capacitance of the proposed load geometries."""
+import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -9,11 +11,19 @@ import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-mapping = json.loads((ROOT / "verification/porting/sky_input2_load_resistors/mapping.json").read_text())
-wanted = (68.05 + 56.46 * 13.035) * 1.7
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--kind", choices=["load", "trim"], default="load")
+args = parser.parse_args()
+project = "sky_input2_quiet_trim_poly" if args.kind == "trim" else "sky_input2_load_resistors"
+mapping = json.loads((ROOT / f"verification/porting/{project}/mapping.json").read_text())
+wanted = ((68.05 + 56.46 * .875) * 1.7 * 1.4 if args.kind == "trim"
+          else (68.05 + 56.46 * 13.035) * 1.7)
 lines = ["* Equal-resistance precision-poly load probe",
          ".lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt", ".temp 27"]
 for family, v in mapping.items():
+    model = Path("/foss/pdks/sky130A/libs.ref/sky130_fd_pr/spice") / f"sky130_fd_pr__res_high_po_{family}.model.spice"
+    if hashlib.sha256(model.read_bytes()).hexdigest() != v["model_sha256"]:
+        raise ValueError(f"Model changed since resistance mapping: {family}")
     length = ((wanted-v["rcon"]) + ((wanted-v["rcon"])**2-4*v["rsheet"]*v["a"])**.5)/(2*v["rsheet"])
     v["length_um"] = length
     v["minimum_model_resistance_ohm"] = v["rcon"] + 2*(v["rsheet"]*v["a"])**.5
@@ -41,5 +51,6 @@ for family, v in mapping.items():
         raise ValueError(f"Resistance mapping failed: {family}")
 evidence = {"target_resistance_ohm": wanted, "temperature_c": 27,
             "voltage_v": .001, "ac_frequency_hz": 1e6, "models": mapping}
-(ROOT/"doc/porting/evidence/sky_input2_resistor_probe.json").write_text(json.dumps(evidence, indent=2)+"\n")
+name = "sky_quiet_trim_resistor_probe.json" if args.kind == "trim" else "sky_input2_resistor_probe.json"
+(ROOT/"doc/porting/evidence"/name).write_text(json.dumps(evidence, indent=2)+"\n")
 print(json.dumps(evidence, indent=2))

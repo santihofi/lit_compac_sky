@@ -1121,3 +1121,24 @@ The target segment resistance is 279.53695 ohm at 27 C and zero differential vol
 The fixed core loads, source resistors, switches and transistor geometry remain unchanged.
 Because voltage and temperature coefficients also differ, this is a resistor-family sensitivity test rather than proof that any speed change comes solely from capacitance.
 Evidence: evidence/sky_quiet_range14_ac.csv and evidence/sky_quiet_range14_ac_summary.json.
+
+### Resistance-matched trim poly recovers the FS speed screen
+
+A primitive probe at 27 C and 1 mV measures 279.5370 ohm for the 5.73 um unit and 279.5346 ohm for the 2.85 um unit, within nine parts per million.
+Their model lengths are 3.745784 and 1.156668 um.
+Driven-end capacitance at 1 MHz falls from 3.351322 to 1.322483 fF per unit.
+These continuous model lengths still require physical-rule and mismatch qualification.
+
+All four FS circuit cases are valid, both wide-family controls reproduce the preceding results and all sixteen captured gain curves reproduce their scalar anchors.
+
+| Code | Trim family | Gain error | Diagonal ratio | Bare input-2 bandwidth | Loaded input-2 bandwidth | Joint screen |
+|---|---|---:|---:|---:|---:|---|
+| 21 | 5.73 um | -0.7951% | 1.01852 | 730.272 MHz | 474.119 MHz | fail |
+| 21 | 2.85 um | -0.7960% | 1.01851 | 888.077 MHz | 535.503 MHz | pass |
+| 22 | 5.73 um | +0.4310% | 1.01921 | 704.182 MHz | 461.782 MHz | fail |
+| 22 | 2.85 um | +0.4300% | 1.01920 | 860.663 MHz | 523.913 MHz | pass |
+
+The measured family change restores both FS nominal codes under the provisional joint gain, shape and bandwidth screen.
+It does not yet establish temperature, passive-corner, mismatch, noise or loop equivalence.
+Both families are now being compared at all eight nominal DC-feasible codes, with unchanged-width controls in every corner.
+Evidence: evidence/sky_quiet_trim_poly.csv and evidence/sky_quiet_trim_resistor_probe.json.

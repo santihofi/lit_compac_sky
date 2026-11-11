@@ -248,3 +248,11 @@ From verification/porting/sky_input2_quiet_range14_ac run the wrapper with chipi
 After completion run python scripts/analyze_input2_quiet_range14_ac.py from the repository root.
 Every nominal DC-feasible code is checked, with exact parameter matching, six DC replay metrics and four independently anchored AC curves.
 The matched IHP bare and loaded references are reused from the preceding comparison with the fs/sf mapping preserved.
+
+## Resistance-matched trim-poly controls
+
+Run python scripts/prepare_input2_quiet_trim_poly.py and python scripts/probe_input2_load_resistors.py --kind trim.
+From verification/porting/sky_input2_quiet_trim_poly run the wrapper with chipify-cli -c trim_fs.yaml --cores 4 --json for the four-case FS control.
+Use --batch datasheets/corners for the sixteen-case comparison across all nominal DC-feasible codes.
+Run python scripts/analyze_input2_quiet_trim_poly.py for the FS audit, or add --corners for the five-corner audit.
+The wider-family control must reproduce prior DC and AC metrics, while every captured curve is independently anchored.
