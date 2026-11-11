@@ -240,3 +240,11 @@ From verification/porting/sky_input2_quiet_range14 run the wrapper with chipify-
 After completion, run python scripts/analyze_input2_quiet_followups.py range14.
 The analyzer requires all 322 tuples, reproduces twenty prior endpoints and excludes the two replay-only rows from the ten-point all-code verdict.
 This study uses one global resistor network and cannot be merged into the previous network's calibration coverage.
+
+## Widened-network nominal speed checks
+
+Run python scripts/prepare_input2_quiet_range14_ac.py after the all-code subset audit.
+From verification/porting/sky_input2_quiet_range14_ac run the wrapper with chipify-cli --batch datasheets/nominal --cores 4 --json.
+After completion run python scripts/analyze_input2_quiet_range14_ac.py from the repository root.
+Every nominal DC-feasible code is checked, with exact parameter matching, six DC replay metrics and four independently anchored AC curves.
+The matched IHP bare and loaded references are reused from the preceding comparison with the fs/sf mapping preserved.
