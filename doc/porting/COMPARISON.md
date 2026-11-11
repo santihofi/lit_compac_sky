@@ -1071,3 +1071,28 @@ Nominal points retain bias factor 1 and hot points use 0.9.
 Twenty endpoints have direct replay controls.
 An endpoint span is not an intermediate-code pass, and the other 35 PVT points plus same-code speed, noise and loop checks remain open.
 Evidence: evidence/sky_quiet_range.csv and evidence/sky_quiet_range_summary.json.
+
+### Widened-network all-code subset result
+
+All 322 cases are valid, and twenty endpoint controls reproduce six preceding measurements.
+The single 0.8 fixed-load / 1.4 trim network has a jointly DC-feasible code at every one of the ten sampled points.
+
+| Raw corner | Temperature | Supply | Bias factor | DC-feasible codes |
+|---|---:|---:|---:|---|
+| ff | 27 C | 1.5 V | 1 | 11, 12 |
+| fs | 27 C | 1.5 V | 1 | 21, 22 |
+| fs | 80 C | 1.45 V | 0.9 | 30 |
+| fs | 80 C | 1.5 V | 0.9 | 29, 30 |
+| fs | 80 C | 1.65 V | 0.9 | 28 |
+| sf | 27 C | 1.5 V | 1 | 9 |
+| ss | 27 C | 1.5 V | 1 | 11, 12 |
+| ss | 80 C | 1.45 V | 0.9 | 22, 23 |
+| tt | 0 C | 1.45 V | 0.85 | 0 |
+| tt | 27 C | 1.5 V | 1 | 7 |
+
+This recovers the five difficult points for the changed network while retaining nominal DC feasibility.
+It does not establish 45/45 coverage because the other 35 PVT points were measured on a different resistor network.
+The two cold-TT factor-0.9 replay rows are excluded from the exhaustive factor-0.85 code verdict.
+All eight nominal DC-feasible codes are now receiving DC replay, bare-core AC and receiver-loaded AC checks.
+The receiver remains an identical cell input 1 with 25 fF wire per output.
+Evidence: evidence/sky_quiet_range14.csv and evidence/sky_quiet_range14_summary.json.

@@ -1,0 +1,242 @@
+{
+  "audits": {
+    "control_tt_0C_1450mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_ff_27C_1500mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000024: compr=1.03348 above 1.03242",
+        "Case 000025: compr=1.03499 above 1.03242",
+        "Case 000026: compr=1.03648 above 1.03242",
+        "Case 000027: compr=1.03796 above 1.03242",
+        "Case 000028: compr=1.03943 above 1.03242",
+        "Case 000029: compr=1.04089 above 1.03242",
+        "Case 000030: compr=1.04232 above 1.03242",
+        "Case 000031: compr=1.04375 above 1.03242"
+      ]
+    },
+    "range_fs_27C_1500mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1450mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1500mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1650mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_sf_27C_1500mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000016: compr=1.03371 above 1.03242",
+        "Case 000017: compr=1.03518 above 1.03242",
+        "Case 000018: compr=1.03663 above 1.03242",
+        "Case 000019: compr=1.03808 above 1.03242",
+        "Case 000020: compr=1.03952 above 1.03242",
+        "Case 000021: compr=1.04093 above 1.03242",
+        "Case 000022: compr=1.04233 above 1.03242",
+        "Case 000023: compr=1.04372 above 1.03242",
+        "Case 000024: compr=1.04518 above 1.03242",
+        "Case 000025: compr=1.04654 above 1.03242",
+        "Case 000026: compr=1.04789 above 1.03242",
+        "Case 000027: compr=1.04923 above 1.03242",
+        "Case 000028: compr=1.05057 above 1.03242",
+        "Case 000029: compr=1.05188 above 1.03242",
+        "Case 000030: compr=1.05318 above 1.03242",
+        "Case 000031: compr=1.05448 above 1.03242"
+      ]
+    },
+    "range_ss_27C_1500mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_ss_80C_1450mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_tt_0C_1450mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_tt_27C_1500mV.yaml": {
+      "cases": 32,
+      "scalar_values": 672,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000022: compr=1.03299 above 1.03242",
+        "Case 000023: compr=1.03399 above 1.03242",
+        "Case 000024: compr=1.03512 above 1.03242",
+        "Case 000025: compr=1.0361 above 1.03242",
+        "Case 000026: compr=1.03708 above 1.03242",
+        "Case 000027: compr=1.03805 above 1.03242",
+        "Case 000028: compr=1.03903 above 1.03242",
+        "Case 000029: compr=1.03999 above 1.03242",
+        "Case 000030: compr=1.04093 above 1.03242",
+        "Case 000031: compr=1.04188 above 1.03242"
+      ]
+    }
+  },
+  "cases": 322,
+  "replayed_controls": 20,
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "dc_feasible_codes": [
+        21,
+        22
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "dc_feasible_codes": [
+        30
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "dc_feasible_codes": [
+        29,
+        30
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.65,
+      "bias_factor": 0.9,
+      "dc_feasible_codes": [
+        28
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "dc_feasible_codes": [
+        9
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "dc_feasible_codes": [
+        22,
+        23
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0,
+      "vdd": 1.45,
+      "bias_factor": 0.85,
+      "dc_feasible_codes": [
+        0
+      ],
+      "dc_covered": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "dc_feasible_codes": [
+        7
+      ],
+      "dc_covered": true
+    }
+  ],
+  "scope": "ten-point screening subset with one global resistor network"
+}
