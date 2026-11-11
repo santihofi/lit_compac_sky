@@ -223,3 +223,12 @@ Run the wrapper with chipify-cli --batch datasheets/sensitivity --cores 4 --json
 After all thirteen sheets finish, run python scripts/analyze_input2_quiet_bias.py from the repository root.
 The analyzer requires the intended 150 parameter tuples, including thirty unchanged-current controls, and checks six control metrics against the original sweep.
 A lack of passing sampled codes does not reject untested gain or bias codes.
+
+## Fine calibration and resistor-range controls
+
+Run python scripts/prepare_input2_quiet_refine.py and python scripts/prepare_input2_quiet_range.py.
+Their separate projects are verification/porting/sky_input2_quiet_refine and verification/porting/sky_input2_quiet_range.
+Run the wrapper with chipify-cli --batch datasheets/refine --cores 4 --json in the refinement project, and use datasheets/endpoints in the range project.
+After each batch completes, run python scripts/analyze_input2_quiet_followups.py refine or range from the repository root.
+Run python scripts/summarize_input2_quiet_calibration.py after the refinement audit to combine observed DC settings for the unchanged resistor network.
+It explicitly excludes resistor-range variants.

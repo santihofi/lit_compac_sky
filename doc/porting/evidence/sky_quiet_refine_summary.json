@@ -1,0 +1,82 @@
+{
+  "audits": {
+    "bias_fs_27C_1650mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "bias_tt_0C_1500mV.yaml": {
+      "cases": 6,
+      "scalar_values": 126,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "cases": 14,
+  "replayed_controls": 2,
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "sampled_feasible_settings": [
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "gcode": 26,
+      "bias_factor": 0.8,
+      "rbase_scale": 1,
+      "rtrim_scale": 1,
+      "gain_error_percent": -0.41090000000000293,
+      "compr": 0.970084
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "gcode": 26,
+      "bias_factor": 0.9,
+      "rbase_scale": 1,
+      "rtrim_scale": 1,
+      "gain_error_percent": -0.4395000000000038,
+      "compr": 1.00274
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "gcode": 27,
+      "bias_factor": 0.8,
+      "rbase_scale": 1,
+      "rtrim_scale": 1,
+      "gain_error_percent": 0.5430000000000046,
+      "compr": 0.970575
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "gcode": 27,
+      "bias_factor": 0.9,
+      "rbase_scale": 1,
+      "rtrim_scale": 1,
+      "gain_error_percent": 0.5020000000000024,
+      "compr": 1.00325
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "gcode": 0,
+      "bias_factor": 0.83,
+      "rbase_scale": 1,
+      "rtrim_scale": 1,
+      "gain_error_percent": 0.5770000000000053,
+      "compr": 0.967966
+    }
+  ]
+}

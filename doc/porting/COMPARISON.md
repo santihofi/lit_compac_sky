@@ -1025,3 +1025,18 @@ A finer code/current test targets fs at 27 C/1.65 V and tt at 0 C/1.5 V.
 A separate endpoint study tests nine fixed-load/trim-resistance combinations at all nominal MOS corners and the other five unresolved points.
 Any selected resistor network must be global, with per-PVT calibration repeated afterwards.
 Evidence: evidence/sky_quiet_bias_sensitivity.csv and evidence/sky_quiet_bias_sensitivity_summary.json.
+
+### Fine calibration raises demonstrated DC coverage to 40/45
+
+All fourteen refinement cases are valid, with two repeated controls agreeing with the earlier bias screen.
+At fs, 27 C, 1.65 V, gain codes 26 and 27 pass at bias factors 0.8 and 0.9.
+Code 26 at factor 0.9 gives gain error -0.4395 percent and diagonal ratio 1.00274.
+At tt, 0 C, 1.5 V, code 0 at factor 0.83 gives gain error +0.5770 percent and ratio 0.967966.
+The latter is only 0.000386 above the provisional lower shape limit and is not a robust-margin claim.
+
+The union of the original sweep, sparse bias screen and refinement gives observed DC-feasible settings at 40 of 45 points for one unchanged resistor network.
+The remaining points are fs at 80 C and all three supplies, ss at 80 C and 1.45 V, and tt at 0 C and 1.45 V.
+The combined evidence preserves each code, ideal bias setting and source measurement.
+It does not mix a gain result from one setting with a shape result from another.
+The resistor-range endpoint study is still running and is excluded from this coverage count.
+Evidence: evidence/sky_quiet_refine_summary.json and evidence/sky_quiet_calibration_coverage.json.
