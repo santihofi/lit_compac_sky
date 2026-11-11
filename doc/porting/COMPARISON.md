@@ -1038,5 +1038,36 @@ The union of the original sweep, sparse bias screen and refinement gives observe
 The remaining points are fs at 80 C and all three supplies, ss at 80 C and 1.45 V, and tt at 0 C and 1.45 V.
 The combined evidence preserves each code, ideal bias setting and source measurement.
 It does not mix a gain result from one setting with a shape result from another.
-The resistor-range endpoint study is still running and is excluded from this coverage count.
+The completed resistor-range endpoint study remains separate from this coverage count.
 Evidence: evidence/sky_quiet_refine_summary.json and evidence/sky_quiet_calibration_coverage.json.
+
+### Fixed-load and trim-range endpoint results
+
+All 180 endpoint cases are valid and twenty unchanged-network controls reproduce the preceding data.
+Nine global fixed-load/trim-factor combinations were tested at five nominal MOS corners and five unresolved PVT points.
+
+| Fixed-load factor | Trim factor | Endpoint spans overlapping gain window | Endpoint spans bracketing gain 10 |
+|---|---:|---:|---:|
+| 0.8 | 1.0 | 5/10 | 5/10 |
+| 0.8 | 1.2 | 7/10 | 6/10 |
+| 0.8 | 1.4 | 9/10 | 9/10 |
+| 0.9 | 1.0 | 5/10 | 5/10 |
+| 0.9 | 1.2 | 7/10 | 6/10 |
+| 0.9 | 1.4 | 9/10 | 9/10 |
+| 1.0 | 1.0 | 5/10 | 5/10 |
+| 1.0 | 1.2 | 9/10 | 9/10 |
+| 1.0 | 1.4 | 9/10 | 9/10 |
+
+The 0.8 fixed-load / 1.4 trim candidate brackets the target at all sampled points except tt, 0 C, 1.45 V.
+At that point, code 0 gives gain magnitude 10.1308 and shape 0.988632 with bias factor 0.9.
+Among the combinations that bracket nine points, this candidate has the lowest cold-TT minimum gain.
+It is a candidate for further qualification, not an established optimum.
+At hot fs, 1.45 V, its endpoint magnitudes span 6.60806 to 10.1016 with shapes 0.982551 and 1.00103.
+Thus reducing fixed resistance alone cannot solve the hot gain deficit, while expanding trim and adjusting the fixed load together can restore endpoint range.
+
+A 322-case follow-up sweeps all 32 codes at the same ten points for this one global network.
+Cold TT uses bias factor 0.85 as a calibration hypothesis, while two additional endpoints at 0.9 replay the previous measurement.
+Nominal points retain bias factor 1 and hot points use 0.9.
+Twenty endpoints have direct replay controls.
+An endpoint span is not an intermediate-code pass, and the other 35 PVT points plus same-code speed, noise and loop checks remain open.
+Evidence: evidence/sky_quiet_range.csv and evidence/sky_quiet_range_summary.json.
