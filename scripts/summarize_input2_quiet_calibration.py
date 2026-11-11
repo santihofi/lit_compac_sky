@@ -5,6 +5,7 @@
 import json
 from pathlib import Path
 import pandas as pd
+import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 evidence = ROOT / "doc/porting/evidence"
@@ -18,6 +19,13 @@ for name in sources:
                           "rtrim_scale": 1, "load_family": "1p41",
                           "replica_tracks_signal": 0}.items():
         assert data[key].eq(expected).all(), (name, key)
+    for corner, group in data.groupby("corner_mos"):
+        sheet = ROOT / f"verification/porting/sky_input2_quiet_pvt/datasheets/codes_pvt/quiet_pvt_{corner}.yaml"
+        for parameter, allowed in yaml.safe_load(sheet.read_text())["parameters"].items():
+            if allowed == "range(1)":
+                allowed = [0]
+            assert isinstance(allowed, list)
+            assert set(group[parameter]).issubset(set(allowed)), (name, corner, parameter)
     data["source"] = name
     frames.append(data)
 all_data = pd.concat(frames, ignore_index=True)
