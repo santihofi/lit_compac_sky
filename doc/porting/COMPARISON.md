@@ -975,5 +975,29 @@ The test uses zero differential inputs, 100 fF per output and an ideal reference
 
 All ten captured loop curves independently reproduce six scalar anchors and have exactly one unity crossing.
 The nominal small-signal result does not establish startup, large-signal stability, receiver-loaded stability or behavior with a real reference driver.
-The separate 1440-case quiet-replica PVT gain-code search is running.
+The separate 1440-case quiet-replica PVT gain-code search is complete, with results below.
 Evidence: evidence/sky_input2_quiet_loops.csv and evidence/sky_input2_quiet_loops_audit.json.
+
+### Quiet-replica exhaustive PVT result, 2026-11-11
+
+All 1440 cases are valid, with all declared parameter values checked against the datasheets and all 32 codes present at each PVT point.
+The six-copy quiet replica has a jointly gain/shape-feasible code at 32 of 45 points under the provisional one-percent K100 screen.
+Coverage is ff=7/9, fs=4/9, sf=7/9, ss=7/9 and tt=7/9.
+No tail-gate rail violations occur.
+The old two-copy signal-tracking circuit covered 34/45 under the same DC screen.
+The new circuit therefore improves nominal loaded speed but loses two DC-covered points, sf at 0 C, 1.5 V and ss at 80 C, 1.5 V.
+The combined circuit changes prevent assigning that difference solely to the quiet reference connection.
+
+Four points have gain-feasible and shape-feasible codes with no common code: ff at 80 C and 1.5 or 1.65 V, and fs at 1.65 V and 0 or 27 C.
+Five points stay below the gain window at every code: fs at 80 C and every supply, and ss at 80 C and 1.45 or 1.5 V.
+Four points stay above the gain window at every code: sf and tt at 0 C and 1.45 or 1.5 V.
+The sf point at 0 C, 1.45 V also fails shape for every code.
+At ss, 80 C, 1.5 V, the highest gain magnitude is 9.89519, only 0.00481 below the provisional lower limit of 9.9.
+The screen threshold is retained consistently rather than relaxed for this near miss.
+
+These failures exhaust gain codes at the retained bias currents, not alternative current calibration.
+A 150-case follow-up tests current factors 0.8, 0.9, 1, 1.1 and 1.2 at each uncovered point using code endpoints and the earlier nearest-gain code.
+Both ideal current sources scale together, including the tail-ratio normalization.
+Factor-one rows replay the unchanged circuit.
+This sparse test identifies useful directions and cannot establish infeasibility for unsampled codes.
+Evidence: evidence/sky_quiet_codes_pvt.csv and evidence/sky_quiet_codes_pvt_summary.json.

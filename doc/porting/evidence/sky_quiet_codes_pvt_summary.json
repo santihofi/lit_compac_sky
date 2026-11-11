@@ -1,0 +1,899 @@
+{
+  "scope": "DC screening only, nominal passive models, ideal current and gate controls",
+  "acceptance": "For every PVT point at least one single code must satisfy all applicable specs",
+  "gain_tolerance_percent": 1.0,
+  "gain_tolerance_status": "explicit sensitivity screen, not approved specification",
+  "missing": [
+    "bandwidth",
+    "noise",
+    "loop stability",
+    "passive corners",
+    "physical bias circuitry"
+  ],
+  "audits": {
+    "quiet_pvt_ff.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000091: compr=1.03345 above 1.03242",
+        "Case 000092: compr=1.03475 above 1.03242",
+        "Case 000093: compr=1.03605 above 1.03242",
+        "Case 000094: compr=1.03733 above 1.03242",
+        "Case 000095: compr=1.0386 above 1.03242",
+        "Case 000159: compr=1.03263 above 1.03242",
+        "Case 000182: compr=1.03265 above 1.03242",
+        "Case 000183: compr=1.03387 above 1.03242",
+        "Case 000184: compr=1.03509 above 1.03242",
+        "Case 000185: compr=1.03629 above 1.03242",
+        "Case 000186: compr=1.03749 above 1.03242",
+        "Case 000187: compr=1.03867 above 1.03242",
+        "Case 000188: compr=1.03985 above 1.03242",
+        "Case 000189: compr=1.04102 above 1.03242",
+        "Case 000190: compr=1.04219 above 1.03242",
+        "Case 000191: compr=1.04334 above 1.03242",
+        "Case 000221: compr=1.03301 above 1.03242",
+        "Case 000222: compr=1.03376 above 1.03242",
+        "Case 000223: compr=1.0345 above 1.03242",
+        "Case 000249: compr=1.03292 above 1.03242",
+        "Case 000250: compr=1.03375 above 1.03242",
+        "Case 000251: compr=1.03457 above 1.03242",
+        "Case 000252: compr=1.03539 above 1.03242",
+        "Case 000253: compr=1.0362 above 1.03242",
+        "Case 000254: compr=1.03701 above 1.03242",
+        "Case 000255: compr=1.03781 above 1.03242",
+        "Case 000272: compr=1.03303 above 1.03242",
+        "Case 000273: compr=1.03406 above 1.03242",
+        "Case 000274: compr=1.03509 above 1.03242",
+        "Case 000275: compr=1.03612 above 1.03242",
+        "Case 000276: compr=1.03713 above 1.03242",
+        "Case 000277: compr=1.03814 above 1.03242",
+        "Case 000278: compr=1.03914 above 1.03242",
+        "Case 000279: compr=1.04013 above 1.03242",
+        "Case 000280: compr=1.04112 above 1.03242",
+        "Case 000281: compr=1.04209 above 1.03242",
+        "Case 000282: compr=1.04306 above 1.03242",
+        "Case 000283: compr=1.04402 above 1.03242",
+        "Case 000284: compr=1.04498 above 1.03242",
+        "Case 000285: compr=1.04593 above 1.03242",
+        "Case 000286: compr=1.04687 above 1.03242",
+        "Case 000287: compr=1.0478 above 1.03242"
+      ]
+    },
+    "quiet_pvt_fs.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000080: compr=1.03254 above 1.03242",
+        "Case 000081: compr=1.03313 above 1.03242",
+        "Case 000082: compr=1.03372 above 1.03242",
+        "Case 000083: compr=1.03431 above 1.03242",
+        "Case 000084: compr=1.0349 above 1.03242",
+        "Case 000085: compr=1.03548 above 1.03242",
+        "Case 000086: compr=1.03607 above 1.03242",
+        "Case 000087: compr=1.03665 above 1.03242",
+        "Case 000088: compr=1.03724 above 1.03242",
+        "Case 000089: compr=1.03782 above 1.03242",
+        "Case 000090: compr=1.03839 above 1.03242",
+        "Case 000091: compr=1.03896 above 1.03242",
+        "Case 000092: compr=1.03953 above 1.03242",
+        "Case 000093: compr=1.0401 above 1.03242",
+        "Case 000094: compr=1.04066 above 1.03242",
+        "Case 000095: compr=1.04122 above 1.03242",
+        "Case 000183: compr=1.03264 above 1.03242",
+        "Case 000184: compr=1.03319 above 1.03242",
+        "Case 000185: compr=1.03372 above 1.03242",
+        "Case 000186: compr=1.03424 above 1.03242",
+        "Case 000187: compr=1.03477 above 1.03242",
+        "Case 000188: compr=1.0353 above 1.03242",
+        "Case 000189: compr=1.03582 above 1.03242",
+        "Case 000190: compr=1.03634 above 1.03242",
+        "Case 000191: compr=1.03686 above 1.03242",
+        "Case 000277: compr=1.03271 above 1.03242",
+        "Case 000278: compr=1.03316 above 1.03242",
+        "Case 000279: compr=1.03361 above 1.03242",
+        "Case 000280: compr=1.03407 above 1.03242",
+        "Case 000281: compr=1.03451 above 1.03242",
+        "Case 000282: compr=1.03495 above 1.03242",
+        "Case 000283: compr=1.03539 above 1.03242",
+        "Case 000284: compr=1.03583 above 1.03242",
+        "Case 000285: compr=1.03627 above 1.03242",
+        "Case 000286: compr=1.0367 above 1.03242",
+        "Case 000287: compr=1.03714 above 1.03242"
+      ]
+    },
+    "quiet_pvt_sf.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000000: compr=1.03546 above 1.03242",
+        "Case 000001: compr=1.03625 above 1.03242",
+        "Case 000002: compr=1.03703 above 1.03242",
+        "Case 000003: compr=1.03781 above 1.03242",
+        "Case 000004: compr=1.0386 above 1.03242",
+        "Case 000005: compr=1.03937 above 1.03242",
+        "Case 000006: compr=1.04013 above 1.03242",
+        "Case 000007: compr=1.04089 above 1.03242",
+        "Case 000008: compr=1.04181 above 1.03242",
+        "Case 000009: compr=1.04256 above 1.03242",
+        "Case 000010: compr=1.04331 above 1.03242",
+        "Case 000011: compr=1.04406 above 1.03242",
+        "Case 000012: compr=1.04483 above 1.03242",
+        "Case 000013: compr=1.04557 above 1.03242",
+        "Case 000014: compr=1.0463 above 1.03242",
+        "Case 000015: compr=1.04703 above 1.03242",
+        "Case 000016: compr=1.04877 above 1.03242",
+        "Case 000017: compr=1.0495 above 1.03242",
+        "Case 000018: compr=1.05022 above 1.03242",
+        "Case 000019: compr=1.05095 above 1.03242",
+        "Case 000020: compr=1.05169 above 1.03242",
+        "Case 000021: compr=1.05241 above 1.03242",
+        "Case 000022: compr=1.05312 above 1.03242",
+        "Case 000023: compr=1.05383 above 1.03242",
+        "Case 000024: compr=1.05471 above 1.03242",
+        "Case 000025: compr=1.05541 above 1.03242",
+        "Case 000026: compr=1.05611 above 1.03242",
+        "Case 000027: compr=1.05681 above 1.03242",
+        "Case 000028: compr=1.05753 above 1.03242",
+        "Case 000029: compr=1.05822 above 1.03242",
+        "Case 000030: compr=1.05891 above 1.03242",
+        "Case 000031: compr=1.0596 above 1.03242",
+        "Case 000044: compr=1.03311 above 1.03242",
+        "Case 000045: compr=1.03409 above 1.03242",
+        "Case 000046: compr=1.03506 above 1.03242",
+        "Case 000047: compr=1.03603 above 1.03242",
+        "Case 000048: compr=1.03731 above 1.03242",
+        "Case 000049: compr=1.03827 above 1.03242",
+        "Case 000050: compr=1.03921 above 1.03242",
+        "Case 000051: compr=1.04015 above 1.03242",
+        "Case 000052: compr=1.0411 above 1.03242",
+        "Case 000053: compr=1.04203 above 1.03242",
+        "Case 000054: compr=1.04296 above 1.03242",
+        "Case 000055: compr=1.04388 above 1.03242",
+        "Case 000056: compr=1.04486 above 1.03242",
+        "Case 000057: compr=1.04577 above 1.03242",
+        "Case 000058: compr=1.04668 above 1.03242",
+        "Case 000059: compr=1.04758 above 1.03242",
+        "Case 000060: compr=1.04849 above 1.03242",
+        "Case 000061: compr=1.04938 above 1.03242",
+        "Case 000062: compr=1.05026 above 1.03242",
+        "Case 000063: compr=1.05115 above 1.03242",
+        "Case 000089: compr=1.03265 above 1.03242",
+        "Case 000090: compr=1.03396 above 1.03242",
+        "Case 000091: compr=1.03526 above 1.03242",
+        "Case 000092: compr=1.03655 above 1.03242",
+        "Case 000093: compr=1.03783 above 1.03242",
+        "Case 000094: compr=1.0391 above 1.03242",
+        "Case 000095: compr=1.04036 above 1.03242",
+        "Case 000106: compr=1.03258 above 1.03242",
+        "Case 000107: compr=1.03335 above 1.03242",
+        "Case 000108: compr=1.03414 above 1.03242",
+        "Case 000109: compr=1.0349 above 1.03242",
+        "Case 000110: compr=1.03566 above 1.03242",
+        "Case 000111: compr=1.03641 above 1.03242",
+        "Case 000112: compr=1.03786 above 1.03242",
+        "Case 000113: compr=1.03861 above 1.03242",
+        "Case 000114: compr=1.03935 above 1.03242",
+        "Case 000115: compr=1.04009 above 1.03242",
+        "Case 000116: compr=1.04085 above 1.03242",
+        "Case 000117: compr=1.04159 above 1.03242",
+        "Case 000118: compr=1.04232 above 1.03242",
+        "Case 000119: compr=1.04304 above 1.03242",
+        "Case 000120: compr=1.04389 above 1.03242",
+        "Case 000121: compr=1.04461 above 1.03242",
+        "Case 000122: compr=1.04532 above 1.03242",
+        "Case 000123: compr=1.04604 above 1.03242",
+        "Case 000124: compr=1.04677 above 1.03242",
+        "Case 000125: compr=1.04747 above 1.03242",
+        "Case 000126: compr=1.04818 above 1.03242",
+        "Case 000127: compr=1.04888 above 1.03242",
+        "Case 000148: compr=1.03288 above 1.03242",
+        "Case 000149: compr=1.03378 above 1.03242",
+        "Case 000150: compr=1.03467 above 1.03242",
+        "Case 000151: compr=1.03555 above 1.03242",
+        "Case 000152: compr=1.03649 above 1.03242",
+        "Case 000153: compr=1.03736 above 1.03242",
+        "Case 000154: compr=1.03823 above 1.03242",
+        "Case 000155: compr=1.03909 above 1.03242",
+        "Case 000156: compr=1.03996 above 1.03242",
+        "Case 000157: compr=1.04082 above 1.03242",
+        "Case 000158: compr=1.04166 above 1.03242",
+        "Case 000159: compr=1.04251 above 1.03242",
+        "Case 000188: compr=1.03344 above 1.03242",
+        "Case 000189: compr=1.0346 above 1.03242",
+        "Case 000190: compr=1.03574 above 1.03242",
+        "Case 000191: compr=1.03688 above 1.03242"
+      ]
+    },
+    "quiet_pvt_ss.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000020: compr=1.03265 above 1.03242",
+        "Case 000021: compr=1.03291 above 1.03242",
+        "Case 000022: compr=1.03318 above 1.03242",
+        "Case 000023: compr=1.03344 above 1.03242",
+        "Case 000024: compr=1.03395 above 1.03242",
+        "Case 000025: compr=1.03422 above 1.03242",
+        "Case 000026: compr=1.03449 above 1.03242",
+        "Case 000027: compr=1.03475 above 1.03242",
+        "Case 000028: compr=1.03505 above 1.03242",
+        "Case 000029: compr=1.03532 above 1.03242",
+        "Case 000030: compr=1.03558 above 1.03242",
+        "Case 000031: compr=1.03585 above 1.03242"
+      ]
+    },
+    "quiet_pvt_tt.yaml": {
+      "cases": 288,
+      "scalar_values": 6048,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000018: compr=1.03246 above 1.03242",
+        "Case 000019: compr=1.03303 above 1.03242",
+        "Case 000020: compr=1.03364 above 1.03242",
+        "Case 000021: compr=1.03421 above 1.03242",
+        "Case 000022: compr=1.03478 above 1.03242",
+        "Case 000023: compr=1.03534 above 1.03242",
+        "Case 000024: compr=1.03609 above 1.03242",
+        "Case 000025: compr=1.03666 above 1.03242",
+        "Case 000026: compr=1.03722 above 1.03242",
+        "Case 000027: compr=1.03778 above 1.03242",
+        "Case 000028: compr=1.03837 above 1.03242",
+        "Case 000029: compr=1.03893 above 1.03242",
+        "Case 000030: compr=1.03948 above 1.03242",
+        "Case 000031: compr=1.04004 above 1.03242",
+        "Case 000054: compr=1.03252 above 1.03242",
+        "Case 000055: compr=1.03319 above 1.03242",
+        "Case 000056: compr=1.03397 above 1.03242",
+        "Case 000057: compr=1.03463 above 1.03242",
+        "Case 000058: compr=1.03529 above 1.03242",
+        "Case 000059: compr=1.03594 above 1.03242",
+        "Case 000060: compr=1.03662 above 1.03242",
+        "Case 000061: compr=1.03726 above 1.03242",
+        "Case 000062: compr=1.03791 above 1.03242",
+        "Case 000063: compr=1.03855 above 1.03242",
+        "Case 000089: compr=1.03282 above 1.03242",
+        "Case 000090: compr=1.03371 above 1.03242",
+        "Case 000091: compr=1.0346 above 1.03242",
+        "Case 000092: compr=1.03549 above 1.03242",
+        "Case 000093: compr=1.03637 above 1.03242",
+        "Case 000094: compr=1.03725 above 1.03242",
+        "Case 000095: compr=1.03812 above 1.03242",
+        "Case 000125: compr=1.03296 above 1.03242",
+        "Case 000126: compr=1.0335 above 1.03242",
+        "Case 000127: compr=1.03404 above 1.03242",
+        "Case 000158: compr=1.03289 above 1.03242",
+        "Case 000159: compr=1.0335 above 1.03242",
+        "Case 000188: compr=1.03275 above 1.03242",
+        "Case 000189: compr=1.03355 above 1.03242",
+        "Case 000190: compr=1.03434 above 1.03242",
+        "Case 000191: compr=1.03513 above 1.03242",
+        "Case 000286: compr=1.03279 above 1.03242",
+        "Case 000287: compr=1.03343 above 1.03242"
+      ]
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        2,
+        3
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 3,
+      "nearest_gain_error_percent": 0.42999999999999705,
+      "nearest_gain_shape": 1.00134,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        4,
+        5
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 4,
+      "nearest_gain_error_percent": -0.1983000000000068,
+      "nearest_gain_shape": 1.00052,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 7,
+      "nearest_gain_error_percent": 0.2990000000000048,
+      "nearest_gain_shape": 1.00538,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 11,
+      "nearest_gain_error_percent": -0.3273999999999999,
+      "nearest_gain_shape": 1.01121,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": 0.18000000000000238,
+      "nearest_gain_shape": 1.01309,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        12,
+        13
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": -0.30849999999998934,
+      "nearest_gain_shape": 1.01992,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        27,
+        28
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 28,
+      "nearest_gain_error_percent": -0.22290000000000365,
+      "nearest_gain_shape": 1.03225,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 27,
+      "nearest_gain_error_percent": -0.05430000000000712,
+      "nearest_gain_shape": 1.03457,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 25,
+      "nearest_gain_error_percent": 0.24699999999999722,
+      "nearest_gain_shape": 1.04209,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        23,
+        24,
+        25
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 24,
+      "nearest_gain_error_percent": 0.039999999999995595,
+      "nearest_gain_shape": 1.01787,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        23,
+        24
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 23,
+      "nearest_gain_error_percent": -0.3121999999999958,
+      "nearest_gain_shape": 1.02059,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 23,
+      "nearest_gain_error_percent": -0.06559999999999899,
+      "nearest_gain_shape": 1.03665,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        29,
+        30,
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 30,
+      "nearest_gain_error_percent": -0.00940000000000385,
+      "nearest_gain_shape": 1.01481,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        28,
+        29,
+        30
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 29,
+      "nearest_gain_error_percent": -0.05509999999999682,
+      "nearest_gain_shape": 1.01907,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 28,
+      "nearest_gain_error_percent": 0.2590000000000092,
+      "nearest_gain_shape": 1.0353,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -9.020300000000002,
+      "nearest_gain_shape": 1.02045,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -8.288799999999997,
+      "nearest_gain_shape": 1.02449,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -6.935999999999998,
+      "nearest_gain_shape": 1.03714,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 5.8089999999999975,
+      "nearest_gain_shape": 1.03546,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 1.3490000000000002,
+      "nearest_gain_shape": 1.02085,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 7,
+      "nearest_gain_error_percent": 0.49399999999999444,
+      "nearest_gain_shape": 1.00748,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 6,
+      "nearest_gain_error_percent": -0.2067000000000041,
+      "nearest_gain_shape": 1.02932,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        9,
+        10,
+        11
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 10,
+      "nearest_gain_error_percent": 0.19800000000000928,
+      "nearest_gain_shape": 1.02333,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        13,
+        14
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 13,
+      "nearest_gain_error_percent": -0.30239999999999156,
+      "nearest_gain_shape": 1.0151,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        30,
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -0.449300000000008,
+      "nearest_gain_shape": 1.03114,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        29,
+        30,
+        31
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": 0.24900000000001032,
+      "nearest_gain_shape": 1.02931,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        27,
+        28,
+        29
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 28,
+      "nearest_gain_error_percent": -0.10120000000000129,
+      "nearest_gain_shape": 1.02594,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 1,
+      "nearest_gain_error_percent": -0.06990000000000052,
+      "nearest_gain_shape": 1.02568,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        4,
+        5,
+        6
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 5,
+      "nearest_gain_error_percent": 0.07500000000000284,
+      "nearest_gain_shape": 1.02149,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        11,
+        12
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 12,
+      "nearest_gain_error_percent": 0.4170000000000007,
+      "nearest_gain_shape": 1.01589,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 15,
+      "nearest_gain_error_percent": 0.11699999999998933,
+      "nearest_gain_shape": 1.01736,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        14,
+        15,
+        16
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 15,
+      "nearest_gain_error_percent": -0.17020000000000923,
+      "nearest_gain_shape": 1.01341,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        17,
+        18
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 17,
+      "nearest_gain_error_percent": -0.1619000000000037,
+      "nearest_gain_shape": 1.00983,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -2.054200000000006,
+      "nearest_gain_shape": 1.00698,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 31,
+      "nearest_gain_error_percent": -1.0481000000000074,
+      "nearest_gain_shape": 1.00598,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        29,
+        30
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 29,
+      "nearest_gain_error_percent": -0.36519999999999886,
+      "nearest_gain_shape": 1.00631,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 5.259999999999998,
+      "nearest_gain_shape": 1.02037,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [],
+      "dc_covered": false,
+      "nearest_gain_code": 0,
+      "nearest_gain_error_percent": 2.8140000000000054,
+      "nearest_gain_shape": 1.0162,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        3,
+        4
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 3,
+      "nearest_gain_error_percent": -0.41439999999999255,
+      "nearest_gain_shape": 1.01162,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        4,
+        5
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 5,
+      "nearest_gain_error_percent": 0.3530000000000033,
+      "nearest_gain_shape": 1.0182,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        5,
+        6,
+        7
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 6,
+      "nearest_gain_error_percent": -0.12930000000000996,
+      "nearest_gain_shape": 1.01663,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        9,
+        10
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 9,
+      "nearest_gain_error_percent": -0.23880000000000567,
+      "nearest_gain_shape": 1.0166,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 80.0,
+      "vdd": 1.45,
+      "dc_feasible_codes": [
+        23,
+        24,
+        25
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 24,
+      "nearest_gain_error_percent": -0.012399999999990197,
+      "nearest_gain_shape": 1.02234,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 80.0,
+      "vdd": 1.5,
+      "dc_feasible_codes": [
+        22,
+        23,
+        24
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 23,
+      "nearest_gain_error_percent": -0.06840000000000179,
+      "nearest_gain_shape": 1.02267,
+      "full_spec_coverage": "unverified"
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 80.0,
+      "vdd": 1.65,
+      "dc_feasible_codes": [
+        21,
+        22
+      ],
+      "dc_covered": true,
+      "nearest_gain_code": 22,
+      "nearest_gain_error_percent": 0.23899999999998922,
+      "nearest_gain_shape": 1.0275,
+      "full_spec_coverage": "unverified"
+    }
+  ]
+}
