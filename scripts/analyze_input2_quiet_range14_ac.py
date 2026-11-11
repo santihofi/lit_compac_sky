@@ -51,7 +51,7 @@ references = pd.read_csv(evidence / "input2_quiet_corners_matched.csv")
 columns = ["corner_mos", "matched_corner"] + [c for c in references if c.startswith("ihp_")]
 references = references[columns]
 assert len(references) == 5 and references.corner_mos.nunique() == 5
-data = data.merge(references, on="corner_mos", validate="many_to_one")
+data = data.merge(references, on="corner_mos", validate="many_to_one").copy()
 data["gain_error_percent"] = 100 * (data.k100.abs() / 10 - 1)
 data["joint_dc_bare_loaded_bw_screen"] = (
     data.gain_error_percent.abs().le(1) & data.compr.between(.96758, 1.03242) &

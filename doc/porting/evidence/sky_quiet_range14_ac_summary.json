@@ -1,0 +1,77 @@
+{
+  "audits": {
+    "ac_ff.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "ac_fs.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "ac_sf.yaml": {
+      "cases": 1,
+      "scalar_values": 37,
+      "waveform_files": 2,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "ac_ss.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "ac_tt.yaml": {
+      "cases": 1,
+      "scalar_values": 37,
+      "waveform_files": 2,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ff",
+      "feasible_codes": [
+        11,
+        12
+      ]
+    },
+    {
+      "corner_mos": "fs",
+      "feasible_codes": []
+    },
+    {
+      "corner_mos": "sf",
+      "feasible_codes": [
+        9
+      ]
+    },
+    {
+      "corner_mos": "ss",
+      "feasible_codes": []
+    },
+    {
+      "corner_mos": "tt",
+      "feasible_codes": []
+    }
+  ],
+  "anchored_curves": 32,
+  "dc_replay": "pass",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "scope": "nominal MOS corners, identical receiver input 1 with 25 fF wire"
+}

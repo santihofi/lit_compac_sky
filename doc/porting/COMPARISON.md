@@ -1096,3 +1096,28 @@ The two cold-TT factor-0.9 replay rows are excluded from the exhaustive factor-0
 All eight nominal DC-feasible codes are now receiving DC replay, bare-core AC and receiver-loaded AC checks.
 The receiver remains an identical cell input 1 with 25 fF wire per output.
 Evidence: evidence/sky_quiet_range14.csv and evidence/sky_quiet_range14_summary.json.
+
+### Widened-network nominal speed regression
+
+All eight nominal DC-feasible codes have valid DC replay and independently anchored AC measurements, totaling 32 captured gain curves.
+Only ff codes 11/12 and sf code 9 pass the joint DC, bare and receiver-loaded bandwidth screen.
+
+| Raw corner | Code | Bare input-2 bandwidth / IHP | Loaded input-2 bandwidth / IHP | Joint screen |
+|---|---:|---:|---:|---|
+| ff | 11 | 1.032963 | 1.064207 | pass |
+| ff | 12 | 1.003253 | 1.051829 | pass |
+| fs | 21 | 0.870494 | 0.938147 | fail |
+| fs | 22 | 0.839394 | 0.913736 | fail |
+| sf | 9 | 1.156168 | 1.071211 | pass |
+| ss | 11 | 0.792316 | 0.785092 | fail |
+| ss | 12 | 0.786835 | 0.782803 | fail |
+| tt | 7 | 0.998059 | 0.996076 | fail |
+
+The wider trim network recovers the difficult DC points but does not preserve the earlier nominal speed result.
+This exhausts its DC-feasible nominal gain codes at the retained nominal bias settings, not alternative bias calibration or resistor implementations.
+A resistance-matched 2.85 um trim-poly control is running against the 5.73 um trim resistors at fs codes 21 and 22.
+Only the 32 trim segments and three trim dummies change family.
+The target segment resistance is 279.53695 ohm at 27 C and zero differential voltage, high enough for the narrower family's positive-length solution.
+The fixed core loads, source resistors, switches and transistor geometry remain unchanged.
+Because voltage and temperature coefficients also differ, this is a resistor-family sensitivity test rather than proof that any speed change comes solely from capacitance.
+Evidence: evidence/sky_quiet_range14_ac.csv and evidence/sky_quiet_range14_ac_summary.json.
