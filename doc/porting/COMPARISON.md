@@ -1142,3 +1142,28 @@ The measured family change restores both FS nominal codes under the provisional 
 It does not yet establish temperature, passive-corner, mismatch, noise or loop equivalence.
 Both families are now being compared at all eight nominal DC-feasible codes, with unchanged-width controls in every corner.
 Evidence: evidence/sky_quiet_trim_poly.csv and evidence/sky_quiet_trim_resistor_probe.json.
+
+### Narrow trim-poly five-corner result, 2026-11-12
+
+All sixteen cases are valid, all eight wide-family controls reproduce the preceding measurements, and all 64 captured gain curves independently reproduce their scalar anchors.
+The narrow family preserves gain and shape within the provisional limits at all eight tested nominal codes.
+It restores joint gain/shape/bandwidth coverage in fs and tt, giving four of five nominal MOS corners with a passing code.
+
+| Raw corner | Code | Narrow-trim bare input-2 bandwidth | Narrow-trim loaded input-2 bandwidth | Joint screen |
+|---|---:|---:|---:|---|
+| ff | 11 | 1095.540 MHz | 633.630 MHz | pass |
+| ff | 12 | 1078.280 MHz | 632.001 MHz | pass |
+| fs | 21 | 888.077 MHz | 535.503 MHz | pass |
+| fs | 22 | 860.663 MHz | 523.913 MHz | pass |
+| sf | 9 | 1199.660 MHz | 636.752 MHz | pass |
+| ss | 11 | 780.696 MHz | 442.265 MHz | fail |
+| ss | 12 | 782.526 MHz | 443.207 MHz | fail |
+| tt | 7 | 982.014 MHz | 565.691 MHz | pass |
+
+SS code 12 reaches 0.969273 times IHP bare input-2 bandwidth and 0.883756 times its receiver-loaded bandwidth.
+The family change helps SS but does not close its remaining speed gap.
+The new 160-case SS study holds geometry and resistor factors fixed while sweeping all 32 gain codes at ideal bias factors 0.8, 0.9, 1, 1.1 and 1.2.
+Its factor-one codes 11 and 12 replay this result.
+Any DC-feasible settings must receive AC at the same current and gain code before claiming recovery.
+The finite current grid is not an exhaustive infeasibility test.
+Evidence: evidence/sky_quiet_trim_corners.csv and evidence/sky_quiet_trim_corners_summary.json.

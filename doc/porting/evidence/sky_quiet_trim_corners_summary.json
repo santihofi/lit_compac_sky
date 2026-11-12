@@ -1,0 +1,50 @@
+{
+  "audits": {
+    "trim_ff.yaml": {
+      "cases": 4,
+      "scalar_values": 148,
+      "waveform_files": 8,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "trim_fs.yaml": {
+      "cases": 4,
+      "scalar_values": 148,
+      "waveform_files": 8,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "trim_sf.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "trim_ss.yaml": {
+      "cases": 4,
+      "scalar_values": 148,
+      "waveform_files": 8,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "trim_tt.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "anchored_curves": 64,
+  "unchanged_controls": 8,
+  "control_replay": "pass",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified"
+}

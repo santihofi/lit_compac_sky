@@ -256,3 +256,11 @@ From verification/porting/sky_input2_quiet_trim_poly run the wrapper with chipif
 Use --batch datasheets/corners for the sixteen-case comparison across all nominal DC-feasible codes.
 Run python scripts/analyze_input2_quiet_trim_poly.py for the FS audit, or add --corners for the five-corner audit.
 The wider-family control must reproduce prior DC and AC metrics, while every captured curve is independently anchored.
+
+## SS calibration search with narrow trim poly
+
+Run python scripts/prepare_input2_trim_ss_bias.py.
+From verification/porting/sky_input2_trim_ss_bias run the wrapper with chipify-cli -c ss_bias.yaml --cores 4 --json.
+After completion run python scripts/analyze_input2_trim_ss_bias.py.
+The auditor requires all 160 gain/current tuples and replays two preceding SS controls.
+It reports DC-feasible codes per sampled current, not bandwidth coverage.
