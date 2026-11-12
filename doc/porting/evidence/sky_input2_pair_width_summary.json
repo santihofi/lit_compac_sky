@@ -1,0 +1,18 @@
+{
+  "audits": {
+    "pair_ss.yaml": {
+      "cases": 4,
+      "scalar_values": 148,
+      "waveform_files": 8,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "anchored_curves": 16,
+  "unchanged_controls": 2,
+  "control_replay": "pass",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified"
+}

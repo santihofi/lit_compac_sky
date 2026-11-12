@@ -1,0 +1,33 @@
+{
+  "audits": {
+    "bias_0p9.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "bias_1p0.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ss",
+      "feasible_codes": [],
+      "feasible_settings": []
+    }
+  ],
+  "anchored_curves": 16,
+  "dc_replay": "pass",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "scope": "nominal MOS corners, identical receiver input 1 with 25 fF wire"
+}

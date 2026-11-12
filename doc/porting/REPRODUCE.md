@@ -264,3 +264,17 @@ From verification/porting/sky_input2_trim_ss_bias run the wrapper with chipify-c
 After completion run python scripts/analyze_input2_trim_ss_bias.py.
 The auditor requires all 160 gain/current tuples and replays two preceding SS controls.
 It reports DC-feasible codes per sampled current, not bandwidth coverage.
+
+## SS AC intersection and active-pair sensitivity
+
+Run python scripts/prepare_input2_trim_ss_bias_ac.py after the SS DC audit.
+Run the wrapper with chipify-cli --batch datasheets/nominal --cores 4 --json from verification/porting/sky_input2_trim_ss_bias_ac.
+Audit with python scripts/analyze_input2_quiet_range14_ac.py --ss-bias.
+
+Run python scripts/prepare_input2_pair_width.py for the fixed-code active-pair control.
+Run the wrapper with chipify-cli -c pair_ss.yaml --cores 4 --json from verification/porting/sky_input2_pair_width.
+Audit with python scripts/analyze_input2_quiet_trim_poly.py --pair-width.
+
+Run python scripts/prepare_input2_pair_calibration.py for the reduced-pair gain-code search.
+From verification/porting/sky_input2_pair_calibration use chipify-cli -c calibrate_ss.yaml through the wrapper.
+Audit with python scripts/analyze_input2_trim_ss_bias.py --pair-calibration.

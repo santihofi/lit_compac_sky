@@ -1182,5 +1182,29 @@ Exactly four settings pass the provisional gain, shape and tail-gate screen.
 
 Factors 0.8, 1.1 and 1.2 fail shape at every gain code.
 This rejects those sampled currents for the declared DC screen, not every possible current.
-All four feasible settings are receiving bare and receiver-loaded AC checks at identical parameters.
+All four feasible settings completed bare and receiver-loaded AC checks at identical parameters, as reported below.
 Evidence: evidence/sky_trim_ss_bias.csv and evidence/sky_trim_ss_bias_summary.json.
+
+### SS sampled calibration does not close the speed gap
+
+All four DC-feasible settings have valid AC measurements, sixteen independently anchored curves and two repeated AC controls.
+None matches both IHP input-2 bandwidth references.
+The best setting, code 10 at bias factor 0.9, gives 793.843 MHz bare and 451.501 MHz loaded, or 0.983291 and 0.900294 times IHP.
+This exhausts gain codes at the five sampled current factors, not arbitrary current values.
+Evidence: evidence/sky_trim_ss_bias_ac.csv and evidence/sky_trim_ss_bias_ac_summary.json.
+
+### Active input-pair width and receiver loading
+
+A four-case sensitivity control scales only the active main and replica input pairs while retaining the original four-finger XMDP dummy.
+At six circuit copies, pair scale 2/3 has eight main-pair fingers and six replica fingers, compared with twelve and nine at scale one.
+The two scale-one controls reproduce twelve preceding DC and AC metrics, and all sixteen curves independently anchor.
+At code 10 and bias factor 0.9, input-1 capacitance falls from 535.114 to 404.066 fF.
+Receiver-loaded input-2 bandwidth rises from 451.501 to 516.693 MHz, while bare input-2 bandwidth changes from 793.843 to 796.684 MHz.
+The change helps the loaded path, but gain error becomes -9.5774 percent rather than -0.7146 percent.
+At code 11 the small pair gives loaded bandwidth 503.790 MHz and gain error -8.6588 percent.
+Neither reduced-width point is a joint pass.
+Supply current increases slightly from 2.942 to 2.972 mA, so this is not a measured power reduction.
+
+A 32-code DC search is running at pair scale 2/3 and bias factor 0.9 before a matched-gain AC comparison.
+The held dummy loading and continuous device widths remain explicit pre-layout assumptions.
+Evidence: evidence/sky_input2_pair_width.csv and evidence/sky_input2_pair_width_summary.json.

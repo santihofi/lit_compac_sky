@@ -47,25 +47,44 @@
       "feasible_codes": [
         11,
         12
+      ],
+      "feasible_settings": [
+        {
+          "gcode": 11,
+          "bias_factor": 1.0
+        },
+        {
+          "gcode": 12,
+          "bias_factor": 1.0
+        }
       ]
     },
     {
       "corner_mos": "fs",
-      "feasible_codes": []
+      "feasible_codes": [],
+      "feasible_settings": []
     },
     {
       "corner_mos": "sf",
       "feasible_codes": [
         9
+      ],
+      "feasible_settings": [
+        {
+          "gcode": 9,
+          "bias_factor": 1.0
+        }
       ]
     },
     {
       "corner_mos": "ss",
-      "feasible_codes": []
+      "feasible_codes": [],
+      "feasible_settings": []
     },
     {
       "corner_mos": "tt",
-      "feasible_codes": []
+      "feasible_codes": [],
+      "feasible_settings": []
     }
   ],
   "anchored_curves": 32,

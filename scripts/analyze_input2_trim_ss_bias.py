@@ -2,6 +2,7 @@
 # SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
 # SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
 """Audit all gain codes at sampled SS currents and preserve same-setting feasibility."""
+import argparse
 import itertools
 import json
 from pathlib import Path
@@ -12,8 +13,13 @@ from check_chipify_results import audit
 
 ROOT = Path(__file__).resolve().parents[1]
 evidence = ROOT / "doc/porting/evidence"
-project = ROOT / "verification/porting/sky_input2_trim_ss_bias"
-sheet, out = project / "datasheets/ss_bias.yaml", project / "out"
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--pair-calibration", action="store_true")
+args = parser.parse_args()
+project_name = "sky_input2_pair_calibration" if args.pair_calibration else "sky_input2_trim_ss_bias"
+project = ROOT / "verification/porting" / project_name
+sheet = project / ("datasheets/calibrate_ss.yaml" if args.pair_calibration else "datasheets/ss_bias.yaml")
+out = project / "out"
 report = audit(sheet, out, False)
 data = pd.read_csv(out / "simulation_results.csv")
 params = yaml.safe_load(sheet.read_text())["parameters"]
@@ -21,16 +27,21 @@ for key, allowed in params.items():
     if allowed == "range(1)":
         allowed = [0]
     assert isinstance(allowed, list) and set(data[key]) == set(allowed), key
-expected = set(itertools.product(range(32), [.8, .9, 1., 1.1, 1.2]))
-assert len(data) == 160 and set(map(tuple, data[["gcode", "bias_factor"]].to_numpy())) == expected
-prior = pd.read_csv(evidence / "sky_quiet_trim_corners.csv")
-prior = prior[(prior.corner_mos == "ss") & (prior.trim_family == "2p85")]
+factors = [.9] if args.pair_calibration else [.8, .9, 1., 1.1, 1.2]
+expected = set(itertools.product(range(32), factors))
+assert len(data) == len(expected) and set(map(tuple, data[["gcode", "bias_factor"]].to_numpy())) == expected
+if args.pair_calibration:
+    prior = pd.read_csv(evidence / "sky_input2_pair_width.csv")
+    prior = prior[prior.pair_scale < 1]
+else:
+    prior = pd.read_csv(evidence / "sky_quiet_trim_corners.csv")
+    prior = prior[(prior.corner_mos == "ss") & (prior.trim_family == "2p85")]
 assert len(prior) == 2
 for key in params:
     if key not in {"gcode", "bias_factor"}:
         assert data[key].eq(prior.iloc[0][key]).all(), key
 for _, previous in prior.iterrows():
-    control = data[(data.gcode == previous.gcode) & (data.bias_factor == 1.)]
+    control = data[(data.gcode == previous.gcode) & (data.bias_factor == previous.bias_factor)]
     assert len(control) == 1
     for metric in ["k100", "k10", "compr", "idd", "tail_gate_v", "tail_ratio"]:
         assert np.isclose(control.iloc[0][metric], previous[metric], rtol=1e-5, atol=1e-12), metric
@@ -47,7 +58,7 @@ report.update(coverage=coverage, control_replay="pass", unchanged_controls=2,
               gain_tolerance_percent=1, gain_tolerance_status="provisional",
               full_spec_coverage="unverified",
               scope="SS 27 C 1.5 V, sampled ideal currents, gain/shape screen only")
-stem = evidence / "sky_trim_ss_bias"
+stem = evidence / ("sky_input2_pair_calibration" if args.pair_calibration else "sky_trim_ss_bias")
 data.to_csv(stem.with_suffix(".csv"), index=False)
 stem.with_name(stem.name + "_summary.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(coverage, indent=2))
