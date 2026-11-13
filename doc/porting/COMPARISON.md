@@ -15,9 +15,27 @@ The two feedback loops meet their provisional margin limits.
 Fifteen full transfer surfaces at 1.5 V show lower peak error than IHP in every matched MOS/temperature case, with three RMS-error regressions.
 The drawn replica view is electrically equivalent to its characterized source at nominal conditions.
 Full-port equivalence and physical signoff remain open.
-The latest measured checkpoint is summarized first, with the earlier candidates retained below to explain the sizing decisions.
+Candidate-specific results must stay separate. The latest status is summarized first, with earlier measurements retained below to explain the sizing decisions.
 
-## Current transistor-replica checkpoint
+## Current status, 2026-11-13
+
+No SKY130 replacement has full-spec PVT or physical signoff.
+The current experiments use six parallel copies and an ideal common-mode-biased replica.
+The gain window remains a provisional one-percent screen.
+
+| Candidate | Demonstrated DC coverage | Nominal joint gain/shape/bandwidth coverage | Remaining issue |
+|---|---|---|---|
+| Original fixed/trim factors 1 / 1, wide trim poly | 40/45 points after gain/current calibration | 5/5 corners at the selected nominal settings | Five PVT points remain unresolved |
+| Fixed/trim factors 0.8 / 1.4, wide trim poly | 10/10 screened points, including those five | 2/5 corners | Wider range loses input-2 speed |
+| Fixed/trim factors 0.8 / 1.4, narrow trim poly | All tested nominal codes retain DC feasibility | 4/5 corners | SS still misses speed after sampled current calibration |
+| Smaller active input pair, narrow trim poly | SS codes 20/21 recover gain and shape | Both SS codes pass after recalibration | Other corners and full PVT need requalification for this geometry |
+
+The first candidate's coverage cannot be combined with later candidates to claim 45/45.
+The newer geometries need fresh full-PVT, noise, loop, reference-driver, mismatch and extracted checks.
+Power is also a cost: the six-copy experiments use roughly 3 mA rather than the IHP nominal core's roughly 0.72 mA.
+Only the earlier two-copy experimental replica has a drawn schematic replay, and none of these newer candidates has accepted multiplier layout.
+
+## Earlier two-copy transistor-replica checkpoint
 
 The following nominal results use tt, 27 C, 1.5 V, common mode 0.75 V, gain code 13 and 100 fF per output.
 IHP uses a 40 uA unit reference.
@@ -1205,6 +1223,25 @@ At code 11 the small pair gives loaded bandwidth 503.790 MHz and gain error -8.6
 Neither reduced-width point is a joint pass.
 Supply current increases slightly from 2.942 to 2.972 mA, so this is not a measured power reduction.
 
-A 32-code DC search is running at pair scale 2/3 and bias factor 0.9 before a matched-gain AC comparison.
+The completed 32-code DC search at pair scale 2/3 and bias factor 0.9 finds codes 20/21, whose matched-gain AC results follow below.
 The held dummy loading and continuous device widths remain explicit pre-layout assumptions.
 Evidence: evidence/sky_input2_pair_width.csv and evidence/sky_input2_pair_width_summary.json.
+
+### Smaller-pair matched-gain result, 2026-11-13
+
+All 32 calibration cases are valid and two preceding controls replay.
+Only codes 20 and 21 pass gain and shape at pair scale 2/3 and bias factor 0.9.
+Both subsequent AC cases reproduce their DC values, and all eight captured curves independently anchor.
+
+| Code | Gain error | Diagonal ratio | Bare input-2 bandwidth | Loaded input-2 bandwidth | Loaded bandwidth / IHP |
+|---|---:|---:|---:|---:|---:|
+| 20 | -0.4227% | 1.00195 | 848.522 MHz | 518.140 MHz | 1.033172 |
+| 21 | +0.4590% | 1.00252 | 824.990 MHz | 506.887 MHz | 1.010734 |
+
+Both codes pass the joint provisional gain, shape, bare and loaded bandwidth screen at SS, 27 C and 1.5 V.
+The input-1 bandwidth comparisons also pass at those same settings.
+The speed benefit therefore survives gain recalibration at this operating point.
+It does not establish other-corner or full-PVT equivalence, and this geometry cannot inherit the larger-pair candidate's passes.
+A twenty-case endpoint screen now checks the same smaller-pair geometry at all five nominal MOS corners and the five difficult PVT points before another exhaustive code search.
+Nominal SS uses factor 0.9, other nominal points use 1, hot points use 0.9 and cold TT uses 0.85.
+Evidence: evidence/sky_input2_pair_calibration_summary.json and evidence/sky_input2_pair_calibration_ac_summary.json.

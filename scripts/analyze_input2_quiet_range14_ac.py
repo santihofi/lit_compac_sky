@@ -84,7 +84,8 @@ coverage = [{"corner_mos": corner,
             for corner, group in data.groupby("corner_mos")]
 summary = {"audits": audits, "coverage": coverage, "anchored_curves": 4 * len(data),
            "dc_replay": "pass", "gain_tolerance_percent": 1, "gain_tolerance_status": "provisional",
-           "full_spec_coverage": "unverified", "scope": "nominal MOS corners, identical receiver input 1 with 25 fF wire"}
+           "full_spec_coverage": "unverified", "scope": ("SS at 27 C and 1.5 V" if args.ss_bias or args.pair_calibration else "five nominal MOS corners") +
+                    ", identical receiver input 1 with 25 fF wire"}
 stem = evidence / ("sky_input2_pair_calibration_ac" if args.pair_calibration else
                    "sky_trim_ss_bias_ac" if args.ss_bias else "sky_quiet_range14_ac")
 data.to_csv(stem.with_suffix(".csv"), index=False)

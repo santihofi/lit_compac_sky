@@ -278,3 +278,14 @@ Audit with python scripts/analyze_input2_quiet_trim_poly.py --pair-width.
 Run python scripts/prepare_input2_pair_calibration.py for the reduced-pair gain-code search.
 From verification/porting/sky_input2_pair_calibration use chipify-cli -c calibrate_ss.yaml through the wrapper.
 Audit with python scripts/analyze_input2_trim_ss_bias.py --pair-calibration.
+
+## Smaller-pair matched AC and global endpoint checks
+
+After the smaller-pair DC audit, run python scripts/prepare_input2_trim_ss_bias_ac.py --pair-calibration.
+Run the wrapper with chipify-cli --batch datasheets/nominal --cores 4 --json from verification/porting/sky_input2_pair_calibration_ac.
+Audit with python scripts/analyze_input2_quiet_range14_ac.py --pair-calibration.
+
+Run python scripts/prepare_input2_pair_endpoints.py for the global geometry screen.
+From verification/porting/sky_input2_pair_endpoints run the wrapper with chipify-cli --batch datasheets/endpoints --cores 4 --json.
+Audit with python scripts/analyze_input2_pair_endpoints.py.
+Endpoint range alone is not a full-code or joint-specification verdict.

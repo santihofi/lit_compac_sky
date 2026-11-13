@@ -1,0 +1,37 @@
+{
+  "audits": {
+    "bias_0p9.yaml": {
+      "cases": 2,
+      "scalar_values": 74,
+      "waveform_files": 4,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    }
+  },
+  "coverage": [
+    {
+      "corner_mos": "ss",
+      "feasible_codes": [
+        20,
+        21
+      ],
+      "feasible_settings": [
+        {
+          "gcode": 20,
+          "bias_factor": 0.9
+        },
+        {
+          "gcode": 21,
+          "bias_factor": 0.9
+        }
+      ]
+    }
+  ],
+  "anchored_curves": 8,
+  "dc_replay": "pass",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "scope": "SS at 27 C and 1.5 V, identical receiver input 1 with 25 fF wire"
+}

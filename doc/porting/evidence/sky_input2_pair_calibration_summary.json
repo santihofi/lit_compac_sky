@@ -1,0 +1,23 @@
+{
+  "cases": 32,
+  "scalar_values": 672,
+  "waveform_files": 0,
+  "status": "valid",
+  "specification_status": "pass",
+  "failed_limits": [],
+  "coverage": [
+    {
+      "bias_factor": 0.9,
+      "dc_feasible_codes": [
+        20,
+        21
+      ]
+    }
+  ],
+  "control_replay": "pass",
+  "unchanged_controls": 2,
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "full_spec_coverage": "unverified",
+  "scope": "SS 27 C 1.5 V, sampled ideal currents, gain/shape screen only"
+}
