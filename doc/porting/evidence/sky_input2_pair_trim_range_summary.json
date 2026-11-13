@@ -1,0 +1,558 @@
+{
+  "audits": {
+    "range_ff_27C_1500mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000004: compr=1.05397 above 1.03242",
+        "Case 000005: compr=1.06352 above 1.03242",
+        "Case 000006: compr=1.06582 above 1.03242",
+        "Case 000007: compr=1.06808 above 1.03242"
+      ]
+    },
+    "range_fs_27C_1500mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000004: compr=1.03316 above 1.03242",
+        "Case 000005: compr=1.03785 above 1.03242",
+        "Case 000006: compr=1.03899 above 1.03242",
+        "Case 000007: compr=1.04013 above 1.03242"
+      ]
+    },
+    "range_fs_80C_1450mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1500mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1650mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_sf_27C_1500mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000004: compr=1.07051 above 1.03242",
+        "Case 000005: compr=1.08069 above 1.03242",
+        "Case 000006: compr=1.08314 above 1.03242",
+        "Case 000007: compr=1.08554 above 1.03242"
+      ]
+    },
+    "range_ss_27C_1500mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_ss_80C_1450mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_tt_0C_1450mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_tt_27C_1500mV.yaml": {
+      "cases": 8,
+      "scalar_values": 168,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000004: compr=1.05153 above 1.03242",
+        "Case 000005: compr=1.05871 above 1.03242",
+        "Case 000006: compr=1.06044 above 1.03242",
+        "Case 000007: compr=1.06215 above 1.03242"
+      ]
+    }
+  },
+  "control_replay": "pass",
+  "unchanged_controls": 20,
+  "endpoint_diagnostics": [
+    {
+      "corner_mos": "ff",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 7.48636,
+      "gain_max": 11.5327,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.6,
+      "gain_min": 7.59765,
+      "gain_max": 12.2821,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.65,
+      "gain_min": 7.62245,
+      "gain_max": 12.463,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ff",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.7,
+      "gain_min": 7.6462,
+      "gain_max": 12.6415,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 6.50428,
+      "gain_max": 10.0599,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.6,
+      "gain_min": 6.63321,
+      "gain_max": 10.8203,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.65,
+      "gain_min": 6.66218,
+      "gain_max": 11.0062,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.7,
+      "gain_min": 6.69001,
+      "gain_max": 11.1905,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 5.94138,
+      "gain_max": 9.04498,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.6,
+      "gain_min": 6.06521,
+      "gain_max": 9.7338,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.65,
+      "gain_min": 6.09296,
+      "gain_max": 9.90158,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.7,
+      "gain_min": 6.11959,
+      "gain_max": 10.0677,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 5.85316,
+      "gain_max": 9.13112,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.6,
+      "gain_min": 5.96437,
+      "gain_max": 9.8292,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.65,
+      "gain_min": 5.98921,
+      "gain_max": 9.99929,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.7,
+      "gain_min": 6.01301,
+      "gain_max": 10.1677,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.65,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 5.53987,
+      "gain_max": 9.31077,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.65,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.6,
+      "gain_min": 5.6159,
+      "gain_max": 10.0252,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.65,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.65,
+      "gain_min": 5.63271,
+      "gain_max": 10.1994,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.65,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.7,
+      "gain_min": 5.64875,
+      "gain_max": 10.3719,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 8.16638,
+      "gain_max": 11.3285,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.6,
+      "gain_min": 8.33947,
+      "gain_max": 12.026,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.65,
+      "gain_min": 8.37855,
+      "gain_max": 12.1936,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.7,
+      "gain_min": 8.41614,
+      "gain_max": 12.3588,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 8.09871,
+      "gain_max": 10.9107,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.6,
+      "gain_min": 8.35256,
+      "gain_max": 11.7139,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.65,
+      "gain_min": 8.41074,
+      "gain_max": 11.9098,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.7,
+      "gain_min": 8.46703,
+      "gain_max": 12.1038,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 7.18708,
+      "gain_max": 9.67343,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.6,
+      "gain_min": 7.41199,
+      "gain_max": 10.3905,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.65,
+      "gain_min": 7.46329,
+      "gain_max": 10.5648,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.7,
+      "gain_min": 7.51285,
+      "gain_max": 10.7372,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0,
+      "vdd": 1.45,
+      "bias_factor": 0.85,
+      "rtrim_scale": 1.4,
+      "gain_min": 9.22373,
+      "gain_max": 12.6249,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0,
+      "vdd": 1.45,
+      "bias_factor": 0.85,
+      "rtrim_scale": 1.6,
+      "gain_min": 9.46672,
+      "gain_max": 13.4652,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0,
+      "vdd": 1.45,
+      "bias_factor": 0.85,
+      "rtrim_scale": 1.65,
+      "gain_min": 9.52284,
+      "gain_max": 13.6715,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0,
+      "vdd": 1.45,
+      "bias_factor": 0.85,
+      "rtrim_scale": 1.7,
+      "gain_min": 9.57719,
+      "gain_max": 13.8759,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 8.14323,
+      "gain_max": 11.7521,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.6,
+      "gain_min": 8.31432,
+      "gain_max": 12.5419,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.65,
+      "gain_min": 8.35289,
+      "gain_max": 12.733,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.7,
+      "gain_min": 8.38997,
+      "gain_max": 12.9218,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    }
+  ],
+  "full_spec_coverage": "unverified",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "scope": "ten-point endpoint diagnostic, each trim factor evaluated globally with the smaller pair",
+  "target_brackets_by_trim_factor": {
+    "1.4": 6,
+    "1.6": 8,
+    "1.65": 8,
+    "1.7": 10
+  }
+}

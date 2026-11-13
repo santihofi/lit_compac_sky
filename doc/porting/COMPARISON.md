@@ -1252,3 +1252,13 @@ Twenty factor-1.4 cases replay the preceding endpoint study.
 Each trim factor must be assessed globally before selecting a geometry and repeating joint gain, shape and same-setting bandwidth qualification.
 Nominal SS uses factor 0.9, other nominal points use 1, hot points use 0.9 and cold TT uses 0.85.
 Evidence: evidence/sky_input2_pair_calibration_summary.json and evidence/sky_input2_pair_calibration_ac_summary.json.
+
+### Smaller-pair global trim-range result
+
+All eighty cases are valid and twenty factor-1.4 controls reproduce six DC metrics.
+Trim factors 1.4, 1.6, 1.65 and 1.7 bracket gain magnitude 10 at 6, 8, 8 and 10 of the ten screened points respectively.
+Factor 1.65 overlaps the provisional gain window at all ten points, but the hot FS 1.45 V upper endpoint is only 9.90158, close to its lower limit.
+Factor 1.7 brackets the target everywhere, with hot FS 1.45 V endpoints 6.11959 and 10.06770 and cold TT endpoints 9.57719 and 13.87590.
+Select factor 1.7 for the next 320-case all-code DC screen, retaining fixed-load factor 0.8, active-pair scale 2/3 and the same operating-point bias factors globally.
+This is an experimental selection from endpoint evidence, not joint specification coverage or an accepted schematic.
+Evidence: doc/porting/evidence/sky_input2_pair_trim_range_summary.json.

@@ -1,0 +1,134 @@
+# SPDX-FileCopyrightText: 2026 Santiago Hofwimmer
+# SPDX-License-Identifier: Apache-2.0 WITH SHL-2.1
+parameters:
+  temp:
+  - 27
+  seed: range(1)
+  vdd:
+  - 1.5
+  vincm:
+  - 0.75
+  vref:
+  - 0.75
+  corner_mos:
+  - ff
+  corner_res:
+  - typ
+  corner_cap:
+  - typ
+  gcode:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  ibias:
+  - 2.75e-05
+  c_load:
+  - 100f
+  vd1:
+  - 0
+  vd2:
+  - 0
+  mirror_scale:
+  - 4
+  mirror_l:
+  - 0.3
+  pair_scale:
+  - 0.6666666666666666
+  pair_l:
+  - 0.35
+  quad_scale:
+  - 1
+  quad_l:
+  - 0.15
+  rscale:
+  - 1.7
+  power_m:
+  - 6
+  quad_model:
+  - nfet_01v8_lvt
+  body_tied:
+  - 0
+  native_nf:
+  - 1
+  rquad:
+  - 120
+  tail_width:
+  - 4
+  rpair:
+  - 120
+  pload_l:
+  - 0.35
+  tail_length_scale:
+  - 1
+  pair_body_tied:
+  - 0
+  rbase_scale:
+  - 0.8
+  rtrim_scale:
+  - 1.7
+  load_family:
+  - 1p41
+  replica_tracks_signal:
+  - 0
+  bias_factor:
+  - 1.0
+  trim_family:
+  - 2p85
+tests:
+  replica:
+    source: netlist
+    engine: ngspice
+    k100: {}
+    k10: {}
+    compr:
+      min: 0.96758
+      max: 1.03242
+    vocm: {}
+    idd: {}
+    vos: {}
+    tail_margin: {}
+    pair_margin: {}
+    mirror_margin: {}
+    quad_margin: {}
+    qs: {}
+    sp: {}
+    kaxis1: {}
+    kaxis2: {}
+    axis1: {}
+    axis2: {}
+    tail_current: {}
+    tail_gate_v:
+      min: 0
+      max: 1.45
+    tail_drop_v: {}
+    replica_error_v: {}
+    tail_ratio: {}

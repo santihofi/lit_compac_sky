@@ -297,3 +297,7 @@ From verification/porting/sky_input2_pair_trim_range run the SKY130 ngspice wrap
 Audit with python scripts/analyze_input2_pair_endpoints.py --trim-range.
 The analyzer requires all eighty parameter tuples and twenty unchanged controls, then reports endpoint spans separately for each global trim factor.
 Endpoint coverage is not a calibrated gain/shape or bandwidth verdict.
+
+Run python scripts/prepare_input2_pair_global_codes.py --trim-factor 1.7 after the trim-range audit.
+The generator requires target brackets at all ten points and successful replay controls.
+From verification/porting/sky_input2_pair_global_codes run the wrapper with chipify-cli --batch datasheets/codes --cores 4 --json.
