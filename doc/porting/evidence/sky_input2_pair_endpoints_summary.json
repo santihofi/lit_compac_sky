@@ -1,0 +1,213 @@
+{
+  "audits": {
+    "range_ff_27C_1500mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.05397 above 1.03242"
+      ]
+    },
+    "range_fs_27C_1500mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.03316 above 1.03242"
+      ]
+    },
+    "range_fs_80C_1450mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1500mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_fs_80C_1650mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_sf_27C_1500mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.07051 above 1.03242"
+      ]
+    },
+    "range_ss_27C_1500mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_ss_80C_1450mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_tt_0C_1450mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "pass",
+      "failed_limits": []
+    },
+    "range_tt_27C_1500mV.yaml": {
+      "cases": 2,
+      "scalar_values": 42,
+      "waveform_files": 0,
+      "status": "valid",
+      "specification_status": "fail",
+      "failed_limits": [
+        "Case 000001: compr=1.05153 above 1.03242"
+      ]
+    }
+  },
+  "control_replay": "pass",
+  "unchanged_controls": 2,
+  "endpoint_diagnostics": [
+    {
+      "corner_mos": "ff",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 7.48636,
+      "gain_max": 11.5327,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 6.50428,
+      "gain_max": 10.0599,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 5.94138,
+      "gain_max": 9.04498,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 5.85316,
+      "gain_max": 9.13112,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "fs",
+      "temp": 80,
+      "vdd": 1.65,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 5.53987,
+      "gain_max": 9.31077,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "sf",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 8.16638,
+      "gain_max": 11.3285,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 8.09871,
+      "gain_max": 10.9107,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "ss",
+      "temp": 80,
+      "vdd": 1.45,
+      "bias_factor": 0.9,
+      "rtrim_scale": 1.4,
+      "gain_min": 7.18708,
+      "gain_max": 9.67343,
+      "endpoint_span_brackets_target": false,
+      "endpoint_span_overlaps_gain_window": false
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 0,
+      "vdd": 1.45,
+      "bias_factor": 0.85,
+      "rtrim_scale": 1.4,
+      "gain_min": 9.22373,
+      "gain_max": 12.6249,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    },
+    {
+      "corner_mos": "tt",
+      "temp": 27,
+      "vdd": 1.5,
+      "bias_factor": 1.0,
+      "rtrim_scale": 1.4,
+      "gain_min": 8.14323,
+      "gain_max": 11.7521,
+      "endpoint_span_brackets_target": true,
+      "endpoint_span_overlaps_gain_window": true
+    }
+  ],
+  "full_spec_coverage": "unverified",
+  "gain_tolerance_percent": 1,
+  "gain_tolerance_status": "provisional",
+  "scope": "ten-point endpoint diagnostic, each trim factor evaluated globally with the smaller pair",
+  "target_brackets_by_trim_factor": {
+    "1.4": 6
+  }
+}

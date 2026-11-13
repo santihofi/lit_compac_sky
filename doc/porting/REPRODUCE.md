@@ -289,3 +289,11 @@ Run python scripts/prepare_input2_pair_endpoints.py for the global geometry scre
 From verification/porting/sky_input2_pair_endpoints run the wrapper with chipify-cli --batch datasheets/endpoints --cores 4 --json.
 Audit with python scripts/analyze_input2_pair_endpoints.py.
 Endpoint range alone is not a full-code or joint-specification verdict.
+
+## Smaller-pair global trim range
+
+Run python scripts/prepare_input2_pair_trim_range.py after the endpoint audit.
+From verification/porting/sky_input2_pair_trim_range run the SKY130 ngspice wrapper with chipify-cli --batch datasheets/endpoints --cores 4 --json.
+Audit with python scripts/analyze_input2_pair_endpoints.py --trim-range.
+The analyzer requires all eighty parameter tuples and twenty unchanged controls, then reports endpoint spans separately for each global trim factor.
+Endpoint coverage is not a calibrated gain/shape or bandwidth verdict.

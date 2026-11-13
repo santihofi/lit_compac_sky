@@ -1242,6 +1242,13 @@ Both codes pass the joint provisional gain, shape, bare and loaded bandwidth scr
 The input-1 bandwidth comparisons also pass at those same settings.
 The speed benefit therefore survives gain recalibration at this operating point.
 It does not establish other-corner or full-PVT equivalence, and this geometry cannot inherit the larger-pair candidate's passes.
-A twenty-case endpoint screen now checks the same smaller-pair geometry at all five nominal MOS corners and the five difficult PVT points before another exhaustive code search.
+The completed twenty-case endpoint screen brackets gain magnitude 10 at six of ten points, including all five nominal MOS corners and cold TT.
+All cases are valid, and two nominal SS controls reproduce six DC metrics.
+At 80 C, the upper FS endpoints are 9.04498, 9.13112 and 9.31077 at 1.45, 1.5 and 1.65 V.
+The hot SS upper endpoint at 1.45 V is 9.67343.
+These endpoint deficits do not establish exhaustive intermediate-code infeasibility.
+An eighty-case follow-up tests global trim factors 1.4, 1.6, 1.65 and 1.7 with the same smaller pair, fixed-load factor 0.8 and ten operating points.
+Twenty factor-1.4 cases replay the preceding endpoint study.
+Each trim factor must be assessed globally before selecting a geometry and repeating joint gain, shape and same-setting bandwidth qualification.
 Nominal SS uses factor 0.9, other nominal points use 1, hot points use 0.9 and cold TT uses 0.85.
 Evidence: evidence/sky_input2_pair_calibration_summary.json and evidence/sky_input2_pair_calibration_ac_summary.json.
